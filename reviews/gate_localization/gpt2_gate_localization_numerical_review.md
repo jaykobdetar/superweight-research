@@ -1,0 +1,21 @@
+# Independent numerical localization review
+
+**Passed.** See `gpt2_gate_localization_numerical_audit.py/.json` for the independent reductions, gate/norm checks and FP64 reconstruction, and `../report12_localization_findings.md` for report-ready factual interpretation. `gpt2_gate_localization_findings.json` retains exact selected numerical rows and their source hashes; the complete primary tables retain all arms. No production artifact was modified and no model/GPU was loaded.
+
+The audit recomputed all 938 raw per-token scalar records; 248 full and 496 early/later dual-reference summaries; 810 paired contrasts with 216 actual-n bootstrap groups; and all 90 descriptive nonadditivity records/24 groups. It checked 14,400 operation/gate records, 930 suffix shards, 900 source identities, 720 incoming singleton b/mass and 480 directional s equalities, 7,200 saved norm states and 5,040 score-aligned norm rows. Frozen calibration bytes permit reuse of the completed independent calibration audit. All 52 fixed snapshot states and 104 prefix-context fingerprints were independently reconstructed. Numerical limitations, worst unsnapshotted gain and the reviewer-only FP64 reduction correction are explicit in the findings.
+
+## Next discriminating test
+
+Prioritize a fresh-panel additive-logit diagnostic if the question is what generates the universally positive joint-minus-sum NLL residual. This directly addresses a competing explanation not isolated by layerwise interventions: nonlinearity of the loss/readout. Use the prespecified same singleton sets and all three families, rather than only the strongest reported family or layer. Define
+
+`z_add = z_P + sum_l (z_single_l - z_P)`
+
+and decompose the existing residual exactly as
+
+`D = [L(z_joint) - L(z_add)] + [L(z_add) - L(z_P) - sum_l (L(z_single_l) - L(z_P))]`.
+
+The second bracket measures the loss functional's nonadditivity on the additive-output counterfactual. The first measures the loss difference between actual joint and additive outputs; it is not a pure mechanism, feedback or mediation term. Equal scalar losses can conceal different distributions. Therefore also report per-token centered-logit differences and KL between actual joint and additive-counterfactual distributions, along with P-relative fidelity and every per-passage term. Subtract/add logits in FP64 with frozen layer order and score identical targets; preserve raw finite snapshots and exact algebra checks. Scalar logit offsets do not change the loss, while centering is needed for interpretable vector distances. Cross-entropy convexity does not guarantee positive second-bracket values for arbitrary multiple perturbation directions. This synthetic output is a diagnostic counterfactual, not a native internal state or proposed deployment model. Old successful full logits were not saved, so this cannot be reconstructed exactly from the present scalar outputs; new forwards and a prospectively frozen plan are required.
+
+A calibration-center × basis factorial remains the strongest subsequent test of the corpus sign reversal, especially selected L10 plus all layers. L10 is more discriminating than L5 because L10's loss response reverses between Wiki and books/code relative to both P and the matched control; L5's book benefit also occurs in the control direction. Cross old versus independently fitted calibration centers with old versus independently fitted bases, freeze calibration without evaluation outputs, and use untouched evaluation. If new corpora are needed for availability, call it a transfer/mechanistic test, not direct confirmation of the old DuBois/Hobbes effects. Such a factorial answers why the direction is helpful/harmful across domains, whereas the additive-logit test answers why the joint loss residual is positive. The current observations support neither an exclusive domain-mismatch explanation nor unique layer feedback. A block/pair intervention is useful later for compositional localization, but without the readout diagnostic it does not by itself resolve this competing explanation.
+
+No remaining numerical blocker. Scientific claims must retain the conditional P reference, tiny-panel uncertainty, runtime-only full-context evidence outside snapshots, and selected-layer development status.

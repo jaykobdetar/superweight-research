@@ -1,0 +1,63 @@
+{
+  "status": "ready_for_independent_scientific_design_review",
+  "model_runner_implemented": false,
+  "model_forwards": 0,
+  "model_loaded": false,
+  "gpu_used": false,
+  "frozen_sha256": {
+    "GPT2_GATE_LOCALIZATION_PROPOSAL.md": "0538d36b454f3eabe7cbfbb359b7893cd11157198f9d9797edede3947174b94c",
+    "gate_localization_inputs.py": "7bf15b79d0e9c2ba57736667adb11511996943f58f69f3763e7ee4fa20338a06",
+    "localization_inputs_v2/preflight.json": "d1500843cd0c12c37e2c1210a0ce047fd526d320668950bef422cd2862f829d5",
+    "localization_inputs_v2/tokens.pt": "cac494daff1f70b1787430e80a32a35af6e6ac8939d94f8acafe5d423e306a84",
+    "localization_inputs_v2/data_manifest.json": "387d214aa87c8533f59171ab0e8179ffb4b3adf3ab2494dcacec39a732671fc7",
+    "localization_inputs_v2/directions.pt": "4bf8fc396fd57e2146933131b928ace0a49498b3d295d749b91626a1b70260b3",
+    "localization_inputs_v2/exclusion_inventory.json": "cbc58d05d3eb00903140e788be80d500773693e2d3bae82bb8fe6c76c35f509d"
+  },
+  "passed_preflight": {
+    "passages": 15,
+    "inputs": 30,
+    "n_per_corpus": {
+      "wiki_validation": 4,
+      "dubois": 4,
+      "hobbes": 4,
+      "optimizers": 3
+    },
+    "wall_seconds": 2.4234330654144287,
+    "peak_rss_kib": 1039604,
+    "all15_records_match_preserved_failed_preflight": true
+  },
+  "planned_forwards": 1868,
+  "planned_main_records": 938,
+  "planned_suffix_controls": 930,
+  "new_calibration_forwards": 0,
+  "capacity": {
+    "eligible_grid_candidates": 38,
+    "maximum_grid_packing": 3,
+    "all_character_starts_claim": false
+  },
+  "direction_evidence": {
+    "unchanged_tested_function_AST": true,
+    "byte_identical_to_tested_directions": true,
+    "max_FP32_relative_norm_error": 2.0186175220260338e-07,
+    "test_peak_rss_kib": 725924
+  },
+  "preserved_failure": {
+    "directory": "gpt2_gate_localization_inputs",
+    "preflight_sha256": "2fd5f040e872949287fbe566a9f348e6684d5984c3d6ada888be163189b351a4",
+    "source_snapshots_verified": true
+  },
+  "exclusion_records": {
+    "wiki_validation": 80,
+    "dubois": 79,
+    "hobbes": 79,
+    "optimizers": 80
+  },
+  "declared_full_calibration_development_buffers_including_duplicates": 48,
+  "limitations": [
+    "Fresh code windows cluster late in source; frozen-grid capacity only",
+    "Same corpora and paired natural/BOS starts; no checkpoint-training novelty claim",
+    "Matched logit norm at own current state, not across diverging joint trajectories",
+    "Does not fully explain rank1 retention failure; later center-by-basis calibration factorial separate"
+  ],
+  "next_step": "Independent scientific design/input review; only then model implementation and independent CPU implementation review."
+}

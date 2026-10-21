@@ -44,6 +44,15 @@ rebuilds old metadata without rerunning prior model experiments or loading
 Llama weights. Audit exported gate results with
 `python scripts/audit_gate_results.py`; this needs NumPy and no model.
 
+The [layer-localization report](docs/GPT2_GATE_LOCALIZATION.md) then tests every
+L4–L11 singleton and their joint intervention on fresh passages. L10 PC1 removal
+worsens Wiki loss but improves both books; joint effects do not add in NLL,
+and lower loss still does not preserve predictions. See the
+[localization reproduction guide](docs/GPT2_GATE_LOCALIZATION_REPRODUCING.md).
+`python scripts/audit_localization_results.py` checks all exported numeric
+results without a model. The new primary batch is independently audited;
+a complete second pretrained localization replay remains unperformed.
+
 Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
 then `python scripts/compare_transfer.py --work .reproduce-transfer`.

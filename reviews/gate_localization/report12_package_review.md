@@ -1,0 +1,27 @@
+# Independent Report12 package readiness
+
+**Ready for the local commit at the reviewed bytes.** No remaining scientific or packaging blocker was found after the guard repairs. This decision does not authorize or attempt GitHub publication, and does not claim a second pretrained localization replay or an external replication.
+
+## Report and evidence
+
+All five requested report refinements are resolved. The 216 numerical table cells and the signed interval claims pass the independent claim audit. The corrected nonadditivity figure is legible. The report distinguishes P from native C, own-current-state logit-norm matching from a matched joint trajectory, lower loss from prediction fidelity, n=3 code from n=4 prose, and loss nonadditivity from identified network feedback. Its prospective additive-logit diagnostic remains a hypothesis/test plan. Prior-art and novelty qualifications remain appropriate within the focused primary-source review; no exhaustive novelty search is claimed.
+
+The primary saved-output audit covers all 938 main records, 930 suffix controls, paired actual-n bootstrap summaries, singleton saved states, 52 fixed FP64 snapshots and original model/map closures. The tiny FP64 reduction discrepancy and audit-only tolerance repair remain disclosed. Full successful output logits are absent; unsnapshotted context/logit equality rests on runtime comparisons and fingerprints, not an independent reconstruction of unavailable arrays.
+
+## Portable checks and repairs
+
+The NumPy reader auditor now enforces exact unique universes for 938 records/index entries, 248 full summaries, 496 segment summaries, 810 contrasts/216 groups, and 90 nonadditivity records/24 groups. It checks the declared conditions, target/length metadata, reference identities and all five array kinds. It reproduces 6,566 scalar reductions and 1,488 dual-reference summary checks from the numeric export.
+
+Independent corruption fixtures accepted the valid export and rejected ten altered exports despite refreshed file hashes: duplicate/missing summary, paired, contrast and nonadditivity groups; unknown segment/condition; wrong baseline; failed run and stale checking audit. Three of these originally passed; the original auditor/wrapper snapshots and original results are preserved. See `localization_package_guard_probe.py/.json`, its `_initial.json`, and `initial_audit_localization_results.py` / `initial_run_gate_localization.py`.
+
+Fifteen fully stubbed orchestration fixtures exercise prepare-only, the fresh eight-forward calibration route, explicit calibration reference and twelve failures. Preparation invokes no model stage. Successful totals are 1,876 new forwards with fresh calibration or 1,868 with an explicit reference. Failed, miscounted, evaluation-using or parameter-mutated calibration is rejected before the study. Invalid study/analyzer completion metadata is rejected without a completion marker. Initial wrapper completion gaps and the intermediate source are preserved in `localization_wrapper_guard_tests_initial.json` and `localization_wrapper_guard_initial.py`. Final evidence is `localization_wrapper_guard_tests.py/.json`. These are control-flow fixtures, not actual pretrained re-execution.
+
+The wrapper reuses the previously reviewed source/config/checkpoint preparation, rebuilds metadata/token IDs with local tokenizers, checks exact raw calibration/maps bytes, and preserves fresh-workspace/no-resume rules. The seven-artifact actual tokenizer-only input reconstruction was independently verified earlier. No prior Llama/OLMo model batch is required. The new guide correctly labels the historical independent raw audit as dependent on private earlier evidence, provides the standalone NumPy audit command, and discloses that a separate replay-to-reference comparator is not supplied. A future successful wrapper execution therefore establishes a checked new run, not an exact-match claim by itself.
+
+## Hygiene and scope
+
+The final inspected delta contains 105 files. All 81 exported experiment-source hashes and 33 numeric-file hashes match their manifests. The NPZ contains exactly 4,690 arrays / 2,391,900 values: scored losses, two KL arrays and two boolean agreement arrays per record. No token sequences, predicted token IDs, model weights, source passages or activation donors are present. Token hashes, offsets, first-token reconstruction placeholders and derived direction coefficients are appropriate reproducibility metadata. All five relative report links resolve. The explicit artifact allowlist and private-marker scan found no credentials, private Library IDs, personal paths or ignored reproduction workspace in the export. This scan is not a universal proof that no conceivable secret exists.
+
+The complete primary raw directory remains local rather than being duplicated into this package. The source ledger labels the additive-logit follow-up as prospective and the center/basis follow-up deferred; neither is exported as a completed experiment. Current review scripts document historical evidence and may require the private raw files they explicitly name. No new model, tokenizer or GPU was loaded by this package review.
+
+Final hashes and the inventory are recorded in `report12_package_readiness.json` and `localization_package_hygiene.json`. Subsequent evidence-only export/manifest updates should retain the reviewed report/runner/auditor bytes and refresh the inventory.

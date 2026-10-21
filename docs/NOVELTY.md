@@ -133,3 +133,15 @@ checks. This does not establish priority, one underlying mechanism, or an
 efficient replacement. A potentially relevant SSRN preprint's full text remains
 inaccessible, so its method comparison is explicitly unresolved.
 [Unresolved comparison](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6886378).
+
+
+## Layer-localization continuation
+
+The [localization report](GPT2_GATE_LOCALIZATION.md) adds a frozen singleton
+versus joint layer screen with one locally logit-norm-matched orthogonal control.
+It finds opposing corpus/layer loss effects and positive joint-minus-sum NLL
+residuals. These are specific causal patch outcomes, not a new attention
+identity, a priority claim for direction interventions, or evidence of one
+shared mechanism. In particular, NLL nonadditivity does not itself identify
+network feedback: nonlinear loss/readout remains a competing explanation.
+A fresh-panel additive-logit diagnostic is prospective, not a completed result.

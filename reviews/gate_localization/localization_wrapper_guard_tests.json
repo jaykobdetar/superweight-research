@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "failures": [],
+  "checks": [
+    {
+      "case": "prepare only",
+      "outcome": "accepted",
+      "calls": [
+        "run_gate_study.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "fresh eight-forward calibration",
+      "outcome": "accepted",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": true,
+      "accounting": 1876
+    },
+    {
+      "case": "explicit calibration reference",
+      "outcome": "accepted",
+      "calls": [
+        "run_gate_study.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": true,
+      "accounting": 1868
+    },
+    {
+      "case": "failed rebuilt calibration",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "wrong rebuilt calibration forwards",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "evaluation performed in calibration",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "calibration parameter hash changed",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "calibration parameter versions changed",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "failed explicit reference",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "failed study",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "wrong main record count",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "wrong suffix forward count",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "study parameter hash changed",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "wrong analyzer count",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    },
+    {
+      "case": "failed analyzer",
+      "outcome": "rejected",
+      "calls": [
+        "run_gate_study.py",
+        "rebuild_gate_calibration.py",
+        "prepare_localization_replay_inputs.py",
+        "gpt2_gate_localization.py",
+        "analyze_gate_localization.py"
+      ],
+      "completion_written": false
+    }
+  ],
+  "wrapper_sha256": "36a074ac18dd07d2fd90f0c927be83a140d7ac28644a5706ab1d991e6b12d913",
+  "peak_rss_kib": 18640,
+  "subprocesses_stubbed": true,
+  "model_loaded": false,
+  "gpu_used": false
+}
