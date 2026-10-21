@@ -115,5 +115,67 @@
       "traces.pt": "f99055dde78623ec2801f7bee2bc43281dc54e1f3c7eb5eb8e9d55dbb25422ef"
     },
     "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors."
+  },
+  {
+    "run": "gpt2_query_source_run",
+    "records": 776,
+    "original_per_token_sha256": "2a871ee2901d07f4d86c0507573ba3548029c018a4bda5e68dd3e982b24cac75",
+    "export_sha256": "e226645f6c5f171362f049f4f6f41bd0ad45c766d74ac6259d61495d5552d439",
+    "private_raw_files": {
+      "attention_diagnostics.pt": "39b8bf5f8dace49f60d3cdd15135bf47b67962ed86ff77413124bcb7f8a83118",
+      "attention_snapshots.pt": "208fd1a1b54521a7d5277a251fdad7a702e8e4c952bfff7d4a7262684d65c073",
+      "bias_controls.pt": "a36db6e0e43be3ae5bab2d0ddb3bd7a04aad27a6dc2c06dba83fe6b7f8507a85",
+      "per_token.pt": "2a871ee2901d07f4d86c0507573ba3548029c018a4bda5e68dd3e982b24cac75",
+      "source_states.pt": "b4ae1a5c04c9ad82e9a8d627e711bac654969185953b443ec4b797978e516e00",
+      "tokens.pt": "c376f1cf172160ea98aff45745d2faf21808bdcb1abb3277f309a14a6f863448",
+      "traces.pt": "796b9101c209220336a6e88e172cdf0bc27768995059a49d7c0cac2d1bc10a7d"
+    },
+    "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors. Attention/geometry exports contain numerical summaries only."
+  },
+  {
+    "run": "gpt2_query_mixture_run",
+    "records": 520,
+    "original_per_token_sha256": "60e165a52741ba79b07a368ff2880614cecf15f3b56c5ab8d2678cfce1668ab9",
+    "export_sha256": "117f785d8cc4dfd5a5212a6e2b18730f1fae492d0b0019914e063af11b7f93f3",
+    "private_raw_files": {
+      "attention_snapshots.pt": "c8bb6d51a1c6d0cab5c2005f12b9268db8b1da09695da0666f394a147b29a66f",
+      "donors/query_mixture__dubois__0__512__bos.pt": "0fd812ef4baabd6f90e09139b042317c9b1eee2a393a7408848226a517437f16",
+      "donors/query_mixture__dubois__0__512__natural.pt": "7e009bd91401bdb8a04cdf7b46b5c4dbe2ff09a7f4fe526de031ef3ffc0c93b9",
+      "donors/query_mixture__dubois__1__512__bos.pt": "ded763151d6dd5720c1d9ec0d49ab18f67052c63251b048bc546f8844d540f23",
+      "donors/query_mixture__dubois__1__512__natural.pt": "239e6279bc876c263e29f68f5461181daf73c779a2822bf59395bf4b792b4380",
+      "donors/query_mixture__dubois__2__512__bos.pt": "531e4e65646398b31c7d49a15e5feffe8f95f409c64c58710b4503ee67cd7a6c",
+      "donors/query_mixture__dubois__2__512__natural.pt": "1b202ed54569873135c0d94821710ff85ac58a9aab91f572e9b3849fb29c8985",
+      "donors/query_mixture__dubois__3__512__bos.pt": "6bce4fa108c37a1625af2c9ab2ee681e8fbbda853a1a6731e95999d2c3debad4",
+      "donors/query_mixture__dubois__3__512__natural.pt": "76cc76fe04f3c34c0c2efb4e4a13b2597fa0c68b04f02c890e473f2f15f44161",
+      "donors/query_mixture__hobbes__0__512__bos.pt": "0fe40dee7d314cba9d7d12cd063ca6f8cb2c9ce0f843c355fa4946473ebc9eb8",
+      "donors/query_mixture__hobbes__0__512__natural.pt": "bc7a2df4d8c855cc74f0f196eb274353f2f34841d5ea1a2605e5dae7eb9f6590",
+      "donors/query_mixture__hobbes__1__512__bos.pt": "621c3992de33ccb7c050227cabff23799133311d76945dd2e3fcd1d04dfbf663",
+      "donors/query_mixture__hobbes__1__512__natural.pt": "de6a0622e37e7d54109ddaf3555c41ba20f088c4dfecacf1b1ff1b29592eaf15",
+      "donors/query_mixture__hobbes__2__512__bos.pt": "1b3df7e575bf1d3fdc55d19823a6689cfabcc79b1123fd7cb407dfaa7fbc2bfc",
+      "donors/query_mixture__hobbes__2__512__natural.pt": "00d02bce5cfe857ebbc58cd652d9e02d0e22e5c81c9727ef0c96bf59b4d684c3",
+      "donors/query_mixture__hobbes__3__512__bos.pt": "96eea807a72244edfdc72f726d52e07e8728ace70c007f86467d3d8d5f0ac42c",
+      "donors/query_mixture__hobbes__3__512__natural.pt": "63d828289a5932febf69f45bf1c679a2d056d991767e93ee80a0ddf6339c32fe",
+      "donors/query_mixture__optimizers__0__512__bos.pt": "253c9fa925d84ef491cea2ba6adde535d0e3c69359f8fc68aabbcbf293ee8d0a",
+      "donors/query_mixture__optimizers__0__512__natural.pt": "7ab05f864a291306c45f0d8725a68e5bdf4e3447cf7116b2909b0ec66fedbfe5",
+      "donors/query_mixture__optimizers__1__512__bos.pt": "76bcc9da2e15b1e706e5ea7ceb4418e20edb917820d507dcf2e80f82e4752f5e",
+      "donors/query_mixture__optimizers__1__512__natural.pt": "4c8e239ac77212202d9bd9f86f4b9dee5cef3eec8650e6d97aca947a6b5c1327",
+      "donors/query_mixture__optimizers__2__512__bos.pt": "ddf41f7a17b5ffe98a05cf93ae1c99ca30c24c9fa5899636d0d29e26dab1fb34",
+      "donors/query_mixture__optimizers__2__512__natural.pt": "7637b4844eb953c3df6d5ed27f6643d7156b492e5a8e77ac988d9009b945fe6a",
+      "donors/query_mixture__optimizers__3__512__bos.pt": "15f945a4b8d3eac2253bf360a994ec5c585a1ffd9cef0c94e1f9836a3551a4ea",
+      "donors/query_mixture__optimizers__3__512__natural.pt": "5398a3d708480801619d949ee0288ec5951b483ddb794a4759fc0bfe292670e0",
+      "donors/query_mixture__wiki_validation__0__512__bos.pt": "0bcd88bb1db2ef5473ed263b859e87ef0b467e2c15c80b683ee5ac75ffb66d9b",
+      "donors/query_mixture__wiki_validation__0__512__natural.pt": "5c47bc9636062f8f53921c2d09ea03bcea66cb084b002d01ebfb0e8af6d42f67",
+      "donors/query_mixture__wiki_validation__1__512__bos.pt": "2b5970d71291e9a4f3c07a877f152ee3011e1e0b31cb680e3839202be7063620",
+      "donors/query_mixture__wiki_validation__1__512__natural.pt": "7ea6232c2de7ad49ce086b5598cea262a41db2f2c4c8ed3a611aa00b2ea2f23d",
+      "donors/query_mixture__wiki_validation__2__512__bos.pt": "070b209ea25bdf23631aab4b4bc4b8585b1b9389a05619efd6ff90414413ec93",
+      "donors/query_mixture__wiki_validation__2__512__natural.pt": "156b5574d6457c3be31a64279f0bac7f49816d5abd184ce79af51f04f469a940",
+      "donors/query_mixture__wiki_validation__3__512__bos.pt": "d33c014cc49bda09c5898d794585a2733c53adf0acf728c48ca13e7657eb3698",
+      "donors/query_mixture__wiki_validation__3__512__natural.pt": "773109545ed1f1da68de17da95b0fde27045703285a0be015d4af087d28a0811",
+      "per_token.pt": "60e165a52741ba79b07a368ff2880614cecf15f3b56c5ab8d2678cfce1668ab9",
+      "source_states.pt": "8ce330244275e29d797d62d1e8c985e07872f018f5359110f4a6e2ecd2e77257",
+      "tokens.pt": "587a280c80a8e48d8e60aa282359e671de0c6e4286bb9e7799daf3c0499d16be",
+      "traces.pt": "39aaa14cdfb54afb4ab799ee45b66d0f7b17c76c6096022f3ec489f8cf51b5a2"
+    },
+    "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors. Attention/geometry exports contain numerical summaries only."
   }
 ]

@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "scope": "Design algebra checks and four frozen prior-panel donor snapshots; no model inference",
+  "synthetic_factorial_max_abs_errors": {
+    "PP": 4.440892098500626e-16,
+    "PR": 6.661338147750939e-16,
+    "RP": 3.3306690738754696e-16,
+    "RR": 4.440892098500626e-16
+  },
+  "illustrative_abs_tolerance_failure": {
+    "donor_mass": 1e-08,
+    "allowed_context_error": 1e-06,
+    "recipient_mass": 0.5,
+    "amplified_context_error": 50.0,
+    "observed_kernel_failure": false
+  },
+  "prior_snapshot_sha256": "208fd1a1b54521a7d5277a251fdad7a702e8e4c952bfff7d4a7262684d65c073",
+  "prior_snapshot_diagnostics": [
+    {
+      "mode": "P",
+      "layer": 4,
+      "min_non_source_mass_fp64": 2.817599433249637e-07,
+      "max_non_source_mass_fp64": 1.0,
+      "context_reference_max_error": 3.480230281960317e-06,
+      "normalized_context_reference_max_error": 7.778743140507416e-06
+    },
+    {
+      "mode": "P",
+      "layer": 11,
+      "min_non_source_mass_fp64": 0.0036938962082561774,
+      "max_non_source_mass_fp64": 0.9999999999999948,
+      "context_reference_max_error": 6.2979200050605755e-06,
+      "normalized_context_reference_max_error": 1.8789903877269865e-05
+    },
+    {
+      "mode": "R",
+      "layer": 4,
+      "min_non_source_mass_fp64": 0.05531335428913106,
+      "max_non_source_mass_fp64": 1.0000000000000002,
+      "context_reference_max_error": 4.301891680658088e-06,
+      "normalized_context_reference_max_error": 4.351839286820258e-06
+    },
+    {
+      "mode": "R",
+      "layer": 11,
+      "min_non_source_mass_fp64": 0.0028219355340543925,
+      "max_non_source_mass_fp64": 0.9999999999999558,
+      "context_reference_max_error": 9.268010359164691e-06,
+      "normalized_context_reference_max_error": 1.3800583697598512e-05
+    }
+  ],
+  "prior_snapshot_cross_diagnostics": [
+    {
+      "layer": 4,
+      "message": "P",
+      "mass": "R",
+      "max_gain_fp64": 385291.5459387833,
+      "scaled_context_reference_max_error": 5.701903729171676e-06
+    },
+    {
+      "layer": 4,
+      "message": "R",
+      "mass": "P",
+      "max_gain_fp64": 1.0000000000000002,
+      "scaled_context_reference_max_error": 2.988232919887146e-06
+    },
+    {
+      "layer": 11,
+      "message": "P",
+      "mass": "R",
+      "max_gain_fp64": 12.76852545046562,
+      "scaled_context_reference_max_error": 6.297870553950702e-06
+    },
+    {
+      "layer": 11,
+      "message": "R",
+      "mass": "P",
+      "max_gain_fp64": 64.13179178232238,
+      "scaled_context_reference_max_error": 9.268043104526669e-06
+    }
+  ],
+  "limits": "FP64 CPU mass/softmax references, not the future GPU runtime mass. Only Wiki natural window0 L4/L11 P/R from prior panel. Runtime guards remain required on all new rows.",
+  "gpu_used": false,
+  "model_loaded": false,
+  "peak_rss_kib": 813380
+}

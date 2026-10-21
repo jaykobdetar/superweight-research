@@ -1,0 +1,25 @@
+# Focused prior-art check: source allocation versus conditional mixture
+
+Reviewed 21 October 2026 using the primary HTML versions below, their relevant methods/appendices, and the existing Report8/NOVELTY discussion. **The inspected papers establish the neighboring mechanisms and decomposition. I did not identify an explicit donor allocation × conditional non-source mixture factorial at the attention-output boundary under literal V0=0 in those sections. This is a bounded reading result, not a claim that the intervention is new.** No model, GPU, or publication action was used.
+
+## Ran-Milo, Ofek and Mendel, arXiv:2604.14722v1
+
+[Sections3.1, 3.2.1, 3.2.6/Table1, 5.3–5.4 and AppendixB.1](https://arxiv.org/html/2604.14722v1) establish a learned-query-bias/positional-MLP/key circuit. Their interventions nullify query bias, alter positional signals, disable MLPs, or ablate key-projection coordinates. The EPE swap changes an MLP-output direction; it is not a patch of attention allocation independently from the conditional non-source mixture. Sections5.3–5.4 acknowledge residual sinks and leave downstream functional benefit/cost unresolved. The enumerated experiments do not report the proposed V0=0 output-factorial.
+
+Important comparison limits: query bias is nullified in every layer. Their attention analysis excludes the first three and final layers, using a one-based 4–11 range; our zero-based4–11 includes the final block. Their allocation metric uses the latter half of 40-token prompts. Our position-restricted later-layer intervention and queries1–510 therefore are not a matched replication of their statistic. Query-bias reduction of a sink, residual allocation after removal, and architecture dependence must already receive credit. The targeted loss/fidelity measurements and proposed factor crossings are the scoped investigation here.
+
+## Sun, Chen, Kolter and Liu, arXiv:2402.17762v2
+
+[Section4.2, Eq(2), Figure8 and AppendixB.3](https://arxiv.org/html/2402.17762v2) explicitly split attention output into weighted value contributions from massive-activation tokens and from other tokens. Their analysis describes approximately constant additive updates from the former. This precedes a claim of discovering source/non-source output decomposition.
+
+[Section4.3, Eq(3), and AppendixB.4, Eqs(6)–(8), Figures37–38](https://arxiv.org/html/2402.17762v2) examine trained attention variants: learned extra K/V vectors, an extra zero-K/zero-V slot (identified as softmax-off-by-one), added query/key features, and a constant additive value update. The latter three alternatives did not eliminate massive activations during their pretraining. Zero-valued probability allocation is therefore already represented, not a new conceptual mechanism. These are architectural training comparisons, not the proposed fixed-checkpoint donor factorial. Eq(2) uses unnormalized weighted sums; the described analyses do not independently transplant source mass and the renormalized non-source mixture from query-bias-present/removed runs. Do not reinterpret their negative training result as testing or refuting our conditional intervention.
+
+## Exact distinction and reporting boundary
+
+For our single-source case, define `a0=p0` and `u=sum(j>0, pj/(1−p0) * vj)` at a query with an available non-source key. Ordinary attention algebra gives `Y=a0*v0+(1−a0)*u`; imposing `v0=0` gives `Y=(1−a0)*u`. This identity is elementary regrouping, not a research contribution. A zero value can still alter the total weighting of other values because its probability remains in the normalization. Query-bias removal can change both factors.
+
+The prospective experiment's precise operation is to replace one factor with a frozen same-input donor from a different query-bias world while preserving or separately replacing the other, at the pre-output-projection attention context. Reconstruction/diagonal controls, bidirectional crossings, and the joint donor test distinguish an operational causal patch from a descriptive decomposition. They do not automatically yield additive mediation percentages, a unique functional explanation, or an input-independent replacement. The same-input donor carries information from the evaluation run.
+
+Report this as a **targeted functional extension using a specified factor intervention**, with no priority claim. Cite both papers at the mechanism and decomposition, not only in a general related-work list. The result can answer the finite factorial question even if a closer antecedent exists.
+
+This check examined substantive intervention definitions and appendices, rather than using missing keywords as evidence. Both requested papers were accessible. It did not exhaust author repositories, all cited literature, later revisions, or other publications; it cannot establish absence elsewhere. Existing Report8 (repository docs/TRANSFER.md) already credits these sources. AppendixB.4's zero-K/zero-V control deserves explicit mention in the next report because it is closer to the proposed estimand than a generic constant-bias citation.

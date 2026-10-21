@@ -17,7 +17,7 @@ def main():
         index=json.loads((run/'per_token_index.json').read_text())
         rows=[json.loads(l) for l in (run/'windows.jsonl').read_text().splitlines()]
         records={r['key']:r for r in rows};indexed={e['key']:e for e in index}
-        assert len(records)==len(rows)==len(index)==len(indexed)==m['records']
+        assert len(records)==len(rows)==len(index)==len(indexed)==m['records']>0
         assert set(indexed)==set(records) and sorted(e['index'] for e in index)==list(range(len(index)))
         worst=0.
         with np.load(path,allow_pickle=False) as arrays:

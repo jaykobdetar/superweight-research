@@ -1,10 +1,12 @@
 # Reproduce the model-transfer experiments
 
-Read [the transfer report](TRANSFER.md) and [GPT-2 follow-up](GPT2_FOLLOWUP.md)
+Read [the transfer report](TRANSFER.md), [GPT-2 follow-up](GPT2_FOLLOWUP.md)
+and [query-pathway report](GPT2_QUERY_PATHWAYS.md)
 for claims and limits. The first six batches contain 4,568 evaluation records
 from 4,592 forwards, including 24 development/calibration forwards. Three later
 GPT-2 batches add 1,912 forwards/records: nine total batches, 6,504 forwards and
-6,480 records. This is separate from the earlier OLMo core reproduction.
+6,480 records. Two query-pathway batches add1,296 forwards/records, for eleven
+batches,7,800 forwards and7,776 records. This is separate from the earlier OLMo core reproduction.
 No UIT background is required.
 
 ## Audit supplied numbers without models
@@ -90,20 +92,35 @@ stage after its prerequisites have completed in that workspace:
 | gpt2_layer_writes_run | gpt2_run,gpt2_groups_run,gpt2_writes_run | Fourth-panel layer-local writes |
 | gpt2_regrowth_kv_run | all previous GPT-2 stages | Fifth-panel source K/V transmission |
 | gpt2_value_geometry_run | all previous GPT-2 stages | Sixth-panel headwise value norm/direction |
+| gpt2_query_source_run | all previous GPT-2 stages | Seventh-panel query bias by source access |
+| gpt2_query_mixture_run | all previous GPT-2 stages | Eighth-panel non-source mass by conditional mixture |
 
 Comparison defaults to exact scalar equality. Other hardware/kernels may differ.
 `--atol` explicitly sets an absolute tolerance: justify it scientifically and
 retain discrepancies rather than hiding input/intervention errors. Each run
 also requires its own prescribed exact oracle/closure checks.
-Use `--series six` or `--series followup` with the comparison script to inspect
-one documented subset. The default requires all nine unique batches.
+Use `--series six`, `--series followup` or `--series query` with the comparison
+script to inspect one documented subset. The default requires all eleven unique batches.
 
-Allow8GiB VRAM,16GiB RAM and25GiB disk including checkpoints/environment/outputs.
+Allow8GiB VRAM,16GiB RAM and30GiB disk including checkpoints/environment/outputs.
 The original six batches took518.85seconds recorded worker time, with6.36GiB
 maximum allocated GPU and5.50GiB maximum worker RSS. Retrieval, installation,
 review and packaging are additional; budget15–30minutes after inputs are ready.
 The three follow-up batches added 120.54 recorded worker seconds on this machine.
+The two query-pathway batches added130.05 recorded worker seconds and about3GiB
+of private diagnostics/donor tensors. Their maximum worker RSS was2.51GiB;
+donor audits load separate input files sequentially to stay below3GiB.
 CPU-only numeric audit needs no GPU or model.
+
+The two query batches were rerun through this driver in a fresh private
+workspace:1,296 records and all44 raw tensor files were byte-identical, with
+new files rather than hardlinks for the two rerun outputs. Nine previously
+verified prerequisite runs were explicitly reused via hardlinks. Total
+validation time including driver input hashing was176.71seconds; worker time
+was132.13seconds. See `manifests/transfer_query_replay_validation.json` and
+the separate CPU audit. This is same-machine validation, not an independent
+researcher replication. Reusing prerequisites is documented validation
+provenance, not an undocumented resume feature of the driver.
 
 ## Audit boundaries
 

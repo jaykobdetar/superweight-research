@@ -25,10 +25,13 @@ counterexamples are retained. No UIT knowledge is needed.
 The [model-transfer report](docs/TRANSFER.md) adds GPT-2 and Llama-3.2-3B-Instruct.
 It finds conditional GPT-2 MLP coordinate regrowth and different Llama source
 K/V dependence, including approximate fixed-source replacements. See the
-[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for nine sequential
+[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for eleven sequential
 batches and their limits. The [GPT-2 follow-up](docs/GPT2_FOLLOWUP.md) localizes
 the conditional L3 writes, separates source K/V transmission, and tests value
-norm against direction. These findings do not establish one shared mechanism.
+norm against direction. The [query-pathway report](docs/GPT2_QUERY_PATHWAYS.md)
+separates allocation from the conditional non-source value mixture and finds
+opposing loss effects on several corpora. These findings do not establish one
+shared mechanism or faithful output replacement.
 
 Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,

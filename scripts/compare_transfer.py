@@ -5,14 +5,15 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--work',type=Path,required=True)
-    ap.add_argument('--series',choices=['all','six','followup'],default='all')
+    ap.add_argument('--series',choices=['all','six','followup','query'],default='all')
     ap.add_argument('--atol',type=float,default=0.);args=ap.parse_args()
     assert math.isfinite(args.atol) and args.atol>=0
     manifest=json.loads((ROOT/'manifests/transfer_numeric_export.json').read_text());out=[]
     six={'gpt2_run','llama_run','gpt2_groups_run','llama_source_kv_run','gpt2_writes_run','llama_replacements_run'}
     followup={'gpt2_layer_writes_run','gpt2_regrowth_kv_run','gpt2_value_geometry_run'}
-    assert len(manifest)==9 and {m['run'] for m in manifest}==six|followup,'Expected all nine unique batches'
-    selected=six if args.series=='six' else followup if args.series=='followup' else six|followup
+    query={'gpt2_query_source_run','gpt2_query_mixture_run'}
+    assert len(manifest)==11 and {m['run'] for m in manifest}==six|followup|query,'Expected all eleven unique batches'
+    selected=six if args.series=='six' else followup if args.series=='followup' else query if args.series=='query' else six|followup|query
     manifest=[m for m in manifest if m['run'] in selected]
     for m in manifest:
         saved=ROOT/'results/pulse_transfer'/m['run'];fresh=args.work/'pulse_transfer'/m['run']
@@ -28,6 +29,7 @@ def main():
                 assert error<=args.atol,(m['run'],key,k,error,args.atol)
         mm=json.loads((fresh/'manifest.json').read_text());archived=json.loads((saved/'manifest.json').read_text())
         assert isinstance(mm.get('completed_utc'),str) and mm['completed_utc']
+        assert mm.get('status')!='failed','Failed runs cannot pass completed-run comparison'
         assert mm['records']==len(b) and mm['forward_passes']==archived['forward_passes']
         for field in ('model_hash_before','model_hash_after'):
             assert isinstance(mm.get(field),str) and re.fullmatch('[0-9a-f]{64}',mm[field])
