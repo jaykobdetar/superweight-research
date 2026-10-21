@@ -144,4 +144,23 @@ residuals. These are specific causal patch outcomes, not a new attention
 identity, a priority claim for direction interventions, or evidence of one
 shared mechanism. In particular, NLL nonadditivity does not itself identify
 network feedback: nonlinear loss/readout remains a competing explanation.
-A fresh-panel additive-logit diagnostic is prospective, not a completed result.
+The subsequent T17 diagnostic below separates these output/loss terms on a fresh panel; it still does not identify an internal mediator.
+
+## Additive-output follow-up: scope of the result
+
+The [T17 report](GPT2_GATE_ADDITIVE.md) constructs an additive output from
+actual singleton gate-patch logits and separates its loss from the jointly
+patched output. Its identity N=J+R is elementary accounting, not a new
+attribution method or mediation decomposition. The empirical result is that
+the terms have different signs and corpus/sequence-view dependence, with
+large cancellation in some controls and measurable output disagreement.
+It does not identify feedback, a compensating circuit or a unique dimension.
+
+[Circuit Tracing's methods](https://transformer-circuits.pub/2025/attribution-graphs/methods.html)
+already construct linear attribution graphs under frozen attention and
+normalization, with interventions to validate mechanisms. T17 instead uses
+finite output differences from separate runs with downstream computation
+live. This difference in estimand is not a priority claim. The report retains
+the earlier super-weight, massive-activation, attention-gate, GPT-2 sink and
+self-repair comparisons and does not claim exhaustive absence of prior art.
+

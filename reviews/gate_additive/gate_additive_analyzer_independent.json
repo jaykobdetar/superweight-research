@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "fabricated_only": true,
+  "storage_aliases_used": true,
+  "not_a_storage_or_model_fidelity_test": true,
+  "valid_audit": {
+    "status": "passed",
+    "records": 1000,
+    "forwards": 1992,
+    "gate_runtime_checks": 15360,
+    "raw_main_gate_states": 1792,
+    "hidden_states": 928,
+    "raw_gpu_logit_query_rows": 744,
+    "additive_inputs_families": 96,
+    "additive_window_views": 288,
+    "max_cpu_gate_error": 0.0,
+    "max_J_R_identity_error": 0.0,
+    "max_FP64_FP32_loss_difference": 2.7580573203067615e-07,
+    "minimum_mass": 0.00021185667719691992,
+    "gate_runtime_maxima": {
+      "norm_match_error": 1.2598578069678013e-08,
+      "conditional_error": 0.0,
+      "native_reconstruction_error": 0.0,
+      "mixed_reconstruction_error": 0.0,
+      "sigmoid_context_error": 0.0,
+      "fullrank_logit_error": 0.0,
+      "fullrank_mass_error": 0.0,
+      "fullrank_context_error": 0.0,
+      "formula_error": 0.0,
+      "max_gain": 1.1670418977737427
+    },
+    "output_bytes_before_audit": 349292349,
+    "peak_rss_kib": 905036,
+    "limits": "Production saved-evidence audit, not independent review. All-query hidden-to-logit CPU reconstruction and fixed attention snapshots require separate independent audit. Main compact gate fingerprints are bound to saved raw states; suffix full gate fingerprints and source/context closures outside saved tensors are runtime/hash evidence. Bootstrap conditional on fixed calibration; correlated starts/views, no multiplicity correction.",
+    "paired_bootstrap_identity_max_error": 0.0
+  },
+  "summary_counts": {
+    "full": 248,
+    "segments": 496,
+    "additive_metric_groups": 1440
+  },
+  "corruptions_rejected": [
+    "manifest.json",
+    "checks.json",
+    "operation_checks.json",
+    "suffix_checks.json",
+    "checks.json",
+    "suffix_checks.json",
+    "operation_checks.json",
+    "window scalar",
+    "J corruption with refreshed shard hash",
+    "missing suffix KL field",
+    "main prediction dtype",
+    "additive FP64 dtype",
+    "sampled actual-logit FP32 dtype"
+  ],
+  "non_null_n4_bootstrap_exact": true,
+  "stale_pass_cleared": true,
+  "source_sha256": {
+    "gpt2_gate_additive.py": "98929fbd45760dbd768b44dbf3c976166a250ab0235eb05611df81acf36af38b",
+    "gate_additive_readout.py": "3913a6d71e7f1dabc5ab1236ea9416041ffa6c7f66d3321782e3972dc9cccc16",
+    "gate_additive_failure.py": "5136d71bffc2fb3c47d801fa2546212fe23d7d41b6940377236260b3edb95313",
+    "analyze_gate_additive.py": "e7c60aeade14afcdf43a2ccdca78499fbe0410a8cdfcb052a82c1401ddbdbe66"
+  },
+  "peak_rss_kib": 964076,
+  "peak_child_rss_kib": 964076,
+  "model_loaded": false,
+  "gpu_used": false
+}

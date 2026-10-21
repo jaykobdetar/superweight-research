@@ -53,6 +53,16 @@ and lower loss still does not preserve predictions. See the
 results without a model. The new primary batch is independently audited;
 a complete second pretrained localization replay remains unperformed.
 
+The [additive-output report](docs/GPT2_GATE_ADDITIVE.md) separates finite
+output nonadditivity from the nonlinear loss calculation on another fresh
+panel. The terms can oppose each other strongly; small net loss differences
+do not imply faithful predictions or an internal compensating mechanism.
+L10's scoped Wiki-versus-other-source pattern recurs, while a blanket book
+benefit fails on Mill. Follow the [audit/replay quick start](docs/GPT2_GATE_ADDITIVE_QUICKSTART.md)
+or run `python scripts/audit_additive_results.py` with NumPy only. This new
+batch has independent saved-array and CPU readout audits; a complete second
+pretrained replay remains unperformed.
+
 Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
 then `python scripts/compare_transfer.py --work .reproduce-transfer`.

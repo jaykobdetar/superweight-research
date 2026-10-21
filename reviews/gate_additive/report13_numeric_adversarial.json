@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "baseline": {
+    "status": "passed",
+    "records": 1000,
+    "exact_control_closures": 72,
+    "scalar_reductions": 7000,
+    "dual_reference_summary_checks": 1488,
+    "paired_contrasts": 864,
+    "paired_groups": 216,
+    "nonadditivity_records": 96,
+    "nonadditivity_groups": 24,
+    "additive_inputs_families": 96,
+    "additive_window_views": 288,
+    "additive_metric_groups": 1440,
+    "additive_scalar_reductions": 5760,
+    "max_identity_error": 1.4210854715202004e-14,
+    "max_bootstrap_identity_error": 9.992007221626409e-16,
+    "peak_rss_kib": 76676,
+    "limits": "Audits exported loss/KL/boolean agreement arrays, additive scalar identities, exact per-target control closures and all aggregations, not original KL-from-logits, private tokens, hook arithmetic or absent complete contexts."
+  },
+  "corruptions": [
+    {
+      "name": "duplicate record universe",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "missing primary array",
+      "rejected": true,
+      "error_type": "KeyError",
+      "error": "'0_kl is not a file in the archive'"
+    },
+    {
+      "name": "unexpected token array",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "incorrect boolean dtype",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "control per-target drift with unchanged full and segment means",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": "('Exact control closure', 'gate__wiki_validation__0__512__natural__current', 'gate__wiki_validation__0__512__natural__P', 'nll')"
+    },
+    {
+      "name": "changed additive source identity",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "internally consistent FP64 ledger detached from FP32",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "broken J/R identity",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": "(array([ 0.00000000e+00,  1.20290596e-01,  3.59726638e-02, -7.99052025e-02,\n       -8.74725990e-02,  2.56769528e-01,  2.69986098e-01,  4.41423406e-01,\n        2.37409360e-01,  4.56577528e-02,  7.90028522e-01,  8.53459764e-01,\n       -2.71161209e-01, -3.01891524e-03, -1.66402997e-01, -2.92983683e-04,"
+    },
+    {
+      "name": "incorrect paired interval",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": "([100.0, 101.0], array([-3.09264092e-03, -9.10638245e-05]))"
+    },
+    {
+      "name": "missing segment universe",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "incorrect manifest forward count",
+      "rejected": true,
+      "error_type": "AssertionError",
+      "error": ""
+    },
+    {
+      "name": "unexpected export member",
+      "rejected": true
+    }
+  ],
+  "auditor_sha256": "47c0432f511eff9b125de8b7c0d2ad2cbbe5dd2f20b80210f438d052475c2420",
+  "export_manifest_sha256": "189b607e7dda66bc1dbcb3a1289c4c56e2a448983a99e323ae70fe47a66339ef",
+  "no_model_or_raw_tensor_load": true,
+  "gpu_used": false,
+  "peak_rss_kib": 107268,
+  "wall_seconds": 19.0354220867157,
+  "scope": "Reaggregates only exported numerical scalars/agreements. Does not independently reconstruct logits, gate hooks or the original private input history."
+}

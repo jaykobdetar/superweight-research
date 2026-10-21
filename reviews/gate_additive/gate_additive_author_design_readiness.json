@@ -1,0 +1,87 @@
+{
+  "status": "prospective_design_and_tokenizer_preflight_ready_for_independent_review",
+  "new_model_forwards": 0,
+  "model_loaded": false,
+  "gpu_used": false,
+  "source_hashes": {
+    "GPT2_GATE_ADDITIVE_PROPOSAL.md": "9542fa49a39564d5c6835f95a7ead774552f84da071d69033e86d11eff314d68",
+    "gate_additive_inputs.py": "436235e4daa0e8494d804814c3aaf1ea4cb5128589f7448143af3b45331fa90e",
+    "review/gate_additive_storage_budget.py": "4e529c05e65fabd21556d731a35cb5f0e2616ac62acf6aaa784f5972a429c50d"
+  },
+  "input_hashes": {
+    "data_manifest.json": "931f8c698aefa46f2b595121ef9de27764b8e9afdf34a81ff55043279ee16ebf",
+    "directions.json": "0a27dcc857b221a9fdbd1265be678aa341d59f914eb3030cff5eb44690ff852e",
+    "directions.pt": "4bf8fc396fd57e2146933131b928ace0a49498b3d295d749b91626a1b70260b3",
+    "exclusion_inventory.json": "5722677bc774efda1b0b3e7bc8a8d943d3c34a032d33a991854e33bfc3432686",
+    "historical_manifest_scan.json": "41d8a119d94e875113bc5280fa20703f028488b34799ed6519c2c31cd10d616c",
+    "preflight.json": "d0fa737595f63ff7c48507925a4ddb500013f5301a245878f85ee72beabee66b",
+    "start_identity_summary.json": "15c7b0994209c68189c63184fb1049d0990d64c720dcf5662d02cfcfb28c49b4",
+    "tokens.pt": "e009ddfbcee00ec08e013ef2cddc9c745cc2f8f90ca042a2e83d5e2c89120510"
+  },
+  "preflight": {
+    "status": "passed",
+    "passages": 16,
+    "model_inputs": 32,
+    "passages_per_corpus": {
+      "wiki_validation": 4,
+      "mill": 4,
+      "wollstonecraft": 4,
+      "optimizers_new": 4
+    },
+    "wall_seconds": 0.490480899810791,
+    "peak_rss_kib": 760180
+  },
+  "historical_manifests_scanned": 84,
+  "new_source_matches": 0,
+  "selected_numerators": {
+    "wiki_validation": [
+      119,
+      379,
+      620,
+      877
+    ],
+    "mill": [
+      125,
+      375,
+      625,
+      875
+    ],
+    "wollstonecraft": [
+      125,
+      375,
+      625,
+      875
+    ],
+    "optimizers_new": [
+      125,
+      375,
+      625,
+      875
+    ]
+  },
+  "natural_start_calibration_overlap_count": 2,
+  "bos_seen_in_calibration": false,
+  "code_components": [
+    "adagrad",
+    "adagrad",
+    "rmsprop",
+    "lbfgs"
+  ],
+  "storage_unit_projection_bytes": 2134637328,
+  "storage_cap_bytes": 2147483648,
+  "storage_margin_bytes": 12846320,
+  "current_free_disk_bytes": 4608176128,
+  "pending": [
+    "Independent input-helper/saved-preflight audit",
+    "Root-owned final runner/readout/analyzer implementation and CPU review",
+    "Exact full writer serialization and bounded-failure capsule measurement",
+    "Prelaunch disk/memory checks"
+  ],
+  "limitations": [
+    "Proposal is a timestamped pre-output draft; it is preserved at its successful preflight hash. Root final protocol will record approved implementation refinements.",
+    "Freshness means verified research exposures, not pretraining or independent distribution.",
+    "Per-unit serialization model is not measured future complete writer output.",
+    "No GPU run or scientific T17 result exists.",
+    "GitHub remains blocked; no attempt."
+  ]
+}

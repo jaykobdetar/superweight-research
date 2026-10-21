@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "actual_model_forwards": 0,
+  "gpu_used": false,
+  "source_hashes": {
+    "gpt2_gate_additive.py": "0a3f712199169973f414a430ca9211c894a731e603b10bfe848a4b9939838204",
+    "gate_additive_failure.py": "5136d71bffc2fb3c47d801fa2546212fe23d7d41b6940377236260b3edb95313"
+  },
+  "cases": {
+    "gate_forward_accumulator": {
+      "serialized_bytes": 25597017,
+      "cap_bytes": 67108864,
+      "margin_bytes": 41511847,
+      "loaded_and_shape_checked": true
+    },
+    "reconstruction_forward_accumulator": {
+      "serialized_bytes": 23903855,
+      "cap_bytes": 67108864,
+      "margin_bytes": 43205009,
+      "loaded_and_shape_checked": true
+    },
+    "singleton_record_accumulator": {
+      "serialized_bytes": 21563757,
+      "cap_bytes": 67108864,
+      "margin_bytes": 45545107,
+      "loaded_and_shape_checked": true
+    },
+    "suffix_comparison_accumulator": {
+      "serialized_bytes": 31777463,
+      "cap_bytes": 67108864,
+      "margin_bytes": 35331401,
+      "loaded_and_shape_checked": true
+    },
+    "suffix_metrics_accumulator": {
+      "serialized_bytes": 16402795,
+      "cap_bytes": 67108864,
+      "margin_bytes": 50706069,
+      "loaded_and_shape_checked": true
+    },
+    "additive_readout_accumulator": {
+      "serialized_bytes": 13781377,
+      "cap_bytes": 67108864,
+      "margin_bytes": 53327487,
+      "loaded_and_shape_checked": true
+    }
+  },
+  "largest_serialized_bytes": 31777463,
+  "capsule_limit_bytes": 67108864,
+  "oversize_rejected_before_write": true,
+  "oversize_message": "('Failure capsule exceeds frozen limit', 67110441, 67108864)",
+  "max_error_row_preserved": true,
+  "first_nonfinite_row_preserved": true,
+  "scope": "Reachable failure classes with full independent-storage upper envelopes, maximum eight-layer accumulated metrics and pending prefix reference. Gate/reconstruction/singleton/suffix failures are not combined because each raises immediately. Some upper envelopes retain completed fields that would be absent in an earlier-layer failure; no field is omitted for size.",
+  "peak_rss_kib": 1349636,
+  "wall_seconds": 4.85956597328186,
+  "temporary_files_removed": true,
+  "source_hashes_unchanged": true
+}

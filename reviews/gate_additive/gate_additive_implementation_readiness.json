@@ -1,0 +1,90 @@
+{
+  "status": "approved_for_one_parent_owned_pretrained_run",
+  "utc": "2026-10-21T17:09:45.666708+00:00",
+  "scientific_results_reviewed": false,
+  "source_sha256": {
+    "gpt2_gate_additive.py": "5fe59f79cd375342e7ff6a9f7c90ce853393fbbce2eb32fd8860b3c5b262238c",
+    "analyze_gate_additive.py": "e7c60aeade14afcdf43a2ccdca78499fbe0410a8cdfcb052a82c1401ddbdbe66",
+    "gate_additive_readout.py": "3913a6d71e7f1dabc5ab1236ea9416041ffa6c7f66d3321782e3972dc9cccc16",
+    "gate_additive_failure.py": "5136d71bffc2fb3c47d801fa2546212fe23d7d41b6940377236260b3edb95313",
+    "GPT2_GATE_ADDITIVE_PROPOSAL.md": "9542fa49a39564d5c6835f95a7ead774552f84da071d69033e86d11eff314d68",
+    "GPT2_GATE_ADDITIVE_STORAGE_ADDENDUM.md": "2af4123e261fdc772c37dee5d0b620bf7d0aeef4713df2a69de4f0dbe715a49d",
+    "gate_additive_inputs.py": "436235e4daa0e8494d804814c3aaf1ea4cb5128589f7448143af3b45331fa90e",
+    "gpt2_gate_localization.py": "eafab996ce06c697d081d8e0d06583cf9d3c0866ab2f27213cfcb4387503e238"
+  },
+  "input_preflight_sha256": "d0fa737595f63ff7c48507925a4ddb500013f5301a245878f85ee72beabee66b",
+  "evidence": {
+    "gate_additive_actual_input_audit.json": {
+      "sha256": "b2b70e9d9a307059f7e88d8c726863b7884225d254e412e335b629ebd9567c99",
+      "status": "passed"
+    },
+    "gate_additive_inputs_independent.json": {
+      "sha256": "ffbc79555483901d8293b4fbf977f5dd72c9cbf0855a26dbf0ebb417c0f51754",
+      "status": "passed_synthetic_helper_review"
+    },
+    "gate_additive_readout_preliminary.json": {
+      "sha256": "ba0702df43c66ae552098dbf1388510b9c0580b8c218640c8a8d6e7daae5853a",
+      "status": "passed_preliminary_helper_only"
+    },
+    "gate_additive_independent_integration.json": {
+      "sha256": "361068631c3cd0971a73c20c2a7271de9ada9afbafa3f1c40829fd1c14f995d9",
+      "status": "passed"
+    },
+    "gate_additive_failure_independent.json": {
+      "sha256": "115814857abc8802513f5130e4bf251803ecd1aa7cb3f6180d8ebb511a28e7e4",
+      "status": "passed"
+    },
+    "gate_additive_analyzer_independent.json": {
+      "sha256": "fe2efe6db120ea41e5d5f500b5dcff9bc661e6f340fe254f4a52e8fff8255b32",
+      "status": "passed"
+    },
+    "gate_additive_full_layout.json": {
+      "sha256": "5e334c6b58619612703c745c5ca8e6baacca78804e9e35f89a2375c1327edc13",
+      "status": "passed"
+    },
+    "gate_additive_failure_layout.json": {
+      "sha256": "01495cadf9bdf2219ecda9c4815f3c6c0c5016e8ded0e1c670961c81c22c7acf",
+      "status": "passed"
+    },
+    "gate_additive_six_row_budget.json": {
+      "sha256": "e661cf55f29780d09ff73b866583f212010464dae8469d32534fdaf6029e4a62",
+      "status": "passed_prospective_storage_revision"
+    },
+    "gate_additive_setup_guards.json": {
+      "sha256": "38d8d0b30e91045a0fea5bd1e5174e11526670d8771df1faf896e359e26b2ea4",
+      "status": "passed"
+    },
+    "gate_additive_identity_failure_layout.json": {
+      "sha256": "50395b5cc9c7929772ae3569d2011501e04cbfd6909a6e6be988110730ceae93",
+      "status": "passed"
+    }
+  },
+  "expected": {
+    "forward_passes": 1992,
+    "main_records": 1000,
+    "suffix_controls": 992,
+    "runtime_checks": 1800,
+    "layer_gate_checks": 15360,
+    "hidden_states": 928,
+    "retained_main_gate_states": 1792,
+    "raw_actual_logit_rows": 744,
+    "attention_states": 4,
+    "new_calibration_forwards": 0
+  },
+  "review_activity": {
+    "pretrained_models_loaded": 0,
+    "gpu_used": false,
+    "random_weight_cpu_integration_forwards": 63,
+    "maximum_recorded_review_rss_kib": 1349636
+  },
+  "final_delta": "Runner98929fbd to5fe59f79 adds only conditional identity-failure logit_pair evidence and capsule field; reviewed statically and measured at18,613,555 bytes. Analyzer fixture not repeated because schema/math unchanged.",
+  "limits": [
+    "No new pretrained outcome or efficacy inference exists at signoff.",
+    "Physical512 CPU integration predates final orchestration guards; unchanged evaluated hook/math methods reused, final guards separately reviewed.",
+    "Full-writer fixture was stubbed serialization, not neural inference; six-row change is a measured serialization delta plus explicit prospective allowances.",
+    "Successful missing full source/context/logit arrays remain runtime/hash evidence; all-query CPU readout will be approximate.",
+    "Input freshness is limited to inventoried research; two natural start tokens occur in calibration.",
+    "J+R is a counterfactual algebraic identity, not causal mediation; n4 uncertainty conditional on fixed maps."
+  ],
+  "remaining_launch_blockers": []
+}

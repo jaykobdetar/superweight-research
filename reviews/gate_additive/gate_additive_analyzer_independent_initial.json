@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "fabricated_only": true,
+  "storage_aliases_used": true,
+  "not_a_storage_or_model_fidelity_test": true,
+  "valid_audit": {
+    "status": "passed",
+    "records": 1000,
+    "forwards": 1992,
+    "gate_runtime_checks": 15360,
+    "raw_main_gate_states": 1792,
+    "hidden_states": 928,
+    "raw_gpu_logit_query_rows": 992,
+    "additive_inputs_families": 96,
+    "additive_window_views": 288,
+    "max_cpu_gate_error": 0.0,
+    "max_J_R_identity_error": 0.0,
+    "max_FP64_FP32_loss_difference": 2.7580573203067615e-07,
+    "minimum_mass": 0.00021185667719691992,
+    "gate_runtime_maxima": {
+      "norm_match_error": 1.2598578069678013e-08,
+      "formula_error": 0.0,
+      "max_gain": 1.1670418977737427
+    },
+    "output_bytes_before_audit": 336030150,
+    "peak_rss_kib": 869664,
+    "limits": "Production saved-evidence audit, not independent review. All-query hidden-to-logit CPU reconstruction and fixed attention snapshots require separate independent audit. Source/context closures outside saved tensors are runtime/hash evidence. Bootstrap conditional on fixed calibration; correlated starts/views, no multiplicity correction.",
+    "paired_bootstrap_identity_max_error": 0.0
+  },
+  "summary_counts": {
+    "full": 248,
+    "segments": 496,
+    "additive_metric_groups": 1440
+  },
+  "corruptions_rejected": [
+    "manifest.json",
+    "checks.json",
+    "operation_checks.json",
+    "suffix_checks.json",
+    "window scalar",
+    "J corruption with refreshed shard hash"
+  ],
+  "non_null_n4_bootstrap_exact": true,
+  "stale_pass_cleared": true,
+  "source_sha256": {
+    "gpt2_gate_additive.py": "0a3f712199169973f414a430ca9211c894a731e603b10bfe848a4b9939838204",
+    "gate_additive_readout.py": "3913a6d71e7f1dabc5ab1236ea9416041ffa6c7f66d3321782e3972dc9cccc16",
+    "gate_additive_failure.py": "5136d71bffc2fb3c47d801fa2546212fe23d7d41b6940377236260b3edb95313",
+    "analyze_gate_additive.py": "6c0033975ae49b7209f483f58d3361ad55727e101739bda1642f947aadd48b94"
+  },
+  "peak_rss_kib": 869372,
+  "peak_child_rss_kib": 869664,
+  "model_loaded": false,
+  "gpu_used": false
+}

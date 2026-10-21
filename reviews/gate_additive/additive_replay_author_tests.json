@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "checks": [
+    "pinned safe metadata identity and all files/dependencies",
+    "safe export contains no source paths or token IDs/arrays",
+    "actual GPT2 tokenizer rebuilt exact five canonical files",
+    "only INPUT_HASHES AST binding changed",
+    "actual prepare-only workspace staged with no study/calibration forwards or earlier-model directories"
+  ],
+  "rejected_corruptions": [
+    "changed canonical tokens",
+    "changed canonical directions",
+    "broadened metadata whitelist",
+    "already patched source",
+    "duplicate INPUT_HASHES definition",
+    "absolute path",
+    "Windows path",
+    "token payload",
+    "fake pointer",
+    "missing dependency gate_additive_inputs.py",
+    "missing dependency gate_localization_inputs.py",
+    "missing dependency run_transfer.py"
+  ],
+  "model_forwards": 0,
+  "gpu_used": false,
+  "safe_metadata_identity_sha256": "13cca2b5ec8ef9993e01df36f0d86aecfc0bab96c4b598fd94a887fec0605a98",
+  "helper_sha256": "e5f982dbaa6f81197100ad01ecfd4844e423278a0acd140e394b371b4f8ebcdd",
+  "wrapper_sha256": "fef30e99c2c99f8ed92e3fc527cc934caa4dd3ca5cce8581dc9a24609f20525a",
+  "staged_bytes": 6703140,
+  "staged_source_count": 35,
+  "tokenizer_reconstruction": {
+    "status": "passed",
+    "model_forwards": 0,
+    "model_loaded": false,
+    "gpu_used": false,
+    "source_sha256": "e5f982dbaa6f81197100ad01ecfd4844e423278a0acd140e394b371b4f8ebcdd",
+    "passages": 16,
+    "selector_rejections": 32,
+    "source_files": 6,
+    "tokenizer_sha256": {
+      "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+      "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+      "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    "metadata_identity_sha256": "13cca2b5ec8ef9993e01df36f0d86aecfc0bab96c4b598fd94a887fec0605a98",
+    "inherited_history_manifests": 84,
+    "exclusion_intervals": {
+      "wiki_validation": 84,
+      "mill": 0,
+      "wollstonecraft": 0,
+      "optimizers_new": 0
+    },
+    "input_bindings_sha256": "be256dfc1609df7b6ebbc55173c2b952a2d26bf1f48af95b8a1713a438e95d7b",
+    "output_sha256": {
+      "preflight.json": "87b41842df863f5dae54c7aaa196fbfbecbcf21dd363880bdec0fc6d88d03f09",
+      "tokens.pt": "e009ddfbcee00ec08e013ef2cddc9c745cc2f8f90ca042a2e83d5e2c89120510",
+      "data_manifest.json": "20f04c612a19f2bb1659b5cf6deee7eedbbdee02fb451bd558109c9abbb3f712",
+      "directions.pt": "4bf8fc396fd57e2146933131b928ace0a49498b3d295d749b91626a1b70260b3",
+      "directions.json": "0a27dcc857b221a9fdbd1265be678aa341d59f914eb3030cff5eb44690ff852e",
+      "exclusion_inventory.json": "4356e3a15a7f0bdd8663b39f7998e3679d7ecf409456636d0f3a46207bf39f2e",
+      "historical_manifest_scan.json": "41d8a119d94e875113bc5280fa20703f028488b34799ed6519c2c31cd10d616c",
+      "start_identity_summary.json": "15c7b0994209c68189c63184fb1049d0990d64c720dcf5662d02cfcfb28c49b4"
+    },
+    "canonical_exact": {
+      "tokens.pt": true,
+      "directions.pt": true,
+      "directions.json": true,
+      "start_identity_summary.json": true,
+      "historical_manifest_scan.json": true
+    },
+    "scope": "Original historical records are inherited attestations; original OLMo/Llama model outputs/tokenizers and old research directories are not read. Fresh GPT2-only reconstruction checks source bytes, all candidate selection decisions, offsets, exclusions, exact input tensors and directions. Metadata hashes intentionally differ where private fields were removed.",
+    "wall_seconds": 0.40081191062927246,
+    "peak_rss_kib": 758776
+  },
+  "wrapper_preparation_sha256": "12dbde8742ad36e5d14f078dd15d1aa44538840bf4c82ef23f9ba6c73276590d",
+  "parent_peak_rss_kib": 726404,
+  "child_peak_rss_kib": 829680,
+  "wall_seconds": 5.420557260513306,
+  "limits": "Preparation and metadata binding only. --execute was not invoked or model-tested. Historical exclusion attestations are preserved, not independently re-audited from unavailable raw earlier runs."
+}

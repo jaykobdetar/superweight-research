@@ -1,0 +1,345 @@
+{
+  "status": "passed",
+  "weight_file_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "loaded_tensor_key": "wte.weight",
+  "loaded_weight_fingerprint": {
+    "shape": [
+      50257,
+      768
+    ],
+    "dtype": "torch.float32",
+    "sha256": "e182e433b37dbdb47448e0413c840edf6965113c1fc8048c63b69795d8cf875a"
+  },
+  "inputs": 32,
+  "hidden_trajectories": 928,
+  "query_rows_reconstructed": 474208,
+  "sampled_actual_GPU_comparison": {
+    "rows": 744,
+    "max_absolute_logit_error": 0.0007914810494185076,
+    "max_RMS_logit_error": 0.0001489345110460198,
+    "max_relative_L2_error": 9.349831019581285e-07,
+    "max_gamma_bound_ratio": 0.02926525571142234,
+    "max_NLL_error": 0.0004042742707213165,
+    "max_KL_either_direction": 5.137872835214629e-09,
+    "zero_reference_norm_rows": 0,
+    "zero_reference_nonzero_error_rows": 0,
+    "relative_L2_definition": "L2(CPU_FP64 minus saved_GPU_FP32)/L2(saved_GPU_FP32), reported only for nonzero reference norm; zero-norm rows counted separately"
+  },
+  "sampled_additive_logit_max_error": 0.005196171722957388,
+  "all_query_runtime_metric_errors": {
+    "model_NLL": {
+      "max_abs": 0.000624704256779296,
+      "elements": 474208,
+      "max_location": [
+        "gate__mill__3__512__bos",
+        "orthogonal_control_L9",
+        288,
+        320
+      ],
+      "nonzero": 474208,
+      "mean_abs": 2.4792738913307995e-05
+    },
+    "model_KL_C": {
+      "max_abs": 0.0002955891127518484,
+      "elements": 474208,
+      "max_location": [
+        "gate__optimizers_new__2__512__bos",
+        "position_L7",
+        288,
+        320
+      ],
+      "nonzero": 457856,
+      "mean_abs": 1.4434468686579354e-06
+    },
+    "model_KL_P": {
+      "max_abs": 0.00029332833131734404,
+      "elements": 474208,
+      "max_location": [
+        "gate__wiki_validation__0__512__bos",
+        "position_all",
+        128,
+        160
+      ],
+      "nonzero": 456992,
+      "mean_abs": 1.0720516376341535e-06
+    },
+    "additive_loss_p": {
+      "max_abs": 0.00039640008012042927,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__0__512__bos",
+        "remove_pc1",
+        320,
+        352
+      ],
+      "nonzero": 49056,
+      "mean_abs": 2.474281131073243e-05
+    },
+    "additive_loss_joint": {
+      "max_abs": 0.0004211875169062296,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__3__512__natural",
+        "orthogonal_control",
+        0,
+        32
+      ],
+      "nonzero": 49056,
+      "mean_abs": 2.4819113821633102e-05
+    },
+    "additive_loss_additive": {
+      "max_abs": 0.0030956926419207775,
+      "elements": 49056,
+      "max_location": [
+        "gate__mill__1__512__natural",
+        "orthogonal_control",
+        448,
+        480
+      ],
+      "nonzero": 49056,
+      "mean_abs": 0.00019378259766573747
+    },
+    "additive_singleton_losses": {
+      "max_abs": 0.0006244897497822421,
+      "elements": 392448,
+      "max_location": [
+        "gate__mill__3__512__bos",
+        "orthogonal_control",
+        288,
+        320
+      ],
+      "nonzero": 392448,
+      "mean_abs": 2.4763008310793626e-05
+    },
+    "additive_sum_singleton_delta": {
+      "max_abs": 0.0034481823040835025,
+      "elements": 49056,
+      "max_location": [
+        "gate__mill__1__512__natural",
+        "orthogonal_control",
+        448,
+        480
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.00021023280367165646
+    },
+    "additive_J": {
+      "max_abs": 0.0030783009900119396,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__0__512__bos",
+        "remove_pc1",
+        480,
+        511
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.00019512993665583964
+    },
+    "additive_R": {
+      "max_abs": 0.0024482914826791102,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__0__512__bos",
+        "position",
+        128,
+        160
+      ],
+      "nonzero": 48960,
+      "mean_abs": 2.1193837185423953e-05
+    },
+    "additive_joint_minus_sum": {
+      "max_abs": 0.003078310511739346,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__0__512__bos",
+        "remove_pc1",
+        480,
+        511
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.00018857565526606395
+    },
+    "additive_identity_error": {
+      "max_abs": 1.4210854715202004e-14,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__0__512__natural",
+        "position",
+        480,
+        511
+      ],
+      "nonzero": 32,
+      "mean_abs": 2.1149368405744634e-18
+    },
+    "additive_kl_joint_additive": {
+      "max_abs": 0.002222536460884328,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__0__512__bos",
+        "position",
+        128,
+        160
+      ],
+      "nonzero": 48960,
+      "mean_abs": 1.2434533687385542e-05
+    },
+    "additive_kl_additive_joint": {
+      "max_abs": 0.006356682032087946,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__3__512__bos",
+        "position",
+        224,
+        256
+      ],
+      "nonzero": 48960,
+      "mean_abs": 1.3394697981449198e-05
+    },
+    "additive_kl_p_additive": {
+      "max_abs": 0.002451975704488518,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__0__512__bos",
+        "position",
+        128,
+        160
+      ],
+      "nonzero": 48960,
+      "mean_abs": 2.3204811794657582e-05
+    },
+    "additive_kl_native_additive": {
+      "max_abs": 0.002449901025762813,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__0__512__bos",
+        "position",
+        128,
+        160
+      ],
+      "nonzero": 49056,
+      "mean_abs": 2.2217450098557777e-05
+    },
+    "additive_centered_logit_l2": {
+      "max_abs": 0.0064595252398564895,
+      "elements": 49056,
+      "max_location": [
+        "gate__wollstonecraft__2__512__bos",
+        "remove_pc1",
+        0,
+        32
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.0003411306764809834
+    },
+    "additive_centered_logit_rms": {
+      "max_abs": 2.8813918220262774e-05,
+      "elements": 49056,
+      "max_location": [
+        "gate__wollstonecraft__2__512__bos",
+        "remove_pc1",
+        0,
+        32
+      ],
+      "nonzero": 48960,
+      "mean_abs": 1.5216770659734714e-06
+    },
+    "additive_centered_logit_max_abs": {
+      "max_abs": 0.004542595366539892,
+      "elements": 49056,
+      "max_location": [
+        "gate__optimizers_new__2__512__natural",
+        "orthogonal_control",
+        288,
+        320
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.00031730621424896975
+    },
+    "additive_joint_delta_centered_l2": {
+      "max_abs": 0.0006897282639215518,
+      "elements": 49056,
+      "max_location": [
+        "gate__wollstonecraft__1__512__natural",
+        "orthogonal_control",
+        32,
+        64
+      ],
+      "nonzero": 48960,
+      "mean_abs": 5.495061114786756e-05
+    },
+    "additive_additive_delta_centered_l2": {
+      "max_abs": 0.004271193252080252,
+      "elements": 49056,
+      "max_location": [
+        "gate__wollstonecraft__0__512__bos",
+        "orthogonal_control",
+        192,
+        224
+      ],
+      "nonzero": 48960,
+      "mean_abs": 0.0003418436603738661
+    },
+    "additive_agreement_joint_additive": {
+      "max_abs": 1.0,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__1__512__natural",
+        "remove_pc1",
+        160,
+        192
+      ],
+      "nonzero": 8,
+      "mean_abs": 0.00016307893020221786
+    },
+    "additive_agreement_p_additive": {
+      "max_abs": 1.0,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__1__512__natural",
+        "position",
+        256,
+        288
+      ],
+      "nonzero": 6,
+      "mean_abs": 0.0001223091976516634
+    },
+    "additive_agreement_native_additive": {
+      "max_abs": 1.0,
+      "elements": 49056,
+      "max_location": [
+        "gate__wiki_validation__0__512__natural",
+        "remove_pc1",
+        288,
+        320
+      ],
+      "nonzero": 9,
+      "mean_abs": 0.0001834637964774951
+    },
+    "model_prediction_agreement": {
+      "mismatches": 3,
+      "rows": 474208,
+      "fraction_agreement": 0.9999936736621904
+    }
+  },
+  "per_query_sign_changes": {
+    "J": {
+      "changes": 50,
+      "max_runtime_absolute_at_changed_sign": 0.0011802958431985644
+    },
+    "R": {
+      "changes": 21,
+      "max_runtime_absolute_at_changed_sign": 6.150959305273318e-05
+    },
+    "joint_minus_sum": {
+      "changes": 49,
+      "max_runtime_absolute_at_changed_sign": 0.0006539906729585709
+    }
+  },
+  "R_target_cancellation_J_partition_max_error": 5.968558980384842e-13,
+  "wall_seconds": 1194.073738336563,
+  "peak_rss_kib": 1269920,
+  "pretrained_model_loaded": false,
+  "single_weight_tensor_loaded": true,
+  "gpu_used": false,
+  "limits": "CPU FP64 hidden-to-logit reconstruction is approximate. Direct raw-GPU bound validated only on six frozen queries of four natural inputs. Runtime saved metrics remain primary; all-query errors and any sign/argmax changes are disclosed, not silently substituted. Successful complete GPU logits/context arrays outside fixed snapshots are absent."
+}

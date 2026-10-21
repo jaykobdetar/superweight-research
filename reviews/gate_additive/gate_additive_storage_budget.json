@@ -1,0 +1,77 @@
+{
+  "status": "prospective_unit_serialization_measured",
+  "no_model_or_tokenizer": true,
+  "gpu_used": false,
+  "components": {
+    "main_hidden": {
+      "unit_bytes": 1574533,
+      "count": 928,
+      "bytes": 1461166624
+    },
+    "main_gate_state": {
+      "unit_bytes": 100525,
+      "count": 1792,
+      "bytes": 180140800
+    },
+    "suffix_gate_state": {
+      "unit_bytes": 26817,
+      "count": 1792,
+      "bytes": 48056064
+    },
+    "raw_logit_rows": {
+      "unit_bytes": 1610205,
+      "count": 124,
+      "bytes": 199665420
+    },
+    "additive_logit_rows": {
+      "unit_bytes": 3218501,
+      "count": 12,
+      "bytes": 38622012
+    },
+    "main_metrics": {
+      "unit_bytes": 17681,
+      "count": 1000,
+      "bytes": 17681000
+    },
+    "additive_metrics": {
+      "unit_bytes": 109741,
+      "count": 96,
+      "bytes": 10535136
+    },
+    "p_source_states": {
+      "unit_bytes": 81547,
+      "count": 32,
+      "bytes": 2609504
+    }
+  },
+  "allowances_bytes": {
+    "four_attention_states": 50331648,
+    "metadata_and_scalar_json": 50331648,
+    "copied_calibration_inputs_code": 8388608,
+    "bounded_failure_capture": 67108864
+  },
+  "projected_bytes_including_failure_allowance": 2134637328,
+  "cap_bytes": 2147483648,
+  "cap_margin_bytes": 12846320,
+  "reserve_bytes": 2147483648,
+  "prior_measured_artifacts": {
+    "gates": 714538354,
+    "suffix": 1159452934,
+    "prefix": 369166376,
+    "traces.pt": 195449621,
+    "attention_snapshots.pt": 534252975,
+    "local_norms": 174846850,
+    "source_states.pt": 75525003
+  },
+  "prior_peak_process_rss_kib": 3008792,
+  "prior_peak_gpu_allocated_bytes": 966884864,
+  "prospective_readout_cpu_payload_bytes": {
+    "fp64_accumulator": 205450616,
+    "P_logits_fp32": 102725308,
+    "C_logits_fp32": 102725308,
+    "current_logits_fp32": 102725308,
+    "chunk32_float64_matrix": 12865792
+  },
+  "limitations": "Unit tensor serialization plus explicit allowances, not a measurement of the future complete writer. Final writer must measure exact full synthetic layout before production. No statement that future process RSS is measured.",
+  "peak_rss_kib": 483312
+}
