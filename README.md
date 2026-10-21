@@ -25,8 +25,10 @@ counterexamples are retained. No UIT knowledge is needed.
 The [model-transfer report](docs/TRANSFER.md) adds GPT-2 and Llama-3.2-3B-Instruct.
 It finds conditional GPT-2 MLP coordinate regrowth and different Llama source
 K/V dependence, including approximate fixed-source replacements. See the
-[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for six sequential
-batches and their limits. These findings do not establish one shared mechanism.
+[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for nine sequential
+batches and their limits. The [GPT-2 follow-up](docs/GPT2_FOLLOWUP.md) localizes
+the conditional L3 writes, separates source K/V transmission, and tests value
+norm against direction. These findings do not establish one shared mechanism.
 
 Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
@@ -78,6 +80,7 @@ model and is much smaller. Other GPUs/kernels can change FP16 rounding.
 - `figures/`: original explanatory diagrams and result plots.
 - `transfer/`: subsequent model comparisons, when executed.
 
-The repository is private. It contains no credentials, checkpoint weights,
+The intended GitHub destination is private; creation remains denied and no
+remote has been configured. This local repository contains no credentials, checkpoint weights,
 input corpora, or unrelated files. Retrieve external inputs under their own
 terms; hashes and source links are supplied instead of redistribution.

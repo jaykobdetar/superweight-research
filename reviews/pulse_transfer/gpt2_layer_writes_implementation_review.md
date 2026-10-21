@@ -1,0 +1,13 @@
+# Independent GPT-2 layer-writer implementation review
+
+Status: static/synthetic pass; no launch blocker after the existing sequential validation releases the GPU. Evidence: `gpt2_layer_writes_cpu_test.py/.json`, with exact reviewed source/protocol/dependency hashes. CPU-only, no pretrained model/GPU load; peak RSS761,404 KiB.
+
+The subclass deliberately calls `Probe.down` rather than the global-write-blocking superclass method, then applies the layer-specific source0 coordinate edit and records the full source MLP vector. The inherited block/attention hooks retain source residual captures and native attention. `reset_layers` leaves inherited A/M flags false, so there is no accidental global write block or all-residual-zero assertion. Layer erasure still occurs afterL2; layer-set MLP edits occur before residual addition. All unselected source coordinates and later positions remain untouched at the hook site.
+
+All24 unique conditions and four aliases independently match their intended sets. The complete E×block3×block4..11 factorial, every single-unblocked-layer condition and every cumulative blocked prefix are represented without duplicate evaluations. Two frozen random-pair controls are separate conditions. Expected776 records/forwards,768 operation records,32 final-layer negative closures and eight native/identity anchors.
+
+216 synthetic layer checks (nine later layers ×24 conditions) verify exact zeroed/unchanged outputs, native attention, input nonmutation and correct per-condition locality/zero-check counters. With all MLP writes blocked, native attention correctly allows residual coordinates to become nonzero. The only-layer11/all-blocked scored-loss equality is structurally appropriate because final source MLP output cannot propagate to another position; actual model numerical closure remains a runtime check.
+
+Independent private-source/tokenizer preparation reproduced16 fixed-fraction fourth-panel windows. Each used512-token span is disjoint from12 old used spans per corpus (all three prior panels) and from other fresh spans. No fraction or input choice was adjusted. Capture scope now explicitly says all12 residual vectors and attention/MLP vectors atL3..11, matching implementation.
+
+The finite family is selected before these outcomes. Any single-layer sufficiency conclusion must retain its conditional scope: other coordinates, attention and the rest of the network remain active. No native-trajectory restoration, unique neuron or full repair-circuit claim follows. Runtime completion, exact controls, hashes, saved-vector reconstruction and all-layer numerical reporting remain pending.

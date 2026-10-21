@@ -76,5 +76,44 @@
       "traces.pt": "9aab3d6df772216597facf5029f1affe032ab016dea0fb7e01aab3aa81956728"
     },
     "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "gpt2_layer_writes_run",
+    "records": 776,
+    "original_per_token_sha256": "5b4e5ea54e43bb76025d0cdefe7f501c7b34ea6499bb506138f387b1e2702775",
+    "export_sha256": "4d8f2bed0a3b2e528e212b8e4546e66bf401fe0dc33ba5c43b2c0e758abf930f",
+    "private_raw_files": {
+      "per_token.pt": "5b4e5ea54e43bb76025d0cdefe7f501c7b34ea6499bb506138f387b1e2702775",
+      "tokens.pt": "661f4bf49986ec3ac3795585e43e6a7f4e8b4f48987e730a969e2ff935f020ff",
+      "traces.pt": "1ec22cdc6021f88cb5bc20b03010d2da0fd8473594395216db572734e268acd7"
+    },
+    "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors."
+  },
+  {
+    "run": "gpt2_regrowth_kv_run",
+    "records": 616,
+    "original_per_token_sha256": "bb355823a196205be0928924b9a739f95fbab54760018df2f7e228e3c7e2e99f",
+    "export_sha256": "cedcbace2d1bf95b5bf86dc68d4efebdbdea2172a1c94ce30d97677e5abadc90",
+    "private_raw_files": {
+      "donors.pt": "bc5d1457da34659fb8e901896bbcd2162f50a717bdd06baaefd64bcc8feba313",
+      "per_token.pt": "bb355823a196205be0928924b9a739f95fbab54760018df2f7e228e3c7e2e99f",
+      "tokens.pt": "7622de306581bb7a67504336087f556d7df6767422722cf9dac1ab05b4ba6b9f",
+      "traces.pt": "70ea9297f916d8f7d715d11875a10f33d1af9857ff5571ddf4a7423b34b42ef6"
+    },
+    "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors."
+  },
+  {
+    "run": "gpt2_value_geometry_run",
+    "records": 520,
+    "original_per_token_sha256": "51f8ef2a33b048bd6681e45dc39c6236b36d40dc100646528ca75166ab925034",
+    "export_sha256": "ab7c40a6c04544d53d67a14378308d48fd2079e32feb5b79c31bc83e57cae4ec",
+    "private_raw_files": {
+      "donors.pt": "dca8c37e31a2d217b3ec8739e72deeeb702fddd616c31ac4cb30c693074df0a7",
+      "per_token.pt": "51f8ef2a33b048bd6681e45dc39c6236b36d40dc100646528ca75166ab925034",
+      "random_control.pt": "f86583cdf072992d919f528740dc8632742f93170dd9fc38bd5a8e539139dea3",
+      "tokens.pt": "9f18ff797121f818bf3a33dfc77823d58d8615ab4a42e4ee023bfe031a01df50",
+      "traces.pt": "f99055dde78623ec2801f7bee2bc43281dc54e1f3c7eb5eb8e9d55dbb25422ef"
+    },
+    "transformation": "Retain scored loss/KL and native-prediction equality masks only; omit input/prediction IDs and source/donor tensors."
   }
 ]

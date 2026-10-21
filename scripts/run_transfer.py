@@ -1,4 +1,4 @@
-"""Stage a private offline workspace and run six sequential transfer batches."""
+"""Stage a private offline workspace and run nine sequential transfer batches."""
 import argparse, hashlib, json, shutil, subprocess, sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -8,7 +8,10 @@ STAGES=[
  ('gpt2_groups_run',['gpt2_groups.py'],['analyze_followup.py','--kind','groups']),
  ('llama_source_kv_run',['llama_source_kv.py'],['analyze_followup.py','--kind','kv']),
  ('gpt2_writes_run',['gpt2_writes.py'],['analyze_writes.py']),
- ('llama_replacements_run',['llama_replacements.py'],['analyze_replacements.py'])]
+ ('llama_replacements_run',['llama_replacements.py'],['analyze_replacements.py']),
+ ('gpt2_layer_writes_run',['gpt2_layer_writes.py'],['analyze_layer_writes.py']),
+ ('gpt2_regrowth_kv_run',['gpt2_regrowth_kv.py'],['analyze_regrowth_kv.py']),
+ ('gpt2_value_geometry_run',['gpt2_value_geometry.py'],['analyze_value_geometry.py'])]
 
 def sha(p):
     h=hashlib.sha256()

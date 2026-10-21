@@ -1,8 +1,10 @@
 # Reproduce the model-transfer experiments
 
-Read [the transfer report](TRANSFER.md) for claims and limits. Six batches
-contain4,568 evaluation records from4,592 forwards, including24 development or
-calibration forwards. This is separate from the earlier OLMo core reproduction.
+Read [the transfer report](TRANSFER.md) and [GPT-2 follow-up](GPT2_FOLLOWUP.md)
+for claims and limits. The first six batches contain 4,568 evaluation records
+from 4,592 forwards, including 24 development/calibration forwards. Three later
+GPT-2 batches add 1,912 forwards/records: nine total batches, 6,504 forwards and
+6,480 records. This is separate from the earlier OLMo core reproduction.
 No UIT background is required.
 
 ## Audit supplied numbers without models
@@ -85,16 +87,22 @@ stage after its prerequisites have completed in that workspace:
 | llama_source_kv_run | llama_run | Independent source K/V donor factorial |
 | gpt2_writes_run | gpt2_run,gpt2_groups_run | Third-panel E/A/M writer factorial |
 | llama_replacements_run | llama_run,llama_source_kv_run | Fresh means, complement lesion |
+| gpt2_layer_writes_run | gpt2_run,gpt2_groups_run,gpt2_writes_run | Fourth-panel layer-local writes |
+| gpt2_regrowth_kv_run | all previous GPT-2 stages | Fifth-panel source K/V transmission |
+| gpt2_value_geometry_run | all previous GPT-2 stages | Sixth-panel headwise value norm/direction |
 
 Comparison defaults to exact scalar equality. Other hardware/kernels may differ.
 `--atol` explicitly sets an absolute tolerance: justify it scientifically and
 retain discrepancies rather than hiding input/intervention errors. Each run
 also requires its own prescribed exact oracle/closure checks.
+Use `--series six` or `--series followup` with the comparison script to inspect
+one documented subset. The default requires all nine unique batches.
 
 Allow8GiB VRAM,16GiB RAM and25GiB disk including checkpoints/environment/outputs.
 The original six batches took518.85seconds recorded worker time, with6.36GiB
 maximum allocated GPU and5.50GiB maximum worker RSS. Retrieval, installation,
 review and packaging are additional; budget15–30minutes after inputs are ready.
+The three follow-up batches added 120.54 recorded worker seconds on this machine.
 CPU-only numeric audit needs no GPU or model.
 
 ## Audit boundaries

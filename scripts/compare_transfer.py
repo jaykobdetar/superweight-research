@@ -5,11 +5,15 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--work',type=Path,required=True)
+    ap.add_argument('--series',choices=['all','six','followup'],default='all')
     ap.add_argument('--atol',type=float,default=0.);args=ap.parse_args()
     assert math.isfinite(args.atol) and args.atol>=0
     manifest=json.loads((ROOT/'manifests/transfer_numeric_export.json').read_text());out=[]
-    expected={'gpt2_run','llama_run','gpt2_groups_run','llama_source_kv_run','gpt2_writes_run','llama_replacements_run'}
-    assert len(manifest)==6 and {m['run'] for m in manifest}==expected,'Expected all six unique batches'
+    six={'gpt2_run','llama_run','gpt2_groups_run','llama_source_kv_run','gpt2_writes_run','llama_replacements_run'}
+    followup={'gpt2_layer_writes_run','gpt2_regrowth_kv_run','gpt2_value_geometry_run'}
+    assert len(manifest)==9 and {m['run'] for m in manifest}==six|followup,'Expected all nine unique batches'
+    selected=six if args.series=='six' else followup if args.series=='followup' else six|followup
+    manifest=[m for m in manifest if m['run'] in selected]
     for m in manifest:
         saved=ROOT/'results/pulse_transfer'/m['run'];fresh=args.work/'pulse_transfer'/m['run']
         aa=list(map(json.loads,(saved/'windows.jsonl').read_text().splitlines()))
@@ -30,6 +34,6 @@ def main():
             assert mm[field]==archived[field]
         assert mm['model_hash_before']==mm['model_hash_after'] and mm['parameter_versions_unchanged'] is True
         out.append({'run':m['run'],'records':len(a),'max_scalar_error':worst})
-    print(json.dumps({'passed':True,'atol':args.atol,'runs':out,'scope':'Scalar comparison only; each run also executes its protocol closures.'},indent=2))
+    print(json.dumps({'passed':True,'series':args.series,'atol':args.atol,'runs':out,'scope':'Scalar comparison only; each run also executes its protocol closures.'},indent=2))
 
 if __name__=='__main__':main()
