@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "scope": "Pretrained execution not performed. Approved only for the frozen predeclared gate study; empirical outcomes and runtime numerical safety remain untested.",
+  "source_hashes": {
+    "gpt2_gate_subspace.py": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e",
+    "analyze_gate_subspace.py": "0b65d05ec9afec48f182ab7fecff2cd5cc35e3a47ae41df51ac410215f47cdce",
+    "GPT2_GATE_SUBSPACE.md": "84cb95cf7ef48f6d70ea44663ab3559ef16d38396449de31d0ebe36edff59b40",
+    "gate_inputs.py": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d",
+    "analyze_transfer.py": "a854fcad3cbdc98ea5661146da3492138a6a225fd2e628073ca4de788e81011a"
+  },
+  "evidence": {
+    "gpt2_gate_subspace_synthetic.json": {
+      "status": "passed",
+      "fixtures": 102,
+      "no_model_instantiated": true,
+      "device": "cpu",
+      "max_projection_error": 1.7763568394002505e-14,
+      "max_context_error": 5.960464477539063e-08,
+      "maps_digest": "db9e8dca15910ffad3cbdde6852220be792783703183ff20dcb9cf47aaf207ed",
+      "conditions": 21,
+      "expected_forwards": 1368,
+      "expected_records": 1360,
+      "source_hashes": {
+        "gpt2_gate_subspace.py": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e",
+        "gate_inputs.py": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d",
+        "GPT2_GATE_SUBSPACE.md": "84cb95cf7ef48f6d70ea44663ab3559ef16d38396449de31d0ebe36edff59b40"
+      },
+      "peak_rss_kib": 745364
+    },
+    "gpt2_gate_subspace_integration.json": {
+      "status": "passed",
+      "synthetic_forwards": 16,
+      "pretrained_loaded": false,
+      "device": "cpu",
+      "config": {
+        "layers": 12,
+        "heads": 12,
+        "width": 768,
+        "inner": 16,
+        "vocab": 97,
+        "lengths": [
+          128,
+          512
+        ]
+      },
+      "nonzero_query_and_output_biases": true,
+      "source_identity_cases": 14,
+      "dual_reference_metrics_checked": true,
+      "hook_cleanup_exact": true,
+      "max_kl_p_fp64_error": 4.346604087445934e-07,
+      "max_prefix_hidden_error": 1.1920928955078125e-06,
+      "peak_rss_kib": 982676,
+      "source_sha256": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e"
+    },
+    "gpt2_gate_analyzer_synthetic.json": {
+      "status": "passed",
+      "fixtures": 10,
+      "paired_contrasts": 32,
+      "scoring_lengths": [
+        128,
+        512
+      ],
+      "analyzer_sha256": "0b65d05ec9afec48f182ab7fecff2cd5cc35e3a47ae41df51ac410215f47cdce",
+      "peak_rss_kib": 723524
+    },
+    "gpt2_gate_inputs_independent.json": {
+      "status": "passed",
+      "model_loaded": false,
+      "calibration_passages": 8,
+      "evaluation_passages": 16,
+      "prior_spans_per_eval_corpus": 32,
+      "excluded_full_buffers_per_calibration_corpus": 8,
+      "matches_parent_preflight_exactly": true,
+      "evaluation_manifest_sha256": "7f7abe557c9dd67df1d66c98499cdba258de8f021164950040a989bb553ec32c",
+      "calibration_manifest_sha256": "24b1bdf8c1a0744bbd70e0936d24cbf741835aab691bfe496bd9eb809100557e",
+      "calibration_token_hashes": [
+        "d902bfe687866fac356a529be54ff6c3b26e62c4f0e13124d27baa8c1a933287",
+        "706d4655f2d8be3fbe6f4f82c06b289ab9b5304c63049f5fe76608532f5ae8e5",
+        "5ca28f84ccc77928f8b78cfa7808762a62ea9bbb8bb3bab3da4e2e82ba386aef",
+        "dc7293dacb3b4a345ded901c8e5c20844f37bc2b21b254f46a2aaa97a5038f1b",
+        "970e0f5593b7521761a34fce2cc5140d0b28bfd215cd27004a446bd842952a6c",
+        "d99e875fdeeae210b75d43f6d7edde334da1dd817aa5d3c3cb23a1526fd39294",
+        "b93fb987a2fe4a3bf184f13c38c6cbafc04542d9e7fe4a2c25eb090289899419",
+        "38fa8effa3c63a103bf57bd195916962c0bd54f489495603a2dd8863d24541d2"
+      ],
+      "evaluation_token_hashes": [
+        "e8e3c0920b3ae464f28ceb283104a7240c9877f6abc08562b6c055b7935df505",
+        "c3c5c9a8bd7996858277466629d34b83130fc58f06d0cc76257f77ec30a33bda",
+        "748b3cc1f1890d8867fc41a137cda241e4d5c0d0b97c72bee592cf899736ebd9",
+        "31f6ec399b8ce5bfafb825da6d3a2443ad90d8ae668c25bc6ae9d2b019f6ae8c",
+        "eb8d1608ea48fe62d34e64f88a699d34789e3f7c4ab93fc82f12b4a1561fb1d7",
+        "5080deafb297efbd1ceb40a323b14ae25a2e616f712bbcd655ab26c003d8c079",
+        "455f518e4da72df0e13e4ad8a09129c74cd751ac3de34ddc8b0aaebc5839b6e3",
+        "123e9e7fb269ef3e1f2406c5c0f6afb818a1c6da49221f040c1328414c02328e",
+        "a147e41819854213df65234e87f1a04a293618ae46e18d4a49b3c5f1d856c6dd",
+        "4ed9c80ef491959bd9c0c7e63774b25e747998152e4e11f196934abfc1aeb680",
+        "a2873d5a905e481b687be404f16659a99da86ebd4b051ca62065444270119c2d",
+        "f4d640b685c7b07cd9f06dea6f2dff2750175bc752a0fcb69b1d48c179e42799",
+        "8f5481d17b705e0c30a6630a6439fac4950c31c0a949d9b770c0884b7ab3f0a6",
+        "02895173cd38f3ebc69ab09ce1ac391a3eb1e606be907de161059b87f440cd31",
+        "6b7ee2366b8ee4423e591c6a96e7a3d1ca884f4570b31a1310124f07c44bc404",
+        "55564425eb95c73ec14977efcadcac376796557bc3da276dbc916d2b28af865c"
+      ],
+      "helper_sha256": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d",
+      "peak_rss_kib": 755732
+    }
+  },
+  "author_smoke_evidence": "gpt2_gate_subspace_analyzer_smoke.json",
+  "review_file_sha256": "e2aa7fe785727a58e2d25c211c88f52824056eb04fb807e6e8c190ad67a06839"
+}

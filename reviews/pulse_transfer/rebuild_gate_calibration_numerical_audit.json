@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "checks": [
+    "eight calibration forwards, zero evaluation; original remains failed",
+    "recorded checkpoint and parameter closure",
+    "all twelve source hashes current and reviewed",
+    "calibration/evaluation input manifests and calibration tokens identical",
+    "both bytes and all raw/map tensors equal frozen original reference",
+    "eight input identities/metrics and 64 layer operation checks",
+    "independent FP64 means and centered residual covariance eigenbasis"
+  ],
+  "exact_compared_tensors": 176,
+  "raw_passages": 8,
+  "map_layers": 8,
+  "operation_checks": 64,
+  "max_context_reconstruction_error": 2.9087066650390625e-05,
+  "covariance_offdiagonal_errors": {
+    "4": 4.823665464795058e-15,
+    "5": 5.8018196819626174e-15,
+    "6": 4.369891136553767e-15,
+    "7": 1.3264720192343298e-14,
+    "8": 1.0727196160761515e-14,
+    "9": 6.348324207106673e-15,
+    "10": 6.866564078896479e-15,
+    "11": 8.536356695942677e-15
+  },
+  "reference_hashes": {
+    "calibration_maps.pt": "ed62f089168abeec63434e5f6dfa83ff8e7e139bc362e952456ea34859b5a098",
+    "calibration_raw.pt": "d41d5a91c699d30d5414a2916f7350a9093eda4b0004d8bb7b2fb458ebb31935"
+  },
+  "model_loaded": false,
+  "gpu_used": false,
+  "reported_resources": {
+    "wall_seconds": 3.6137938499450684,
+    "peak_gpu_allocated_bytes": 645195776,
+    "peak_process_rss_kib": 1828584
+  },
+  "review_peak_rss_kib": 495292,
+  "limits": "Saved-artifact audit confirms recorded accounting and equality. Model hash/version assertions are runner evidence, not an independent model reload. Same-machine reproducibility, not independent external replication."
+}

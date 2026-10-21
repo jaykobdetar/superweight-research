@@ -1,0 +1,82 @@
+{
+  "status": "author_ready_for_independent_review",
+  "source_hashes": {
+    "gpt2_gate_subspace_v2.py": "8a1b6b08b5d1e0d379247455fda610ebb98a4c3102161d37cc6531c8ba807dda",
+    "analyze_gate_subspace_v2.py": "c96d43612206d652b5171efa2ecb028740c04e43d79bc92f257775bad7a51f66",
+    "GPT2_GATE_SUBSPACE_V2.md": "40d8410fa20cd806699abb023c3cad17deba0695acfd2ad26ca97f47343eb48c"
+  },
+  "actual_cpu_integration": {
+    "status": "passed",
+    "pretrained_model_loaded": false,
+    "gpu_used": false,
+    "successful_model_forwards": 43,
+    "additional_expected_failed_forward": 1,
+    "all_21_suffix_modes_exact": [
+      "C",
+      "P_native",
+      "P",
+      "current",
+      "fullrank",
+      "meanlogit",
+      "meanmass",
+      "position",
+      "global1",
+      "pca_keep1",
+      "pca_keep3",
+      "pca_keep6",
+      "pca_remove1",
+      "pca_remove3",
+      "pca_remove6",
+      "qr_keep1",
+      "qr_keep3",
+      "qr_keep6",
+      "qr_remove1",
+      "qr_remove3",
+      "qr_remove6"
+    ],
+    "same_shape_unchanged_prefix_with_changed_target128": true,
+    "changed_suffix_targets_not_gathered": true,
+    "relative_symmetry": true,
+    "relative_nonfinite_zero_denominator_rejections": 2,
+    "local_drift_detected": true,
+    "nonfinite_kl_failure_logits_preserved": true,
+    "max_fp64_kl_error": 4.228310068167757e-07,
+    "prefix_diagnostics": {
+      "max_query_relative_l2": 0.0,
+      "maximum_relative_query": 0,
+      "whole_prefix_relative_l2": 0.0,
+      "max_hidden_drift": 0.0,
+      "hidden_rms_drift": 0.0,
+      "minimum_query_denominator": 27.709464907698354,
+      "hidden_old_absolute_exceedance_count": 0,
+      "hidden_maximum_index": [
+        0,
+        0,
+        0
+      ],
+      "short_value_at_maximum": -0.06285884976387024,
+      "long_value_at_maximum": -0.06285884976387024,
+      "source_relative_l2": 0.0,
+      "query127_relative_l2": 0.0,
+      "source_max_abs_drift": 0.0,
+      "query127_max_abs_drift": 0.0,
+      "local_relative_threshold": 0.0001,
+      "global_relative_threshold": 1e-05
+    },
+    "hook_cleanup": true,
+    "peak_rss_kib": 1030844,
+    "source_hashes": {
+      "gpt2_gate_subspace_v2.py": "99c6f178d64e87b68baa3130980023e07ca938b1903653b8dd491177eac9c809",
+      "analyze_gate_subspace_v2.py": "c96d43612206d652b5171efa2ecb028740c04e43d79bc92f257775bad7a51f66",
+      "GPT2_GATE_SUBSPACE_V2.md": "40d8410fa20cd806699abb023c3cad17deba0695acfd2ad26ca97f47343eb48c"
+    }
+  },
+  "fabricated_analyzer_evidence": "gpt2_gate_subspace_v2_analyzer_smoke.json",
+  "analyzer_smoke_at_current_analyzer_bytes": true,
+  "analyzer_smoke_runner_delta": "Final runner changed only completed/attempted forward accounting after the full fixture; no imported analyzer arithmetic changed.",
+  "pretrained_model_loaded": false,
+  "gpu_used": false,
+  "blocked_actions": [],
+  "pending": "Independent implementation signoff before root executes any pretrained V2 forward.",
+  "final_runner_delta_after_integration": "Outer failure manifest only: failed/active phase, wall seconds, peak GPU allocated/reserved and RSS, requested by root. Integration evidence retains the exact tested predecessor hash; inference and hook arithmetic are unchanged."
+}

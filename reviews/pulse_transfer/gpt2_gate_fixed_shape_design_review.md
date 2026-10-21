@@ -1,0 +1,15 @@
+# Independent fixed-shape proposal review
+
+Status: approved **for implementation**, not pretrained inference. No scientific or numerical blocker found in the proposal at SHA256 `64b8c10cd4c143a86d8cb680696c7ba2bbebc95270097a1596bebe8291ac39d3`. Separate implementation review and frozen hashes remain required before launch.
+
+A fixed512 study is scientifically defensible as a different, narrower intervention estimand. It compares each gate condition to C and zero-V P at the same input and physical execution shape. It does not assert that physical128 and512 executions agree, replace a failed result with a pass, or claim that early-position scoring changes available past history. The proposal explicitly relinquishes cross-length execution validation while retaining the original failed artifacts and resource accounting. This is preferable to another outcome-informed tolerance increase.
+
+The important preserved choices are all16 passages, both starts, all21 conditions, ranks1/3/6 and reciprocal retain/remove controls, original frozen maps and calibration, both fidelity references, all fixed-shape suffix controls, original reconstruction/error guards and parameter integrity. No arm or data exclusion is chosen from observed effects. Wiki window0 remains exposed across identities and its exclusion view is prespecified n3; full n4 results also remain. The early/full/later score views share samples and should not be presented as independent evidence or as a new short-context experiment.
+
+The21 existing natural-start suffix controls support feasibility only. They do not establish the pending BOS or other-passage controls. The new run should rerun every prespecified condition/control and preserve a failure without automatic remedy if any exact same-shape or1e-4 reconstruction guard fails. Query0 identity is relative to P because zeroing source V already changes query0 relative to C. Successful logits/contexts remain partly hash-only, which limits later independent raw recomputation and must remain disclosed.
+
+Counts are consistent:32×21 main672 +8 anchors =680 main, plus672 controls =1,352 new forwards;744 main runtime checks;10,240 main/control gate checks;40 fixed snapshots;168 whole-condition groups and336 early/later groups;1,024 raw contrasts and256 grouped contrasts per full/unexposed view. Cumulative production accounting33+18+8+90+1352=1501 is correct, excluding separately recorded CPU tests/replays. There is no new calibration, hidden-error tolerance or padded-mask control.
+
+The proposal appropriately limits interpretation: covariance is descriptive; layerwise endogenous projections are not a global scalar mechanism or additive mediation decomposition; low loss need not imply output fidelity; and the allocation algebra/prior gated-attention work require attribution. The design does not establish OLMo single-weight transfer, generation behavior, speed or priority. No further material design changes are required before implementation.
+
+Supporting failure audit: `gpt2_gate_v2_failure_review.md` and `gpt2_gate_v2_failure_audit.json`. No model/GPU or GitHub action was used for this review.

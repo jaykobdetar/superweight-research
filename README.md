@@ -33,6 +33,17 @@ separates allocation from the conditional non-source value mixture and finds
 opposing loss effects on several corpora. These findings do not establish one
 shared mechanism or faithful output replacement.
 
+The [gate-subspace report](docs/GPT2_GATE_SUBSPACES.md) tests centered PCA
+directions with causal retention/removal and matched controls. High calibration
+variance does not yield a faithful scalar replacement: rank-one retention
+raises perplexity about15–29% relative to the zero-value reference, while
+rank-six retention still changes about5–10% of argmax predictions. Two failed
+cross-length runs remain preserved; the completed study uses fixed512 execution.
+See the [standalone reproduction guide](docs/GPT2_GATE_REPRODUCING.md): it
+rebuilds old metadata without rerunning prior model experiments or loading
+Llama weights. Audit exported gate results with
+`python scripts/audit_gate_results.py`; this needs NumPy and no model.
+
 Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
 then `python scripts/compare_transfer.py --work .reproduce-transfer`.

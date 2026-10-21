@@ -1,0 +1,23 @@
+# Gate replay wrapper and comparator author review
+
+Ready for independent implementation review. The author made no changes to frozen experiment, analyzer or protocol files and did not load a pretrained model or use a GPU.
+
+The portable wrapper now checks all eleven seeded metadata files against the explicit `seed_metadata_sha256` inventory before staging. It verifies GPT-2 checkpoint files, only the four specified Llama tokenizer/config files, and all supplied corpus hashes. Historical Llama exclusions are reconstructed by the previously reviewed tokenizer-only helper; no Llama weights or previous model experiments are used. Cached reconstruction evidence must still identify eight passages, zero forwards, no model/GPU, exact tokenizer hashes and the historical metadata hash. The wrapper refuses existing calibration/study output and checks completed state, attempts, 680 scientific records, 672 suffix controls and the analyzer's 10,240 gate checks before recording completion.
+
+`compare_gate_study.py` offers two exact comparison scopes. Numeric scope checks all 17 deterministic JSON/JSONL files, protocol/model/source identities, counts and scoring definitions; it independently loads replay per-token tensors to reduce 4,760 scalar metrics and compares 1,734,000 safe exported loss/KL/boolean-agreement values. Private scope additionally loads and compares all nine top-level tensor files and 96 gate/prefix/suffix shards (105 file pairs), including calibration maps/raw measurements, predictions, writer traces, source states and frozen attention snapshots. It directly compares tensor values with exact shape/dtype, not only recorded hashes. This scope reduces 9,520 scalar metrics across both runs. Successful full logits and every full context were never retained, so their coverage remains recorded runtime fingerprints plus the frozen snapshot subset. Exact equality does not prove execution independence or scientific interpretation.
+
+Only timestamps, resource measurements and calibration-reference provenance differ by design. Runtime/library versions and observed SDPA event names are reported rather than required equal; precision settings, scientific source hashes shared between runs, model/checkpoint identities and the unchanged protocol must match. No post hoc numerical tolerance is provided. Matching mask infinities are permitted, while NaNs fail. Failed or incomplete runs, duplicate/missing records, altered raw values and stale success files are rejected. The tool never silently falls back from private to numeric scope.
+
+Sixteen CPU fixtures passed, including scalar-preserving raw corruption, safe-export corruption, altered gate tensors with updated inventory hashes, source-state corruption, duplicate records, failed status, stale-report clearing, metadata seed changes, tokenizer changes and false cached model-load claims. They used fabricated records and no model; peak RSS was 530,116 KiB. These fixtures validate comparison and orchestration, not the scientific experiment. Evidence: `gate_replay_comparison_tests.py/.json`.
+
+The real prepare-only wrapper successfully reconstructed the historical eight-passage Llama metadata with SHA256 `f2158f56eafeb1459e240a0ddb40ee64493f54a64b23463995b94b9cc08af9b0`, zero model forwards and peak helper RSS 808,804 KiB. The new ignored workspace is `superweight-causal-circuits/.reproduce-gate-prepare-review`. Its staged source hashes match the current export, and calibration/study outputs do not yet exist.
+
+After primary completion, numeric comparison of its safe export against its private raw bundle passed all 680 records, 17 deterministic files, 4,760 reductions and 1,734,000 per-token values at peak RSS 504,860 KiB. This is export consistency, not an independent replay. Evidence: `gate_export_numeric_comparison.json`.
+
+Remaining work is independent code signoff, one root-owned 1,360-forward replay, and numeric/private comparison against that replay. Both earlier failed gate runs remain preserved and failed; this comparison makes no physical-128 execution claim. The same-machine strict calibration-file hashes are intentional; a cross-platform calibration mismatch stops and remains evidence rather than silently switching maps. The full private comparison's production peak memory has not yet been measured; it loads one shard pair at a time, with the largest pair being the fixed attention snapshots.
+
+## Frozen implementation hashes
+
+- `run_gate_study.py`: `15942f06e04c4df3bfbff504f2e69aacd79ed0a4b2ceee03db8f75abdc1950f7`
+- `compare_gate_study.py`: `76d80425cb73bcccf9b5ce8262a7f4e0ea9b9d2dc429cfac5adf0063b7d6391c`
+- `gate_replay_comparison_tests.py`: `06338376f48c9b4c8c4c5e5f58cf98843b4be361b9e19648114477133ceecc88`

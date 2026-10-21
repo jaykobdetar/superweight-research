@@ -1,0 +1,44 @@
+{
+  "status": "author_frozen_ready_for_independent_review",
+  "source_hashes": {
+    "gpt2_gate_fixed512.py": "23c9104c4b80f72c13daee601373a4f026b6967bc21124411a85ec5f79cff1d0",
+    "analyze_gate_fixed512.py": "3a76791f0fec956765c7304a1b8459b101cff88c0d1e4a7710a73ddd11d9c6bd",
+    "GPT2_GATE_FIXED512.md": "75a567b57927bf15e2f04b34be4d9ab6ddd94c3ebddfb47573fd525150cba2d7"
+  },
+  "policy_proposal": "GPT2_GATE_FIXED_SHAPE_PROPOSAL.md",
+  "policy_sha256": "64b8c10cd4c143a86d8cb680696c7ba2bbebc95270097a1596bebe8291ac39d3",
+  "tests_reused_without_restart_after_capacity_boundary": true,
+  "tests": [
+    {
+      "artifact": "review/gpt2_gate_fixed512_failure_smoke.json",
+      "status": "passed",
+      "peak_rss_kib": 760480
+    },
+    {
+      "artifact": "review/gpt2_gate_fixed512_analyzer_smoke.json",
+      "status": "passed",
+      "peak_rss_kib": 813048,
+      "peak_child_rss_kib": 872852
+    }
+  ],
+  "counts": {
+    "new_forwards": 1352,
+    "main_records": 680,
+    "suffix_controls": 672,
+    "main_checks": 744,
+    "gate_context_checks": 10240,
+    "prefix_references": 680,
+    "cross_length_pairs": 0,
+    "snapshot_states": 40,
+    "summaries": 168,
+    "segments": 336,
+    "contrasts": 1024,
+    "paired_groups": 256,
+    "unexposed_raw_contrasts": 960
+  },
+  "pretrained_model_loaded": false,
+  "gpu_used": false,
+  "old_runners_hash_unchanged": true,
+  "old_runs_still_failed": true,
+  "pending": "Independent final-byte implementation signoff; root owns any later GPU launch."
+}

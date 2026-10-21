@@ -9,7 +9,11 @@ def main():
     manifest=json.loads((ROOT/'manifests/transfer_numeric_export.json').read_text())
     assert manifest and len({m['run'] for m in manifest})==len(manifest)
     actual={p.parent.name for p in (ROOT/'results/pulse_transfer').glob('*/per_token_numeric.npz')}
-    assert actual=={m['run'] for m in manifest}
+    gate_manifest=ROOT/'manifests/gate_numeric_export.json'
+    separate_gate_runs=set()
+    if gate_manifest.exists():
+        separate_gate_runs={m['run']for m in json.loads(gate_manifest.read_text())if m['records']>0}
+    assert actual=={m['run'] for m in manifest}|separate_gate_runs
     results=[]
     for m in manifest:
         run=ROOT/'results/pulse_transfer'/m['run'];path=run/'per_token_numeric.npz'

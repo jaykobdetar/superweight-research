@@ -1,0 +1,1067 @@
+{
+  "status": "passed",
+  "checks": [
+    "frozen code, completed counts, recorded checkpoint/precision/map closure and preserved failed V1/V2",
+    "exact calibration reuse, independent FP64 means/covariance/eigenvalues; earlier full calibration audit remains applicable",
+    "680 raw per-token reductions and both C/P bootstrap summaries for full/early/later and n4/n3 exposure views",
+    "all 1024/960 full/unexposed raw contrasts and512 independently seeded paired bootstrap summaries",
+    "all680 prefix references,672 saved suffix comparisons,640 source identities and10240 operation records; independent gate formula audit",
+    "40 fixed QKV snapshots independently reconstructed FP64; sourceV zero, mixture/gate delivery and80 prefix context fingerprints checked"
+  ],
+  "records": 680,
+  "scientific_summaries": 168,
+  "segment_summaries": 336,
+  "raw_metric_closures": 72,
+  "calibration_max_eigenvalue_error": 1.2079226507921703e-13,
+  "calibration_residual_cumulative_variance": {
+    "4": {
+      "1": 0.6111586692733988,
+      "3": 0.870379966057805,
+      "6": 0.9543859880317118
+    },
+    "5": {
+      "1": 0.431616766153525,
+      "3": 0.7547070428702428,
+      "6": 0.9044030947815042
+    },
+    "6": {
+      "1": 0.4925709244298055,
+      "3": 0.7557449052214774,
+      "6": 0.9241065595059698
+    },
+    "7": {
+      "1": 0.40468800351318907,
+      "3": 0.7001905544329198,
+      "6": 0.8814181080848389
+    },
+    "8": {
+      "1": 0.43935938052018797,
+      "3": 0.7432551213858938,
+      "6": 0.8876036761312549
+    },
+    "9": {
+      "1": 0.4509023577178403,
+      "3": 0.7249338569080199,
+      "6": 0.8932137147990309
+    },
+    "10": {
+      "1": 0.5601662042604374,
+      "3": 0.8214916475057413,
+      "6": 0.9346065840572174
+    },
+    "11": {
+      "1": 0.4782428633950337,
+      "3": 0.869519310303121,
+      "6": 0.9497977541325279
+    }
+  },
+  "main_gate_checks": 5120,
+  "suffix_gate_checks": 5120,
+  "source_identity_records": 640,
+  "prefix_references": 680,
+  "suffix_saved_array_closures": 672,
+  "all_logit_context_runtime_hash_closures": 672,
+  "max_cpu_map_error": 7.62939453125e-06,
+  "operation_error_maxima": {
+    "conditional_error": 4.76837158203125e-05,
+    "native_reconstruction_error": 2.09808349609375e-05,
+    "mixed_reconstruction_error": 2.682209014892578e-05,
+    "sigmoid_context_error": 2.002716064453125e-05,
+    "fullrank_logit_error": 1.33514404296875e-05,
+    "fullrank_mass_error": 4.76837158203125e-07,
+    "fullrank_context_error": 1.9073486328125e-06,
+    "formula_error": 0.0
+  },
+  "active_target_endpoints": {
+    "zeros": 0,
+    "ones": 488572
+  },
+  "max_gain": 19538970624.0,
+  "heldout_centered_retention": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.6455770848117725,
+        "pca3": 0.884718317778422,
+        "pca6": 0.9601756060357858,
+        "qr1": 0.09351226773124399,
+        "qr3": 0.3668664991769568,
+        "qr6": 0.47286437203310827
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.387379328343362,
+        "pca3": 0.7560561348485989,
+        "pca6": 0.9049797724681364,
+        "qr1": 0.06224215349455746,
+        "qr3": 0.21603189269783052,
+        "qr6": 0.7233414480178602
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4786027798839319,
+        "pca3": 0.7164482134955181,
+        "pca6": 0.9161383591964856,
+        "qr1": 0.044259345336725195,
+        "qr3": 0.13792503223338184,
+        "qr6": 0.3708625669335466
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.3621293753354531,
+        "pca3": 0.6969868384696932,
+        "pca6": 0.8838295088582213,
+        "qr1": 0.09556705395284089,
+        "qr3": 0.25189663859556144,
+        "qr6": 0.44106872481887616
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.41957835435647717,
+        "pca3": 0.7350711795817768,
+        "pca6": 0.8761891220630615,
+        "qr1": 0.028993336860224633,
+        "qr3": 0.32102076726489376,
+        "qr6": 0.5513525271974072
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4342110885256288,
+        "pca3": 0.735907535034389,
+        "pca6": 0.8936951962106415,
+        "qr1": 0.06289039147130572,
+        "qr3": 0.2064543468257467,
+        "qr6": 0.6210275541934328
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.558193600184619,
+        "pca3": 0.8158550238380838,
+        "pca6": 0.9197763238992163,
+        "qr1": 0.11786980982806579,
+        "qr3": 0.3068112563339113,
+        "qr6": 0.5457584341371731
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5442267794454286,
+        "pca3": 0.8451904115288876,
+        "pca6": 0.9376762858481028,
+        "qr1": 0.10172909773281326,
+        "qr3": 0.4411453288838952,
+        "qr6": 0.632505044466461
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.6417964107840081,
+        "pca3": 0.8847190057738232,
+        "pca6": 0.9602863462032994,
+        "qr1": 0.09553551821516269,
+        "qr3": 0.36675337035540395,
+        "qr6": 0.47315883879714477
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.3917701924906166,
+        "pca3": 0.7600684893481406,
+        "pca6": 0.9068173426592803,
+        "qr1": 0.06165101788473997,
+        "qr3": 0.21573699666585758,
+        "qr6": 0.7259020585845982
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.48304666325763296,
+        "pca3": 0.7231490963570901,
+        "pca6": 0.91754424275095,
+        "qr1": 0.04395681690056986,
+        "qr3": 0.1360055151149722,
+        "qr6": 0.36967949247107745
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.3592925997195903,
+        "pca3": 0.6962896162673273,
+        "pca6": 0.8825828013614425,
+        "qr1": 0.09592287917898258,
+        "qr3": 0.2490997882527229,
+        "qr6": 0.43740371851364035
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.41839533163842624,
+        "pca3": 0.7365903920247597,
+        "pca6": 0.8767706039206967,
+        "qr1": 0.02859510131147958,
+        "qr3": 0.3235735081001024,
+        "qr6": 0.5540897539544575
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.43463593979627463,
+        "pca3": 0.7364777982541583,
+        "pca6": 0.8930507254459333,
+        "qr1": 0.06286832422130113,
+        "qr3": 0.20790769061792677,
+        "qr6": 0.6250685104117198
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5605778180625693,
+        "pca3": 0.8152624545971472,
+        "pca6": 0.9194185150911993,
+        "qr1": 0.11923409355180574,
+        "qr3": 0.3109610050984296,
+        "qr6": 0.5489663433246846
+      }
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5479182126736653,
+        "pca3": 0.8431001894913733,
+        "pca6": 0.9369464413658456,
+        "qr1": 0.10329876488314113,
+        "qr3": 0.4477233791751253,
+        "qr6": 0.6324472473974566
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.61257329226527,
+        "pca3": 0.871137394490203,
+        "pca6": 0.9595408419831448,
+        "qr1": 0.09950864537977545,
+        "qr3": 0.3636095519440883,
+        "qr6": 0.46757832448321507
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4866878662562932,
+        "pca3": 0.7557872703921571,
+        "pca6": 0.9060475601517879,
+        "qr1": 0.05505503631352172,
+        "qr3": 0.18822282651681724,
+        "qr6": 0.710447969718017
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5187912559670838,
+        "pca3": 0.7718090593101343,
+        "pca6": 0.92339771137477,
+        "qr1": 0.03689819804293775,
+        "qr3": 0.12661225813131094,
+        "qr6": 0.36914960396597885
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4670529877688036,
+        "pca3": 0.7124985126084867,
+        "pca6": 0.8843714703554441,
+        "qr1": 0.07861124610342182,
+        "qr3": 0.23653401986366865,
+        "qr6": 0.4591100048148124
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.44920459186427875,
+        "pca3": 0.7757811756856499,
+        "pca6": 0.8989324782175485,
+        "qr1": 0.0264701227495207,
+        "qr3": 0.3647279291368396,
+        "qr6": 0.5758955788692767
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4794903450627081,
+        "pca3": 0.7263524778397439,
+        "pca6": 0.8826166366827334,
+        "qr1": 0.06823813226686702,
+        "qr3": 0.20708135456776308,
+        "qr6": 0.5922794466795906
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5518796787230968,
+        "pca3": 0.820444335352983,
+        "pca6": 0.9304129476769114,
+        "qr1": 0.09999508030366741,
+        "qr3": 0.2624526796951414,
+        "qr6": 0.5578424184409712
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "natural",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5311419722187433,
+        "pca3": 0.8684308784107018,
+        "pca6": 0.9463269646031454,
+        "qr1": 0.09221187588987183,
+        "qr3": 0.4268031463139532,
+        "qr6": 0.6396837856827503
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.6101976997885936,
+        "pca3": 0.8720326541064761,
+        "pca6": 0.9601347864131928,
+        "qr1": 0.10269128578017875,
+        "qr3": 0.366114905420559,
+        "qr6": 0.4699859298253315
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.49242170897614046,
+        "pca3": 0.759133234383479,
+        "pca6": 0.9086882946884765,
+        "qr1": 0.053862712010759824,
+        "qr3": 0.1881821624584738,
+        "qr6": 0.7139804678883587
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5232679099667874,
+        "pca3": 0.7767585704949453,
+        "pca6": 0.9247062187621476,
+        "qr1": 0.03672496754457037,
+        "qr3": 0.12436328966250805,
+        "qr6": 0.3687315694543183
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4638404818988649,
+        "pca3": 0.7122165980864491,
+        "pca6": 0.8835719016399971,
+        "qr1": 0.07838060778643244,
+        "qr3": 0.23358836626009602,
+        "qr6": 0.45444398993755025
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4485706628777638,
+        "pca3": 0.7766046588970017,
+        "pca6": 0.8987920766934951,
+        "qr1": 0.026780815960867024,
+        "qr3": 0.37015440265788563,
+        "qr6": 0.5806319434721067
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4878962727644634,
+        "pca3": 0.7311650704964678,
+        "pca6": 0.8829812597546823,
+        "qr1": 0.06754203547674584,
+        "qr3": 0.20780499953069578,
+        "qr6": 0.5967648233106296
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5614607538348501,
+        "pca3": 0.8246498743568488,
+        "pca6": 0.9313346373853398,
+        "qr1": 0.10073379805235036,
+        "qr3": 0.26393239029273363,
+        "qr6": 0.556885867894996
+      }
+    },
+    {
+      "corpus": "dubois",
+      "identity": "bos",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5024229298537641,
+        "pca3": 0.8782815798311544,
+        "pca6": 0.9502409687527212,
+        "qr1": 0.09071891042937141,
+        "qr3": 0.41062428639533255,
+        "qr6": 0.6514596864186022
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5953692372549317,
+        "pca3": 0.8689465090452971,
+        "pca6": 0.9563570255394823,
+        "qr1": 0.1055713476527624,
+        "qr3": 0.35339905534439786,
+        "qr6": 0.46392629956846676
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4418049522365686,
+        "pca3": 0.7453570715718477,
+        "pca6": 0.8979465555795451,
+        "qr1": 0.06092948616257416,
+        "qr3": 0.21809021717365334,
+        "qr6": 0.7243375238028825
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5081745744053652,
+        "pca3": 0.734339006901118,
+        "pca6": 0.9215285433174261,
+        "qr1": 0.03298243896274301,
+        "qr3": 0.1326358605975145,
+        "qr6": 0.3489974155107748
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.412356842490253,
+        "pca3": 0.6774863150949212,
+        "pca6": 0.8675580438172832,
+        "qr1": 0.07744290988438535,
+        "qr3": 0.22728699052881138,
+        "qr6": 0.46511444326386325
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4095557678640256,
+        "pca3": 0.7377511776719184,
+        "pca6": 0.8871893727271714,
+        "qr1": 0.025322324298223193,
+        "qr3": 0.34149984210624573,
+        "qr6": 0.5767680392317065
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.46060757466129765,
+        "pca3": 0.7152993829998322,
+        "pca6": 0.8800571995481564,
+        "qr1": 0.07137228915440134,
+        "qr3": 0.21024933722632905,
+        "qr6": 0.5971207539709603
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.555765507545805,
+        "pca3": 0.8028713121313,
+        "pca6": 0.9183310869656964,
+        "qr1": 0.10357528640129533,
+        "qr3": 0.25799912380860873,
+        "qr6": 0.5654492564528932
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "natural",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.48965991849404894,
+        "pca3": 0.8625076975775269,
+        "pca6": 0.9468907184824673,
+        "qr1": 0.102716307621173,
+        "qr3": 0.41775288149302353,
+        "qr6": 0.6531338369473552
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5948495885000341,
+        "pca3": 0.8712710139558355,
+        "pca6": 0.9570265747501511,
+        "qr1": 0.10796584931614064,
+        "qr3": 0.35487763524668575,
+        "qr6": 0.4661184769389317
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4484692568115912,
+        "pca3": 0.7482290005874875,
+        "pca6": 0.9001030377207718,
+        "qr1": 0.06134134221077625,
+        "qr3": 0.22091807978194947,
+        "qr6": 0.7276005017437891
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.518932551509857,
+        "pca3": 0.7396236896234245,
+        "pca6": 0.9223901915642758,
+        "qr1": 0.03237236770959477,
+        "qr3": 0.12982533647290762,
+        "qr6": 0.3420115181243308
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.41105171816441616,
+        "pca3": 0.6762546904606809,
+        "pca6": 0.8666511390031263,
+        "qr1": 0.07808964348251923,
+        "qr3": 0.2263718801113747,
+        "qr6": 0.4648394774414499
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.40904930856313865,
+        "pca3": 0.7372736443132344,
+        "pca6": 0.8868018983158283,
+        "qr1": 0.025218103433017017,
+        "qr3": 0.3436407847120293,
+        "qr6": 0.5781027507018293
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4636242531037796,
+        "pca3": 0.7176043710762621,
+        "pca6": 0.8801137899463974,
+        "qr1": 0.07394302278293192,
+        "qr3": 0.21192073956995866,
+        "qr6": 0.5980534189833271
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5608485644390824,
+        "pca3": 0.8042729085976572,
+        "pca6": 0.9180616528583704,
+        "qr1": 0.103300635957618,
+        "qr3": 0.25696420938879927,
+        "qr6": 0.5604285934862336
+      }
+    },
+    {
+      "corpus": "hobbes",
+      "identity": "bos",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.48931778017547906,
+        "pca3": 0.8606724582991413,
+        "pca6": 0.9457723617640308,
+        "qr1": 0.10559586703126156,
+        "qr3": 0.42247556510005446,
+        "qr6": 0.6541255131245228
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.7701921583938564,
+        "pca3": 0.8820628119638059,
+        "pca6": 0.9364538859535945,
+        "qr1": 0.057410809470836745,
+        "qr3": 0.3115241507361937,
+        "qr6": 0.47536578878911223
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.2556591744919904,
+        "pca3": 0.8358144719991274,
+        "pca6": 0.9400390724591648,
+        "qr1": 0.037151848581767566,
+        "qr3": 0.14858960912507313,
+        "qr6": 0.6653172441659789
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.30219918555679226,
+        "pca3": 0.5486548181968368,
+        "pca6": 0.898024961373382,
+        "qr1": 0.03329516156352822,
+        "qr3": 0.14478381695786482,
+        "qr6": 0.3451134366474799
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.21512836473239003,
+        "pca3": 0.6388680985199486,
+        "pca6": 0.8358217684076148,
+        "qr1": 0.12193072120856714,
+        "qr3": 0.22246293095675132,
+        "qr6": 0.4459575276978249
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.43860941230112177,
+        "pca3": 0.6983186832113933,
+        "pca6": 0.8478972198512416,
+        "qr1": 0.04266077732526732,
+        "qr3": 0.34616945784151365,
+        "qr6": 0.5539807318312364
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4472145520979016,
+        "pca3": 0.7119932116844508,
+        "pca6": 0.8426153666893027,
+        "qr1": 0.07924401187157457,
+        "qr3": 0.21596301124409695,
+        "qr6": 0.5919100817169088
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5921100062078964,
+        "pca3": 0.7874274473512292,
+        "pca6": 0.8766225887049461,
+        "qr1": 0.1067191079568648,
+        "qr3": 0.24475376929899179,
+        "qr6": 0.47448439718475627
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "natural",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5005622912817635,
+        "pca3": 0.9177127266425306,
+        "pca6": 0.9620499061291697,
+        "qr1": 0.03925173794192667,
+        "qr3": 0.291622770003322,
+        "qr6": 0.6433432992533373
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 4,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.7758331894430929,
+        "pca3": 0.8828940091009947,
+        "pca6": 0.937700126398592,
+        "qr1": 0.055400680638525164,
+        "qr3": 0.3095685589241506,
+        "qr6": 0.47328578752915823
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 5,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.25080580240281175,
+        "pca3": 0.8338968421025128,
+        "pca6": 0.9397538927547777,
+        "qr1": 0.03654050158490483,
+        "qr3": 0.1474939724836568,
+        "qr6": 0.6639701331901737
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 6,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.29897974237073066,
+        "pca3": 0.547639701181661,
+        "pca6": 0.8981515037544539,
+        "qr1": 0.03287531006430213,
+        "qr3": 0.14830033909127152,
+        "qr6": 0.34684240025472235
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 7,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.219486645598661,
+        "pca3": 0.6450305911968844,
+        "pca6": 0.8421290509685169,
+        "qr1": 0.12318691625165178,
+        "qr3": 0.21722043424849224,
+        "qr6": 0.44145739745277396
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 8,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4338419213433995,
+        "pca3": 0.6984727401923646,
+        "pca6": 0.8490983070050505,
+        "qr1": 0.04277459641104195,
+        "qr3": 0.35210913431413676,
+        "qr6": 0.5568052838010754
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 9,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4461955964613938,
+        "pca3": 0.7068859434937238,
+        "pca6": 0.8377092469472864,
+        "qr1": 0.08042042732872719,
+        "qr3": 0.22105990350955765,
+        "qr6": 0.5965827668863235
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 10,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.5906260093140137,
+        "pca3": 0.7874967353560425,
+        "pca6": 0.8761614661994493,
+        "qr1": 0.10674453095398664,
+        "qr3": 0.24713405195738922,
+        "qr6": 0.476191213244647
+      }
+    },
+    {
+      "corpus": "optimizers",
+      "identity": "bos",
+      "layer": 11,
+      "vectors": 2040,
+      "definition": "centered heldout P covariance of b-log(q), scored queries1..510; descriptive only",
+      "retention": {
+        "pca1": 0.4916396597733797,
+        "pca3": 0.9159883612757873,
+        "pca6": 0.9604318234081047,
+        "qr1": 0.03871053159722011,
+        "qr3": 0.2923962688320511,
+        "qr6": 0.6429365688779634
+      }
+    }
+  ],
+  "snapshot_states": 40,
+  "FP64_snapshot_max_errors": {
+    "b": 2.983192511507582e-05,
+    "mass": 8.376667921528025e-07,
+    "stable_mixture": 1.0593312928186549e-05,
+    "actual_context": 7.48415494555843e-06,
+    "delivered_fp64": 2.6374766903813907e-05,
+    "delivered_saved_formula": 0.0
+  },
+  "snapshot_context_fingerprints": 80,
+  "source_hashes": {
+    "gpt2_gate_fixed512.py": "23c9104c4b80f72c13daee601373a4f026b6967bc21124411a85ec5f79cff1d0",
+    "analyze_gate_fixed512.py": "3a76791f0fec956765c7304a1b8459b101cff88c0d1e4a7710a73ddd11d9c6bd",
+    "GPT2_GATE_FIXED512.md": "75a567b57927bf15e2f04b34be4d9ab6ddd94c3ebddfb47573fd525150cba2d7"
+  },
+  "reported_resources": {
+    "wall_seconds": 226.99718761444092,
+    "peak_gpu_allocated_bytes": 966876672,
+    "peak_gpu_reserved_bytes": 1061158912,
+    "peak_process_rss_kib": 2655644
+  },
+  "review_peak_rss_kib": 1211524,
+  "pretrained_loaded": false,
+  "gpu_used": false,
+  "limits": "Successful full logits/contexts outside fixed snapshots are hash/runtime evidence only; KL arrays/aggregates audited but unavailable logits prevent independent KL recomputation for every record. Recorded final model closure was not independently reloaded. Fixed512 early/later views share passages; intervals condition on calibration and no multiplicity correction. V1/V2 remain failed."
+}

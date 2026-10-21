@@ -1,0 +1,15 @@
+# Independent Report11 review
+
+Status: scientifically ready. No numerical or causal-interpretation blocker found. The minor figure-interval wording refinement sent to the parent is recorded below; actual portable replay remains a separately reviewed event.
+
+All 136 rounded table cells match the saved unexposed summaries. Independently recomputed narrative checks include the PC1/rank6 ranges against both P and C, all 24 PCA-versus-QR agreement comparisons, rank-one loss signs and paired intervals, six rank-six mean comparisons favoring QR with five intervals spanning zero, all eight PC1-removal fidelity comparisons, position-only early/later ranges, and resource conversions/counts. Evidence is in `report11_claims_recomputed.json` and the previously completed `gpt2_gate_fixed512_numerical_audit.json`. The 244318 endpoint count is explicitly main-only; the larger main-plus-suffix audit count is a different scope.
+
+The report appropriately distinguishes the zero-source-value P baseline from native C; preserves both failed execution-length studies; identifies post-failure V2 thresholds; excludes the exposed Wiki passage in the primary view; uses actual n3/n4 intervals conditional on frozen calibration; and makes no native-trajectory, universal mechanism, speedup, generation-fidelity, or priority claim. Fixed physical512 early score views are not described as standalone128 executions. Source-query preservation is explicitly relative to P. The worst runtime gain is outside fixed raw snapshots, so the parent is adding that limitation explicitly. Successful absent full logit/context arrays remain an acknowledged audit limit.
+
+Visual/source inspection of the mechanism and loss figures agrees with these scopes. Minor clarification requested: change “The figures show paired bootstrap95% intervals” to specify the perplexity figure; agreement panels show means only. This does not alter any result.
+
+Primary-source attribution was independently checked against Fu et al. Appendix B.2, equations14–16 and Appendix A Table3 (https://arxiv.org/html/2602.01203v1); Qiu et al. abstract and sections2/4 (https://arxiv.org/html/2505.06708v1); and Zhou et al. sections3.2–3.4 (https://arxiv.org/html/2608.11805v1). These support the stated existing gate algebra, output gating and low-rank/cross-head precedents. Fu's all-head Qwen3-8B zeroing has AVG64.10 versus70.36 unchanged, so the report correctly avoids a general negligible-impact claim. SSRN access remains an unresolved comparison, not evidence of novelty. This was a focused attribution check, not an exhaustive literature search.
+
+Highest-value next discriminator remains prespecified layer-isolated versus all-layer maps using the unchanged calibration, with loss and fidelity both reported. Any fresh-domain fit should remain separately calibrated and confirmed. Current evidence does not choose between cumulative layer changes and calibration-domain mismatch.
+
+No model/GPU was loaded by this reviewer. No main report or experiment source was edited.

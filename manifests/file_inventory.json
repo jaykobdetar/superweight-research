@@ -1,5 +1,5 @@
 {
-  "scope": "All release files except this self-referential inventory; reviewed OLMo plus eleven transfer batches.",
+  "scope": "All local release files except this self-referential inventory; reviewed OLMo, eleven transfer batches, completed fixed512 gate study, its two failed predecessors, numerical diagnostic and calibration rebuild. Future localization work excluded.",
   "files": [
     {
       "path": ".gitignore",
@@ -8,8 +8,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4706,
-      "sha256": "f9c652cb348a92fd3dd97c413f04e99679cc8594862cb959f84bbef368287ba0"
+      "bytes": 5442,
+      "sha256": "ff19a60726102f82350c5c7c254b0caf8971240029c5cc4ba0ccb47efe5dfaac"
     },
     {
       "path": "docs/COORDINATE_ERRATUM.md",
@@ -20,6 +20,16 @@
       "path": "docs/GPT2_FOLLOWUP.md",
       "bytes": 16374,
       "sha256": "cda2865d2133cd5e90ea57a97c26ba5e8460d1ad5adbda837abfbd0f9310309e"
+    },
+    {
+      "path": "docs/GPT2_GATE_REPRODUCING.md",
+      "bytes": 5871,
+      "sha256": "25a73e60f2377070310503997f952ffff111be83c5e15d4c18091df28a385c12"
+    },
+    {
+      "path": "docs/GPT2_GATE_SUBSPACES.md",
+      "bytes": 24259,
+      "sha256": "f1f3809e42a8df0e73c9f245afbac4e650a7b160edb7948e244f53ddd963f09f"
     },
     {
       "path": "docs/GPT2_QUERY_PATHWAYS.md",
@@ -33,8 +43,8 @@
     },
     {
       "path": "docs/NOVELTY.md",
-      "bytes": 16383,
-      "sha256": "e76b9cd32ffbffff11a7002373daa3bfeab7c2daf612e96d45ac2a7d9055ca99"
+      "bytes": 17639,
+      "sha256": "d8979d43c62922ff096bdbc6f8bd95b2ace8f816930eca128b7f83095e3461a7"
     },
     {
       "path": "docs/REPORT.md",
@@ -387,6 +397,36 @@
       "sha256": "48d7bb7def44f54f135838327b27d4318ed34b7bf14ade7b4b16060dbca2671b"
     },
     {
+      "path": "experiments/pulse_transfer/GATE_CALIBRATION_REBUILD.md",
+      "bytes": 3250,
+      "sha256": "4a9b3aa8cd0c442cfb295a1f035de95421ad66fb8edf59635bfed26878204981"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_GATE_FIXED512.md",
+      "bytes": 9268,
+      "sha256": "75a567b57927bf15e2f04b34be4d9ab6ddd94c3ebddfb47573fd525150cba2d7"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_GATE_FIXED_SHAPE_PROPOSAL.md",
+      "bytes": 6050,
+      "sha256": "64b8c10cd4c143a86d8cb680696c7ba2bbebc95270097a1596bebe8291ac39d3"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_GATE_SUBSPACE.md",
+      "bytes": 8777,
+      "sha256": "84cb95cf7ef48f6d70ea44663ab3559ef16d38396449de31d0ebe36edff59b40"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_GATE_SUBSPACE_V2.md",
+      "bytes": 16196,
+      "sha256": "40d8410fa20cd806699abb023c3cad17deba0695acfd2ad26ca97f47343eb48c"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_GATE_SUBSPACE_V2_PROPOSAL.md",
+      "bytes": 13017,
+      "sha256": "ac39d290df29a2981373b6212cbbe92d0443c187bc09cb69ebc8c586b2ba1536"
+    },
+    {
       "path": "experiments/pulse_transfer/GPT2_GROUPS.md",
       "bytes": 3038,
       "sha256": "72df921048a38b7caccf36351b023707af37aa50b031d0c1002b931a81a0075e"
@@ -395,6 +435,11 @@
       "path": "experiments/pulse_transfer/GPT2_LAYER_WRITES.md",
       "bytes": 3821,
       "sha256": "9a3c9b81fe8a42323dc5cd68486c3358ed846809b5544d65fcebcc9ed61a51fa"
+    },
+    {
+      "path": "experiments/pulse_transfer/GPT2_PREFIX_DIAGNOSTIC.md",
+      "bytes": 6186,
+      "sha256": "c0959ccc6315a2f59f8d2862b1d2d0462b6a244d101418b934b22b64f214ccd7"
     },
     {
       "path": "experiments/pulse_transfer/GPT2_QUERY_MIXTURE.md",
@@ -432,6 +477,11 @@
       "sha256": "337f5f6ee74ef9cecde06372f46699c2d74e9244872ffe37dfd4d021a792f495"
     },
     {
+      "path": "experiments/pulse_transfer/HYPOTHESES_GATE.md",
+      "bytes": 19243,
+      "sha256": "fa4d8a9ed4626c97d75c154bccbbf9ffc619310b1ffe29d5cd49259389d00620"
+    },
+    {
       "path": "experiments/pulse_transfer/HYPOTHESES_QUERY.md",
       "bytes": 11539,
       "sha256": "85df59dce78d49917419bc6f205c2d4f13a0a917e6c29e75c1b611d3ea1d1546"
@@ -455,6 +505,21 @@
       "path": "experiments/pulse_transfer/analyze_followup.py",
       "bytes": 4354,
       "sha256": "1d13551c3e6763d7d6894ea33ea5290d48f822112d46884fc2c19617505dbea8"
+    },
+    {
+      "path": "experiments/pulse_transfer/analyze_gate_fixed512.py",
+      "bytes": 23935,
+      "sha256": "3a76791f0fec956765c7304a1b8459b101cff88c0d1e4a7710a73ddd11d9c6bd"
+    },
+    {
+      "path": "experiments/pulse_transfer/analyze_gate_subspace.py",
+      "bytes": 16796,
+      "sha256": "0b65d05ec9afec48f182ab7fecff2cd5cc35e3a47ae41df51ac410215f47cdce"
+    },
+    {
+      "path": "experiments/pulse_transfer/analyze_gate_subspace_v2.py",
+      "bytes": 25919,
+      "sha256": "c96d43612206d652b5171efa2ecb028740c04e43d79bc92f257775bad7a51f66"
     },
     {
       "path": "experiments/pulse_transfer/analyze_layer_writes.py",
@@ -497,9 +562,34 @@
       "sha256": "76f209e5112582a351620b272d50d88612d831635ffc1e06d655cdc69d1c040e"
     },
     {
+      "path": "experiments/pulse_transfer/build_gate_diagram.py",
+      "bytes": 2292,
+      "sha256": "6a54b4ecb74be430f7df4048f192ae8a2a588065f8dc39649f9d217a97a485e6"
+    },
+    {
+      "path": "experiments/pulse_transfer/build_gate_result_figures.py",
+      "bytes": 2985,
+      "sha256": "878692bc3a40c3fe61bd3ba003c5f3ed98b8ebd971d5dfc71234cc85f53c8ba4"
+    },
+    {
+      "path": "experiments/pulse_transfer/build_gate_spectrum_figure.py",
+      "bytes": 1461,
+      "sha256": "d83857ea343bef1bf5c0c15aa28cba1897b6c45343434c9c4d7445a3248d7d91"
+    },
+    {
+      "path": "experiments/pulse_transfer/build_prefix_diagnostic_figure.py",
+      "bytes": 1701,
+      "sha256": "9a1fc2da85ea7d9fcddfede9e35a8ba2276925b59019c4cf8d15110d82d0c96a"
+    },
+    {
       "path": "experiments/pulse_transfer/build_report10.py",
       "bytes": 11003,
       "sha256": "7686545e85e5fb5807153df772eaeae799a89641080e33e346eb1cc2c8b4c689"
+    },
+    {
+      "path": "experiments/pulse_transfer/build_report11.py",
+      "bytes": 7939,
+      "sha256": "4fe34025ee31b9beb1ace69b0d4571cfc6ded32ab7699e1ef1703af5f37027e1"
     },
     {
       "path": "experiments/pulse_transfer/build_report8.py",
@@ -520,6 +610,26 @@
       "path": "experiments/pulse_transfer/fresh_inputs_v2.py",
       "bytes": 2570,
       "sha256": "7a0d251b577c6af917d92ba5ccf6b3b6f57df6ff2d2cae78f539206baf330519"
+    },
+    {
+      "path": "experiments/pulse_transfer/gate_inputs.py",
+      "bytes": 2696,
+      "sha256": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d"
+    },
+    {
+      "path": "experiments/pulse_transfer/gpt2_gate_fixed512.py",
+      "bytes": 22283,
+      "sha256": "23c9104c4b80f72c13daee601373a4f026b6967bc21124411a85ec5f79cff1d0"
+    },
+    {
+      "path": "experiments/pulse_transfer/gpt2_gate_subspace.py",
+      "bytes": 30031,
+      "sha256": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e"
+    },
+    {
+      "path": "experiments/pulse_transfer/gpt2_gate_subspace_v2.py",
+      "bytes": 28066,
+      "sha256": "8a1b6b08b5d1e0d379247455fda610ebb98a4c3102161d37cc6531c8ba807dda"
     },
     {
       "path": "experiments/pulse_transfer/gpt2_groups.py",
@@ -567,6 +677,21 @@
       "sha256": "84a96ee919c422f72df04c9a55765368095e0ca2c03265c74a1f1afe20f1a1e2"
     },
     {
+      "path": "experiments/pulse_transfer/native_prefix_diagnostic.py",
+      "bytes": 21772,
+      "sha256": "561c3342d4810ece74a9f183c83c3e7bd81ab952eabf4c21b1d977a81ad40d4d"
+    },
+    {
+      "path": "experiments/pulse_transfer/prepare_gate_replay_inputs.py",
+      "bytes": 2588,
+      "sha256": "3d5202ea71e51908fa1399f7b66adae6a888f6e14f54becee3b26217a2f3ef95"
+    },
+    {
+      "path": "experiments/pulse_transfer/rebuild_gate_calibration.py",
+      "bytes": 11736,
+      "sha256": "43172c7ee68af83d186859e8a3a29a92eb702682a8c53e4bb0f2454fc57b4b30"
+    },
+    {
       "path": "experiments/pulse_transfer/report10_mixture_findings.md",
       "bytes": 5976,
       "sha256": "e4ac88f945e0ae2e9ea138c92c6d68911e229877f7adbedfac54ba59a1e3665d"
@@ -582,6 +707,21 @@
       "sha256": "c81438639ff7138edc4de076fb9b9f5136d45073d49460dd250390454e1e1bcd"
     },
     {
+      "path": "experiments/pulse_transfer/report11_gate_findings.md",
+      "bytes": 6348,
+      "sha256": "b29a5c81e350bffc3ce23b8655900241c647b8e5929e09d7880db621ff0f5ab5"
+    },
+    {
+      "path": "experiments/pulse_transfer/report11_methods.md",
+      "bytes": 8499,
+      "sha256": "7282c6b359dff582289a0c7fbbd4d42358a2b22768a1493fddba23ab96f00abb"
+    },
+    {
+      "path": "experiments/pulse_transfer/report11_prior_findings.md",
+      "bytes": 2350,
+      "sha256": "bb4a7adc63839d93841b77aa6f72e9eff8c99309038c99bf2475171b64bf338f"
+    },
+    {
       "path": "experiments/pulse_transfer/report9_value_findings.md",
       "bytes": 2508,
       "sha256": "c4b5b18f32b2d6366948b73a24e067feb382aeaf6cc089c7564e42e1cf41975f"
@@ -590,6 +730,56 @@
       "path": "experiments/pulse_transfer/run_transfer.py",
       "bytes": 14865,
       "sha256": "16a0240a8c679de05c8875e50304b1bc9aabe90e2c4c376b2fc89eeaec0de044"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_intervention.png",
+      "bytes": 173534,
+      "sha256": "9dd35139f9a36c2c73e6a6e12a0f52fef881b540510092411730c2c0c9985b4e"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_intervention.svg",
+      "bytes": 78932,
+      "sha256": "fc5fc4baeddd7303c7fd0d8c3549411135ecd0c8dce96a1b714a2db66e7efdd4"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_rank_agreement.png",
+      "bytes": 266416,
+      "sha256": "74e61e75a99e961fc6f1e9ea9f2501fb7c0338f1b7199d8e4f0f4d192137d5bc"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_rank_agreement.svg",
+      "bytes": 146948,
+      "sha256": "bdf207f0a3c1bbaa79c067a61b3db54884cb2f97d572ba9439e013fdb1ad847e"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_rank_loss.png",
+      "bytes": 402872,
+      "sha256": "45e23b2ea7d2760b0ca10c0002384edecad58bb4813172e851c45d9a600c718d"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_rank_loss.svg",
+      "bytes": 210982,
+      "sha256": "c3aeff41ca1f82b7569b9d3520aa395f96472f36e3673d07c211c454955e4d36"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_spectrum.png",
+      "bytes": 170463,
+      "sha256": "66d1d1a356534271f26c44e2e20a4b91e06c69a99c4b4cc9d89212ee5d2eb3ea"
+    },
+    {
+      "path": "figures/gate_subspaces/gate_spectrum.svg",
+      "bytes": 87709,
+      "sha256": "4e31b1a27c3c81fd49ea9960b56a1569c4480dbbaff50ed810d6efd1933d5bf7"
+    },
+    {
+      "path": "figures/gate_subspaces/prefix_numerics.png",
+      "bytes": 135100,
+      "sha256": "564532111e49f9d3ceebb04d80aa8174d3052120c9bfa9ee662a0e0047757651"
+    },
+    {
+      "path": "figures/gate_subspaces/prefix_numerics.svg",
+      "bytes": 71550,
+      "sha256": "793112211a30c4caf89d8f962bd8b8bb5cde6a1abc6ea6b94f2c39a1feb89050"
     },
     {
       "path": "figures/geometry.png",
@@ -807,6 +997,41 @@
       "sha256": "b9261852332beb2282e3dfd25a259e27d85ca262e8ae30ea75f65b20f6e338fc"
     },
     {
+      "path": "manifests/gate_numeric_audit.json",
+      "bytes": 758,
+      "sha256": "9075536a54350a1ed672517391f825638a0674dbe8a74e94c6499735e72a3f08"
+    },
+    {
+      "path": "manifests/gate_numeric_export.json",
+      "bytes": 26711,
+      "sha256": "f7c1b85bbead4718ce6f1b48a3fb6abeeb18d659169acd92460615fd259e7d70"
+    },
+    {
+      "path": "manifests/gate_replay_numeric_comparison.json",
+      "bytes": 6376,
+      "sha256": "5e44aba8bfea9dd9f048a712d6f3919f20544166082d99aa4406e0003fdcf652"
+    },
+    {
+      "path": "manifests/gate_replay_private_comparison.json",
+      "bytes": 32526,
+      "sha256": "a38da9d644f20cf7a46d6111e7857805cc6d8f44b35ead69a7bde8aba7631477"
+    },
+    {
+      "path": "manifests/gate_replay_validation.json",
+      "bytes": 1067,
+      "sha256": "229a2c2106895f1d8ee187cfb71f2b1176f58bc35207000f86b55e1c564df82b"
+    },
+    {
+      "path": "manifests/gate_reproduction.json",
+      "bytes": 1870,
+      "sha256": "c2cedc24369cbf607083fa96f31ca1f81b13e3a7b53a3fb25fabd20f3b3553c5"
+    },
+    {
+      "path": "manifests/gate_review_export.json",
+      "bytes": 20837,
+      "sha256": "91833be92f5964f8eff876b7aff87669cf54246d284f1df67f1e944e48874ebf"
+    },
+    {
       "path": "manifests/input_sources.json",
       "bytes": 6930,
       "sha256": "f959fe13f12d23d2434f9df2e0620b48409badc89c91465cfcaf8d211af5a825"
@@ -873,8 +1098,8 @@
     },
     {
       "path": "manifests/transfer_source_export.json",
-      "bytes": 5415,
-      "sha256": "9ab2217a5598ec9e8bec5da85dc36bf5ee2257e0b06e0eb8d15c1caebfd86436"
+      "bytes": 8217,
+      "sha256": "5d2b91ff06127aefa3821f45449ba81bcd2947bd64da4f97c6a1da15349ccdc4"
     },
     {
       "path": "requirements-report.txt",
@@ -883,8 +1108,8 @@
     },
     {
       "path": "requirements.txt",
-      "bytes": 140,
-      "sha256": "8fd040189b373d9d3c81c168e274caf300a5b9fe814d5945aa94468122e5a21a"
+      "bytes": 162,
+      "sha256": "80fc0a15630adf76b442198986ae1fe3ae470823affc24a55ede8675fbb87d0f"
     },
     {
       "path": "results/pulse_causal_tranche/run/conditions.json",
@@ -2157,6 +2382,291 @@
       "sha256": "e179f4f2ae874d54d624a040d14fc47fd4aa7bf40e09027e5a7805f3e002c9d6"
     },
     {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/calibration_inputs.json",
+      "bytes": 3928,
+      "sha256": "866a858fc810fd2a56ec7eae199df36a4dc48f90ca454fa1cedc4419c9815bd9"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/calibration_operations.json",
+      "bytes": 56960,
+      "sha256": "e76e5efc9e097edabe67643c1159d6a22d4d585a28514396927cdde042389f2f"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/calibration_spectra.json",
+      "bytes": 2346166,
+      "sha256": "2910c3de477e1d137fb35dbb7f7a55fec583e795cb6c243332372b0c69bba138"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/data_manifest.json",
+      "bytes": 13443,
+      "sha256": "7f7abe557c9dd67df1d66c98499cdba258de8f021164950040a989bb553ec32c"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/manifest.json",
+      "bytes": 3463,
+      "sha256": "bb7b6a87354742508de3929a5b782c62980b58e875db044cc17d941e0e6f2dbd"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_calibration_rebuild/reference_comparison.json",
+      "bytes": 52103,
+      "sha256": "a203fd8fdfd1f12a7d2bcd2bde2b5ef6b04dd9b182b91f61f00958ea102f07a9"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/audit.json",
+      "bytes": 2416,
+      "sha256": "0f16d8da97afeec93bed55ad95ce6581324c33701c750ccf996a44aa0d8e5ac0"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/calibration_dependency.json",
+      "bytes": 2520,
+      "sha256": "b60b69a1aca1d9f49bd7b2abc839496f6161b2dd277592c13ec74ebfc1e44310"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/calibration_inputs.json",
+      "bytes": 3928,
+      "sha256": "866a858fc810fd2a56ec7eae199df36a4dc48f90ca454fa1cedc4419c9815bd9"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/calibration_operations.json",
+      "bytes": 58656,
+      "sha256": "a26e553b554fe9f155dd2b67cb1663177ba4a458a444919d4f787c3df75f191e"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/calibration_spectra.json",
+      "bytes": 2346166,
+      "sha256": "2910c3de477e1d137fb35dbb7f7a55fec583e795cb6c243332372b0c69bba138"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/checks.json",
+      "bytes": 188925,
+      "sha256": "252234f690d26d6c0adb7116dac8201e6e3d4131f47780e997b2591eb9e8a04c"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/conditions.json",
+      "bytes": 300,
+      "sha256": "124c212178082e8faa9b6980ed26434106c1bd3daefa1dbe83415f0d694c8790"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/data_manifest.json",
+      "bytes": 13443,
+      "sha256": "7f7abe557c9dd67df1d66c98499cdba258de8f021164950040a989bb553ec32c"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/gate_geometry.json",
+      "bytes": 6979577,
+      "sha256": "4d211bd99033bd4607ecdffce0f1ebd9252071c1d2abaa6846b03f4983cba8f3"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/manifest.json",
+      "bytes": 5831,
+      "sha256": "d63b1a768187a9995824c09ee3f690c5d452d9a35a39c2f46e554f4511ca231b"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/operation_checks.json",
+      "bytes": 8964950,
+      "sha256": "12d5bcf71e6961401decbc43e8bc9540eb65da95d08b7055975dc5290d0396e7"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/paired_contrasts.json",
+      "bytes": 176429,
+      "sha256": "35855182bf4b5ec453c7ae63c6542e6286cce914291e027da60d9574e0116b8a"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/paired_summary.json",
+      "bytes": 103151,
+      "sha256": "2438fa0098469baaa9ce99fb3d08beefc12cffda672e4b4401b69ce8c11ea361"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/per_token_index.json",
+      "bytes": 209299,
+      "sha256": "9b457939f3cb384a81d547523d1359f7d1b80ba6af4748bf7887a81a91c52935"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/per_token_numeric.npz",
+      "bytes": 4335573,
+      "sha256": "4027e39cbf81e0c081cb144959a1387915fe830787275ee9b23c15c9b0bbae33"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/segment_summary.json",
+      "bytes": 319781,
+      "sha256": "c819ab0219615f32dece8605d22e986fd9c97dc7eb064e323007b90e6f58309d"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/suffix_checks.json",
+      "bytes": 6122145,
+      "sha256": "80b99b1745d88f457bfac15ef7e42744b7e327ffd5bc87304f0381a7f56469ed"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/suffix_operations.json",
+      "bytes": 8849649,
+      "sha256": "ea1e18551553d85ad8022642a4e51bce8a61a5d754d092c2a68b065bbee7a3c0"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/summary.json",
+      "bytes": 148738,
+      "sha256": "6d6a8c93651dc929ecc9c255c96404a6530ade5722c3ee20804aa33524c1ed03"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/unexposed_paired_contrasts.json",
+      "bytes": 197683,
+      "sha256": "3b840f5ddb815af0a3aebea52416fe8f1e4f7f54ed0228d26e36efcd1a54a78b"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/unexposed_paired_summary.json",
+      "bytes": 110115,
+      "sha256": "051fd897c650c0a1b5b4462106f62dd2387a904750646070e197d89a6529f965"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/unexposed_segment_summary.json",
+      "bytes": 327048,
+      "sha256": "755268f10c334700bd76febf5068b4d17c2b450f99ad02836804229489bd6da0"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/unexposed_summary.json",
+      "bytes": 152357,
+      "sha256": "4ae0bf786812c7042202d7b42e7bcc7e615bc95498ad86aa720e89f73bcf77bd"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_fixed512_run/windows.jsonl",
+      "bytes": 442241,
+      "sha256": "a28e9e0c3ad53c258a9d6196b87a40a2c8fb282742cf253006b2671ad170cad7"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/calibration_inputs.json",
+      "bytes": 3928,
+      "sha256": "866a858fc810fd2a56ec7eae199df36a4dc48f90ca454fa1cedc4419c9815bd9"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/calibration_operations.json",
+      "bytes": 58656,
+      "sha256": "a26e553b554fe9f155dd2b67cb1663177ba4a458a444919d4f787c3df75f191e"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/calibration_spectra.json",
+      "bytes": 2346166,
+      "sha256": "2910c3de477e1d137fb35dbb7f7a55fec583e795cb6c243332372b0c69bba138"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/checks.json",
+      "bytes": 5926,
+      "sha256": "c85143b8163f92416ba4f47aa9428be7a15df499613b0bdddfcc01657b4f6001"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/conditions.json",
+      "bytes": 300,
+      "sha256": "124c212178082e8faa9b6980ed26434106c1bd3daefa1dbe83415f0d694c8790"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/data_manifest.json",
+      "bytes": 13443,
+      "sha256": "7f7abe557c9dd67df1d66c98499cdba258de8f021164950040a989bb553ec32c"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/manifest.json",
+      "bytes": 3374,
+      "sha256": "0a0b35192e76a1c56baf29ab7edd0458cf04f8b67b1d38afc7df7c7513884d31"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/operation_checks.json",
+      "bytes": 152107,
+      "sha256": "ede6993c1264ba8a2d0974ead7def7edcc9db4ed8028c7eadd49ec09986299db"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/per_token_index.json",
+      "bytes": 7907,
+      "sha256": "839e16ad964fc0a089cf58c3b11e589d2cfcb08770e2a410d1bae909cb32bec3"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/per_token_numeric.npz",
+      "bytes": 60184,
+      "sha256": "377a616d0012af2ad642cc6e3cc9cd796e46078aa006aba01987fc3a5e1f9636"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/prefix_checks.json",
+      "bytes": 384,
+      "sha256": "fa43acd7c22c86710229f2caaef0e7e544191a3330a7200f2e945100754ffa87"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_run/windows.jsonl",
+      "bytes": 14878,
+      "sha256": "b3328d7eecf0fc1d59e47d161bdc2ea2f05e1c5d1749116573f825d9f1d3e355"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/calibration_dependency.json",
+      "bytes": 2515,
+      "sha256": "f70a7489503226c0d54a93691c56cc480911198526ebc9134379730aad5f7836"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/calibration_inputs.json",
+      "bytes": 3928,
+      "sha256": "866a858fc810fd2a56ec7eae199df36a4dc48f90ca454fa1cedc4419c9815bd9"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/calibration_operations.json",
+      "bytes": 58656,
+      "sha256": "a26e553b554fe9f155dd2b67cb1663177ba4a458a444919d4f787c3df75f191e"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/calibration_spectra.json",
+      "bytes": 2346166,
+      "sha256": "2910c3de477e1d137fb35dbb7f7a55fec583e795cb6c243332372b0c69bba138"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/checks.json",
+      "bytes": 19185,
+      "sha256": "3bbb382ca7a53b516a570cc2c943833b712248358f4153b41db32d1ad3621c35"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/conditions.json",
+      "bytes": 300,
+      "sha256": "124c212178082e8faa9b6980ed26434106c1bd3daefa1dbe83415f0d694c8790"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/data_manifest.json",
+      "bytes": 13443,
+      "sha256": "7f7abe557c9dd67df1d66c98499cdba258de8f021164950040a989bb553ec32c"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/manifest.json",
+      "bytes": 6008,
+      "sha256": "7f948ba69c8bff4fcfca613aa42ee3e08376f16c5318457ed9b6ce3160b9ccea"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/operation_checks.json",
+      "bytes": 869105,
+      "sha256": "25cad1b17f7ef46955fd3d5274088171e159eaa741dd7af5cccf070c56851762"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/per_token_index.json",
+      "bytes": 22167,
+      "sha256": "2d3e072cadd06ed483c1cb0a8230b1a5b5556a05b53314a5b92448e71d3fd548"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/per_token_numeric.npz",
+      "bytes": 254864,
+      "sha256": "e750e71936d3bd492ec17921b9176ef5bf821eb58d1d5e0921039c85319c0c5b"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/prefix_checks.json",
+      "bytes": 34347,
+      "sha256": "4fae6096d40033d3a5cb8d71d9a9142d4c1ad68bcef8b6992a3377fb99928bfe"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/suffix_checks.json",
+      "bytes": 191463,
+      "sha256": "cc73ce7100263427f588acea693fd5c468a6e53f6dcf4708a877bfb4a6e5b20a"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/suffix_operations.json",
+      "bytes": 276625,
+      "sha256": "a6266fcff73ca3262978d8112148383a4052912d6798fa3fd6f6415a8e018f99"
+    },
+    {
+      "path": "results/pulse_transfer/gpt2_gate_subspace_v2_run/windows.jsonl",
+      "bytes": 44164,
+      "sha256": "fe73cccefd56d637ff384813004c5f477842b927b021a2863ab9352eb1f78887"
+    },
+    {
       "path": "results/pulse_transfer/gpt2_groups_run/audit.json",
       "bytes": 111,
       "sha256": "2eb1e92fb954e071137c0ff1c9ce3a2eafe4c7bacac4e2a4ef996b79fd9eda87"
@@ -2857,6 +3367,41 @@
       "sha256": "faccfc9c6f0ebd9ff43c05cca1f6c0f6174ab5abe2f24d5c3ffcb4fb21197981"
     },
     {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/case_files.json",
+      "bytes": 2863,
+      "sha256": "47bc173c4e5110a8feb06e45bca32e1e9edc2d6d22282060b37bd12bb4fc45ac"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/comparisons.json",
+      "bytes": 1271985,
+      "sha256": "9b1a4eb2b082570b5dd4019e79080d7d0b1907ddc73f06338d5fb68623ba7b3d"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/context_reconstructions.json",
+      "bytes": 131520,
+      "sha256": "14bb32a879a9c89ddcda355859ea5e0939b0ee35501556704f47a7f8290f7a5b"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/failed_run_alignment.json",
+      "bytes": 8871,
+      "sha256": "4c0d429aaca55864fde6949bfc4af333debea97b57f8e3f119357522ce2f257c"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/manifest.json",
+      "bytes": 5653,
+      "sha256": "91dfcb330506fc9ff80df4ed94d1d75cef5ed2da6d5de515d034952c139e69bb"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/operations.json",
+      "bytes": 15808,
+      "sha256": "ecb75bd4b99c4b4187139a3ee82414634cf8a2a46c7795010e72a3194fbbaf9a"
+    },
+    {
+      "path": "results/pulse_transfer/native_prefix_diagnostic_run/score_comparisons.json",
+      "bytes": 324847,
+      "sha256": "56b99b0a2014fb839296e83974c9d046e6c8a9466c964fe6cd1446a31c94afa1"
+    },
+    {
       "path": "reviews/pulse_causal_tranche/cpu_hook_checks.json",
       "bytes": 720,
       "sha256": "4d38f7bb06f0bf9cc35d32a07734b6abccd33448045f6b5b9e88e5af07352dce"
@@ -3542,6 +4087,341 @@
       "sha256": "c953b70edf7ab48e0498388f9715fc6f467134c1d5bdb6b47303e93cf598d720"
     },
     {
+      "path": "reviews/pulse_transfer/gate_export_independent_guards.json",
+      "bytes": 644,
+      "sha256": "b773fa37fe70a23a925981c83c68780f41b436f53fc5ec17b7571e79eabb9475"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_export_independent_positive.json",
+      "bytes": 758,
+      "sha256": "407877a9bfc8912e52e4fb4a109baa3666e5f984fa403ccb8b17b6f0c91f0168"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_export_numeric_comparison.json",
+      "bytes": 6116,
+      "sha256": "38e96d827495d4544c77a6367155744dcad132cfb9722c0c0fceaa1d1eaadd89"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_input_reconstruction_smoke.json",
+      "bytes": 999,
+      "sha256": "bad1a03f24be463f0f6049e10caedac4396f7314715f643948e339b1dff5c3ff"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_legacy_transfer_compatibility.json",
+      "bytes": 1423,
+      "sha256": "5cc041e60c0da4766afc6a3817b15633061c52fc46f99d504694008631123e33"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_numeric_export_review.md",
+      "bytes": 1584,
+      "sha256": "f62bdb047d341b56b88bafdc75c8a2ef46f2703935a06f27f6b703bd1c8f0d0d"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_package_hygiene_scan.json",
+      "bytes": 216,
+      "sha256": "97eae4944ef66ec75dd5d687dbf5883896e79b42f817f2408df1f4dcf0d10d13"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_author_readiness.json",
+      "bytes": 1314,
+      "sha256": "8aa73bd724af226fcac2e5a2f70e7c77e0af2eb2cb1a78b8e056e8dd4ba2ce72"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_author_review.md",
+      "bytes": 4731,
+      "sha256": "8b03be321e664e0f81f2b61ca20095ec3671af9216fca9820ac64d59dfa8e632"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_comparison_tests.json",
+      "bytes": 37981,
+      "sha256": "d9537f63079edec9d86bff12ad166dbffb28a99841c3b84fa92cb0037f934bd5"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_execution.json",
+      "bytes": 1067,
+      "sha256": "229a2c2106895f1d8ee187cfb71f2b1176f58bc35207000f86b55e1c564df82b"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_independent_readiness.json",
+      "bytes": 504,
+      "sha256": "7120d621dfb93f5ff7c439f797d46a65b5af125ddc28396f131028fd65f2f2b0"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_independent_review.md",
+      "bytes": 2202,
+      "sha256": "bc0cd016a7093b0347fa9801060c8cc5c371c52faea473a07be4ace76292a861"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_independent_tests.json",
+      "bytes": 38372,
+      "sha256": "64d2f061877e4a078a10288d26d1129c10b52d10409e10b8c2720fd6aada36ca"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_inputs_helper_review.md",
+      "bytes": 2282,
+      "sha256": "6b0892eb659fc9b2c5577a55e67461cbfc7c2a8c548bee3eeaa032092ba95cb0"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_inputs_helper_tests.json",
+      "bytes": 749,
+      "sha256": "715e2fbad2ca99bfa4fb6f243eb910d5a4999336836a2659869fadeffbb9d0ba"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_numeric_comparison.json",
+      "bytes": 6376,
+      "sha256": "5e44aba8bfea9dd9f048a712d6f3919f20544166082d99aa4406e0003fdcf652"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_numeric_comparison_initial_failed.json",
+      "bytes": 147,
+      "sha256": "c8fd09fb77846b024e7ff9f67c81e91c957834c6dcaa018c96241f3912e53f24"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_private_comparison.json",
+      "bytes": 32526,
+      "sha256": "a38da9d644f20cf7a46d6111e7857805cc6d8f44b35ead69a7bde8aba7631477"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_provenance_audit.json",
+      "bytes": 37475,
+      "sha256": "6bc75f47714b46a6bb491e3b2ee09a564476ee8467bd9846dec006135cb6be4b"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_provenance_review.md",
+      "bytes": 2697,
+      "sha256": "e6097b5cb8aaef7016654fca9be7d45a2783762b68e27d2a07a8b5193650d1ff"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_schema_review.json",
+      "bytes": 1030,
+      "sha256": "248678fedb6c39eba79ba5fa0e3d4be8cdb4367c0ced2d167f772e3a554be4dc"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_replay_schema_review.md",
+      "bytes": 1512,
+      "sha256": "3a182d4e7901cc8005d567b6463975d1e0d010fa145da180ea07de3a2ffc2506"
+    },
+    {
+      "path": "reviews/pulse_transfer/gate_subspace_prior_art.md",
+      "bytes": 3410,
+      "sha256": "4f50682a6a70e31e73ab5cfec9a68976711eac42bdc2b53a7caba99c583cf69f"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_analyzer_synthetic.json",
+      "bytes": 229,
+      "sha256": "61daa7cf1e3cbe571409fb45c21984517932b9ba3d3edb3850d2980b7f4764b1"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_failure_inventory.json",
+      "bytes": 5865,
+      "sha256": "52ead3a89b56033a3a1ff31ff46308b0d55fc58aa93898027d1a73408a6496e2"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_analyzer_smoke.json",
+      "bytes": 3552,
+      "sha256": "916d065246d6b26a17142e564e365feea5a3c9aaf68a2d0188a3b02a71d2359c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_author_readiness.json",
+      "bytes": 1503,
+      "sha256": "effe307624e2dfcfc8fd38e115223dec192364019e4b1a18f6a0b624e925ae3f"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_author_readiness.md",
+      "bytes": 2099,
+      "sha256": "3797777dafd6fe2c5e7b7d7665f8ff773c89be4fe5b712d4a416f4893b8f84da"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_design_assessment.json",
+      "bytes": 510,
+      "sha256": "b29c4ae04b4482f62beba07640aa1f9bb2e9c310a0007a801443c15781e7cdd7"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_failure_smoke.json",
+      "bytes": 664,
+      "sha256": "a03a446a9813c37d2be4e45dfa8b34615374cd69058869d6fe3a2b632d5b7213"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_findings_ranges.json",
+      "bytes": 8626,
+      "sha256": "a0bd9e057394a50c0d3d8a716b2d2b29a672b74859e3c7a3a0a2f44b59ff325c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_implementation_audit.json",
+      "bytes": 879,
+      "sha256": "5b9f61622dbb335164113e0ce5b56a48ff39038f53eedd837f5329f2b5cb5b0b"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_implementation_review.md",
+      "bytes": 5407,
+      "sha256": "60d63ff6ff75cbc120572741bfbbe89d4595bd53584a97ee6900ebc505b57d35"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_independent_analyzer.json",
+      "bytes": 3877,
+      "sha256": "2aa74d7c13b1207dfaebc811bad8b12222468f5a2b28d706d41ffe5b2d0b2027"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_independent_flow.json",
+      "bytes": 1218,
+      "sha256": "27858ff49f0f462dd6c0d0bb9bd3c7ec85004bc525db7b8dc9e0aa27e038b946"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_numerical_audit.json",
+      "bytes": 33356,
+      "sha256": "2915d5dc332fc95ce9f004f81e1a87bad2bbda26b8f09fb22a1acf97469cb9ff"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed512_numerical_review.md",
+      "bytes": 6780,
+      "sha256": "a807f5b28e986dab06471730e950f45dc7742c00b02651649297ccf8a76dc2b1"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed_shape_author_policy_review.json",
+      "bytes": 974,
+      "sha256": "71dd4563efe506ee30d752c99b3efc70af36d82872736e12b70ca7996203af45"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed_shape_author_policy_review.md",
+      "bytes": 1772,
+      "sha256": "d7a0756b1b004e39f81969955050222a160d2f684c7ee9fa11b1c8ac9213867c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed_shape_design_review.json",
+      "bytes": 400,
+      "sha256": "964f95ac4bb8bbd018aedb304d4c639e944e7c8428e9d88a3e9c616649d34d43"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_fixed_shape_design_review.md",
+      "bytes": 3139,
+      "sha256": "75fe6466dd5be7166ceb06880f9d90fc1d48d47f575d1ceee68fdbdf81b8bca2"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_inputs_independent.json",
+      "bytes": 2355,
+      "sha256": "a02cb3d83f781fd15203f5b58951c779fa5f25d01fa8e62d87016c98bb22ed31"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_inputs_preflight.json",
+      "bytes": 4836,
+      "sha256": "4841fe0238dea8f2cb5e0fae981e3c1437e0267fb3d820476bdfde6729ee03af"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_prefix_failure_audit.json",
+      "bytes": 35845,
+      "sha256": "02bf089fea1c4e37ea42c8525382edbe1512daf5a8fc852baadb53d8e1a09583"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_prefix_failure_review.md",
+      "bytes": 6657,
+      "sha256": "44e9a0f48c498c2affb2e76b0c411b23bff19d15e4f6a373509a920c56f2cbd5"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_analyzer_smoke.json",
+      "bytes": 2069,
+      "sha256": "38a22427588ce533d2e28a9376ddef98f90592f49c4dca1a3baf052037ac8adb"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_author_freeze.json",
+      "bytes": 1106,
+      "sha256": "95161382a55ea74d3c00402531dcc27194c33adf257016ea8fe221038bed2b9c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_design_review.md",
+      "bytes": 13564,
+      "sha256": "14323750298de2130ff8c1a9d7622fec08066914a4043dfce41dfa83f67ba97a"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_implementation_audit.json",
+      "bytes": 5297,
+      "sha256": "57446cdbd711daa9c830b800bd08fe3f952e6cbc0bf0053e27eb95a891f5c40a"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_implementation_review.md",
+      "bytes": 6433,
+      "sha256": "e2aa7fe785727a58e2d25c211c88f52824056eb04fb807e6e8c190ad67a06839"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_integration.json",
+      "bytes": 612,
+      "sha256": "79409e6de0d0ee978612768edcaececccd6c3a9168f084eb7b4c15ff42fbd00f"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_synthetic.json",
+      "bytes": 689,
+      "sha256": "2f0395df3dc238b2e71f964be1c14a8c33a6d4c8339cf3134d7c6ec6c63c4ba9"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_analyzer_smoke.json",
+      "bytes": 4289,
+      "sha256": "5cebd35262a224892a2eb65bed1e15b75dd36e75c008a4b7918a67345d387994"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_author_integration.json",
+      "bytes": 1905,
+      "sha256": "fc8d4c43e2ef615b38dce8a0720dd2792839195c40b72f25ce568f12360324b4"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_author_readiness.json",
+      "bytes": 3198,
+      "sha256": "f56c2154a8f014611df86a6bf9afeaf4fc7ca5c6d5ac9eec24593009d9d7562d"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_author_readiness.md",
+      "bytes": 2623,
+      "sha256": "2eb5c164ac556c6cddd46c5a6aee72637b8c09f494b861e33f5fcf5841ff688b"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_implementation_audit.json",
+      "bytes": 806,
+      "sha256": "399a885b4d1660ad8367972fd404989947d289450df7235de1b1917e5c6b283f"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_implementation_review.md",
+      "bytes": 6607,
+      "sha256": "5ba5ce30d42c6a82fb88288d659f18dc6d7606824c024981e37131e0aa96d3da"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_policy_review.json",
+      "bytes": 961,
+      "sha256": "8486f00ed5a6577c4aa305ff49a2d97947844c35f384db97a2d82923aa016ddc"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_subspace_v2_policy_review.md",
+      "bytes": 4628,
+      "sha256": "52b5141cd82e83a4d2cbe21eef2ad59298f3b26b2de0ddc7fc2bf9809ab710fb"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_failure_audit.json",
+      "bytes": 2684,
+      "sha256": "f4eccae951572dc90419cbdd98442e17a4704251b53816f037e746de327f1068"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_failure_inventory.json",
+      "bytes": 8244,
+      "sha256": "c865b5c71a75c464ca69d72ab3702a40659a24e83b05ab5830f21a3f8fdf693c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_failure_review.md",
+      "bytes": 3785,
+      "sha256": "970abaafa1cbd9c245e52b38b3eefbecf3c4994e73b37f8b081e696b72e965c8"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_independent_analyzer_guards.json",
+      "bytes": 4634,
+      "sha256": "4105ba13bf985fa785bbcf80bcd4d01e8e7cb6ce672525cc16f6ed1e03134b36"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_independent_tests.json",
+      "bytes": 1853,
+      "sha256": "0d4aa9dec35dcca757d7c340193500002d6535993aeafe47fa6db201b9a0096c"
+    },
+    {
+      "path": "reviews/pulse_transfer/gpt2_gate_v2_native_numerical_basis.json",
+      "bytes": 1298,
+      "sha256": "fbbe72e1bfece4381295b4b22cc264f0f6ee74dfbfd9542a82f9755e907d9709"
+    },
+    {
       "path": "reviews/pulse_transfer/gpt2_groups_numerical_review.md",
       "bytes": 3756,
       "sha256": "0ea9f3b1874448378fdeea2886c5230042a790c589ebd35726f48fe6a16d03ae"
@@ -3742,6 +4622,46 @@
       "sha256": "c61312f368bc618da3a3f0e55f095a74cb9e27b0af36ef975e885b8ae34ea003"
     },
     {
+      "path": "reviews/pulse_transfer/native_prefix_diagnostic_author_smoke.json",
+      "bytes": 736,
+      "sha256": "eb57bb1ace50d7660232d39f1f00e9b6a15df9950c4bc946172d35622d953e44"
+    },
+    {
+      "path": "reviews/pulse_transfer/native_prefix_diagnostic_implementation_review.md",
+      "bytes": 3774,
+      "sha256": "c5ba95ff9fc997fa0df6019fd0edbc3e29d5b40af71b8360d4dcaf45fdb1f76f"
+    },
+    {
+      "path": "reviews/pulse_transfer/native_prefix_diagnostic_numerical_audit.json",
+      "bytes": 36507,
+      "sha256": "ff81dbc0506f407a5ccf9c5443606c6dc495502d30d38d4c15cf26cd9b93d314"
+    },
+    {
+      "path": "reviews/pulse_transfer/native_prefix_diagnostic_numerical_review.md",
+      "bytes": 7604,
+      "sha256": "c0eca3d593b6840da0db25148e21a2d114097ef10dcdae71755b25837d71b530"
+    },
+    {
+      "path": "reviews/pulse_transfer/native_prefix_diagnostic_synthetic.json",
+      "bytes": 4805,
+      "sha256": "ed9994c39c4dd3886add6d68fe6da2313d8d4f78041192f48c76ec57cc7e2891"
+    },
+    {
+      "path": "reviews/pulse_transfer/rebuild_gate_calibration_numerical_audit.json",
+      "bytes": 1656,
+      "sha256": "8f8fec2036b8e862a8b6965ef6b9770424a9a0611d2dd4f93773ed5da0ee3197"
+    },
+    {
+      "path": "reviews/pulse_transfer/rebuild_gate_calibration_review.md",
+      "bytes": 4871,
+      "sha256": "ffce186913b343f05357de3716aa9bb72bc82aa588ca1e12246c2e31ce4eeed0"
+    },
+    {
+      "path": "reviews/pulse_transfer/rebuild_gate_calibration_tests.json",
+      "bytes": 911,
+      "sha256": "d38c135bb9b7fc877068a6adaab625abf9c445dbc43b966abd62d3d33fdc681b"
+    },
+    {
       "path": "reviews/pulse_transfer/report10_consistency_audit.json",
       "bytes": 1556,
       "sha256": "a8e7706fed0542cd0775c741a596b858aa385b8232008ee980c28d424129122c"
@@ -3775,6 +4695,46 @@
       "path": "reviews/pulse_transfer/report10_review.md",
       "bytes": 9159,
       "sha256": "4b55ce7fe6bd443735e4e18b9d00dbdd91c1b24a987709fa4425271ac472c3e9"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_claims_recomputed.json",
+      "bytes": 5274,
+      "sha256": "7643ac75716474cd64c485bf1108217a5f58c6843ff293b4cfe587fbd9a537c8"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_draft_methods_review.json",
+      "bytes": 1236,
+      "sha256": "27c44a806bfb1e7beb173390f8354f3e7be8ce66079e00842c6f49603b82be2c"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_draft_methods_review.md",
+      "bytes": 4880,
+      "sha256": "b069ddde929c8d60727224ddb4a75eeee5a592928cb55e17b56e557ae11f3300"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_package_readiness.json",
+      "bytes": 949,
+      "sha256": "c161ed148169834e2f44d31919b66c9d9e32465ea445abb878a5aebb67378d22"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_package_review.md",
+      "bytes": 1928,
+      "sha256": "74ba26add3d2e985f98a7ed85b56eee50793e1d69bf911f41655086424db1ff2"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_portable_figures.json",
+      "bytes": 930,
+      "sha256": "cad6cd9fd76086dde7cfe9acf94d1ff26219e39195e2fae781d86b4edd6449ca"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_review.json",
+      "bytes": 558,
+      "sha256": "aeef88a332957bb787fc33fca75caa4715d7f380bc61b9156d3e3169aa448077"
+    },
+    {
+      "path": "reviews/pulse_transfer/report11_review.md",
+      "bytes": 3035,
+      "sha256": "c92d136bc9b99548f80a558127da35f13e76d9b7f196f27e09a9b2748916746c"
     },
     {
       "path": "reviews/pulse_transfer/report8_package_review.md",
@@ -3847,19 +4807,29 @@
       "sha256": "2c08bb9463c185305cf7db50db4e78a4dda8bcca608cefe1ae896ad611715c7d"
     },
     {
+      "path": "scripts/audit_gate_results.py",
+      "bytes": 6330,
+      "sha256": "dce15dbb424c19cda2222065c776d083ee1c38ed01b6e346c1d1e3d8c0f3becf"
+    },
+    {
       "path": "scripts/audit_results.py",
       "bytes": 2365,
       "sha256": "328df5cb94808e32ebc12fa072c022bc0b2b223886c908bbf1faff2f40d8de53"
     },
     {
       "path": "scripts/audit_transfer.py",
-      "bytes": 2977,
-      "sha256": "98fd341a01fa9b090b7935fc7055f151c8462d37e8fb6f430c2fd8c71f524008"
+      "bytes": 3217,
+      "sha256": "2339839547c15b4e41a43cfdafa6005c972cce9c54a29d290ccbe10496ffe94f"
     },
     {
       "path": "scripts/build_figures.py",
       "bytes": 3945,
       "sha256": "0536b8f2804721ab09261e6baa11d7c8e75760e280f129739397b08d07c42126"
+    },
+    {
+      "path": "scripts/build_gate_report.py",
+      "bytes": 1369,
+      "sha256": "f76229583d452d6b2a296dfd5567cb9435f053ab429cbf37d867574c71d6b96b"
     },
     {
       "path": "scripts/build_report_html.py",
@@ -3870,6 +4840,11 @@
       "path": "scripts/compare_core.py",
       "bytes": 1534,
       "sha256": "b152b245c9a78194effa56ccc336b31b9125c057dff9a66e85f814cf229d8245"
+    },
+    {
+      "path": "scripts/compare_gate_study.py",
+      "bytes": 15316,
+      "sha256": "c4f1db286b8025e9080635b3062ea845e50828e7a5e2191866589a3020f6ca25"
     },
     {
       "path": "scripts/compare_transfer.py",
@@ -3885,6 +4860,11 @@
       "path": "scripts/run_core.py",
       "bytes": 3024,
       "sha256": "46a53e2bd9c990cea07d0d6ac2ec09aa0b75c787c4b92a257e18c9313aa523e7"
+    },
+    {
+      "path": "scripts/run_gate_study.py",
+      "bytes": 7788,
+      "sha256": "15942f06e04c4df3bfbff504f2e69aacd79ed0a4b2ceee03db8f75abdc1950f7"
     },
     {
       "path": "scripts/run_transfer.py",

@@ -1,0 +1,34 @@
+{
+  "status": "author_ready_for_independent_review",
+  "source_hashes": {
+    "run_gate_study.py": "15942f06e04c4df3bfbff504f2e69aacd79ed0a4b2ceee03db8f75abdc1950f7",
+    "compare_gate_study.py": "76d80425cb73bcccf9b5ce8262a7f4e0ea9b9d2dc429cfac5adf0063b7d6391c",
+    "gate_replay_comparison_tests.py": "06338376f48c9b4c8c4c5e5f58cf98843b4be361b9e19648114477133ceecc88"
+  },
+  "cpu_fixture_status": "passed",
+  "cpu_fixture_checks": 16,
+  "cpu_fixture_peak_rss_kib": 530116,
+  "prepare_only": {
+    "status": "passed",
+    "model_forwards": 0,
+    "passages": 8,
+    "historical_metadata_sha256": "f2158f56eafeb1459e240a0ddb40ee64493f54a64b23463995b94b9cc08af9b0",
+    "peak_rss_kib": 808804,
+    "workspace": "superweight-causal-circuits/.reproduce-gate-prepare-review"
+  },
+  "primary_export_comparison": {
+    "status": "passed",
+    "scope": "numeric",
+    "records": 680,
+    "scalars_reduced_from_raw": 4760,
+    "safe_export_per_token_elements_compared": 1734000,
+    "peak_process_rss_kib": 504860
+  },
+  "no_gpu_or_pretrained_model_activity": true,
+  "pending": [
+    "Independent wrapper/comparator implementation signoff",
+    "Root launches one 8-calibration + 1352-study replay",
+    "Compare actual independent replay in numeric and private scopes"
+  ],
+  "frozen_experiment_sources_edited": false
+}

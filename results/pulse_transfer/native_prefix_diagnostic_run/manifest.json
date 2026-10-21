@@ -1,0 +1,191 @@
+{
+  "started_utc": "2026-10-21T14:33:25Z",
+  "status": "completed",
+  "model_id": "openai-community/gpt2",
+  "revision": "75e09b43581151bd1d9ef6700faa605df408979f",
+  "dtype": "float32",
+  "attention": "sdpa",
+  "seed": 20261021,
+  "expected_forwards": 18,
+  "cases": [
+    [
+      "default",
+      "hookfree_short128",
+      "none"
+    ],
+    [
+      "default",
+      "hookfree_full512",
+      "none"
+    ],
+    [
+      "default",
+      "short128",
+      "observer"
+    ],
+    [
+      "default",
+      "short128_repeat",
+      "observer"
+    ],
+    [
+      "default",
+      "full512",
+      "observer"
+    ],
+    [
+      "default",
+      "full512_repeat",
+      "observer"
+    ],
+    [
+      "default",
+      "suffix_rotated512",
+      "observer"
+    ],
+    [
+      "default",
+      "suffix_constant512",
+      "observer"
+    ],
+    [
+      "default",
+      "padded512",
+      "observer"
+    ],
+    [
+      "math",
+      "short128",
+      "observer"
+    ],
+    [
+      "math",
+      "short128_repeat",
+      "observer"
+    ],
+    [
+      "math",
+      "full512",
+      "observer"
+    ],
+    [
+      "math",
+      "full512_repeat",
+      "observer"
+    ],
+    [
+      "math",
+      "suffix_rotated512",
+      "observer"
+    ],
+    [
+      "math",
+      "suffix_constant512",
+      "observer"
+    ],
+    [
+      "math",
+      "padded512",
+      "observer"
+    ],
+    [
+      "default",
+      "study_short128",
+      "study"
+    ],
+    [
+      "default",
+      "study_full512",
+      "study"
+    ]
+  ],
+  "source_hashes": {
+    "native_prefix_diagnostic.py": "561c3342d4810ece74a9f183c83c3e7bd81ab952eabf4c21b1d977a81ad40d4d",
+    "GPT2_PREFIX_DIAGNOSTIC.md": "c0959ccc6315a2f59f8d2862b1d2d0462b6a244d101418b934b22b64f214ccd7",
+    "run_transfer.py": "16a0240a8c679de05c8875e50304b1bc9aabe90e2c4c376b2fc89eeaec0de044"
+  },
+  "frozen_study_source_hashes": {
+    "gpt2_gate_subspace.py": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e",
+    "analyze_gate_subspace.py": "0b65d05ec9afec48f182ab7fecff2cd5cc35e3a47ae41df51ac410215f47cdce",
+    "analyze_transfer.py": "a854fcad3cbdc98ea5661146da3492138a6a225fd2e628073ca4de788e81011a",
+    "gate_inputs.py": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d",
+    "GPT2_GATE_SUBSPACE.md": "84cb95cf7ef48f6d70ea44663ab3559ef16d38396449de31d0ebe36edff59b40",
+    "gpt2_query_source.py": "c1deeaf4035ff74ea8d7f724b93feadfc593d4785272921cf201728fb802f4a5",
+    "gpt2_regrowth_kv.py": "b85e7bf18ccc04d96b121bebbef8272d435da9553153f9a003a1982dbba087b8",
+    "gpt2_layer_writes.py": "b6c166e03d792401b25b30696f1f1a4413679f5741b26bd0d00824822c82be24",
+    "gpt2_writes.py": "fc1a98cbeb9e3d6e779ef0f61cc7c934be2cd2d127da24dfea2f146015a00181",
+    "llama_source_kv.py": "84a96ee919c422f72df04c9a55765368095e0ca2c03265c74a1f1afe20f1a1e2",
+    "run_transfer.py": "16a0240a8c679de05c8875e50304b1bc9aabe90e2c4c376b2fc89eeaec0de044",
+    "fresh_inputs_v2.py": "7a0d251b577c6af917d92ba5ccf6b3b6f57df6ff2d2cae78f539206baf330519"
+  },
+  "failed_run_manifest_sha256": "0a0b35192e76a1c56baf29ab7edd0458cf04f8b67b1d38afc7df7c7513884d31",
+  "failed_prefix_checks_sha256": "fa43acd7c22c86710229f2caaef0e7e544191a3330a7200f2e945100754ffa87",
+  "failed_tokens_sha256": "e26d1e50c4118d151c918600eb5516cdd02bdf0813ed8a1a3b6d487d8eeef30d",
+  "failed_failure_state_sha256": "a80745666cbc21b4a0326e50d9cd6fa44b14dd96eb185c0e7eb044925304bfb2",
+  "failed_native_event": {
+    "panel": "gate",
+    "corpus": "wiki_validation",
+    "window": 0,
+    "length": 512,
+    "identity": "natural",
+    "trial": "C",
+    "shared_scored_tokens": 126,
+    "max_loss_drift": 0.0001621246337890625,
+    "max_hidden_drift": 0.0022735595703125,
+    "max_gate_b_drift": 0.0,
+    "max_target_mass_drift": 0.0,
+    "argmax_agreement": 1.0,
+    "threshold": 0.001
+  },
+  "input_sha256": "6cd98f8eceb1d93efbb9b02ed90376c945f49dfd337ccebc54055037f93aead0",
+  "original_token_sha256": "e8e3c0920b3ae464f28ceb283104a7240c9877f6abc08562b6c055b7935df505",
+  "precision_settings_before": {
+    "float32_matmul_precision": "highest",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "flash_sdp_enabled": true,
+    "memory_efficient_sdp_enabled": true,
+    "math_sdp_enabled": true,
+    "cudnn_sdp_enabled": true
+  },
+  "runtime_versions": {
+    "python": "3.12.3",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.6",
+    "cuda_runtime": "13.0"
+  },
+  "failed_bundle_inventory_sha256": "52ead3a89b56033a3a1ff31ff46308b0d55fc58aa93898027d1a73408a6496e2",
+  "failed_source_snapshot_verified": true,
+  "model_hash_before": "2eaf003b11dbb54c7fe511397a4c77d8fc734983b8dbf66794eed8e546073527",
+  "gpu_name": "NVIDIA GeForce RTX 3060 Ti",
+  "gpu_capability": [
+    8,
+    6
+  ],
+  "forward_passes": 18,
+  "completed_utc": "2026-10-21T14:33:44Z",
+  "model_hash_after": "2eaf003b11dbb54c7fe511397a4c77d8fc734983b8dbf66794eed8e546073527",
+  "parameter_versions_unchanged": true,
+  "precision_settings_after": {
+    "float32_matmul_precision": "highest",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "flash_sdp_enabled": true,
+    "memory_efficient_sdp_enabled": true,
+    "math_sdp_enabled": true,
+    "cudnn_sdp_enabled": true
+  },
+  "wall_seconds": 19.274147510528564,
+  "peak_gpu_allocated_bytes": 656467968,
+  "peak_gpu_reserved_bytes": 698351616,
+  "peak_process_rss_kib": 2118256,
+  "pairwise_comparisons": 25,
+  "layer_score_comparisons": 276,
+  "context_reconstructions": 192
+}

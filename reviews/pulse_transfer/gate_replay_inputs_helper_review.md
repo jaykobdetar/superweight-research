@@ -1,0 +1,11 @@
+# Independent gate replay input-helper review
+
+Ready for use by the prospective reproduction wrapper. Reviewed `prepare_gate_replay_inputs.py` SHA256 `3d5202ea71e51908fa1399f7b66adae6a888f6e14f54becee3b26217a2f3ef95`; no blocker found.
+
+The helper verifies the expected model ID/revision and the byte lengths/hashes of four local tokenizer/config files before loading the tokenizer with local-only access. It calls only the existing `calibration_inputs` helper, whose source/processed-text hashes, historical development-token hashes and span exclusions are enforced. It does not call any model loader or forward. The reconstructed calibration metadata must match the explicit expected SHA256 before a passed record is written. Exactly eight passages are required. The output directory must be new or empty.
+
+The exact expected metadata hash is an externally supplied provenance requirement: the eventual wrapper must take it from its frozen trusted dependency manifest, not regenerate it from newly produced output. Likewise, the wrapper should hash this helper and imported calibration/source-processing dependencies. On failure, partial private token/metadata files may exist, but no passed `input_reconstruction.json` is emitted; mere file presence is not success. Private output IDs must remain outside the numeric repository.
+
+Seven independent lightweight fixtures passed: valid eight-passage metadata; mismatched expected output hash; wrong passage count; altered tokenizer file rejected before loading; wrong checkpoint revision rejected before loading; occupied output preserved; and parent real-tokenizer smoke matching the original historical metadata hash `f2158f56eafeb1459e240a0ddb40ee64493f54a64b23463995b94b9cc08af9b0`. Evidence is `gate_replay_inputs_helper_tests.py/.json`. The reviewer used fake tokenizer/calibration functions for orchestration tests and did not repeat real tokenizer/model loading. Peak reviewer RSS was716,724 KiB. The separate parent smoke reports808,904 KiB, zero model forwards and removal of temporary private outputs.
+
+This verifies the helper's bounded metadata reconstruction path; it does not claim the entire future reproduction wrapper is complete or validated. Fixed512 implementation review retains priority and remains separate.

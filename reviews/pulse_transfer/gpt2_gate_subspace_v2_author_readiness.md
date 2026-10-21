@@ -1,0 +1,13 @@
+# V2 author readiness (not independent signoff)
+
+The new runner, analyzer and protocol are frozen for independent implementation review. No pretrained checkpoint or GPU was loaded by this author task, and no scientific outcome is inferred from synthetic data.
+
+The frozen inference/hook implementation passed 43 successful CPU random-weight model forwards and one intentional nonfinite-KL failure. All 21 length-512 suffix-rotation conditions preserved first-128 hidden states/logits, scored losses, prefix gate tensors, source Q/K/V and current/delivered contexts exactly. Source and output attention biases were nonzero. The changed target at position 128 was not gathered. The intentional failure preserved computed current logits and counted the completed model forward. Zero/nonfinite relative denominators were rejected, the symmetric formula was verified, and all hooks were removed. Maximum FP64 KL reconstruction discrepancy was 4.23e-7; peak RSS was 1,030,844 KiB.
+
+A complete fabricated saved-state fixture passed the analyzer's 1,360 main records, 672 numerical controls, 680 cross-length pairs, 15,360 gate checks and 60 snapshot-state counts. It checked all full-panel and unexposed views, including exact seeded bootstrap resampling with three Wiki passages. Scalar and exact-hidden closure corruption were rejected, and a previous passed audit was invalidated when a new failing audit started. Maximum analyzer RSS was 897,012 KiB. This fixture ran at the final analyzer hash; the subsequently finalized runner delta affected only resource accounting, not any function imported by the analyzer.
+
+The original V1 runner/analyzer/protocol and native diagnostic hashes remain unchanged. Full successful logit/context arrays are intentionally absent except for frozen snapshots: their closure evidence consists of runtime equality and independently computed hash/shape/dtype records. Both sides of failed comparisons and current diagnostic state are preserved. The fixed rotation family does not prove arbitrary suffix invariance.
+
+Independent implementation review is still required before inference. Root owns GPU execution and later independent numerical interpretation. Exact frozen hashes and evidence references are in the companion JSON.
+
+Root subsequently requested failure-manifest resource accounting. The final runner adds only failed/active phase, elapsed wall time and peak GPU/RSS fields; it does not change the tested inference, metrics or hook arithmetic. The companion JSON preserves both the tested predecessor hash and the final source hash. Independent review is evaluating the final bytes.

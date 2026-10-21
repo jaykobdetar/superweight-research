@@ -112,3 +112,24 @@ The GPT-2 experiments are best described as targeted replication/extension with
 different intervention scope, fresh paired evaluation and explicit source K/V
 controls. The specific OLMo H14 history/K/V outcome remains a scoped case-study
 claim. None of these differences establishes priority or a universal mechanism.
+# Additional gate-subspace evidence
+
+The later [gate report](GPT2_GATE_SUBSPACES.md) uses an established attention
+identity: with source values zeroed, the context is a conditional non-source
+mixture multiplied by its probability mass. Fu et al. explicitly derive the
+sigmoid/log-sum-exp gate and test source-value zeroing; this project does not
+claim those algebraic or intervention ideas as new.
+[Primary derivation](https://arxiv.org/html/2602.01203v1).
+
+Explicit head-specific post-attention sigmoid gates, learned low-rank/cross-head
+gates, and synthetic sinks also precede this experiment.
+[Gated Attention](https://arxiv.org/html/2505.06708v1),
+[Hybrid Gated Attention](https://arxiv.org/html/2608.11805v1).
+
+The additional evidence is checkpoint- and protocol-specific: fixed centered
+gate subspaces, directional retention/removal with matched controls, differing
+loss versus prediction-fidelity rankings, and preservation of failed numerical
+checks. This does not establish priority, one underlying mechanism, or an
+efficient replacement. A potentially relevant SSRN preprint's full text remains
+inaccessible, so its method comparison is explicitly unresolved.
+[Unresolved comparison](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6886378).

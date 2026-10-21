@@ -1,0 +1,13 @@
+# Independent completed replay provenance review
+
+Passed. The saved evidence supports a new sequential eight-forward calibration rebuild followed by1352 study forwards, totaling1360, in258.17897057533264 driver seconds. The reviewer used streaming hashes and metadata only, with24204KiB peak RSS and no model/GPU load.
+
+All105 saved tensor files are byte-identical to the original and have distinct filesystem inodes; none is a symlink. Rebuilt calibration raw/maps/metrics/tokens are also separate files from both original calibration and the study's copied calibration artifacts, with exact byte hashes. The rebuild records reference_hashes=null, eight calibration and zero evaluation forwards. Its completion precedes study start. The study inherits that newly frozen calibration timestamp. Logs place metadata reconstruction before calibration completion and study completion. Fifty-nine staged source files, seed metadata and tokenizer-only evidence match their saved preparation inventory; final model hashes and parameter/map closure pass.
+
+The independently tested comparator's output hashes were verified against every recorded file:19 numeric entries and122 private entries. Numeric comparison passed680 records,4760 raw reductions and1,734,000 safe-array elements. Private comparison passed9520 reductions and123828 tensors containing546996560 elements. We did not repeat that entire tensor load; the tested comparator results and every associated file hash were checked. All105 paired raw files additionally passed independent byte comparison.
+
+The initial comparator-schema failure and original comparator remain preserved. The narrow reviewed compatibility repair accepts only the original12-field and rebuilt4-field calibration records, validates original constants and compares every shared value, including64 layer gate diagnostics. Missing rebuilt calibration projection/query/context/writer counters are not claimed remeasured. No model rerun occurred to fix this metadata mismatch.
+
+This is same-machine reproducibility evidence, not external replication or proof from hashes alone of an independent scientific replication. The separate source inspection, sequential logs, timestamps, fresh paths/inodes, resource records and saved exact outputs support the execution account. Full successful logits/contexts outside fixed snapshots were never saved and are outside retrospective array comparison. The new Report11 replay paragraph accurately states these limits and keeps1360 replay forwards separate from1501 production/diagnostic forwards.
+
+Evidence: `gate_replay_provenance_audit.py/.json`, `gate_replay_schema_review.py/.json`, and preserved execution/comparison records.

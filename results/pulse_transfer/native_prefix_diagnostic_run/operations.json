@@ -1,0 +1,568 @@
+[
+  {
+    "backend": "default",
+    "name": "hookfree_short128",
+    "capture": "none",
+    "seconds_including_observers": 0.35071706771850586,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "hookfree_full512",
+    "capture": "none",
+    "seconds_including_observers": 0.11931324005126953,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "short128",
+    "capture": "observer",
+    "seconds_including_observers": 0.42127013206481934,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "short128_repeat",
+    "capture": "observer",
+    "seconds_including_observers": 0.23725533485412598,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "full512",
+    "capture": "observer",
+    "seconds_including_observers": 0.29501795768737793,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "full512_repeat",
+    "capture": "observer",
+    "seconds_including_observers": 0.27330589294433594,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "suffix_rotated512",
+    "capture": "observer",
+    "seconds_including_observers": 0.4433298110961914,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "suffix_constant512",
+    "capture": "observer",
+    "seconds_including_observers": 0.25419187545776367,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "padded512",
+    "capture": "observer",
+    "seconds_including_observers": 0.2587153911590576,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "short128",
+    "capture": "observer",
+    "seconds_including_observers": 0.42127394676208496,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "short128_repeat",
+    "capture": "observer",
+    "seconds_including_observers": 0.24535107612609863,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "full512",
+    "capture": "observer",
+    "seconds_including_observers": 0.27214574813842773,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "full512_repeat",
+    "capture": "observer",
+    "seconds_including_observers": 0.44326186180114746,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "suffix_rotated512",
+    "capture": "observer",
+    "seconds_including_observers": 0.2715287208557129,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "suffix_constant512",
+    "capture": "observer",
+    "seconds_including_observers": 0.4306766986846924,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "math",
+    "name": "padded512",
+    "capture": "observer",
+    "seconds_including_observers": 0.2667539119720459,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": false,
+      "memory_efficient_sdp_enabled": false,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": false
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_attention_math",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "study_short128",
+    "capture": "study",
+    "seconds_including_observers": 0.4511418342590332,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  },
+  {
+    "backend": "default",
+    "name": "study_full512",
+    "capture": "study",
+    "seconds_including_observers": 0.5822920799255371,
+    "precision_settings": {
+      "float32_matmul_precision": "highest",
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": true,
+      "deterministic_algorithms": false,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "flash_sdp_enabled": true,
+      "memory_efficient_sdp_enabled": true,
+      "math_sdp_enabled": true,
+      "cudnn_sdp_enabled": true
+    },
+    "sdpa_profiler_events": [
+      {
+        "operator": "aten::scaled_dot_product_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_scaled_dot_product_efficient_attention",
+        "count": 12
+      },
+      {
+        "operator": "aten::_efficient_attention_forward",
+        "count": 12
+      }
+    ],
+    "profiler_backend_observed": true
+  }
+]
