@@ -1,0 +1,71 @@
+{
+  "initial_event_prior_state": {
+    "status": "v3_completed_pending_parent_narrow_source_review",
+    "first_attempt": {
+      "source": "gate_native_value_readout_audit_v2.py",
+      "source_sha256": "24a27eca6f0ac2ca591a07e1c364407e040d7a6f7cc28259eb22a412d7ebf51e",
+      "failure": "Pinned safetensors header has wte.weight, not transformer.wte.weight.",
+      "failure_scope": "Before loading any pretrained tensor or T19 numeric shard.",
+      "failure_capsule": "gate_native_value_readout_audit_failure_1792615240204032727.json",
+      "log": "gate_native_value_readout_audit.log"
+    },
+    "corrected_attempt": {
+      "source": "gate_native_value_readout_audit_v3.py",
+      "source_sha256": "6f9af0a95871d5db28c4ca2e101b72d2e051c5d810d15970e6ba646a26908539",
+      "only_change": "Exactly three string replacements transformer.wte.weight to wte.weight: docstring, header lookup, tensor-label report.",
+      "thresholds_metric_guards_and_other_schema_unchanged": true,
+      "exit_code": 0,
+      "log": "gate_native_value_readout_audit_v3.log",
+      "numerical_outputs_not_inspected_at_note_creation": true
+    },
+    "preserved_all_attempts": true,
+    "model_forwards": 0,
+    "gpu_computation": false,
+    "file_deletions": 0
+  },
+  "final_execution_review": {
+    "status": "passed_after_parent_narrow_key_review",
+    "first_attempt_preserved": "gate_native_value_readout_audit_failure_1792615240204032727.json",
+    "first_attempt_scope": "Metadata key error before tensor/readout data; originalv2sourceandlogpreserved.",
+    "corrected_source": "gate_native_value_readout_audit_v3.py",
+    "corrected_source_sha256": "6f9af0a95871d5db28c4ca2e101b72d2e051c5d810d15970e6ba646a26908539",
+    "parent_review_file": "gate_native_value_readout_key_compatibility_review.json",
+    "parent_review_sha256": "6e82246970bbfc5359e30c9bcae7cd725ad12e395b6888b8170091935e41fe11",
+    "chronology": "CorrectedCPUauditrerunhadfinishedbeforeparentrequestedpreexecutionreview; numericinterpretationpauseduntilparentindependent3-string/keymappingreviewpassed.",
+    "thresholds_unchanged": true,
+    "run_manifest_sha256": "0810724a8e74b64f9908f0b7a22665926aec0734cdda6c70dc9d64ac06c25083",
+    "audit_json_sha256": "ef539162dabfa6e7f07fb930406c5f53b7c92cd97ee64bfa2755af10942e3da1",
+    "audit_markdown_sha256": "e03bfd6ebc08bd0b7850d02ae92eb6f58ed5422e2b43efef9671acc2098cc3fc",
+    "model_forwards": 0,
+    "gpu_computation": false,
+    "file_deletions": 0
+  },
+  "key_compatibility_review": {
+    "status": "passed",
+    "checked_utc": "2026-10-21T20:42:39.325234+00:00",
+    "scope": "Independent exact three-string key/label correction and checkpoint header-only mapping review after actual v3 execution; before interpreting its numerical result. No change to scientific or audit tolerances.",
+    "old_source_sha256": "24a27eca6f0ac2ca591a07e1c364407e040d7a6f7cc28259eb22a412d7ebf51e",
+    "new_source_sha256": "6f9af0a95871d5db28c4ca2e101b72d2e051c5d810d15970e6ba646a26908539",
+    "exact_changes": 3,
+    "old_checkpoint_key": "transformer.wte.weight",
+    "actual_checkpoint_key": "wte.weight",
+    "embedding_header": {
+      "dtype": "F32",
+      "shape": [
+        50257,
+        768
+      ],
+      "data_offsets": [
+        287209472,
+        441598976
+      ]
+    },
+    "checkpoint_file_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+    "local_transformers_gpt2_source_sha256": "b591253d7acadd39635bbf6f9f6fd0a97d6be5d7cf901074e2d959ff3e478e80",
+    "bias_free_tied_lm_head_source_verified": true,
+    "pretrained_payload_read": false,
+    "model_forwards": 0,
+    "failure_preserved": true,
+    "chronology_note": "Author had already started and completed v3 before prepare-only review message arrived. No numeric interpretation was accepted until this independent review."
+  }
+}

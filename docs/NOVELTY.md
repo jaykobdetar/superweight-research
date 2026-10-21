@@ -164,3 +164,29 @@ live. This difference in estimand is not a priority claim. The report retains
 the earlier super-weight, massive-activation, attention-gate, GPT-2 sink and
 self-repair comparisons and does not claim exhaustive absence of prior art.
 
+
+## T19 native-value boundary extension
+
+The [native-value report](GPT2_NATIVE_VALUE.md) extends this case study rather
+than claiming discovery of a new general attention mechanism.
+[Super Weight](https://arxiv.org/html/2411.07191v2) establishes exceptional scalar
+weights/super activations. [Massive Activations](https://arxiv.org/html/2402.17762v2)
+studies attention-bias roles and explicit bias alternatives. The
+[implicit attention-gate analysis](https://arxiv.org/html/2602.01203v1) supplies
+the sigmoid/log-sum-exp gate decomposition and source-value-zero approximation.
+The [GPT-2 attention-sink study](https://arxiv.org/html/2604.14722v1) causally
+examines query bias, positional keys and the distinction between sink production
+and downstream function. Centering/PCA and finite-difference interventions are
+established methods; rank alone does not identify one mechanism.
+
+T19's candidate contribution is the exact scoped measurement: frozen-FL10PC1
+removal retains its Wiki-harm/book-and-code-benefit pattern with native source
+values on this panel; an8-boundary source-value factorial quantifies controlled
+operation interactions and distinguishes effects relative to the boundary
+baseline from effects relative to intactGPT-2. The allocation edit still changes
+predictions, and its post-projection perturbation magnitude is not matched by
+the current fixed orthogonal control. T20 is planned to test that competing
+explanation. No priority beyond this measured case, unique circuit, universal
+transfer mechanism, compression benefit or generation-quality gain is established.
+These sources were rechecked for the cited claims; this is not an exhaustive
+proof that no related experiment exists.

@@ -1,0 +1,7 @@
+# Final portable containment review: passed
+
+Adapter `46516322c9841bc6acac67b034c6f1187ba3c07d205879525f403129aa7e6bd4` differs from the archived actual-export adapter only by one resolved-path containment helper and its first-statement guard in four actions. Removing those five AST additions yields exactly the old AST. Numeric serialization, selection, audit contracts and thresholds are unchanged. Guards precede mkdir/import/owned failure recording. The retained 60-case fixture includes ten containment/no-source-mutation cases; its passed evidence was inspected without rerunning it.
+
+An independent read-only probe of v9, private inputs v9 and stage v6 passed eleven checks: exact 35 files/1,070,001 bytes, identity and inventory hashes, canonical token/history bytes, private literal/start commitments, six-input-hash-only runner adaptation, typed audit bindings, omission of real and synthetic token IDs, and preserved review chronology. Peak reviewer RSS was 551,723,008 bytes. No model, GPU, weight read, export, deletion or cleanup occurred.
+
+The V4 guide now places config/outputs outside immutable source trees and honestly distinguishes inherited history, tokenizer-only preparation, staged unexecuted replay and actual export under archived `56718...`. Existing export v1 passed its separate exact comparison/privacy review. This closes the identified containment/guide blocker for these artifacts. Future repository placement must retain the reviewed identities; this is not blanket approval for all CLI inputs or an external replication claim.

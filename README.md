@@ -70,15 +70,28 @@ then `python scripts/compare_transfer.py --work .reproduce-transfer`.
 The [fresh-calibration report](docs/GPT2_GATE_WIKI_CALIBRATION.md) crosses old and
 fresh Wiki centers and directions. L10's Wiki-harm/non-Wiki-benefit pattern
 persists on this panel, but the reference has source values zeroed. On Ethics,
-the apparent gain largely returns loss toward the intact model. The next open
-question is whether the gate effect survives native source values. Start with
+the apparent gain largely returns loss toward the intact model. The native-value follow-up below now tests whether that effect survives
+restored source values. Start with
 the [T18 audit/replay guide](docs/GPT2_GATE_WIKI_CALIBRATION_QUICKSTART.md), or run
 `python scripts/audit_wiki_calibration_results.py` using NumPy only. Numerical,
 readout, export and preparation audits passed; a second pretrained T18 replay
 remains unperformed.
 
-For the clean continuation checkpoint and highest-value next experiment, read
-[the research handoff](docs/HANDOFF.md). No T19 model batch has started.
+The [native-value report](docs/GPT2_NATIVE_VALUE.md) crosses native/zero source
+values upstream, at L10 and downstream on fresh passages. PC1 removal still
+worsens Wiki loss and improves the books/code with native values. Native
+perplexity changes range from about +0.8% on Wiki to −2.2% on Ethics, while
+1.7–4.1% of next-token predictions change. These are scoped controlled effects,
+not a faithful replacement or a unique circuit. The interrupted run was
+recovered with an exact 70-forward continuity check: 2,184 retained scientific
+forwards and 2,272 actual returns. Original missing final guards remain explicit.
+See the [T19 audit/replay guide](docs/GPT2_NATIVE_VALUE_REPRODUCING.md), or run
+`python -B scripts/audit_native_value_results.py` with NumPy only. Independent
+numerical, sampled readout, scientific and actual-export audits passed. A
+complete second pretrained replay remains unperformed.
+
+For the continuation checkpoint and next perturbation-norm control, read
+[the research handoff](docs/HANDOFF.md).
 
 ## Quick start
 

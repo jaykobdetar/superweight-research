@@ -1,0 +1,729 @@
+{
+  "schema": "T19_independent_saved_readout_audit_v2",
+  "status": "passed",
+  "preselected_input": {
+    "corpus": "wiki_validation",
+    "window": 0,
+    "identity": "natural",
+    "length": 512,
+    "token_sha256": "d59b0e7aa38025dc085c5e19ffc1cbcdb387e2c394d055f913da2569c7df7f87"
+  },
+  "scope": "Eight saved arms and four full-vocabulary readout queries; full final hidden/context and stored bridge target losses. Full511-row GPU logits were not saved and are not independently reconstructed.",
+  "execution_provenance": {
+    "execution_type": "verified_composite_after_interruption",
+    "retained_forward_passes": 2184,
+    "scope": "Verified composite retains committed original and resumed evidence. The interrupted original worker lacks final parameter/precision guards; this audit does not assert a global uninterrupted-run guard pass. Compatibility-gate provenance belongs to the composite audit."
+  },
+  "source_sha256": "6f9af0a95871d5db28c4ca2e101b72d2e051c5d810d15970e6ba646a26908539",
+  "run_manifest_sha256": "0810724a8e74b64f9908f0b7a22665926aec0734cdda6c70dc9d64ac06c25083",
+  "inventory_sha256": "cd1b51344e5c4057e179fa37d9a578c920978432d3c8085db6815197fb1bc823",
+  "snapshot_shard_sha256": "d8a9a3d683a9370e2b425fa7301822487f6c1a1a21aa8ad601f9679110406d06",
+  "checkpoint_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "weight_tensors_loaded": [
+    "wte.weight"
+  ],
+  "embedding_sha256": "e182e433b37dbdb47448e0413c840edf6965113c1fc8048c63b69795d8cf875a",
+  "model_forwards": 0,
+  "gpu_computation": false,
+  "cpu_threads": 1,
+  "file_deletions": 0,
+  "query_rows": [
+    1,
+    126,
+    127,
+    510
+  ],
+  "target_positions": [
+    2,
+    127,
+    128,
+    511
+  ],
+  "counts": {
+    "arms": 8,
+    "full_vocabulary_rows_per_arm": 4,
+    "total_full_vocabulary_rows": 32,
+    "independently_checked_bridges": 2,
+    "full_saved_hidden_queries_per_arm": 512,
+    "bridge_recorded_all_query_argmax_mismatches": 0,
+    "bridge_independently_checked_argmax_mismatches": 0
+  },
+  "prospective_offline_saved_metric_max_abs": 0.0001,
+  "arms": {
+    "000__baseline": {
+      "nll": [
+        5.886850554523537,
+        1.138837245110661,
+        2.2295862991071465,
+        0.5399757328331856
+      ],
+      "margin": [
+        0.3322906494140625,
+        0.8192138671875,
+        0.8612823486328125,
+        1.7407608032226562
+      ],
+      "kl_c_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_trial_to_c": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_trial_to_boundary": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 2.652446331463665e-07,
+          "rms": 1.922923969770527e-07,
+          "symmetric_relative_l2": 5.990548992153466e-08
+        },
+        "kl_c": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.0001824993084937887,
+        "rms": 3.6823800378432106e-05,
+        "symmetric_relative_l2": 3.8357124543722687e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00017547607421875,
+        "rms": 3.467131348315707e-05,
+        "symmetric_relative_l2": 3.611500920074688e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015947045825792934,
+        "max_error_to_bound_ratio": 0.01721462626449861
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "000__remove": {
+      "nll": [
+        5.90034229881533,
+        1.0839177613560727,
+        2.383026141201669,
+        0.5073432678821942
+      ],
+      "margin": [
+        0.3127288818359375,
+        0.8699569702148438,
+        1.0338821411132812,
+        1.92144775390625
+      ],
+      "kl_c_to_trial": [
+        0.00022323738849179165,
+        0.0036399504576931155,
+        0.007008701664355845,
+        0.0025147546028850398
+      ],
+      "kl_trial_to_c": [
+        0.00022227248588062857,
+        0.0035506439569609454,
+        0.007231211278992356,
+        0.0024389979960724537
+      ],
+      "kl_boundary_to_trial": [
+        0.00022323738849179165,
+        0.0036399504576931155,
+        0.007008701664355845,
+        0.0025147546028850398
+      ],
+      "kl_trial_to_boundary": [
+        0.00022227248588062857,
+        0.0035506439569609454,
+        0.007231211278992356,
+        0.0024389979960724537
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 3.1120546672980254e-07,
+          "rms": 1.8817892539531946e-07,
+          "symmetric_relative_l2": 5.8125109300704383e-08
+        },
+        "kl_c": {
+          "max_abs": 1.913460781419185e-07,
+          "rms": 1.2234045963266822e-07,
+          "symmetric_relative_l2": 2.951041569908564e-05
+        },
+        "kl_boundary": {
+          "max_abs": 1.913460781419185e-07,
+          "rms": 1.2234045963266822e-07,
+          "symmetric_relative_l2": 2.951041569908564e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00020506120911534254,
+        "rms": 3.6906822527333206e-05,
+        "symmetric_relative_l2": 3.8479349701103305e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00018310546875,
+        "rms": 3.474803744737016e-05,
+        "symmetric_relative_l2": 3.6228583031610106e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015789362314169796,
+        "max_error_to_bound_ratio": 0.01719770007889466
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "000__orth": {
+      "nll": [
+        5.873637317316902,
+        1.1816359490653485,
+        2.107841194314383,
+        0.5561714361635696
+      ],
+      "margin": [
+        0.404693603515625,
+        0.7813796997070312,
+        0.69097900390625,
+        1.7485160827636719
+      ],
+      "kl_c_to_trial": [
+        0.004225203358828755,
+        0.0047051234110082355,
+        0.005312857413736051,
+        0.0014006548496920475
+      ],
+      "kl_trial_to_c": [
+        0.004243916739110252,
+        0.004699144108520409,
+        0.005261312586281799,
+        0.0014611427159536238
+      ],
+      "kl_boundary_to_trial": [
+        0.004225203358828755,
+        0.0047051234110082355,
+        0.005312857413736051,
+        0.0014006548496920475
+      ],
+      "kl_trial_to_boundary": [
+        0.004243916739110252,
+        0.004699144108520409,
+        0.005261312586281799,
+        0.0014611427159536238
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 3.7655511009315745e-07,
+          "rms": 2.0476774326233772e-07,
+          "symmetric_relative_l2": 6.423487453142525e-08
+        },
+        "kl_c": {
+          "max_abs": 3.373186129936208e-07,
+          "rms": 2.38579957706403e-07,
+          "symmetric_relative_l2": 5.695704872619229e-05
+        },
+        "kl_boundary": {
+          "max_abs": 3.373186129936208e-07,
+          "rms": 2.38579957706403e-07,
+          "symmetric_relative_l2": 5.695704872619229e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00018937515002903638,
+        "rms": 3.7382483275905855e-05,
+        "symmetric_relative_l2": 3.868124476590704e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00018310546875,
+        "rms": 3.529895737462629e-05,
+        "symmetric_relative_l2": 3.652533193452364e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015902333028898107,
+        "max_error_to_bound_ratio": 0.017180860795091492
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "111__baseline": {
+      "nll": [
+        5.823391286526693,
+        1.184626952902463,
+        2.2276747493224005,
+        0.5259539319811656
+      ],
+      "margin": [
+        0.0450592041015625,
+        0.7706146240234375,
+        0.8352890014648438,
+        1.8138656616210938
+      ],
+      "kl_c_to_trial": [
+        0.01034289404654153,
+        0.0023176134679305923,
+        0.0034292693754652366,
+        0.001406303355322655
+      ],
+      "kl_trial_to_c": [
+        0.010442199256247035,
+        0.0023250592586784927,
+        0.0035336689267437783,
+        0.001403773526762303
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_trial_to_boundary": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 3.258333336475516e-07,
+          "rms": 1.781944431896898e-07,
+          "symmetric_relative_l2": 5.596354525671413e-08
+        },
+        "kl_c": {
+          "max_abs": 1.3270193453904927e-07,
+          "rms": 1.0373031853265281e-07,
+          "symmetric_relative_l2": 1.847587800351779e-05
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00018651091110655216,
+        "rms": 3.688217887126709e-05,
+        "symmetric_relative_l2": 3.94073197990669e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00019073486328125,
+        "rms": 3.46817280591084e-05,
+        "symmetric_relative_l2": 3.705621497293091e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015911853278853774,
+        "max_error_to_bound_ratio": 0.01988388883922837
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "111__remove": {
+      "nll": [
+        5.8438447808692136,
+        1.1298561894506705,
+        2.35206229625547,
+        0.49460953670476004
+      ],
+      "margin": [
+        0.02024078369140625,
+        0.8141632080078125,
+        0.9756927490234375,
+        2.0035171508789062
+      ],
+      "kl_c_to_trial": [
+        0.010945791705862816,
+        0.0035614389914647017,
+        0.007877047968376035,
+        0.003869571311405828
+      ],
+      "kl_trial_to_c": [
+        0.011040560442287456,
+        0.003395389837934796,
+        0.008350849585951484,
+        0.0037053703363299894
+      ],
+      "kl_boundary_to_trial": [
+        0.000250938504834593,
+        0.003888316734556688,
+        0.007478147474106501,
+        0.0031242620341020424
+      ],
+      "kl_trial_to_boundary": [
+        0.0002496863277999592,
+        0.0037609832627364193,
+        0.00776873195397261,
+        0.002986668608010538
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 1.0972526887087497e-07,
+          "rms": 7.655931580518684e-08,
+          "symmetric_relative_l2": 2.3853861967560556e-08
+        },
+        "kl_c": {
+          "max_abs": 4.131799775999867e-07,
+          "rms": 2.4404153092496675e-07,
+          "symmetric_relative_l2": 3.371890364185712e-05
+        },
+        "kl_boundary": {
+          "max_abs": 5.317452429526477e-07,
+          "rms": 2.795866009712389e-07,
+          "symmetric_relative_l2": 6.218069195614865e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00020093811093602199,
+        "rms": 3.683337009115208e-05,
+        "symmetric_relative_l2": 3.938151283338255e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00019073486328125,
+        "rms": 3.457048273076943e-05,
+        "symmetric_relative_l2": 3.6962078298805e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015715990356538603,
+        "max_error_to_bound_ratio": 0.0222387552641765
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "111__orth": {
+      "nll": [
+        5.800109122713456,
+        1.2294322879284634,
+        2.121364948839652,
+        0.5357157814007358
+      ],
+      "margin": [
+        0.19366455078125,
+        0.7017364501953125,
+        0.6903915405273438,
+        1.8271217346191406
+      ],
+      "kl_c_to_trial": [
+        0.013217336842096507,
+        0.010778602302276459,
+        0.00974357805221667,
+        0.0033824929478697262
+      ],
+      "kl_trial_to_c": [
+        0.013741610777743595,
+        0.010796659409088385,
+        0.009766814093341984,
+        0.0034985906455500676
+      ],
+      "kl_boundary_to_trial": [
+        0.004609162959374709,
+        0.005222179828571385,
+        0.006354351167607883,
+        0.0010711195068813999
+      ],
+      "kl_trial_to_boundary": [
+        0.004651818039217525,
+        0.005230965070539754,
+        0.006170182940541559,
+        0.0011008055857197822
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 4.398327426713422e-07,
+          "rms": 2.537526986277047e-07,
+          "symmetric_relative_l2": 8.030394956842704e-08
+        },
+        "kl_c": {
+          "max_abs": 4.513631693802561e-07,
+          "rms": 2.4626008913917655e-07,
+          "symmetric_relative_l2": 2.471090063339952e-05
+        },
+        "kl_boundary": {
+          "max_abs": 4.4360108749459323e-07,
+          "rms": 2.4410516814466955e-07,
+          "symmetric_relative_l2": 5.144948596157978e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00018837077952582604,
+        "rms": 3.688833224018368e-05,
+        "symmetric_relative_l2": 3.941929317445371e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00017547607421875,
+        "rms": 3.466729419431991e-05,
+        "symmetric_relative_l2": 3.704586656928644e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015754544992053802,
+        "max_error_to_bound_ratio": 0.017833387454063404
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "111__remove_scale": {
+      "nll": [
+        5.843842862312062,
+        1.1298521383809146,
+        2.3520665419163223,
+        0.4946113475307787
+      ],
+      "margin": [
+        0.02024078369140625,
+        0.8141632080078125,
+        0.9757003784179688,
+        2.003509521484375
+      ],
+      "kl_c_to_trial": [
+        0.01094575408883024,
+        0.0035613747873239417,
+        0.007877112860530024,
+        0.003869417941085702
+      ],
+      "kl_trial_to_c": [
+        0.01104051855359163,
+        0.0033953229414784483,
+        0.00835090391610237,
+        0.003705229416298414
+      ],
+      "kl_boundary_to_trial": [
+        0.00025093183570781575,
+        0.003888463053040349,
+        0.007478201671571645,
+        0.0031242400461425845
+      ],
+      "kl_trial_to_boundary": [
+        0.0002496796113483232,
+        0.0037611268157479155,
+        0.007768779697079164,
+        0.002986644200874861
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 3.5590337077451295e-07,
+          "rms": 1.8781451755124471e-07,
+          "symmetric_relative_l2": 5.851805368528154e-08
+        },
+        "kl_c": {
+          "max_abs": 3.105401165585768e-07,
+          "rms": 1.7522509547385528e-07,
+          "symmetric_relative_l2": 2.4211379962055318e-05
+        },
+        "kl_boundary": {
+          "max_abs": 1.7843104139613625e-07,
+          "rms": 9.178831507871884e-08,
+          "symmetric_relative_l2": 2.0413863548874717e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00019390706799526924,
+        "rms": 3.680116252071986e-05,
+        "symmetric_relative_l2": 3.934707484484953e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00017547607421875,
+        "rms": 3.45669333698929e-05,
+        "symmetric_relative_l2": 3.695828124169531e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.015715991630930362,
+        "max_error_to_bound_ratio": 0.021460595063638364
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    },
+    "111__orth_scale": {
+      "nll": [
+        5.800115531020938,
+        1.229436870950507,
+        2.1213606433727623,
+        0.5357163096673232
+      ],
+      "margin": [
+        0.19366455078125,
+        0.7017288208007812,
+        0.6903839111328125,
+        1.827117919921875
+      ],
+      "kl_c_to_trial": [
+        0.013217434791690913,
+        0.010778760883152569,
+        0.009743700976178615,
+        0.003382416802477259
+      ],
+      "kl_trial_to_c": [
+        0.013741718276106677,
+        0.010796826532031116,
+        0.009766946785465084,
+        0.0034985051737440164
+      ],
+      "kl_boundary_to_trial": [
+        0.004609212751656289,
+        0.005222274142989446,
+        0.006354453436124796,
+        0.0010710770956464583
+      ],
+      "kl_trial_to_boundary": [
+        0.004651873378297127,
+        0.005231073617942551,
+        0.006170289677352868,
+        0.0011007600114135334
+      ],
+      "saved_fp32_metric_error": {
+        "nll": {
+          "max_abs": 3.1244823750498085e-07,
+          "rms": 1.7242952017921224e-07,
+          "symmetric_relative_l2": 5.456793028837479e-08
+        },
+        "kl_c": {
+          "max_abs": 3.2096064082366704e-07,
+          "rms": 2.4594897541733603e-07,
+          "symmetric_relative_l2": 2.467904148115057e-05
+        },
+        "kl_boundary": {
+          "max_abs": 3.3014717746270017e-07,
+          "rms": 2.710755066223756e-07,
+          "symmetric_relative_l2": 5.713135962281344e-05
+        }
+      },
+      "readout_gpu_vs_cpu_fp64": {
+        "max_abs": 0.00018756252043772292,
+        "rms": 3.6869996516448544e-05,
+        "symmetric_relative_l2": 3.9399699043644854e-07
+      },
+      "readout_gpu_vs_cpu_fp32": {
+        "max_abs": 0.00018310546875,
+        "rms": 3.467211624112681e-05,
+        "symmetric_relative_l2": 3.7051019112599203e-07
+      },
+      "fp32_dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01575454577103276,
+        "max_error_to_bound_ratio": 0.019037018591163916
+      },
+      "gpu_vs_cpu_fp64_argmax_mismatches": [],
+      "own_boundary_source_hidden_exact": true
+    }
+  },
+  "bridges": {
+    "remove": {
+      "full_saved_context_drift": {
+        "max_abs": 7.152557373046875e-06,
+        "rms": 1.385596999856092e-07,
+        "symmetric_relative_l2": 4.2016290719100475e-07
+      },
+      "full_saved_final_hidden_drift": {
+        "max_abs": 0.000331878662109375,
+        "rms": 1.8955600392126162e-06,
+        "symmetric_relative_l2": 2.1579163729566303e-07
+      },
+      "four_row_saved_logit_drift": {
+        "max_abs": 6.866455078125e-05,
+        "rms": 1.077561264482147e-05,
+        "symmetric_relative_l2": 1.1521071841037142e-07
+      },
+      "scored_target_loss_max_abs": 4.57763671875e-05,
+      "passage_mean_loss_difference": -3.275155619371171e-07,
+      "four_row_kl_delta_to_scale": [
+        2.0460829824350188e-11,
+        1.9375454711245926e-11,
+        1.7749808136080887e-11,
+        7.764971700497425e-12
+      ],
+      "four_row_kl_scale_to_delta": [
+        2.0460540896644838e-11,
+        1.937560280804531e-11,
+        1.774959989134501e-11,
+        7.764300737818334e-12
+      ],
+      "four_row_argmax_mismatches": [],
+      "recorded_all_query_argmax_mismatches": [],
+      "all_query_mismatches_scope": "Runtime records outside the four saved full-vocabulary rows were retained but are not independently checked.",
+      "prospective_bridge_criteria": {
+        "context_passed": true,
+        "target_loss_passed": true,
+        "passage_mean_passed": true
+      }
+    },
+    "orth": {
+      "full_saved_context_drift": {
+        "max_abs": 5.0067901611328125e-06,
+        "rms": 1.0431205368213997e-07,
+        "symmetric_relative_l2": 2.962183891372066e-07
+      },
+      "full_saved_final_hidden_drift": {
+        "max_abs": 0.0003509521484375,
+        "rms": 1.3946894568499703e-06,
+        "symmetric_relative_l2": 1.588336904157525e-07
+      },
+      "four_row_saved_logit_drift": {
+        "max_abs": 4.57763671875e-05,
+        "rms": 8.727926481879588e-06,
+        "symmetric_relative_l2": 9.326761849892066e-08
+      },
+      "scored_target_loss_max_abs": 2.86102294921875e-05,
+      "passage_mean_loss_difference": -5.5488450087460815e-08,
+      "four_row_kl_delta_to_scale": [
+        2.2439633947544094e-11,
+        1.5547752388458913e-11,
+        1.3675981514677488e-11,
+        5.3956390703438255e-12
+      ],
+      "four_row_kl_scale_to_delta": [
+        2.2439103194493667e-11,
+        1.554818433862908e-11,
+        1.3675458993327749e-11,
+        5.3946799227679886e-12
+      ],
+      "four_row_argmax_mismatches": [],
+      "recorded_all_query_argmax_mismatches": [],
+      "all_query_mismatches_scope": "Runtime records outside the four saved full-vocabulary rows were retained but are not independently checked.",
+      "prospective_bridge_criteria": {
+        "context_passed": true,
+        "target_loss_passed": true,
+        "passage_mean_passed": true
+      }
+    }
+  },
+  "maxima": {
+    "gpu_vs_cpu_fp64_readout_max_abs": 0.00020506120911534254,
+    "gpu_vs_cpu_fp32_readout_max_abs": 0.00019073486328125,
+    "saved_nll_max_abs_error": 4.398327426713422e-07,
+    "saved_kl_max_abs_error": 5.317452429526477e-07,
+    "bridge_context_max_abs": 7.152557373046875e-06,
+    "bridge_scored_target_loss_max_abs": 4.57763671875e-05,
+    "bridge_absolute_passage_mean_loss_difference": 3.275155619371171e-07
+  },
+  "peak_rss_bytes": 1015287808,
+  "elapsed_seconds": 4.97718620300293,
+  "resources": {
+    "peak_rss_bytes": 1015287808,
+    "elapsed_seconds": 4.97718620300293,
+    "cpu_threads": 1,
+    "model_forwards": 0,
+    "gpu_computation": false
+  },
+  "public_omissions": "Prediction arrays and all mismatch token IDs omitted. The complete private report is bound by its SHA256 in export.json."
+}
