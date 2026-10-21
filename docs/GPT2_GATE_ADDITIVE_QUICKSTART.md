@@ -80,4 +80,4 @@ This loads only the pinned tied embedding tensor, never a model. It streams all 
 - `reviews/gate_additive/`: independent implementation, numerical, reconstruction and report reviews; the export manifest lists private omissions.
 - `experiments/pulse_transfer/`: frozen scientific code, original proposal, prospective storage addendum and reproduction helpers.
 
-The private GitHub repository has not been created. This is a local package pending the specific publication confirmation; no credential or permission change is needed to run the local audits.
+The reviewed package is published in the private [superweight-research repository](https://github.com/jaykobdetar/superweight-research). The owner explicitly approved this upload on October 21, 2026; no credential or security-setting change was made. Earlier review notes retain their historical pre-publication status.

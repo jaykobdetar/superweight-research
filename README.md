@@ -1,4 +1,4 @@
-# Super-weight causal circuits
+# Super-weight research
 
 A reproducible causal case study of the computation around an OLMo-1B super
 weight: earlier newline history, attention K/V pathways, residual components,
@@ -113,7 +113,8 @@ model and is much smaller. Other GPUs/kernels can change FP16 rounding.
 - `figures/`: original explanatory diagrams and result plots.
 - `transfer/`: subsequent model comparisons, when executed.
 
-The intended GitHub destination is private; creation remains denied and no
-remote has been configured. This local repository contains no credentials, checkpoint weights,
+Published to the private [superweight-research repository](https://github.com/jaykobdetar/superweight-research) with explicit owner approval on October 21, 2026.
+Repository privacy, owner admin access and the initial reviewed commit/tree were verified.
+This repository contains no credentials, checkpoint weights,
 input corpora, or unrelated files. Retrieve external inputs under their own
 terms; hashes and source links are supplied instead of redistribution.
