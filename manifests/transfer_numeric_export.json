@@ -1,0 +1,80 @@
+[
+  {
+    "run": "gpt2_run",
+    "records": 976,
+    "original_per_token_sha256": "93e556a0a9bb233cacb20b74be0593e37f5146b2f8b849eee51f9622d63fd6a0",
+    "export_sha256": "a3952f368174590544f41cfa73eded133b8ad6fd704da28ab8f90b28eb93965a",
+    "private_raw_files": {
+      "per_token.pt": "93e556a0a9bb233cacb20b74be0593e37f5146b2f8b849eee51f9622d63fd6a0",
+      "selection_raw.pt": "0ed8e7836e6076c0b65fc364170af67fb73f8ca523fc6b23ef322a5b2f3aa0b1",
+      "tokens.pt": "fe812665b7762ac5563f5a880ebaa5ce6cb057f54277533d72c47cd2b6c2c14b",
+      "traces.pt": "f7f17e0e6fe7fcb54fb54dcd6e8cbd939a0f567e1ee57b6ffb0c6294b2825654"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "llama_run",
+    "records": 976,
+    "original_per_token_sha256": "94ab3a2bec66f9a30c07314292cb980df4825f73089746d2394f5d7ebd229320",
+    "export_sha256": "4aacd909438752dca87f0db214e4bf3901e6c3d7d5ee7a83cc08f8acd763ac82",
+    "private_raw_files": {
+      "per_token.pt": "94ab3a2bec66f9a30c07314292cb980df4825f73089746d2394f5d7ebd229320",
+      "selection_raw.pt": "e1b10109e744238eed9557d58bac8e786a4e6b4931ed172777d57ac5949aaffb",
+      "tokens.pt": "a9a9e3d9cbc40b1977e7fe8055c988c8d09c23b7c302c75fd341b44729e6b92d",
+      "traces.pt": "ae9445ed5b8045fa62c3ad8f2a9c21ec0c1f64955e99d03ac2fb27f718f8c865"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "gpt2_groups_run",
+    "records": 680,
+    "original_per_token_sha256": "0475d81e0d6e409b31109ddf446adee776eb7725314eb1c3c8b07d79207dce54",
+    "export_sha256": "95c325d5b77401b9cd97b9aae36f9254bac949f1757ddbfec7d18479fc9b3cca",
+    "private_raw_files": {
+      "per_token.pt": "0475d81e0d6e409b31109ddf446adee776eb7725314eb1c3c8b07d79207dce54",
+      "tokens.pt": "d4cb9d5bb43580febc9e251fe77cf9888d9e02e013e4e08c70feb9438f3c2456",
+      "traces.pt": "961c94f91e8e819104e60fef69435e6235d958955b2a0f9c2f39dbefacafde4f"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "llama_source_kv_run",
+    "records": 1056,
+    "original_per_token_sha256": "76e4417098fae35159021262ed8ac6884c101efcca7e9d2f0f8127f715c9c94a",
+    "export_sha256": "6d79238ebea508b8f71796ecf2f02c8373b7b0884e39d9f231f656ed54754db7",
+    "private_raw_files": {
+      "donors.pt": "cdc6e708766bca0109a3e339f8010eb2f3b6896d0e0369a9e3a2184d10961a47",
+      "per_token.pt": "76e4417098fae35159021262ed8ac6884c101efcca7e9d2f0f8127f715c9c94a",
+      "tokens.pt": "2e30221ab002c3a8a68a3777e2d45b205f15bf35a95e74989b7e7ad66958d0ce",
+      "traces.pt": "9ebed33e79f1f63809d46b20b4e93a6f0ee6f78a48e2a7a3c9d1238d7d84781c"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "gpt2_writes_run",
+    "records": 360,
+    "original_per_token_sha256": "a74fb7c2d4114f13d803e1f27b08180fa9a60825ea7d71fbff2dba8740859ee9",
+    "export_sha256": "1ba720e648e5f4f83ac15b8647d71a30472aa288287167bf12d288cfdca53322",
+    "private_raw_files": {
+      "per_token.pt": "a74fb7c2d4114f13d803e1f27b08180fa9a60825ea7d71fbff2dba8740859ee9",
+      "tokens.pt": "f42d8f8b8657c25d87e47a6ed18883ba0c6eaf0cb664ef615f336cf9db4c3635",
+      "traces.pt": "dfb2f5dd83045579f54aeb2a4f2b07cc7fe0f1fc4ca343a83d264da3f7a173f0"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  },
+  {
+    "run": "llama_replacements_run",
+    "records": 520,
+    "original_per_token_sha256": "08644b3b1f08681018d5b9fd7620eeeca2457538780e2f5bdf31f5bd6c71f23f",
+    "export_sha256": "70b329acae882822b55d440eebdd66114a1453b319331d8064127726282f21ae",
+    "private_raw_files": {
+      "calibration.pt": "23f0deb6a4fc732fc94a4211a578f02b123396877163f754d67b708978b01f91",
+      "calibration_tokens.pt": "bba8cbb0ed1197fb505ecfc47244b2100804021fda8821e73fa2a22143c012d7",
+      "clean_donors.pt": "192abed55bd252ffada3b2984f2a87c39e28ae253750a7d54abcc73bddffc7c1",
+      "per_token.pt": "08644b3b1f08681018d5b9fd7620eeeca2457538780e2f5bdf31f5bd6c71f23f",
+      "tokens.pt": "c14cb0ef76161e7f3b874c86c4c6ce7cfed1da94d8594f9778f35ec86026fad5",
+      "traces.pt": "9aab3d6df772216597facf5029f1affe032ab016dea0fb7e01aab3aa81956728"
+    },
+    "transformation": "Slice each record at score_index; retain loss/KL and a boolean equality-to-native prediction mask; omit input and predicted token IDs. History records use their own baseline as originally scored."
+  }
+]

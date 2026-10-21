@@ -1,0 +1,11 @@
+# Llama source K/V static review
+
+No launch blocker found in `LLAMA_SOURCE_KV.md` / `llama_source_kv.py`. Ten synthetic CPU checks pass (`llama_kv_cpu_test.py/.json`, peak RSS721,640 KiB), with no pretrained model/GPU load.
+
+All downstream native K/V projection outputs at source0 are replaced before native RoPE and GQA. The8 KV heads remain in native projection order;24 query heads, the native three-to-one grouping, and later-position projections remain intact. No OLMo clipping is introduced. Later queries in first downstream layer2 are checked identical across C/R/N before transmission. Full-donor diagonal closures against every donor world exclude predictor0, which retains the recipient's direct residual difference. These are architectural controls.
+
+Attention prehooks modify layers2..27 only. Explicit causal and source-blocked masks share the same HF masked-SDPA dispatch; inspection confirms this repeats each KV head three times, whereas mask-free native attention can use enable_gqa. Native-versus-explicit drift is separately saved. Boolean allowed masks and additive masks merge correctly. Source0 self-attention stays allowed; only later query-to-source0 edges are additionally removed. CPU tests verify mask support, query0 preservation, source-only projection changes and grouped attention equivalence. Blocking source content makes all later outputs architecturally independent of the source intervention; the C/R/N blocked closures are appropriate. Native-mask and blocked output comparisons alone would conflate dispatch drift, so effects need each world's explicit-causal reference.
+
+Zero-value controls correctly distinguish endogenous keys from clean-donor-clamped keys; zeroing V does not remove its softmax mass. Conditional source trajectories differ across these worlds, so neither zeroV nor mixed donor effects are additive mediation percentages.
+
+Expected count:32 inputs ×33 conditions =1056 forwards/records. Checks:192 diagonal donor closures,64 blocked-source closures,64 first-query equality checks,96 native-mask drift records;24 patch conditions per input, each26 or52 projection replacements. Fresh preparation inherits verified source hashes and actual used-token character-span disjointness checks. All input preparation/selection is frozen before evaluations. Runtime closure/finiteness and numerical replay remain required.

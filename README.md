@@ -22,6 +22,16 @@ This repository does not claim a universal mechanism, priority over all prior
 work, or a faithful fixed low-rank replacement. Negative experiments and natural
 counterexamples are retained. No UIT knowledge is needed.
 
+The [model-transfer report](docs/TRANSFER.md) adds GPT-2 and Llama-3.2-3B-Instruct.
+It finds conditional GPT-2 MLP coordinate regrowth and different Llama source
+K/V dependence, including approximate fixed-source replacements. See the
+[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for six sequential
+batches and their limits. These findings do not establish one shared mechanism.
+
+Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
+`python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
+then `python scripts/compare_transfer.py --work .reproduce-transfer`.
+
 ## Quick start
 
 CPU-only numerical audit of the supplied results:

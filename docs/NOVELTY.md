@@ -17,7 +17,7 @@ Reviewed 2026-10-21 against the six requested primary papers, using the versions
 
 1. **A prior-newline-dependent suppression path in this OLMo checkpoint.** A development-only screen selected L0H14. On held-out constructed inputs, suppressing its single q→p attention edge restores the later newline pulse. Controlled token IDs distinguish187 from535 and other alternatives. In local head-context recomputation, donor K and V jointly suppress the pulse in one direction; either alone fails there, while either reverse donor breaks suppression. Oracle recomputation and H0 controls support localization. Twelve eligible unedited book/code windows reproduce edge-induced pulses. I did not locate this named head, prior-token counterfactual, and bidirectional K/V factorial in the six papers. This supports a specific circuit case study, not a universal newline detector or first report of delimiter spikes.
 
-2. **Coordinate deletion and neuron-column deletion are different causal questions.** Removing the selected scalar’s output contribution can be far worse than removing the full neuron output at the same position. The row/complement factorial isolates this difference while keeping the intermediate activation fixed; identical raw target-coordinate outcomes can accompany different normalized vectors and downstream behavior. This is stronger than showing that zeroing some large activations is harmless in another model, but it does not overturn prior results for scalar deletion. The result is intervention-dependent fragility in the tested checkpoint and contexts.
+2. **Coordinate deletion and neuron-column deletion are different causal questions.** Removing the selected scalar’s output contribution can be far worse than removing the full neuron output at the same position. The row/complement factorial isolates this difference while keeping the intermediate activation fixed; identical raw target-coordinate outcomes can accompany different normalized vectors and downstream behavior. The model-specific outcome is the empirical extension; the intervention decomposition itself has close prior art in Weight-Dictionary Decomposition, credited below. It does not overturn prior scalar-deletion results or introduce the general scalar/complement distinction.
 
 3. **Downstream K/V compatibility is a specific candidate mechanism for that fragility.** Clean, row-deleted, and column-deleted donor source states yield asymmetric separate-K/separate-V transfers. In the controlled prior-newline panel, column-world K into the row world is near baseline, while column-world V with row-world keys is catastrophically harmful. Blocking the source column often removes most additional row-deletion damage. These experiments expose harmful mixed states; they do not prove a universal “correct K/V pair” law, that keys encode no content, or that the values carry semantics. Whole-column deletion has material natural-input exceptions, especially the two DuBois p0 cases and one code window.
 
@@ -50,4 +50,65 @@ A narrow transfer test should preserve definitions rather than hunt until it fin
 
 [Subramanian et al., Super Weights in LLMs and the Failure of Selective Training, v1](https://arxiv.org/html/2607.08733v1) studies pruning and selective training, including coordinate versus broader structured updates. It cautions against equating parameter importance with isolated trainability. We do not train weights here; our conditional activation and K/V interventions address a different question.
 
-Search date:2026-10-21. Search terms included super-weight column removal, massive activation newline history, OLMo H14, and the cited papers. No priority claim follows from a search failing to find an exact match.
+Search date:2026-10-21. The initial targeted search covered super-weight column removal, massive activation newline history, OLMo H14 and the cited papers. A later exact-coordinate search found close precedents in both target coordinates and intervention families, credited below. The remaining contribution is the scoped comparative dataset and causal controls, without a priority claim.
+
+## Transfer addendum, 21 October 2026
+
+The subsequent [transfer report](TRANSFER.md) tests two additional pinned models.
+It does not extend the original OLMo conclusions by assumption: the selected
+Llama candidate reverses the initial row-versus-column comparison, neither
+candidate passes the prescribed newline-history screen, and GPT-2 shows
+conditional coordinate regrowth after a larger lesion. The fuller
+column/complement factorial in Llama is also nonadditive.
+
+GPT-2 massive source activations and a starting-token-only category already appear
+in [Massive Activations](https://arxiv.org/html/2402.17762v2), along with explicit
+K/V-bias experiments. Fresh mean-source replacement here is a controlled
+checkpoint-specific extension, not discovery of a constant-source idea.
+[The Hydra Effect](https://arxiv.org/abs/2307.15771) and
+[Explorations of Self-Repair](https://arxiv.org/html/2402.15390v1) establish
+compensation after ablation; the latter includes GPT-2, normalization and sparse
+MLP effects. Our raw-coordinate E/A/M factorial has a narrower measurement and
+does not claim general self-repair novelty or recovery of the native trajectory.
+
+The strongest candidate additions are these particular source-coordinate,
+writer-family and K/V donor counterfactuals, the cross-model failures of transfer,
+and the paired quantitative controls. Fixed K/V can retain near-native loss
+while changing argmax outputs and leaving query-dependent gates dynamic. Neither
+this nor the earlier low-rank fits establishes a universal single mechanism,
+faithful generation or a computational speedup. Independent audits and a rerun
+on the original machine are distinct from replication by another researcher.
+
+## Exact-coordinate attribution addendum
+
+[Weight-Dictionary Decomposition](https://github.com/sunmoonron/weight-dictionary-decomposition)
+is a particularly close precedent. At pinned commit
+`33504a4d90840bc01d0ef75609265e48a34403bb`, its author code scales GPT-2 channel447
+at block2→3 (`exp_s8_loop.py`), traces attention/MLP and neuron compensation
+(`exp_t2_compensation.py`), crosses scaling with regulator ablation
+(`exp_u1_reserves.py`), and separately removes a neuron's channel447 contribution
+or non447 complement (`exp_u2_leash.py`). The complete OpenReview PDF was
+access-blocked; these claims rely on the pinned primary code, inspected without
+execution. See [the independent close-prior review](../reviews/pulse_transfer/late_prior_art_review.md)
+and its immutable links. No claim of independent reproduction of that work is made.
+
+[The Communication Map of a Transformer](https://arxiv.org/pdf/2608.22007)
+already uses exact dimensions447/138 for causal direction deletion at repeated
+layer boundaries. [A Mechanistic Account of Attention Sinks in GPT-2](https://arxiv.org/html/2604.14722v1)
+identifies138/378/447 and a positional-MLP/key/query-bias pathway. Our source-only
+joint erasure and selective later output-write blocks are a narrower estimand,
+not discovery of those coordinates or coordinate regulation. Loss dependence
+alone does not establish attention-sink mediation or the full positional circuit.
+
+[Transient Reserves, Sink Dampers](https://arxiv.org/html/2607.09279v1) already
+compares architecture-dependent consequences of repeated massive-coordinate
+clamping. [The Life Cycle of a Massive Activation](https://arxiv.org/html/2610.00423v2)
+tests collective magnitude, redundant carriers and training-time restoration
+with magnitude controls. Our inference-only regrowth must not be equated with
+its continued-training recovery. General redundancy/nonuniversality claims are
+prior art; random-coordinate controls here remain unmatched for magnitude.
+
+The GPT-2 experiments are best described as targeted replication/extension with
+different intervention scope, fresh paired evaluation and explicit source K/V
+controls. The specific OLMo H14 history/K/V outcome remains a scoped case-study
+claim. None of these differences establishes priority or a universal mechanism.
