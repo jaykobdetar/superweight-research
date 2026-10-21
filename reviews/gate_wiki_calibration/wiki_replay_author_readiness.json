@@ -1,0 +1,93 @@
+{
+  "status": "author_checks_passed_independent_review_pending",
+  "source_and_evidence_sha256": {
+    "prepare_wiki_calibration_replay_inputs.py": "b7e69361a4ac2f5d6a41f20426806d0fdd7dd4f98d3d1000e0dee91a9d27b585",
+    "reproduce_wiki_calibration.py": "11705e68a54769ae5ff75c06623a8d4422fcc05a01541717574717b1828bb5ed",
+    "GPT2_WIKI_CALIBRATION_REPLAY.md": "eeb2b7ee8a30e1bb5fff74eed52e7933c796bfaf35bd1762e062ae8a9ec8c5ac",
+    "wiki_replay_metadata/identity.json": "7e3a43808ee51ab8a44526d3cb9e9f545e12ac771a1723ca2d8ca9f360a8a0b6",
+    "review/wiki_replay_author_tests.py": "305240e06d48f8ac39d411052df910e8e94d787c43ea25ebba51c9cc3bec9761",
+    "review/wiki_replay_author_tests.json": "349676ff2eeed3eafd2feec8647075b1a0656da23d5f02817b0f0040087770fa",
+    "review/wiki_replay_source_manifest.json": "2418976b3e370372a380e78ef00a6e9acaa10e7625ffbc2596a50f862ad43a42",
+    "audit_gate_wiki_results_layout.py": "c837ab07243683e08dcfd0288fcf76a7ca8372dfdad06d605a01a80fe23f3974",
+    "review/wiki_replay_author_review.md": "d2f56875e628c2b3c4bbdd1ffcfe0dcbd5e8ade7dc019d442e73f2430219e431"
+  },
+  "model_forwards": 0,
+  "model_loaded": false,
+  "gpu_used": false,
+  "pretrained_replay": false,
+  "numeric_comparison": false,
+  "safe_metadata": {
+    "files": 14,
+    "bytes": 1197246
+  },
+  "actual_preparation": {
+    "workspace": ".reproduce-t18-author",
+    "manifest_sha256": "ee78f76e714c2bf8cc77a8148d92cbd3d2f5520accbfb1201d73daa1c58551cb",
+    "reconstruction_sha256": "194ab240eaae73cde43e6daa8ef8456500e6de66b4e5bfa9f57ce82bf7e455e6",
+    "generated_with_helper_sha256": "36fbbf48fffc695deb268419d8a1dfe0b3fc47c15f125a3548b16c077dd51490",
+    "staged_bytes": 8688514,
+    "wall_seconds": 4.128999471664429,
+    "reconstruction_seconds": 3.230224370956421,
+    "peak_reconstruction_rss_kib": 762424,
+    "calibration_windows": 4,
+    "evaluation_windows": 16,
+    "calibration_rejections": 7,
+    "evaluation_rejections": 58,
+    "historical_duplicate_hashes": 561,
+    "exact_canonical_files": {
+      "calibration_tokens.pt": true,
+      "historical_manifest_scan.json": true,
+      "mixture_directions.json": true,
+      "mixture_directions.pt": true,
+      "prior_historical_manifest_scan.json": true,
+      "prior_olmo_source_mapping.json": true,
+      "prior_preflight.json": true,
+      "tokens.pt": true
+    }
+  },
+  "after_preparation_guard_changes": {
+    "reconstruct_function_ast_unchanged": true,
+    "changed_functions": [
+      "main",
+      "validate_reconstructed_semantics"
+    ],
+    "explanation": "Export CLI now preserves an existing failure record; metadata validator now also rejects extra stripped-ID/preflight keys. Current stricter validator passed against existing actual outputs; no unnecessary tokenization repeat."
+  },
+  "stdlib_tests": {
+    "passed": 58,
+    "peak_rss_kib": 69364,
+    "wall_seconds": 0.8967010974884033,
+    "temporary_removed": true,
+    "synthetic_child_counts_are_not_inference": true
+  },
+  "reference_coverage": {
+    "eight_forward_rebuild": "Actual complete wrapper preparation passed",
+    "completed_original_fixed512": "Actual seven reference files, completed manifest and all20 declared source file hashes validated; a second complete wrapper staging was not run",
+    "failed_original_study": "Rejected as a completed reference"
+  },
+  "remaining": [
+    "Root review of layout-auditor integration and final independent implementation approval",
+    "Final package population and approval; repository-root command paths are documented",
+    "Pretrained T18 replay and independent numeric comparator",
+    "Separate readout audit for a replay",
+    "Optional GPT2-only M8 bootstrap remains deferred; existing fallback needs Llama tokenizer/config only"
+  ],
+  "free_bytes_at_record": 2830209024,
+  "audit_adapter_integration": {
+    "required_adapter_sha256": "c837ab07243683e08dcfd0288fcf76a7ca8372dfdad06d605a01a80fe23f3974",
+    "required_frozen_auditor_sha256": "ebae29f3c04c937aa8abf7dcbb608af91ee0a957f3ffface128e914e6b5f1686",
+    "source_inventory_files": 37,
+    "verified_fields": [
+      "adapter and frozen source identities",
+      "exact24matrices/stride scope",
+      "map values/digests unchanged",
+      "directions/geometry exact",
+      "tolerances_changed is False"
+    ],
+    "primary_saved_completion_contract_passed": true,
+    "primary_audit_rerun": false,
+    "new_preparation_rerun": false,
+    "new_model_forwards": 0,
+    "root_review_pending": true
+  }
+}

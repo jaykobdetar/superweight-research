@@ -1,0 +1,33 @@
+{
+  "changed_metadata_files": [
+    "calibration_inputs.json",
+    "data_manifest.json",
+    "exclusion_inventory.json",
+    "prior_exclusion_inventory.json",
+    "start_identity_summary.json",
+    "preflight.json"
+  ],
+  "exact_canonical_files": [
+    "calibration_tokens.pt",
+    "historical_manifest_scan.json",
+    "mixture_directions.json",
+    "mixture_directions.pt",
+    "prior_historical_manifest_scan.json",
+    "prior_olmo_source_mapping.json",
+    "prior_preflight.json",
+    "tokens.pt"
+  ],
+  "private_value_commitments": {
+    "current_start_summary": "c99737239b805d7c128974558ddb29dcf61ffcb827c9cd943a34463c0c5dc133",
+    "calibration_first_ids": "d66ae6c294016e93bcc937ddb97432ab6e8b808a92f1193e94c953e5f3d90d8c",
+    "evaluation_first_ids": "c3c97ea7b21c8ff7b98cf6bb34a3cbea9e7f629a2d234d3fb64f24a1341d2f95",
+    "literal_ids": "64033d3ea061888246145466bcf99dc58284fd2859392f2231d37b4789450694"
+  },
+  "rules": [
+    "Remove source path fields and explicit token ID fields from shared metadata.",
+    "Reconstruct current IDs privately from the pinned tokenizer and input bytes.",
+    "Omit historical T16/T17 first-ID list; keep prior membership as labeled inherited attestation.",
+    "Preserve original hash edges as historical commitments; record new hashes separately."
+  ],
+  "history_scope": "Frozen original attestations, not a rescan of private history by the recipient."
+}

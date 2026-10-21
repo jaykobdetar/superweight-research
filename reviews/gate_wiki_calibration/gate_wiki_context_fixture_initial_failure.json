@@ -1,0 +1,20 @@
+{
+  "status": "fixture_failed",
+  "failure": "Incoming value-corruption negative test changed a noncontiguous flatten copy; actual snapshot was unchanged",
+  "stage": "negative_fixture_value_mutation",
+  "synthetic_random_cpu_forwards_completed": 26,
+  "pretrained_forwards": 0,
+  "gpu_used": false,
+  "scientific_outputs_changed": false,
+  "preceding_checks_passed": [
+    "24 context conditions",
+    "M8 exact old algebra",
+    "current/fullrank identities",
+    "singleton incoming state",
+    "q0 and suffixprefix",
+    "11snapshot codecroundtrip",
+    "5corruptaliasrejections"
+  ],
+  "script_sha256": "ff2a9f87d24f79cf97d63fe477fa82d917a6974dbd91041e08a60bcbfd5d9e8a",
+  "fix": "Mutate actual noncontiguous tensor with indexed q[0,0,0,0] +=1; separately assert changed fromreference"
+}

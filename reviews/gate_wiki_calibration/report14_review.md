@@ -1,0 +1,15 @@
+# Independent Report14 review
+
+The audited scientific/numerical interpretation is sound, subject to confirming the final rebuilt artifact includes the small scope/figure corrections below. There is no quantitative correction to the primary results.
+
+`report14_numeric_review.py/.json` verifies all160 primary PPL table cells (480 formatted numbers) against independently audited summaries. It also independently verifies all40 L10 sign intervals and the24/24 non-Wiki matched-control counts at both L10 and joint layers, plus Wiki1/8 and2/8. All912 paired contrasts had already been independently replayed with the prescribed n=4 bootstrap.
+
+The narrative correctly distinguishes P from native C, conditional loss gain from fidelity, fixed-panel bootstrap from calibration-population uncertainty, M8 from Wiki4, local matched norms from joint trajectories, and loss interactions from internal causal mediation. Ethics PPL/C1.000043/1.000783 is correctly framed. The enormous maximum gain/minimum mass, fixed snapshot coverage, non-bit-exact readout audit, preserved original audit failure and exact layout-only repair are disclosed. The prospective native-value test is labeled as unexecuted.
+
+Requested scope corrections were applied in source: L10 incoming equality is limited to L10-only gate arms sharing P, query0 preservation is relative to P, Q/K and other V are not directly patched but can change downstream, the diagram's rescaling applies only to q>0, and its norm comparison is at each arm's own incoming state. Effects/geometry legends were moved away from data. Final rebuilt Markdown/HTML and figures must carry these source changes.
+
+The four primary sources were independently opened and checked for the attributed scope: [Super Weight §3](https://arxiv.org/html/2411.07191v2), [Massive Activations §4.2–4.3 and Appendix B.4](https://arxiv.org/html/2402.17762v2), [Fu et al. §3.1 and Appendix B.2](https://arxiv.org/html/2602.01203v1), and [Ran-Milo et al. §3.2.6 and §5.4](https://arxiv.org/html/2604.14722v1). The report appropriately credits implicit bias/gating/query-bias work, makes no first-result claim, and does not repeat a universal claim that source values are negligible. This limited check is not a comprehensive novelty search.
+
+Reproduction is accurately described as in progress: no second pretrained T18 replay is claimed. Independent report approval does not imply approval of a future numeric export, portable wrapper or model execution. Those require their own checks.
+
+Final verification: all requested source scope corrections appear in rebuilt Markdown/HTML; the final effects legend is outside the axes, geometry legend no longer obscures bars, and q>0/own-state qualifications appear in the diagram. Scientific report is ready. Markdown SHA256 `59a310732c3c1dca98069a6b0538550b7d8987a755342f59f9e6476d453b0ee8`; HTML SHA256 `db379aa31c3a7788d42eb9efd46174715a1d7b629228171bd13ccb60d25e6185` (714,285 bytes). No remaining report blocker. Numeric export and standalone reproduction review remain separate work.

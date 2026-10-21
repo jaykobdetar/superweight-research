@@ -67,6 +67,19 @@ Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
 `python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
 then `python scripts/compare_transfer.py --work .reproduce-transfer`.
 
+The [fresh-calibration report](docs/GPT2_GATE_WIKI_CALIBRATION.md) crosses old and
+fresh Wiki centers and directions. L10's Wiki-harm/non-Wiki-benefit pattern
+persists on this panel, but the reference has source values zeroed. On Ethics,
+the apparent gain largely returns loss toward the intact model. The next open
+question is whether the gate effect survives native source values. Start with
+the [T18 audit/replay guide](docs/GPT2_GATE_WIKI_CALIBRATION_QUICKSTART.md), or run
+`python scripts/audit_wiki_calibration_results.py` using NumPy only. Numerical,
+readout, export and preparation audits passed; a second pretrained T18 replay
+remains unperformed.
+
+For the clean continuation checkpoint and highest-value next experiment, read
+[the research handoff](docs/HANDOFF.md). No T19 model batch has started.
+
 ## Quick start
 
 CPU-only numerical audit of the supplied results:
@@ -115,6 +128,12 @@ model and is much smaller. Other GPUs/kernels can change FP16 rounding.
 
 Published to the private [superweight-research repository](https://github.com/jaykobdetar/superweight-research) with explicit owner approval on October 21, 2026.
 Repository privacy, owner admin access and the initial reviewed commit/tree were verified.
+During the Report14 update, a fresh check found the repository public despite
+that earlier verification. It was restored to private before the update;
+the user then clarified that making it public was intentional. Reversing that
+choice was an error. The user manages visibility and has authorized the reviewed
+research-only update at its current setting. The [visibility correction record](reviews/repository_visibility_correction.json)
+preserves this limitation; the earlier check does not establish continuous privacy.
 This repository contains no credentials, checkpoint weights,
 input corpora, or unrelated files. Retrieve external inputs under their own
 terms; hashes and source links are supplied instead of redistribution.

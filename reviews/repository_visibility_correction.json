@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-10-21T19:07:54.672559+00:00",
+  "repository": "jaykobdetar/superweight-research",
+  "observed_before": {
+    "private": false,
+    "visibility": "public",
+    "confirmed_by": [
+      "GitHub connector",
+      "authenticated GitHub REST CLI"
+    ]
+  },
+  "prior_verification": "private_publication_verified.json recorded private at18:22:52UTC",
+  "remote_commit_at_detection": "f4028937f9e66ebe1f7bc5872a414b68c61a669b",
+  "remote_tree_at_detection": "6a1f3048bfabae8ecb1c7b08d411125ca4e5e7ba",
+  "T18_pushed_before_correction": false,
+  "cause": "User clarified at19:11UTC: I made it public. Public setting was intentional.",
+  "action": "PATCH existing repository private=true, fulfilling explicit private-only publication instruction",
+  "action_result": {
+    "private": true,
+    "visibility": "private",
+    "admin": true,
+    "push": true,
+    "pull": true
+  },
+  "credentials_changed": false,
+  "prior_public_exposure_cannot_be_reversed": true,
+  "clarification_received_utc": "2026-10-21T19:12:26.660951+00:00",
+  "assistant_error": "Restored private using older private-only instruction; this overrode an intentional direct user settings change.",
+  "publication_status": "Current research-only update authorized; commit/push verification pending",
+  "investigation_status": "Stopped at parent instruction after user clarified intent",
+  "record_timestamp_precision": "observed_utc is record creation time; precise API-request timestamps were not separately captured",
+  "read_only_commands": [
+    "gh api repos/jaykobdetar/superweight-research --jq {full_name,private,visibility,permissions,default_branch,size,pushed_at}",
+    "gh api repos/jaykobdetar/superweight-research/git/ref/heads/main",
+    "gh api repos/jaykobdetar/superweight-research/git/commits/f4028937f9e66ebe1f7bc5872a414b68c61a669b"
+  ],
+  "mutation_command": "gh api --method PATCH repos/jaykobdetar/superweight-research -F private=true",
+  "latest_authorization": {
+    "user_time_utc": "2026-10-21T19:15:00Z",
+    "scope": "Push reviewed research-only current state using current user-controlled visibility, then hand off to GPT-6.1 Sol",
+    "visibility_owner": "User; no further assistant visibility changes",
+    "current_read_only_observation": "GitHub connector reported public after user said they would manage it",
+    "credentials_weights_corpora_unrelated_files_excluded": true
+  }
+}

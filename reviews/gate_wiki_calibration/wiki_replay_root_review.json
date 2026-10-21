@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "scope": "Independent root code review and actual saved artifact checks; zero model/tokenization reruns",
+  "helper_sha256": "b7e69361a4ac2f5d6a41f20426806d0fdd7dd4f98d3d1000e0dee91a9d27b585",
+  "wrapper_sha256": "11705e68a54769ae5ff75c06623a8d4422fcc05a01541717574717b1828bb5ed",
+  "source_inventory_sha256": "2418976b3e370372a380e78ef00a6e9acaa10e7625ffbc2596a50f862ad43a42",
+  "source_files": 37,
+  "metadata_identity_sha256": "7e3a43808ee51ab8a44526d3cb9e9f545e12ac771a1723ca2d8ca9f360a8a0b6",
+  "metadata_member_count": 14,
+  "exact_input_files": [
+    "calibration_tokens.pt",
+    "historical_manifest_scan.json",
+    "mixture_directions.json",
+    "mixture_directions.pt",
+    "prior_historical_manifest_scan.json",
+    "prior_olmo_source_mapping.json",
+    "prior_preflight.json",
+    "tokens.pt"
+  ],
+  "changed_files": [
+    "calibration_inputs.json",
+    "data_manifest.json",
+    "exclusion_inventory.json",
+    "prior_exclusion_inventory.json",
+    "start_identity_summary.json",
+    "preflight.json"
+  ],
+  "staged_runner_AST_exact": true,
+  "primary_completion_contract_passed": true,
+  "privacy_rejections": [
+    "token_payload",
+    "first_id",
+    "private_path",
+    "fake_pointer"
+  ],
+  "model_forwards": 0,
+  "pretrained_replay": false,
+  "remaining": [
+    "Complete second pretrained T18 replay and numerical comparator unperformed",
+    "GPT2-only M8 bootstrap deferred; current fallback requires Llama tokenizer/config but no weights"
+  ]
+}

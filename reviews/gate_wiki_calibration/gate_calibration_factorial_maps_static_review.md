@@ -1,0 +1,9 @@
+# T18 algebra module: independent static review
+
+Reviewed `gate_calibration_factorial_maps.py`, SHA256 `5fc09b5537acd10be36f45cc186f2b82bd9f979e631fbc1ceb86d5aecd96b6f5`, and the parent's CPU fixture source/results. No new model, tokenizer, weights or GPU were loaded for this review.
+
+The 20 conditions comprise the four references and the intended 16 scientific cells. The first cell letter selects the mean and the second selects the PC1/control direction. The helper computes each coefficient from its own input state, and uses that same coefficient in removal and the orthogonal control. The fresh-minus-original centering displacement has the correct positive sign. Unaffected-layer outputs reuse their input tensors; the fullrank diagnostic deliberately uses the original map. Deterministic direction construction and the shared QR matrix are inherited rather than refitted by outcomes. The stated finite/positive leading eigenvalue and relative gap test implement the prospective rule.
+
+The parent fixture covers FP32/FP64 OO equivalence to the frozen localization formula, 112 unaffected cases, 64 shared-state centering checks and three invalid eigenvalue cases. This is appropriate evidence for this algebra-only module; it is not context-hook or model integration evidence. Future caller checks must retain positive mass, finiteness, own-state norm threshold, q0/P and unaffected-context identities, source QKV invariance and bounded failure capture. Those are intentionally outside this pure mapping helper. Leave-one-passage-out geometry and all fit/provenance checks remain part of the forthcoming calibration pipeline.
+
+Disposition: no algebraic blocker found. This review does not approve input selection or pretrained execution; the input/exposure and measured storage prerequisites remain.
