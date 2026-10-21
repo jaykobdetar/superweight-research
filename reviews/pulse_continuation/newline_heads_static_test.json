@@ -1,0 +1,39 @@
+{
+  "native_clipping_FP32_RoPE_final_FP16_cast_matches": true,
+  "all_ten_local_recomputation_patches_match_independent_SDPA": true,
+  "patch_only_one_head_at_q": true,
+  "raw_projections_unchanged": true,
+  "head_specific_masks_correct": true,
+  "diagnostic_masses_replay_exact": true,
+  "development_windows": 16,
+  "heldout_disjoint_starts": {
+    "wiki_validation": [
+      16384,
+      18432,
+      20480,
+      22528
+    ],
+    "dubois": [
+      16384,
+      18432,
+      20480,
+      22528
+    ],
+    "hobbes": [
+      16384,
+      18432,
+      20480,
+      22528
+    ],
+    "optimizers": [
+      4096,
+      5120,
+      6144,
+      7168
+    ]
+  },
+  "expected_forward_count": 880,
+  "maximum_local_reference_error": 0.0,
+  "no_model_gpu_load": true,
+  "peak_rss_kib": 530792
+}

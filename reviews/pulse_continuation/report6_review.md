@@ -1,0 +1,22 @@
+# Independent report6 review
+
+Reviewed build_report6.py, generated report6.html and all four PNG figures against the five completed numerical audits. Numerical counts reconcile:2,548 forwards,174.04593539237976 recorded batch seconds,601 appendix condition groups (84/168/184/108/57),673 total table rows and four embedded figures. Quoted pulse ranges, loss ratios, attention masses, compensation limits, natural-window exceptions,64 exact oracle cases and prelaunch RoPE correction match saved evidence. All figures show the reviewed direction and magnitude; no plotting-data mismatch found.
+
+Required wording refinements sent to parent before freeze:
+
+- “All corpus groups have only four windows” excludes the two development summary groups, which have eight each. State that evaluation/held-out groups have four windows and selection has sixteen development windows total.
+- The heading “H12 is not its relay” is broader than the tested swaps. Prefer “H12 context swaps do not transfer this effect.” Small code-context pulse changes exist; the tests fail to transfer the qualitative pulse state, not to detect any effect whatsoever.
+- The lead's “blocking ... does [repair damage]” should distinguish exact removal of the extra row-deletion effect within the matched blocked world from full original-output restoration. Blocking remains near original mean loss, with94.50–97.77% agreement.
+- The broadcast figure's “Delete first row”/“Block first position” is ambiguous with deleting a matrix row or source0. Use “Delete target coordinate at p”/“Block p for later queries”; p=64 here.
+
+Baseline distinctions are otherwise correct. The natural exceptions table explicitly uses original-clean baselines, so7.33/149.70/1.34 are valid on that declared scale. Own-edge conditional ratios7.32066/149.56789/1.33982 may be added but are not required if the original-clean reference stays explicit. Group summaries in the appendix use common clean baselines; derived paired contrasts use the displayed terms. Natural scores are matched within window with variable target counts, and window means are not pooled-token estimates.
+
+The report retains essential negative/scope results: one underscore exception, q535 distinction, failed full compensation, three q-row-cost intervals crossing zero, p0 and code whole-column outliers, H12 pathway non-unification, exploratory reuse, unknown checkpoint training overlap, pointwise intervals, architecture-expected full-interface closure, and limited-key diagnostics that cannot reconstruct full attention denominators. It does not claim complete understanding, a unique circuit or a deployable compression result.
+
+Final correction verification and packaging tests are pending the updated files. No experiment artifact or report builder was modified by this review.
+
+Final correction verification: all four requested narrative/figure refinements are present in the regenerated591127-byte HTML/build source. Sample counts now distinguish held-out4 from development8; H12 heading is limited to context swaps; blocking is explicitly compared within the matched blocked world with remaining output differences; broadcast axes specify the target coordinate and p. No further scientific wording correction identified.
+
+Replay packaging tests pass. All22 frozen dependency hashes match. CPU-only stub launcher tests verify successful dispatch of all five adapter jobs, existing-destination refusal, changed/missing-dependency refusal before output creation, split/late JOB_FAILED handling, incomplete/missing manifests, missing/mismatched model hashes, and parameter-version failure. Adapter tests import the actual five experiment modules while replacing their run functions with model-free prepare probes. Both replaced preparers return exact frozen token structures and byte-identical token/data-manifest copies; the later-use tokenizer call is stubbed and constrained to local_files_only; all replay notes match the requested experiment. No actual model/research replay was run. Peak adapter-test RSS762200KiB (~744MiB).
+
+Evidence: report6_packaging_audit.py/.json and report6_adapter_audit.py/.json. Small README clarification sent: external source-provenance checks are used by both later_uses_audit.py and newline_heads_audit.py. The bundle must include independent-audit dependencies beyond the22 replay-preflight entries, notably confirmation_run/tokens.pt, pulse_causal_tranche/run/tokens.pt and review/audit_common.py. Full bundle inventory and immutable archive verification await creation.

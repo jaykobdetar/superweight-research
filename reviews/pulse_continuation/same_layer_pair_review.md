@@ -1,0 +1,7 @@
+# Corrected same-layer pair numerical review
+
+Independent CPU audit passed:144 raw records,36 condition summaries and baseline contrasts,48 exact first-only anchors to the earlier column factorial, and144 unchanged source intermediate captures. Row-only interventions leave every other output coordinate unchanged. Script/design/token hashes and unchanged parameter flags match. Peak RSS513,040KiB; no model or GPU loaded. Evidence: `same_layer_pair_audit.py` and `.json`.
+
+The corrected second target is L1 down_proj[1764,8041]. Its native source0 intermediate contribution ranges only−8.5784e−5 to+5.0693e−5 on these16 natural inputs. Removing its row contribution alone reproduces native loss and predictions exactly in all16 cases. Whole-column removal alone gives PPL ratios1.000038/1.000046/1.000080/1.000154 (Wiki/DuBois/Hobbes/optimizers), agreement99.804–99.902%; the optimizer mean loss increase has a small positive paired interval. Removing both complete columns gives1.445015/1.731670/1.033198/1.011256, essentially the first-column result at this resolution.
+
+This is a negative result for a source0 backup role in these16 fixed natural windows. It does not establish that L1/8041 is irrelevant at other tokens, under other interventions, or globally across inputs. In particular, the paper identifies successive targets after deleting earlier weights; these local source0 tests should not be represented as a comprehensive refutation of its directory. The old L2/8041 measurements remain separate and require the explicit erratum.

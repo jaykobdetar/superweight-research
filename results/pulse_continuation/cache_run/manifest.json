@@ -1,0 +1,23 @@
+{
+  "started_utc": "2026-10-21T08:41:25Z",
+  "script_sha256": "25dd8e74e48e31f4fefb57b0763f7e649170bc34006eee78287b0df4bc04f3c1",
+  "model_hash_before": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "calibration": "8 WikiText and 8 Hume development windows from prior gate batch; means of clipped native first-token cache, fixed before evaluation",
+  "evaluation": "8 windows/corpus; natural and fixed The source identity; matched cropped128/512/1024 token inputs",
+  "actual_bypass": "model receives tokens1: only, explicit cache_position1:, stored single-token KV states; no source hook deletion",
+  "first_prediction": "cached exact-identity single-token logits reused in every bypass; later-scored primary panel excludes it, full panel includes it",
+  "dictionary": "compute once per distinct first-token ID, independently of its suffix; this is ordinary deterministic prefix memoization, not fitted evaluation data",
+  "cache_storage_bytes": 131072,
+  "seed": 20261021,
+  "dtype": "float16",
+  "cpu_threads": 4,
+  "completed_utc": "2026-10-21T08:42:56Z",
+  "forward_passes": 1441,
+  "wall_seconds": 92.31829738616943,
+  "distinct_cached_token_identities": 21,
+  "model_hash_after": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "parameter_versions_unchanged": true,
+  "peak_gpu_allocated_bytes": 3174461952,
+  "peak_gpu_reserved_bytes": 3481272320,
+  "peak_process_rss_kib": 5394640
+}

@@ -1,0 +1,5 @@
+# Same-layer pair static review
+
+2026-10-21, CPU source inspection only. No execution blocker identified before launch. Both requested columns1710 and8041 are in L1 down_proj, targetrow1764. A fresh copied matrix combines the two independently selected row/column deletions, full-shape F.linear retains the established computation shape, and only source0 output is replaced. Original parameters and pre-down-projection activations are unchanged. Nine conditions×16 contexts give144 actual forwards, with48 first-only prior comparisons. Score_start1 matches the saved column-factorial source0 natural evaluation. This corrects literature attribution; it does not reinterpret the old L2 intervention as L1.
+
+Provenance: first-tranche `provenance/main_run_metadata.json` contains explicit command argument `weights=1:1764:1710,2:1764:8041`; its coordinates and calibration agree. `pulse_run_metadata.json` inherits this source run. In contrast, bundled `single_projection_core.py` defaults to the correct same-layer pair. Thus the historical discrepancy arose before continuation in an explicit run-argument override. The metadata does not establish why that override was made.

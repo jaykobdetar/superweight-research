@@ -1,0 +1,69 @@
+{
+  "started_utc": "2026-10-21T09:51:54Z",
+  "script_sha256": "d11961c519ef2ebd8c4299ad0322b3a8f3c85bbbe2061b7261b9b4f299aaec71",
+  "model_hash_before": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "tokens_sha256": "831258974acdd1102a7e5b0259df17b4452ff5a9ab43e4b56171ea7befeff065",
+  "mean_cache_sha256": "89860d9088fb11b049ed9b30a79d4156194dfd013792059589b4eb535ec16ab5",
+  "gate_calibration_sha256": "1e255676c7b4d4f30dc90ad828d014c0144772925e38028d508abdb2a7b27ed5",
+  "worlds": "all source K0 clamped to Wiki means L2..15; source V0 clamped to means or zero at all those layers",
+  "donors": "per-window full causal source attention gates captured independently in each native world before interventions; diagnostic oracles, not fitted replacements",
+  "patch": "source-excluded native conditional mixture combined with current or donor source gate and recipient fixed V0; queries and other-token states remain recipient-dependent",
+  "layer_sets": {
+    "all": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "early": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "middle": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "late": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "L2": [
+      2
+    ],
+    "L6": [
+      6
+    ]
+  },
+  "controls": "current-recipient reconstruction; same-world donor gates; separately frozen Wiki/Hume global gates",
+  "scope": "feedforward dependencies across layers; the filename does not imply a literal recurrent feedback loop",
+  "score_start": 1,
+  "dtype": "float16",
+  "cpu_threads": 4,
+  "seed": 20261021,
+  "completed_utc": "2026-10-21T09:52:55Z",
+  "forward_passes": 768,
+  "wall_seconds": 60.48921084403992,
+  "model_hash_after": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "parameter_versions_unchanged": true,
+  "peak_gpu_allocated_bytes": 2835812864,
+  "peak_gpu_reserved_bytes": 5444206592,
+  "peak_process_rss_kib": 5394640
+}

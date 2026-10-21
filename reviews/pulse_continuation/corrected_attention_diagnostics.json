@@ -1,0 +1,1759 @@
+{
+  "method": "Preclip cached Q/K/V -> native clamp -> RoPE -> original projection dtype -> FP32 causal softmax and value product",
+  "scope": "Natural-window clean/deleted caches only; normalization-intervention full caches were not saved",
+  "model_loaded": false,
+  "device": "cpu",
+  "original_artifacts_modified": false,
+  "remaining_difference": "Explicit FP32 attention differs slightly from native fused SDPA; retain reconstructed-identity controls for causal decomposition patches",
+  "maximum_reconstruction_relative_error": 0.00030919158598408103,
+  "maximum_mean_key0_mass_change": 2.2038817405700684e-05,
+  "source_cache_sha256": {
+    "local_wiki_0.pt": "e6431e91268c07fbb0c5f7dbd1121a39a5d13fcbe47e9ab22c4c1dbf9999ce6c",
+    "local_wiki_1.pt": "a716c6737b2d90850d8c55a7589fbf39a9c1054387b884ea9d77b4972d10cabd",
+    "local_wiki_2.pt": "9f2a47834d805509c5086cac044f0e9d64bf9284910d029bd31cc97928d16d43",
+    "local_wiki_3.pt": "8696595fa4b0383cfae2da59b1866ee523f3e6a08836c299b15f12f13cb6c20e",
+    "local_wiki_4.pt": "98969c39a903b94b6b563c87ae44d790e5f9b7cd61786d5487442b1456e0563d",
+    "local_wiki_5.pt": "9e3c4a6361406d14b3838a5dea01dc9548c662d0508da5f3ac06743d9b40d0a9",
+    "local_wiki_6.pt": "cdabb64b236a46daf7163594791d995e659c44c377f7e7be5f878fe7aa8dd50a",
+    "local_wiki_7.pt": "6a37a24b832846468ea3b0562d5ee7f6e3aae946363383f66238b3e53de70a31",
+    "local_hume_0.pt": "b0933b1ed4b9232d516f73a90a8e90cdbdd9fe623c3cc89752530ce0f2b02bd6",
+    "local_hume_1.pt": "3bc630129870ea3ad424be8f4ab10bfc0156ce2ace75e25780946995de1f87d7",
+    "local_hume_2.pt": "e8651bab9ec29bde104115990f96082ea621277a9619d79dedfa8cfe170ae754",
+    "local_hume_3.pt": "cc3b0ec42f41a870eec31c702cb6b464468276a4c3097f365eb9519b45a2116b",
+    "local_hume_4.pt": "6eeb0c304467eefb1c13a4881aa225e71b2c65858b2291fa93cfe87f09969e1c",
+    "local_hume_5.pt": "69fe0cdaec942a2308e49ef6b96a79571fec2cb690066db2a07a15b77baaad16",
+    "local_hume_6.pt": "75dbb66cf36e24cdb9ba4e47f2a8a1571fddf633e375bb87758bd36e28c571ea",
+    "local_hume_7.pt": "9e24e3e0d56e5d5c46e94c8abdfc4fb10b30d4225b237e643545c04106713b6c"
+  },
+  "windows": [
+    {
+      "corpus": "wiki",
+      "window": 0,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.000281593413092196,
+          "key0_mass_mean": 0.4983741343021393,
+          "key0_mass_median": 0.4910147488117218,
+          "key0_mass_late": 0.4850478172302246,
+          "value0_norm": 0.918808102607727,
+          "key0_norm": 3.378016471862793,
+          "other_values_rms_norm": 4.118937015533447,
+          "conditional_mixture_rms_norm": 1.985181212425232,
+          "source_residual_std": 4.327016830444336,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00022646751313004643,
+          "key0_mass_mean": 0.5566967129707336,
+          "key0_mass_median": 0.5877511501312256,
+          "key0_mass_late": 0.545585036277771,
+          "value0_norm": 0.3026907742023468,
+          "key0_norm": 6.136470317840576,
+          "other_values_rms_norm": 3.4457297325134277,
+          "conditional_mixture_rms_norm": 1.3835327625274658,
+          "source_residual_std": 4.327016830444336,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 2.8201589884702116e-05,
+          "key0_mass_mean": 0.9888978600502014,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.230707168579102,
+          "key0_norm": 40.468536376953125,
+          "other_values_rms_norm": 4.118937015533447,
+          "conditional_mixture_rms_norm": 1.985181212425232,
+          "source_residual_std": 0.6122807860374451,
+          "normalized_source_coordinate": -6.91796875
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00019451917614787817,
+          "key0_mass_mean": 0.8967508673667908,
+          "key0_mass_median": 0.9972565770149231,
+          "key0_mass_late": 0.9679161906242371,
+          "value0_norm": 1.48793363571167,
+          "key0_norm": 41.68754577636719,
+          "other_values_rms_norm": 3.4457297325134277,
+          "conditional_mixture_rms_norm": 1.3835327625274658,
+          "source_residual_std": 0.6122807860374451,
+          "normalized_source_coordinate": -6.91796875
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004725525504909456,
+          "key0_mass_mean": 1.5228986740112305e-05,
+          "key0_mass_median": 0.0001456141471862793,
+          "key0_mass_late": 1.5407800674438477e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.5735626220703125e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00023105186119209975,
+          "key0_mass_mean": -1.3947486877441406e-05,
+          "key0_mass_median": 3.248453140258789e-05,
+          "key0_mass_late": -1.424551010131836e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 9.21487808227539e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -3.8491802115458995e-05,
+          "key0_mass_mean": -3.3974647521972656e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.5735626220703125e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -8.20001878309995e-05,
+          "key0_mass_mean": 2.6226043701171875e-06,
+          "key0_mass_median": -1.1920928955078125e-07,
+          "key0_mass_late": -8.344650268554688e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 9.21487808227539e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 1,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.000281939486740157,
+          "key0_mass_mean": 0.5028756856918335,
+          "key0_mass_median": 0.5008899569511414,
+          "key0_mass_late": 0.49492374062538147,
+          "value0_norm": 0.9227764010429382,
+          "key0_norm": 3.3728373050689697,
+          "other_values_rms_norm": 4.074764251708984,
+          "conditional_mixture_rms_norm": 1.9678698778152466,
+          "source_residual_std": 5.417918682098389,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00022749556228518486,
+          "key0_mass_mean": 0.5044999718666077,
+          "key0_mass_median": 0.5169353485107422,
+          "key0_mass_late": 0.48054346442222595,
+          "value0_norm": 0.299000084400177,
+          "key0_norm": 6.099435806274414,
+          "other_values_rms_norm": 3.3721485137939453,
+          "conditional_mixture_rms_norm": 1.2759225368499756,
+          "source_residual_std": 5.417918682098389,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.798081161221489e-05,
+          "key0_mass_mean": 0.9944601058959961,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.243029594421387,
+          "key0_norm": 40.3348503112793,
+          "other_values_rms_norm": 4.074764251708984,
+          "conditional_mixture_rms_norm": 1.9678698778152466,
+          "source_residual_std": 0.7704390287399292,
+          "normalized_source_coordinate": -8.078125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00020100234542042017,
+          "key0_mass_mean": 0.8855631947517395,
+          "key0_mass_median": 0.9962496161460876,
+          "key0_mass_late": 0.9382418990135193,
+          "value0_norm": 1.4322160482406616,
+          "key0_norm": 41.61606979370117,
+          "other_values_rms_norm": 3.3721485137939453,
+          "conditional_mixture_rms_norm": 1.2759225368499756,
+          "source_residual_std": 0.7704390287399292,
+          "normalized_source_coordinate": -8.078125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004739290161523968,
+          "key0_mass_mean": 1.4603137969970703e-05,
+          "key0_mass_median": -0.00022608041763305664,
+          "key0_mass_late": 1.6987323760986328e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.2186508178710938e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00020275989663787186,
+          "key0_mass_mean": -9.655952453613281e-06,
+          "key0_mass_median": 3.2782554626464844e-06,
+          "key0_mass_late": -1.233816146850586e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.3470649719238281e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -2.880140527850017e-06,
+          "key0_mass_mean": 3.5762786865234375e-07,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.2186508178710938e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -0.0001043539959937334,
+          "key0_mass_mean": 3.5762786865234375e-07,
+          "key0_mass_median": -1.5497207641601562e-06,
+          "key0_mass_late": -2.0265579223632812e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.3470649719238281e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 2,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00028313579969108105,
+          "key0_mass_mean": 0.47532129287719727,
+          "key0_mass_median": 0.46952295303344727,
+          "key0_mass_late": 0.47294020652770996,
+          "value0_norm": 0.9070494771003723,
+          "key0_norm": 3.352177619934082,
+          "other_values_rms_norm": 4.148726940155029,
+          "conditional_mixture_rms_norm": 1.971016526222229,
+          "source_residual_std": 5.58736515045166,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002390156005276367,
+          "key0_mass_mean": 0.4694768786430359,
+          "key0_mass_median": 0.46434640884399414,
+          "key0_mass_late": 0.45128026604652405,
+          "value0_norm": 0.29040196537971497,
+          "key0_norm": 6.121783256530762,
+          "other_values_rms_norm": 3.4500505924224854,
+          "conditional_mixture_rms_norm": 1.2030154466629028,
+          "source_residual_std": 5.58736515045166,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.833689333987422e-05,
+          "key0_mass_mean": 0.9905632138252258,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.003846645355225,
+          "key0_norm": 39.07597351074219,
+          "other_values_rms_norm": 4.148726940155029,
+          "conditional_mixture_rms_norm": 1.971016526222229,
+          "source_residual_std": 0.8184396624565125,
+          "normalized_source_coordinate": -10.578125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00020638108253479004,
+          "key0_mass_mean": 0.8781713247299194,
+          "key0_mass_median": 0.989657461643219,
+          "key0_mass_late": 0.9244622588157654,
+          "value0_norm": 1.441757321357727,
+          "key0_norm": 40.58100891113281,
+          "other_values_rms_norm": 3.4500505924224854,
+          "conditional_mixture_rms_norm": 1.2030154466629028,
+          "source_residual_std": 0.8184396624565125,
+          "normalized_source_coordinate": -10.578125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004273053491488099,
+          "key0_mass_mean": 7.063150405883789e-06,
+          "key0_mass_median": -0.00012686848640441895,
+          "key0_mass_late": 5.21540641784668e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.0132789611816406e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00028835558623541147,
+          "key0_mass_mean": -2.1666288375854492e-05,
+          "key0_mass_median": -6.8247318267822266e-06,
+          "key0_mass_late": -2.6702880859375e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.5762786865234375e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -1.6037083696573973e-05,
+          "key0_mass_mean": 1.1920928955078125e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.0132789611816406e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -9.759157546795905e-05,
+          "key0_mass_mean": -4.112720489501953e-06,
+          "key0_mass_median": -2.2530555725097656e-05,
+          "key0_mass_late": -5.0067901611328125e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.5762786865234375e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 3,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00027689948910847306,
+          "key0_mass_mean": 0.3946308493614197,
+          "key0_mass_median": 0.3785395622253418,
+          "key0_mass_late": 0.38022086024284363,
+          "value0_norm": 0.9031410217285156,
+          "key0_norm": 3.142953634262085,
+          "other_values_rms_norm": 4.087201118469238,
+          "conditional_mixture_rms_norm": 1.9507334232330322,
+          "source_residual_std": 3.6906909942626953,
+          "normalized_source_coordinate": -44.84375
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00022410070232581347,
+          "key0_mass_mean": 0.412885844707489,
+          "key0_mass_median": 0.4032090902328491,
+          "key0_mass_late": 0.37450990080833435,
+          "value0_norm": 0.2939947247505188,
+          "key0_norm": 5.693451881408691,
+          "other_values_rms_norm": 3.467599630355835,
+          "conditional_mixture_rms_norm": 1.722678542137146,
+          "source_residual_std": 3.6906909942626953,
+          "normalized_source_coordinate": -44.84375
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.059122875332832e-05,
+          "key0_mass_mean": 0.9924023747444153,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 0.9999999403953552,
+          "value0_norm": 4.216510772705078,
+          "key0_norm": 36.90132141113281,
+          "other_values_rms_norm": 4.087201118469238,
+          "conditional_mixture_rms_norm": 1.9507334232330322,
+          "source_residual_std": 0.5214034914970398,
+          "normalized_source_coordinate": -14.375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00021673801529686898,
+          "key0_mass_mean": 0.8858755826950073,
+          "key0_mass_median": 0.9870627522468567,
+          "key0_mass_late": 0.9431141018867493,
+          "value0_norm": 1.3687822818756104,
+          "key0_norm": 37.325374603271484,
+          "other_values_rms_norm": 3.467599630355835,
+          "conditional_mixture_rms_norm": 1.722678542137146,
+          "source_residual_std": 0.5214034914970398,
+          "normalized_source_coordinate": -14.375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.00035090313758701086,
+          "key0_mass_mean": 1.0251998901367188e-05,
+          "key0_mass_median": -0.00013911724090576172,
+          "key0_mass_late": 8.404254913330078e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -2.2649765014648438e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00014167283370625228,
+          "key0_mass_mean": 7.450580596923828e-06,
+          "key0_mass_median": 0.00025704503059387207,
+          "key0_mass_late": 8.314847946166992e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.8477439880371094e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -2.7261390641797334e-05,
+          "key0_mass_mean": 0.0,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -2.2649765014648438e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -0.0001839747274061665,
+          "key0_mass_mean": -1.430511474609375e-06,
+          "key0_mass_median": 7.68899917602539e-06,
+          "key0_mass_late": 1.2516975402832031e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.8477439880371094e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 4,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0002830848970916122,
+          "key0_mass_mean": 0.5229398608207703,
+          "key0_mass_median": 0.5168900489807129,
+          "key0_mass_late": 0.5169664621353149,
+          "value0_norm": 0.927948534488678,
+          "key0_norm": 3.391710042953491,
+          "other_values_rms_norm": 4.187722206115723,
+          "conditional_mixture_rms_norm": 2.040285587310791,
+          "source_residual_std": 5.724606990814209,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00023054146731738,
+          "key0_mass_mean": 0.5084046125411987,
+          "key0_mass_median": 0.5235334634780884,
+          "key0_mass_late": 0.4923824965953827,
+          "value0_norm": 0.2983449101448059,
+          "key0_norm": 6.146444797515869,
+          "other_values_rms_norm": 3.5231854915618896,
+          "conditional_mixture_rms_norm": 1.6878418922424316,
+          "source_residual_std": 5.724606990814209,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.335621295263991e-05,
+          "key0_mass_mean": 0.9897525906562805,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.285665035247803,
+          "key0_norm": 40.28569030761719,
+          "other_values_rms_norm": 4.187722206115723,
+          "conditional_mixture_rms_norm": 2.040285587310791,
+          "source_residual_std": 0.8163219094276428,
+          "normalized_source_coordinate": -9.109375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0001913979067467153,
+          "key0_mass_mean": 0.9077029228210449,
+          "key0_mass_median": 0.9990184307098389,
+          "key0_mass_late": 0.9906737804412842,
+          "value0_norm": 1.4556939601898193,
+          "key0_norm": 41.64309310913086,
+          "other_values_rms_norm": 3.5231854915618896,
+          "conditional_mixture_rms_norm": 1.6878418922424316,
+          "source_residual_std": 0.8163219094276428,
+          "normalized_source_coordinate": -9.109375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0005179776635486633,
+          "key0_mass_mean": -5.424022674560547e-06,
+          "key0_mass_median": 8.416175842285156e-05,
+          "key0_mass_late": 2.384185791015625e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.09808349609375e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00019749013881664723,
+          "key0_mass_mean": 1.4841556549072266e-05,
+          "key0_mass_median": -3.510713577270508e-05,
+          "key0_mass_late": 1.0609626770019531e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.276897430419922e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -1.3176901120459661e-05,
+          "key0_mass_mean": 0.0,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.09808349609375e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -9.348065941594541e-05,
+          "key0_mass_mean": 4.231929779052734e-06,
+          "key0_mass_median": -1.9073486328125e-06,
+          "key0_mass_late": -1.9669532775878906e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.276897430419922e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 5,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0002826935378834605,
+          "key0_mass_mean": 0.48548081517219543,
+          "key0_mass_median": 0.4788327217102051,
+          "key0_mass_late": 0.48286792635917664,
+          "value0_norm": 0.9308626651763916,
+          "key0_norm": 3.389158010482788,
+          "other_values_rms_norm": 4.158412456512451,
+          "conditional_mixture_rms_norm": 1.9588234424591064,
+          "source_residual_std": 6.1033935546875,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002203587064286694,
+          "key0_mass_mean": 0.5122974514961243,
+          "key0_mass_median": 0.5336908102035522,
+          "key0_mass_late": 0.4971093237400055,
+          "value0_norm": 0.3013162314891815,
+          "key0_norm": 6.114506244659424,
+          "other_values_rms_norm": 3.5193300247192383,
+          "conditional_mixture_rms_norm": 1.327331304550171,
+          "source_residual_std": 6.1033935546875,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.383932926226407e-05,
+          "key0_mass_mean": 0.992139995098114,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.305113792419434,
+          "key0_norm": 39.911033630371094,
+          "other_values_rms_norm": 4.158412456512451,
+          "conditional_mixture_rms_norm": 1.9588234424591064,
+          "source_residual_std": 0.874229371547699,
+          "normalized_source_coordinate": -10.9765625
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00020177170517854393,
+          "key0_mass_mean": 0.9104934930801392,
+          "key0_mass_median": 0.9960953593254089,
+          "key0_mass_late": 0.9636010527610779,
+          "value0_norm": 1.434545636177063,
+          "key0_norm": 41.166046142578125,
+          "other_values_rms_norm": 3.5193300247192383,
+          "conditional_mixture_rms_norm": 1.327331304550171,
+          "source_residual_std": 0.874229371547699,
+          "normalized_source_coordinate": -10.9765625
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004659410333260894,
+          "key0_mass_mean": 2.771615982055664e-06,
+          "key0_mass_median": -0.00010880827903747559,
+          "key0_mass_late": 5.781650543212891e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.5153160095214844e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00018609805556479841,
+          "key0_mass_mean": -1.33514404296875e-05,
+          "key0_mass_median": 3.224611282348633e-05,
+          "key0_mass_late": -1.7851591110229492e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 6.020069122314453e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -2.0166695321677253e-05,
+          "key0_mass_mean": -1.1324882507324219e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 2.5153160095214844e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -7.829428068362176e-05,
+          "key0_mass_mean": -1.6093254089355469e-06,
+          "key0_mass_median": -1.0728836059570312e-06,
+          "key0_mass_late": -2.86102294921875e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 6.020069122314453e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 6,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00028478208696469665,
+          "key0_mass_mean": 0.49798834323883057,
+          "key0_mass_median": 0.4959103465080261,
+          "key0_mass_late": 0.4922536611557007,
+          "value0_norm": 0.916111409664154,
+          "key0_norm": 3.4045231342315674,
+          "other_values_rms_norm": 4.117510795593262,
+          "conditional_mixture_rms_norm": 1.9747569561004639,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00023477314971387386,
+          "key0_mass_mean": 0.5041642785072327,
+          "key0_mass_median": 0.5208138227462769,
+          "key0_mass_late": 0.4826071560382843,
+          "value0_norm": 0.30047720670700073,
+          "key0_norm": 6.156296730041504,
+          "other_values_rms_norm": 3.326472282409668,
+          "conditional_mixture_rms_norm": 1.2585740089416504,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.173143315711059e-05,
+          "key0_mass_mean": 0.9925549030303955,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.054871082305908,
+          "key0_norm": 38.37442398071289,
+          "other_values_rms_norm": 4.117510795593262,
+          "conditional_mixture_rms_norm": 1.9747569561004639,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00019978987984359264,
+          "key0_mass_mean": 0.8889889717102051,
+          "key0_mass_median": 0.9944444298744202,
+          "key0_mass_late": 0.9620407223701477,
+          "value0_norm": 1.3633939027786255,
+          "key0_norm": 39.89908981323242,
+          "other_values_rms_norm": 3.326472282409668,
+          "conditional_mixture_rms_norm": 1.2585740089416504,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004998264485038817,
+          "key0_mass_mean": 9.149312973022461e-06,
+          "key0_mass_median": -0.00014138221740722656,
+          "key0_mass_late": 1.1026859283447266e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -8.58306884765625e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.0002247460070066154,
+          "key0_mass_mean": 3.993511199951172e-06,
+          "key0_mass_median": -9.34600830078125e-05,
+          "key0_mass_late": 8.165836334228516e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.6450881958007812e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -4.224564690957777e-05,
+          "key0_mass_mean": 2.9802322387695312e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -8.58306884765625e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -8.811929728835821e-05,
+          "key0_mass_mean": 3.4570693969726562e-06,
+          "key0_mass_median": 9.119510650634766e-06,
+          "key0_mass_late": 3.4570693969726562e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.6450881958007812e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "wiki",
+      "window": 7,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0002882900007534772,
+          "key0_mass_mean": 0.49429774284362793,
+          "key0_mass_median": 0.48960086703300476,
+          "key0_mass_late": 0.4833378791809082,
+          "value0_norm": 0.9181931614875793,
+          "key0_norm": 3.4163012504577637,
+          "other_values_rms_norm": 4.204041957855225,
+          "conditional_mixture_rms_norm": 1.9573403596878052,
+          "source_residual_std": 6.020604610443115,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00024004100123420358,
+          "key0_mass_mean": 0.5120277404785156,
+          "key0_mass_median": 0.5174588561058044,
+          "key0_mass_late": 0.4907645285129547,
+          "value0_norm": 0.296011745929718,
+          "key0_norm": 6.178836822509766,
+          "other_values_rms_norm": 3.487116813659668,
+          "conditional_mixture_rms_norm": 1.0941529273986816,
+          "source_residual_std": 6.020604610443115,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.370712511241436e-05,
+          "key0_mass_mean": 0.9861769676208496,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 1.0,
+          "value0_norm": 4.1379289627075195,
+          "key0_norm": 39.658119201660156,
+          "other_values_rms_norm": 4.204041957855225,
+          "conditional_mixture_rms_norm": 1.9573403596878052,
+          "source_residual_std": 0.8748881220817566,
+          "normalized_source_coordinate": -12.078125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00019870555843226612,
+          "key0_mass_mean": 0.9000236988067627,
+          "key0_mass_median": 0.9973135590553284,
+          "key0_mass_late": 0.9725780487060547,
+          "value0_norm": 1.4385075569152832,
+          "key0_norm": 41.144500732421875,
+          "other_values_rms_norm": 3.487116813659668,
+          "conditional_mixture_rms_norm": 1.0941529273986816,
+          "source_residual_std": 0.8748881220817566,
+          "normalized_source_coordinate": -12.078125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004686682077590376,
+          "key0_mass_mean": 5.364418029785156e-07,
+          "key0_mass_median": 0.00015720725059509277,
+          "key0_mass_late": 3.546476364135742e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.0728836059570312e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.0002525353920646012,
+          "key0_mass_mean": -3.337860107421875e-06,
+          "key0_mass_median": -0.00030809640884399414,
+          "key0_mass_late": 3.9637088775634766e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.4781951904296875e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -2.0788429537788033e-05,
+          "key0_mass_mean": -1.1920928955078125e-07,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.0728836059570312e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -7.758440915495157e-05,
+          "key0_mass_mean": -4.76837158203125e-06,
+          "key0_mass_median": -1.6689300537109375e-06,
+          "key0_mass_late": 1.9669532775878906e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.4781951904296875e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 0,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0003073336265515536,
+          "key0_mass_mean": 0.24375507235527039,
+          "key0_mass_median": 0.23548656702041626,
+          "key0_mass_late": 0.24006426334381104,
+          "value0_norm": 0.9187635779380798,
+          "key0_norm": 3.421130895614624,
+          "other_values_rms_norm": 4.649892330169678,
+          "conditional_mixture_rms_norm": 1.1473006010055542,
+          "source_residual_std": 6.086663722991943,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00023404629610013217,
+          "key0_mass_mean": 0.3530566692352295,
+          "key0_mass_median": 0.3870980143547058,
+          "key0_mass_late": 0.33564624190330505,
+          "value0_norm": 0.3015148937702179,
+          "key0_norm": 6.177595615386963,
+          "other_values_rms_norm": 3.5226433277130127,
+          "conditional_mixture_rms_norm": 0.6084846258163452,
+          "source_residual_std": 6.086663722991943,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.686066313297488e-05,
+          "key0_mass_mean": 0.9932303428649902,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 0.9999995231628418,
+          "value0_norm": 4.2142252922058105,
+          "key0_norm": 40.45370101928711,
+          "other_values_rms_norm": 4.649892330169678,
+          "conditional_mixture_rms_norm": 1.1473006010055542,
+          "source_residual_std": 0.8670405745506287,
+          "normalized_source_coordinate": -9.859375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00020247076463419944,
+          "key0_mass_mean": 0.8841639757156372,
+          "key0_mass_median": 0.9946382641792297,
+          "key0_mass_late": 0.9642627835273743,
+          "value0_norm": 1.458833932876587,
+          "key0_norm": 41.951480865478516,
+          "other_values_rms_norm": 3.5226433277130127,
+          "conditional_mixture_rms_norm": 0.6084846258163452,
+          "source_residual_std": 0.8670405745506287,
+          "normalized_source_coordinate": -9.859375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.000526868476299569,
+          "key0_mass_mean": 2.2038817405700684e-05,
+          "key0_mass_median": -2.174079418182373e-05,
+          "key0_mass_late": 1.9744038581848145e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 0.0001195669174194336,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00022305686434265226,
+          "key0_mass_mean": -1.0073184967041016e-05,
+          "key0_mass_median": -8.943676948547363e-05,
+          "key0_mass_late": -7.510185241699219e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.470348358154297e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -1.4849054423393682e-05,
+          "key0_mass_mean": 2.682209014892578e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 0.0001195669174194336,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -5.279220931697637e-05,
+          "key0_mass_mean": -5.066394805908203e-06,
+          "key0_mass_median": -2.562999725341797e-06,
+          "key0_mass_late": 3.5762786865234375e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.470348358154297e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 1,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0002969574125017971,
+          "key0_mass_mean": 0.24794025719165802,
+          "key0_mass_median": 0.23960638046264648,
+          "key0_mass_late": 0.24300312995910645,
+          "value0_norm": 0.9147175550460815,
+          "key0_norm": 3.415034294128418,
+          "other_values_rms_norm": 4.713831424713135,
+          "conditional_mixture_rms_norm": 1.1919655799865723,
+          "source_residual_std": 6.1778788566589355,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00022392222308553755,
+          "key0_mass_mean": 0.3707895874977112,
+          "key0_mass_median": 0.4080483317375183,
+          "key0_mass_late": 0.35579290986061096,
+          "value0_norm": 0.2985211908817291,
+          "key0_norm": 6.17517614364624,
+          "other_values_rms_norm": 3.394958019256592,
+          "conditional_mixture_rms_norm": 0.5877484083175659,
+          "source_residual_std": 6.1778788566589355,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.618136906879954e-05,
+          "key0_mass_mean": 0.9853063225746155,
+          "key0_mass_median": 0.9999998807907104,
+          "key0_mass_late": 0.9999993443489075,
+          "value0_norm": 4.136446952819824,
+          "key0_norm": 40.32340621948242,
+          "other_values_rms_norm": 4.713831424713135,
+          "conditional_mixture_rms_norm": 1.1919655799865723,
+          "source_residual_std": 0.88787841796875,
+          "normalized_source_coordinate": -8.5078125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00019856769358739257,
+          "key0_mass_mean": 0.8851513266563416,
+          "key0_mass_median": 0.9942968487739563,
+          "key0_mass_late": 0.9637250304222107,
+          "value0_norm": 1.4369871616363525,
+          "key0_norm": 41.870445251464844,
+          "other_values_rms_norm": 3.394958019256592,
+          "conditional_mixture_rms_norm": 0.5877484083175659,
+          "source_residual_std": 0.88787841796875,
+          "normalized_source_coordinate": -8.5078125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0005370366561692208,
+          "key0_mass_mean": -7.838010787963867e-06,
+          "key0_mass_median": -5.684792995452881e-05,
+          "key0_mass_late": -8.89599323272705e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.2901763916015625e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.0002003223926294595,
+          "key0_mass_mean": 3.337860107421875e-06,
+          "key0_mass_median": 4.208087921142578e-05,
+          "key0_mass_late": 5.543231964111328e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.5762786865234375e-07,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -3.155787635478191e-05,
+          "key0_mass_mean": 1.7881393432617188e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.2901763916015625e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -4.756991984322667e-05,
+          "key0_mass_mean": -2.2649765014648438e-06,
+          "key0_mass_median": -5.900859832763672e-06,
+          "key0_mass_late": 5.960464477539062e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 3.5762786865234375e-07,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 2,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00030919158598408103,
+          "key0_mass_mean": 0.2414092719554901,
+          "key0_mass_median": 0.2299707978963852,
+          "key0_mass_late": 0.23098702728748322,
+          "value0_norm": 0.9181745648384094,
+          "key0_norm": 3.3950130939483643,
+          "other_values_rms_norm": 4.72995138168335,
+          "conditional_mixture_rms_norm": 1.2179824113845825,
+          "source_residual_std": 6.328310966491699,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002337493933737278,
+          "key0_mass_mean": 0.36432257294654846,
+          "key0_mass_median": 0.386404812335968,
+          "key0_mass_late": 0.34015390276908875,
+          "value0_norm": 0.29502856731414795,
+          "key0_norm": 6.136232852935791,
+          "other_values_rms_norm": 3.391602039337158,
+          "conditional_mixture_rms_norm": 0.507574200630188,
+          "source_residual_std": 6.328310966491699,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.251905920682475e-05,
+          "key0_mass_mean": 0.9900058507919312,
+          "key0_mass_median": 0.9999998807907104,
+          "key0_mass_late": 0.9999995827674866,
+          "value0_norm": 4.176477432250977,
+          "key0_norm": 40.470542907714844,
+          "other_values_rms_norm": 4.72995138168335,
+          "conditional_mixture_rms_norm": 1.2179824113845825,
+          "source_residual_std": 0.9048336744308472,
+          "normalized_source_coordinate": -7.73828125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002015921927522868,
+          "key0_mass_mean": 0.8792175650596619,
+          "key0_mass_median": 0.9948920011520386,
+          "key0_mass_late": 0.9670517444610596,
+          "value0_norm": 1.506669282913208,
+          "key0_norm": 41.91621398925781,
+          "other_values_rms_norm": 3.391602039337158,
+          "conditional_mixture_rms_norm": 0.507574200630188,
+          "source_residual_std": 0.9048336744308472,
+          "normalized_source_coordinate": -7.73828125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0005322011420503259,
+          "key0_mass_mean": -1.7583370208740234e-06,
+          "key0_mass_median": -9.493529796600342e-05,
+          "key0_mass_late": -4.470348358154297e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.0728836059570312e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00022994927712716162,
+          "key0_mass_mean": 1.0460615158081055e-05,
+          "key0_mass_median": 8.07642936706543e-05,
+          "key0_mass_late": 1.1175870895385742e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.351139068603516e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -3.318743983982131e-05,
+          "key0_mass_mean": -4.76837158203125e-07,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.0728836059570312e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -6.267597200348973e-05,
+          "key0_mass_mean": 5.185604095458984e-06,
+          "key0_mass_median": 3.635883331298828e-06,
+          "key0_mass_late": 4.5299530029296875e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.351139068603516e-06,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 3,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.0003013832902070135,
+          "key0_mass_mean": 0.23675572872161865,
+          "key0_mass_median": 0.23324613273143768,
+          "key0_mass_late": 0.23257720470428467,
+          "value0_norm": 0.9072886109352112,
+          "key0_norm": 3.348433256149292,
+          "other_values_rms_norm": 4.721399307250977,
+          "conditional_mixture_rms_norm": 1.137344241142273,
+          "source_residual_std": 5.631173610687256,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002232505939900875,
+          "key0_mass_mean": 0.3512358069419861,
+          "key0_mass_median": 0.3844062387943268,
+          "key0_mass_late": 0.33335432410240173,
+          "value0_norm": 0.2916484475135803,
+          "key0_norm": 6.069537162780762,
+          "other_values_rms_norm": 3.423849582672119,
+          "conditional_mixture_rms_norm": 0.5285769701004028,
+          "source_residual_std": 5.631173610687256,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.5416964237811044e-05,
+          "key0_mass_mean": 0.9854413866996765,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 0.9999995827674866,
+          "value0_norm": 4.068867206573486,
+          "key0_norm": 39.770877838134766,
+          "other_values_rms_norm": 4.721399307250977,
+          "conditional_mixture_rms_norm": 1.137344241142273,
+          "source_residual_std": 0.8098884224891663,
+          "normalized_source_coordinate": -8.25
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00021019563428126276,
+          "key0_mass_mean": 0.8632886409759521,
+          "key0_mass_median": 0.9920873045921326,
+          "key0_mass_late": 0.944416344165802,
+          "value0_norm": 1.4547514915466309,
+          "key0_norm": 41.16481018066406,
+          "other_values_rms_norm": 3.423849582672119,
+          "conditional_mixture_rms_norm": 0.5285769701004028,
+          "source_residual_std": 0.8098884224891663,
+          "normalized_source_coordinate": -8.25
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004962301172781736,
+          "key0_mass_mean": 7.212162017822266e-06,
+          "key0_mass_median": 4.70280647277832e-05,
+          "key0_mass_late": 9.045004844665527e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -2.014636993408203e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00019860928296111524,
+          "key0_mass_mean": -9.626150131225586e-06,
+          "key0_mass_median": 2.5480985641479492e-05,
+          "key0_mass_late": -1.043081283569336e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.4960765838623047e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -2.140821743523702e-05,
+          "key0_mass_mean": 2.6226043701171875e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -2.014636993408203e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -5.223057814873755e-05,
+          "key0_mass_mean": -1.0132789611816406e-06,
+          "key0_mass_median": 1.7940998077392578e-05,
+          "key0_mass_late": 5.960464477539062e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.4960765838623047e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 4,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00030698798946104944,
+          "key0_mass_mean": 0.22917506098747253,
+          "key0_mass_median": 0.2176976352930069,
+          "key0_mass_late": 0.21975310146808624,
+          "value0_norm": 0.9088549613952637,
+          "key0_norm": 3.331538438796997,
+          "other_values_rms_norm": 4.611254692077637,
+          "conditional_mixture_rms_norm": 1.1603007316589355,
+          "source_residual_std": 5.0468621253967285,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002406941493973136,
+          "key0_mass_mean": 0.3424598276615143,
+          "key0_mass_median": 0.360225111246109,
+          "key0_mass_late": 0.3197726309299469,
+          "value0_norm": 0.29038476943969727,
+          "key0_norm": 6.0933518409729,
+          "other_values_rms_norm": 3.4408140182495117,
+          "conditional_mixture_rms_norm": 0.5531028509140015,
+          "source_residual_std": 5.0468621253967285,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.5267068344401196e-05,
+          "key0_mass_mean": 0.9914937019348145,
+          "key0_mass_median": 0.9999998807907104,
+          "key0_mass_late": 0.9999995231628418,
+          "value0_norm": 4.023432731628418,
+          "key0_norm": 39.667274475097656,
+          "other_values_rms_norm": 4.611254692077637,
+          "conditional_mixture_rms_norm": 1.1603007316589355,
+          "source_residual_std": 0.7328899502754211,
+          "normalized_source_coordinate": -6.59375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002009047893807292,
+          "key0_mass_mean": 0.8580412864685059,
+          "key0_mass_median": 0.9939921498298645,
+          "key0_mass_late": 0.9544232487678528,
+          "value0_norm": 1.456925392150879,
+          "key0_norm": 41.13936233520508,
+          "other_values_rms_norm": 3.4408140182495117,
+          "conditional_mixture_rms_norm": 0.5531028509140015,
+          "source_residual_std": 0.7328899502754211,
+          "normalized_source_coordinate": -6.59375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0004982073151040822,
+          "key0_mass_mean": -2.0995736122131348e-05,
+          "key0_mass_median": 3.11434268951416e-05,
+          "key0_mass_late": -1.874566078186035e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -7.700920104980469e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00022272972273640335,
+          "key0_mass_mean": -1.4781951904296875e-05,
+          "key0_mass_median": -3.2395124435424805e-05,
+          "key0_mass_late": -1.8417835235595703e-05,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.1742115020751953e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -7.4327435868326575e-06,
+          "key0_mass_mean": -5.960464477539063e-08,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -7.700920104980469e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -6.208859849721193e-05,
+          "key0_mass_mean": 3.5762786865234375e-07,
+          "key0_mass_median": -3.5762786865234375e-07,
+          "key0_mass_late": -6.556510925292969e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.1742115020751953e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 5,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00030224924557842314,
+          "key0_mass_mean": 0.24246945977210999,
+          "key0_mass_median": 0.23217110335826874,
+          "key0_mass_late": 0.2313898205757141,
+          "value0_norm": 0.916111409664154,
+          "key0_norm": 3.4045231342315674,
+          "other_values_rms_norm": 4.543506622314453,
+          "conditional_mixture_rms_norm": 1.1644067764282227,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00023449880245607346,
+          "key0_mass_mean": 0.35570791363716125,
+          "key0_mass_median": 0.3790021538734436,
+          "key0_mass_late": 0.33330675959587097,
+          "value0_norm": 0.30047720670700073,
+          "key0_norm": 6.156296730041504,
+          "other_values_rms_norm": 3.447378158569336,
+          "conditional_mixture_rms_norm": 0.5742804408073425,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 4.425024235388264e-05,
+          "key0_mass_mean": 0.990415632724762,
+          "key0_mass_median": 0.9999998807907104,
+          "key0_mass_late": 0.9999995231628418,
+          "value0_norm": 4.054871082305908,
+          "key0_norm": 38.37442398071289,
+          "other_values_rms_norm": 4.543506622314453,
+          "conditional_mixture_rms_norm": 1.1644067764282227,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00019862482440657914,
+          "key0_mass_mean": 0.9089199900627136,
+          "key0_mass_median": 0.9957658052444458,
+          "key0_mass_late": 0.9722850918769836,
+          "value0_norm": 1.3633939027786255,
+          "key0_norm": 39.89908981323242,
+          "other_values_rms_norm": 3.447378158569336,
+          "conditional_mixture_rms_norm": 0.5742804408073425,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.000498065521242097,
+          "key0_mass_mean": 2.8461217880249023e-06,
+          "key0_mass_median": -1.1324882507324219e-05,
+          "key0_mass_late": 5.587935447692871e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.172325134277344e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00024951867817435414,
+          "key0_mass_mean": -4.1425228118896484e-06,
+          "key0_mass_median": -2.3990869522094727e-05,
+          "key0_mass_late": -3.9637088775634766e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -3.5762786865234375e-07,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -3.1929113902151585e-05,
+          "key0_mass_mean": -7.152557373046875e-07,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 4.172325134277344e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -6.161635974422097e-05,
+          "key0_mass_mean": -4.172325134277344e-07,
+          "key0_mass_median": 1.6689300537109375e-06,
+          "key0_mass_late": -2.384185791015625e-07,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -3.5762786865234375e-07,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 6,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00030486437026411295,
+          "key0_mass_mean": 0.24479927122592926,
+          "key0_mass_median": 0.232596293091774,
+          "key0_mass_late": 0.232854962348938,
+          "value0_norm": 0.916111409664154,
+          "key0_norm": 3.4045231342315674,
+          "other_values_rms_norm": 4.666388988494873,
+          "conditional_mixture_rms_norm": 1.1558222770690918,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002279257314512506,
+          "key0_mass_mean": 0.3538665473461151,
+          "key0_mass_median": 0.37975117564201355,
+          "key0_mass_late": 0.3250199258327484,
+          "value0_norm": 0.30047720670700073,
+          "key0_norm": 6.156296730041504,
+          "other_values_rms_norm": 3.4543068408966064,
+          "conditional_mixture_rms_norm": 0.6178528666496277,
+          "source_residual_std": 5.419918537139893,
+          "normalized_source_coordinate": -44.8125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.747001392184757e-05,
+          "key0_mass_mean": 0.986932635307312,
+          "key0_mass_median": 0.9999998807907104,
+          "key0_mass_late": 0.9999992251396179,
+          "value0_norm": 4.054871082305908,
+          "key0_norm": 38.37442398071289,
+          "other_values_rms_norm": 4.666388988494873,
+          "conditional_mixture_rms_norm": 1.1558222770690918,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.00020014472829643637,
+          "key0_mass_mean": 0.8924235701560974,
+          "key0_mass_median": 0.9937730431556702,
+          "key0_mass_late": 0.9576815962791443,
+          "value0_norm": 1.3633939027786255,
+          "key0_norm": 39.89908981323242,
+          "other_values_rms_norm": 3.4543068408966064,
+          "conditional_mixture_rms_norm": 0.6178528666496277,
+          "source_residual_std": 0.806708812713623,
+          "normalized_source_coordinate": -16.234375
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0005175941623747349,
+          "key0_mass_mean": -7.748603820800781e-07,
+          "key0_mass_median": -6.93202018737793e-05,
+          "key0_mass_late": -2.9355287551879883e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.704692840576172e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00021317672508303076,
+          "key0_mass_mean": 2.2649765014648438e-06,
+          "key0_mass_median": -1.6868114471435547e-05,
+          "key0_mass_late": 1.7285346984863281e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.1146068572998047e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -4.201802585157566e-05,
+          "key0_mass_mean": 3.814697265625e-06,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.704692840576172e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -7.04764825059101e-05,
+          "key0_mass_mean": -4.649162292480469e-06,
+          "key0_mass_median": -5.841255187988281e-06,
+          "key0_mass_late": -4.410743713378906e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": 1.1146068572998047e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    },
+    {
+      "corpus": "hume",
+      "window": 7,
+      "metrics": {
+        "clean_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 0.00030363284167833626,
+          "key0_mass_mean": 0.25270289182662964,
+          "key0_mass_median": 0.24707236886024475,
+          "key0_mass_late": 0.24906571209430695,
+          "value0_norm": 0.920912504196167,
+          "key0_norm": 3.405161142349243,
+          "other_values_rms_norm": 4.675507068634033,
+          "conditional_mixture_rms_norm": 1.1540719270706177,
+          "source_residual_std": 6.005669116973877,
+          "normalized_source_coordinate": -44.78125
+        },
+        "clean_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0002246190415462479,
+          "key0_mass_mean": 0.36659836769104004,
+          "key0_mass_median": 0.4059646725654602,
+          "key0_mass_late": 0.35954317450523376,
+          "value0_norm": 0.3007473349571228,
+          "key0_norm": 6.172304630279541,
+          "other_values_rms_norm": 3.4131996631622314,
+          "conditional_mixture_rms_norm": 0.5194779634475708,
+          "source_residual_std": 6.005669116973877,
+          "normalized_source_coordinate": -44.78125
+        },
+        "deleted_H15": {
+          "head": 15,
+          "reconstruction_relative_error": 3.564468352124095e-05,
+          "key0_mass_mean": 0.989449679851532,
+          "key0_mass_median": 1.0,
+          "key0_mass_late": 0.9999995827674866,
+          "value0_norm": 4.159023761749268,
+          "key0_norm": 40.276065826416016,
+          "other_values_rms_norm": 4.675507068634033,
+          "conditional_mixture_rms_norm": 1.1540719270706177,
+          "source_residual_std": 0.8662970066070557,
+          "normalized_source_coordinate": -7.8125
+        },
+        "deleted_H0": {
+          "head": 0,
+          "reconstruction_relative_error": 0.0001979041553568095,
+          "key0_mass_mean": 0.8849280476570129,
+          "key0_mass_median": 0.9944242835044861,
+          "key0_mass_late": 0.9502236247062683,
+          "value0_norm": 1.4549025297164917,
+          "key0_norm": 41.642581939697266,
+          "other_values_rms_norm": 3.4131996631622314,
+          "conditional_mixture_rms_norm": 0.5194779634475708,
+          "source_residual_std": 0.8662970066070557,
+          "normalized_source_coordinate": -7.8125
+        }
+      },
+      "corrected_minus_original": {
+        "clean_H15": {
+          "reconstruction_relative_error": -0.0005196811689529568,
+          "key0_mass_mean": 1.1920928955078125e-06,
+          "key0_mass_median": -5.3748488426208496e-05,
+          "key0_mass_late": 2.041459083557129e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -7.855892181396484e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "clean_H0": {
+          "reconstruction_relative_error": -0.00021133779955562204,
+          "key0_mass_mean": -9.298324584960938e-06,
+          "key0_mass_median": 1.8388032913208008e-05,
+          "key0_mass_late": -8.970499038696289e-06,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.1205673217773438e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H15": {
+          "reconstruction_relative_error": -4.422232450451702e-06,
+          "key0_mass_mean": 6.556510925292969e-07,
+          "key0_mass_median": 0.0,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -7.855892181396484e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        },
+        "deleted_H0": {
+          "reconstruction_relative_error": -5.549864727072418e-05,
+          "key0_mass_mean": 8.940696716308594e-07,
+          "key0_mass_median": 6.735324859619141e-06,
+          "key0_mass_late": 0.0,
+          "value0_norm": 0.0,
+          "key0_norm": 0.0,
+          "other_values_rms_norm": 0.0,
+          "conditional_mixture_rms_norm": -1.1205673217773438e-05,
+          "source_residual_std": 0.0,
+          "normalized_source_coordinate": 0.0
+        }
+      }
+    }
+  ],
+  "peak_rss_kib": 590140
+}

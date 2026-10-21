@@ -1,0 +1,111 @@
+{
+  "started_utc": "2026-10-21T09:46:46Z",
+  "script_sha256": "5659cda9d8936fa358dbb2bdce31186f8173e6f0872be72889f830fd83bd093a",
+  "model_hash_before": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "calibration_mass_sha256": "77e1111f00071ebde207be7aea9846d6f875f3e9364f996a7b84f6adcec2f0d9",
+  "evaluation_tokens_sha256": "831258974acdd1102a7e5b0259df17b4452ff5a9ab43e4b56171ea7befeff065",
+  "fit": "centered sample covariance per layer over16-head gate vector; pool8 Wiki+8 Hume development windows,511 queries/window; no heldout fitting",
+  "projection": "current recipient causal full gate a projected as mu+P(a-mu) at each layer; fixed mean values and native conditional nonzero-key mixture",
+  "primary_bounds": "projected gates clamped to[0,1]; bounding is nonlinear, so post-bound gates need not retain the nominal linear rank",
+  "unclamped_controls": "ranks2/4/8 retain affine subspace exactly before FP rounding, but can extrapolate outside probability bounds",
+  "rank16_control": "uses unmodified current gate, exact fast-path to previous oracle recombination",
+  "random": "two fixed Gaussian QR bases per layer, rank-matched nested4/8; same fitted means as PCA",
+  "variants": [
+    [
+      "pca0",
+      "pca",
+      0,
+      true
+    ],
+    [
+      "pca1",
+      "pca",
+      1,
+      true
+    ],
+    [
+      "pca2",
+      "pca",
+      2,
+      true
+    ],
+    [
+      "pca4",
+      "pca",
+      4,
+      true
+    ],
+    [
+      "pca8",
+      "pca",
+      8,
+      true
+    ],
+    [
+      "pca12",
+      "pca",
+      12,
+      true
+    ],
+    [
+      "pca16",
+      "pca",
+      16,
+      true
+    ],
+    [
+      "random20261021_rank4",
+      "random_20261021",
+      4,
+      true
+    ],
+    [
+      "random20261021_rank8",
+      "random_20261021",
+      8,
+      true
+    ],
+    [
+      "random20261022_rank4",
+      "random_20261022",
+      4,
+      true
+    ],
+    [
+      "random20261022_rank8",
+      "random_20261022",
+      8,
+      true
+    ],
+    [
+      "pca2_unclamped",
+      "pca",
+      2,
+      false
+    ],
+    [
+      "pca4_unclamped",
+      "pca",
+      4,
+      false
+    ],
+    [
+      "pca8_unclamped",
+      "pca",
+      8,
+      false
+    ]
+  ],
+  "score_start": 1,
+  "dtype": "float16",
+  "cpu_threads": 4,
+  "seed": 20261021,
+  "completed_utc": "2026-10-21T09:47:30Z",
+  "forward_passes": 544,
+  "wall_seconds": 44.332053422927856,
+  "model_hash_after": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "parameter_versions_unchanged": true,
+  "peak_gpu_allocated_bytes": 2835812864,
+  "peak_gpu_reserved_bytes": 5444206592,
+  "peak_process_rss_kib": 5394640
+}

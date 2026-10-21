@@ -1,0 +1,35 @@
+{
+  "started_utc": "2026-10-21T09:10:02Z",
+  "script_sha256": "864f39bd13ec0553c307ae9e8feff7f10948799124b760422d48cd47e4c7eb6b",
+  "model_hash_before": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "design": "same suffix, real prefix128/512, source0 and suffix-boundary token both The510 or period15; alter only boundary-token attention row in specified layers",
+  "mask_modes": [
+    "explicit",
+    "native",
+    "L0",
+    "L1",
+    "L0_L1",
+    "all"
+  ],
+  "deletions": [
+    "none",
+    "source0",
+    "boundary",
+    "both"
+  ],
+  "score_start": "prefix p for suffix511-target panel; p+1 for later510-target panel; all comparisons within same mask use matched mask-clean logits",
+  "explicit_mask_control": "standard causal4D FP16 mask in all layers, same backend mask shape as isolation conditions; native automatic mask separately compared",
+  "pulse_measurement": "FP32 product of original scalar weight and captured pre-down-projection activation1710; also retain full8192D intermediate at0 andp",
+  "source": "L1/r1764/c1710 at specified positions only",
+  "seed": 20261021,
+  "dtype": "float16",
+  "cpu_threads": 4,
+  "completed_utc": "2026-10-21T09:12:34Z",
+  "forward_passes": 1536,
+  "wall_seconds": 152.56134176254272,
+  "model_hash_after": "6f14cb082d26a785ab2f7f9093b38a214308b61f7e6b6ecaa46bc3681a9b0361",
+  "parameter_versions_unchanged": true,
+  "peak_gpu_allocated_bytes": 3043467776,
+  "peak_gpu_reserved_bytes": 3481272320,
+  "peak_process_rss_kib": 5394640
+}

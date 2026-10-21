@@ -1,0 +1,418 @@
+{
+  "rows": 672,
+  "groups": 84,
+  "summary_rows_replayed": 84,
+  "contrast_rows_replayed": 168,
+  "all_raw_metrics_match": true,
+  "unused_token_span_checks_passed": true,
+  "template_geometry_and_serialized_values_replayed": true,
+  "static_across_layer_svd_verified": true,
+  "svd_matrix_shape": [
+    14,
+    2048
+  ],
+  "uncentered_residual_energy": [
+    0.8845614790916443,
+    0.9662861824035645,
+    0.9927698969841003,
+    0.9993576407432556
+  ],
+  "random_controls": {
+    "20261021": {
+      "max_layer_norm_relative_error": 1.7079277370157797e-07,
+      "matching_target": "full learned residual before FP16 cast"
+    },
+    "20261022": {
+      "max_layer_norm_relative_error": 1.3722346636768634e-07,
+      "matching_target": "full learned residual before FP16 cast"
+    }
+  },
+  "results": {
+    "wiki_ideal": {
+      "vs_clean": {
+        "mean": 0.32571309084321953,
+        "low": 0.2687742142455277,
+        "high": 0.38608889682546227
+      },
+      "mean_clean_agreement": 0.7517156862745098,
+      "mean_clean_kl": 0.28247080645737255
+    },
+    "wiki_coordinate_matched_axis": {
+      "vs_clean": {
+        "mean": 0.3221716242969421,
+        "low": 0.26562864517992774,
+        "high": 0.3821167169350626
+      },
+      "mean_clean_agreement": 0.7531862745098039,
+      "mean_clean_kl": 0.2792356817099686
+    },
+    "wiki_residual_only": {
+      "vs_clean": {
+        "mean": 4.695098099903318,
+        "low": 4.385365107864097,
+        "high": 4.984384502589378
+      },
+      "mean_clean_agreement": 0.11421568627450981,
+      "mean_clean_kl": 4.695072029919054
+    },
+    "wiki_wiki_full_mean": {
+      "vs_clean": {
+        "mean": -0.0006368263761495352,
+        "low": -0.0028386657025438232,
+        "high": 0.000810201762367721
+      },
+      "mean_clean_agreement": 0.991421568627451,
+      "mean_clean_kl": 0.0004924836006259825
+    },
+    "wiki_hume_full_mean": {
+      "vs_clean": {
+        "mean": -0.0006923540668639094,
+        "low": -0.0029634203053040863,
+        "high": 0.0007449240756667809
+      },
+      "mean_clean_agreement": 0.9904411764705883,
+      "mean_clean_kl": 0.0005031006147792005
+    },
+    "wiki_shared_residual": {
+      "vs_clean": {
+        "mean": 0.06700611487457553,
+        "low": 0.05717008185473122,
+        "high": 0.07815662433001982
+      },
+      "mean_clean_agreement": 0.884313725490196,
+      "mean_clean_kl": 0.05298012532128154
+    },
+    "wiki_residual_rank1": {
+      "vs_clean": {
+        "mean": 0.024036737086881366,
+        "low": 0.016634412065235346,
+        "high": 0.03132053950599456
+      },
+      "mean_clean_agreement": 0.9301470588235294,
+      "mean_clean_kl": 0.017839732759731355
+    },
+    "wiki_residual_rank2": {
+      "vs_clean": {
+        "mean": 0.0051605324669093955,
+        "low": 0.0020927262593651297,
+        "high": 0.007864044242792538
+      },
+      "mean_clean_agreement": 0.9735294117647059,
+      "mean_clean_kl": 0.0032681644926652815
+    },
+    "wiki_residual_rank4": {
+      "vs_clean": {
+        "mean": 0.0011250583691400085,
+        "low": -0.0012872428803537672,
+        "high": 0.002996420051213089
+      },
+      "mean_clean_agreement": 0.9833333333333334,
+      "mean_clean_kl": 0.001075185415440978
+    },
+    "wiki_residual_rank8": {
+      "vs_clean": {
+        "mean": -0.0007884040832018546,
+        "low": -0.0031202929380070936,
+        "high": 0.0007215908272047168
+      },
+      "mean_clean_agreement": 0.9921568627450981,
+      "mean_clean_kl": 0.0005290972986699358
+    },
+    "wiki_random_residual_20261021": {
+      "vs_clean": {
+        "mean": 0.35182861826529455,
+        "low": 0.2910209502165485,
+        "high": 0.41342014560970497
+      },
+      "mean_clean_agreement": 0.7409313725490196,
+      "mean_clean_kl": 0.309180714339224
+    },
+    "wiki_random_residual_20261022": {
+      "vs_clean": {
+        "mean": 0.3471620559522183,
+        "low": 0.2830682088115015,
+        "high": 0.4144162624688529
+      },
+      "mean_clean_agreement": 0.7401960784313726,
+      "mean_clean_kl": 0.30488927235684576
+    },
+    "wiki_wrong_axis": {
+      "vs_clean": {
+        "mean": 6.290703140678638,
+        "low": 6.002987128291145,
+        "high": 6.573000071159867
+      },
+      "mean_clean_agreement": 0.02107843137254902,
+      "mean_clean_kl": 6.225994330323211
+    },
+    "hume_ideal": {
+      "vs_clean": {
+        "mean": 0.03568900765130639,
+        "low": 0.004338220607256959,
+        "high": 0.09126532779016916
+      },
+      "mean_clean_agreement": 0.9321078431372549,
+      "mean_clean_kl": 0.03531135644379687
+    },
+    "hume_coordinate_matched_axis": {
+      "vs_clean": {
+        "mean": 0.03526457486566992,
+        "low": 0.004253120650640037,
+        "high": 0.09023874950750074
+      },
+      "mean_clean_agreement": 0.9323529411764706,
+      "mean_clean_kl": 0.03482451369794235
+    },
+    "hume_residual_only": {
+      "vs_clean": {
+        "mean": 0.6436911431685477,
+        "low": 0.24978936843622787,
+        "high": 1.4078880936754041
+      },
+      "mean_clean_agreement": 0.6799019607843138,
+      "mean_clean_kl": 0.6299602623310313
+    },
+    "hume_wiki_full_mean": {
+      "vs_clean": {
+        "mean": 0.0006031124937854182,
+        "low": -8.472086317980049e-05,
+        "high": 0.0016470431372150255
+      },
+      "mean_clean_agreement": 0.9946078431372549,
+      "mean_clean_kl": 0.0001569712044789824
+    },
+    "hume_hume_full_mean": {
+      "vs_clean": {
+        "mean": 0.0004695044386794911,
+        "low": -0.00022891443026587798,
+        "high": 0.0016294131877185346
+      },
+      "mean_clean_agreement": 0.9958333333333333,
+      "mean_clean_kl": 0.00015729911775818912
+    },
+    "hume_shared_residual": {
+      "vs_clean": {
+        "mean": 0.006774214822049207,
+        "low": -8.71160605472876e-05,
+        "high": 0.017989676498441687
+      },
+      "mean_clean_agreement": 0.9590686274509803,
+      "mean_clean_kl": 0.00754898342554843
+    },
+    "hume_residual_rank1": {
+      "vs_clean": {
+        "mean": 0.0046112531227690545,
+        "low": -0.00046316954682459747,
+        "high": 0.012756360963700789
+      },
+      "mean_clean_agreement": 0.970343137254902,
+      "mean_clean_kl": 0.0036536775777558385
+    },
+    "hume_residual_rank2": {
+      "vs_clean": {
+        "mean": 0.0012733544882528314,
+        "low": -0.0007553426424872778,
+        "high": 0.0038739011304390913
+      },
+      "mean_clean_agreement": 0.9838235294117648,
+      "mean_clean_kl": 0.0008437296880704975
+    },
+    "hume_residual_rank4": {
+      "vs_clean": {
+        "mean": 0.0007568159867889501,
+        "low": -2.6983101909570927e-05,
+        "high": 0.0019554269645849884
+      },
+      "mean_clean_agreement": 0.9916666666666667,
+      "mean_clean_kl": 0.0002886461687803118
+    },
+    "hume_residual_rank8": {
+      "vs_clean": {
+        "mean": 0.0006004046995418122,
+        "low": -4.4008220514349385e-05,
+        "high": 0.0016089735415535473
+      },
+      "mean_clean_agreement": 0.9941176470588236,
+      "mean_clean_kl": 0.00016701563491414804
+    },
+    "hume_random_residual_20261021": {
+      "vs_clean": {
+        "mean": 0.04306848670195501,
+        "low": 0.008587664834077734,
+        "high": 0.10635710002768584
+      },
+      "mean_clean_agreement": 0.9259803921568627,
+      "mean_clean_kl": 0.039699509734857814
+    },
+    "hume_random_residual_20261022": {
+      "vs_clean": {
+        "mean": 0.03739884633525886,
+        "low": 0.004873194861947543,
+        "high": 0.09640177278995814
+      },
+      "mean_clean_agreement": 0.9286764705882353,
+      "mean_clean_kl": 0.03744381807388265
+    },
+    "hume_wrong_axis": {
+      "vs_clean": {
+        "mean": 0.7306143747300105,
+        "low": 0.14860672344021722,
+        "high": 1.8735154941907566
+      },
+      "mean_clean_agreement": 0.7215686274509804,
+      "mean_clean_kl": 0.7246519901487167
+    },
+    "plato_ideal": {
+      "vs_clean": {
+        "mean": 0.007765720624539507,
+        "low": 0.003644695602673498,
+        "high": 0.01254940530430808
+      },
+      "mean_clean_agreement": 0.9485294117647058,
+      "mean_clean_kl": 0.011243615832415966
+    },
+    "plato_coordinate_matched_axis": {
+      "vs_clean": {
+        "mean": 0.007506448075562555,
+        "low": 0.0033531544557819926,
+        "high": 0.012272092625278832
+      },
+      "mean_clean_agreement": 0.9485294117647058,
+      "mean_clean_kl": 0.011112190906644094
+    },
+    "plato_residual_only": {
+      "vs_clean": {
+        "mean": 0.21495018464765375,
+        "low": 0.18536767380508923,
+        "high": 0.24214742375560158
+      },
+      "mean_clean_agreement": 0.7696078431372548,
+      "mean_clean_kl": 0.21519079275125227
+    },
+    "plato_wiki_full_mean": {
+      "vs_clean": {
+        "mean": 6.0576469387507714e-05,
+        "low": -0.00029306030257706533,
+        "high": 0.0004125961566025414
+      },
+      "mean_clean_agreement": 0.9958333333333333,
+      "mean_clean_kl": 2.9881259816824496e-05
+    },
+    "plato_hume_full_mean": {
+      "vs_clean": {
+        "mean": 6.19931738565227e-05,
+        "low": -0.00034931753042438115,
+        "high": 0.0003682022324746722
+      },
+      "mean_clean_agreement": 0.9958333333333333,
+      "mean_clean_kl": 3.032688238168266e-05
+    },
+    "plato_shared_residual": {
+      "vs_clean": {
+        "mean": 0.0029698854267807273,
+        "low": 0.0016491034658939045,
+        "high": 0.004663788899657628
+      },
+      "mean_clean_agreement": 0.9634803921568628,
+      "mean_clean_kl": 0.0036374396909553556
+    },
+    "plato_residual_rank1": {
+      "vs_clean": {
+        "mean": 0.0011493183964303988,
+        "low": -0.00018868843727310318,
+        "high": 0.0024193039940714417
+      },
+      "mean_clean_agreement": 0.9725490196078431,
+      "mean_clean_kl": 0.0020136864869618972
+    },
+    "plato_residual_rank2": {
+      "vs_clean": {
+        "mean": 0.0006626099165825128,
+        "low": -0.0004174129703681806,
+        "high": 0.0016862547590920077
+      },
+      "mean_clean_agreement": 0.9843137254901961,
+      "mean_clean_kl": 0.00048801208658928415
+    },
+    "plato_residual_rank4": {
+      "vs_clean": {
+        "mean": 0.00026625330092416855,
+        "low": -0.00021312475729798607,
+        "high": 0.0005915954764390052
+      },
+      "mean_clean_agreement": 0.9933823529411765,
+      "mean_clean_kl": 0.00012362383100834987
+    },
+    "plato_residual_rank8": {
+      "vs_clean": {
+        "mean": -3.6731884509200174e-05,
+        "low": -0.0004451015424132967,
+        "high": 0.00035828923868820014
+      },
+      "mean_clean_agreement": 0.9950980392156863,
+      "mean_clean_kl": 3.730471822007218e-05
+    },
+    "plato_random_residual_20261021": {
+      "vs_clean": {
+        "mean": 0.01007760294897364,
+        "low": 0.005681332330037758,
+        "high": 0.015267273983810111
+      },
+      "mean_clean_agreement": 0.9450980392156862,
+      "mean_clean_kl": 0.012454784849902667
+    },
+    "plato_random_residual_20261022": {
+      "vs_clean": {
+        "mean": 0.010405900897781095,
+        "low": 0.005594013873105362,
+        "high": 0.01619683644499374
+      },
+      "mean_clean_agreement": 0.9470588235294117,
+      "mean_clean_kl": 0.012254328167387642
+    },
+    "plato_wrong_axis": {
+      "vs_clean": {
+        "mean": 0.14582466695308077,
+        "low": 0.11538336917774755,
+        "high": 0.18181318752458578
+      },
+      "mean_clean_agreement": 0.8205882352941176,
+      "mean_clean_kl": 0.1359363805819574
+    }
+  },
+  "random_vs_matched_axis": {
+    "wiki_20261021": {
+      "mean": 0.02965699396835242,
+      "low": 0.022965088551583416,
+      "high": 0.036448897812525374
+    },
+    "wiki_20261022": {
+      "mean": 0.024990431655276146,
+      "low": 0.012756230250665882,
+      "high": 0.036714798631692955
+    },
+    "hume_20261021": {
+      "mean": 0.0078039118362850934,
+      "low": 0.002066579735791231,
+      "high": 0.01693535806068437
+    },
+    "hume_20261022": {
+      "mean": 0.002134271469588944,
+      "low": -0.0012856602120430716,
+      "high": 0.006816080710652319
+    },
+    "plato_20261021": {
+      "mean": 0.0025711548734110856,
+      "low": 0.001841779376954078,
+      "high": 0.003219809770822383
+    },
+    "plato_20261022": {
+      "mean": 0.00289945282221854,
+      "low": 0.0012394910650661785,
+      "high": 0.004484607480239599
+    }
+  },
+  "clean_deleted_template_identity_loss_prediction_kl": true,
+  "uniform_predictors_1_to_510": true,
+  "peak_rss_kib": 518476
+}
