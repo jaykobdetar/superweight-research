@@ -1,5 +1,14 @@
 # Super-weight research
 
+Latest completed extensions: [Report 16: actual-write norm controls](docs/GPT2_POST_WRITE_NORM.md)
+and [Report 17: early-to-later transmission](docs/GPT2_QUERY_WRITE_TIMING.md).
+Report 17 finds controlled cross-position consequences on a finite GPT-2 panel;
+15 of 24 primary signed-loss intervals include zero. It does not yet separate
+the earlier keys from values. [Audit/replay guide](docs/GPT2_QUERY_WRITE_TIMING_REPRODUCING.md)
+distinguishes exact reanalysis/input rebuilding from an unperformed second model replay.
+Self-contained downloads: [Report 16 HTML](reports/report16.html), [Report 17 HTML](reports/report17.html).
+
+
 A reproducible causal case study of the computation around an OLMo-1B super
 weight: earlier newline history, attention K/V pathways, residual components,
 source geometry, and limits of simpler replacements.
@@ -90,8 +99,18 @@ See the [T19 audit/replay guide](docs/GPT2_NATIVE_VALUE_REPRODUCING.md), or run
 numerical, sampled readout, scientific and actual-export audits passed. A
 complete second pretrained replay remains unperformed.
 
-For the continuation checkpoint and next perturbation-norm control, read
-[the research handoff](docs/HANDOFF.md).
+The [actual-write norm-control report](docs/GPT2_POST_WRITE_NORM.md) tests the
+PC-versus-fixed-orthogonal contrast after approximately matching each query's
+actual L10 projected-write-change norm. All eight native source/start mean
+signs persist: Wiki positive, other three sources negative. Early/later signs
+can reverse, and one Ethics passage reverses the aggregate ranking. These are
+conditional finite-operation effects with one calibration and one orthogonal
+control, not a unique direction or a faithful replacement. All776 model calls
+completed without reruns; numerical, sampled projection/readout, scientific and
+restricted-export reviews passed. Start with the [T20 audit/replay guide](docs/GPT2_POST_WRITE_NORM_REPRODUCING.md)
+or `python -B scripts/audit_post_write_norm_results.py` (NumPy only).
+The [research handoff](docs/HANDOFF.md) records the early/later causal-support
+question and unperformed replay limits.
 
 ## Quick start
 

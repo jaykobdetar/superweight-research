@@ -1,0 +1,37 @@
+--- reviewed_Report17_v3
++++ repository_report_body
+@@ -1,6 +1,6 @@
+ # Report 17 — Which write positions change later predictions?
+ 
+-Scientific review candidate. GPT-2 transfer study T21; this is not a new intervention on the original OLMo super-weight. Repository publication is paused; this local report does not claim a new remote commit.
++Scientifically reviewed. GPT-2 transfer study T21; this is not a new intervention on the original OLMo super-weight. Repository publication is paused; this local report does not claim a new remote commit.
+ 
+ Early-only L10 write edits changed later-token distributions while the later L10 computation and later incoming L11 queries, keys and values remained baseline bytes. Under the fixed GPT-2 architecture and the recorded guards, this identifies a cross-position consequence through the remaining L11 attention block. It does not yet separate earlier keys from values or identify a unique head or direction.
+ 
+@@ -16,7 +16,7 @@
+ 
+ The full view scores targets 2..511; early targets 2..127; later targets 128..511. The primary comparisons were later-view early-only PC−baseline, orth−baseline and PC−orth, in every source/start stratum. Ten arms, main/rotated-suffix runs, and eight native identity/repeat anchors required 648 forwards. All 648 completed in their first executions with all final guards; there was no model rerun or calibration fit.
+ 
+-![Measured guards and candidate remaining pathway](figures/mechanism_guarded_path.png)
++![Measured guards and candidate remaining pathway](../figures/query_write_timing/mechanism_guarded_path.png)
+ 
+ The diagram combines recorded runtime guards with the architecture's single remaining attention block. All-query guard fingerprints/flags are runtime evidence; only the predetermined 200 timing-row vectors, ten full snapshot states and 40 vocabulary rows were retained for independent raw reconstruction. Do not read the diagram as a full saved reconstruction of every unsaved node.
+ 
+@@ -24,7 +24,7 @@
+ 
+ Values are nats/target with conditional, unadjusted 95% paired bootstrap intervals. Four passage clusters/source, 2,000 shared PCG64 resamples, seed 20261021. Negative differences mean lower loss. Nine of 24 primary intervals exclude zero; these correlated comparisons are not 24 independent replications. Intervals crossing zero do not establish absence or equivalence.
+ 
+-![All24 primary comparisons](figures/primary_early_later.png)
++![All24 primary comparisons](../figures/query_write_timing/primary_early_later.png)
+ 
+ | Source | Start | PC − baseline | Orth − baseline | PC − orth |
+ | --- | --- | --- | --- | --- |
+@@ -62,7 +62,7 @@
+ | Optimizer code | bos | PC | 2.7432526e-05 | 2.3217409e-05 … 3.1647643e-05 | 0.99869792 |
+ | Optimizer code | bos | orth | 4.8038141e-05 | 3.7374081e-05 … 5.7892727e-05 | 0.99674479 |
+ 
+-![Later-view effects by support and direction](figures/later_support_effects.png)
++![Later-view effects by support and direction](../figures/query_write_timing/later_support_effects.png)
+ 
+ | Source | Start | PC early | PC later | PC both | Orth early | Orth later | Orth both |
+ | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -1,0 +1,139 @@
+{
+  "schema": "Report17_independent_scientific_prose_figure_review_v1",
+  "status": "passed_subject_to_one_narrow_numeric_domain_correction",
+  "candidate_report_sha256": "a7def461e5bd56f63e0a7b6c3bac0b6e7b67aac88cf9afd8cca25b3b18471d69",
+  "candidate_assembly_sha256": "5bb5b0f7fcdb3c96f9b9f41e837bb14bf152f4150a6ae183ab1f55f122f452d3",
+  "builder_sha256": "d348e7d9a43ae3e54c271da30248c106cd0551488d6494d7c8e47e088aa71b3d",
+  "analysis_sha256": "94d8473b35e449b494b5c44c7d29651213f99399f99a40c83cb8fac8a9d56748",
+  "audits": {
+    "numerical": "9cd0778f3d418b2d7f408b08146c52684276161ef1ddc0d6db2d9b8d00edc2c2",
+    "projection": "09e586fcff0ffcd38b4ba6306f37af21d182f908e405cf9cb63bb70b9033c6df",
+    "readout": "e92400d073855d8c2b3905cf748de09f9fe44d45db88d3073b84d5ce76a55da3"
+  },
+  "quantitative_check_source_sha256": "7b4d0718dd5c0966fe739fb2ddfb210a0ddb49635e9ded860313abc296c81216",
+  "quantitative_check_result_sha256": "f6e3afb4b27568abc4fea24de3182dcb65eac694cc3cd933fab4e337bc292c65",
+  "quantitative_coverage": {
+    "table_count": 5,
+    "table_data_rows": 48,
+    "table_cells_including_row_labels": 264,
+    "rounded_numeric_table_coordinates": 376,
+    "all408_CSV_contrast_rows_and_fourpassage_values_exact": true,
+    "all204_paired_start_records_exact": true,
+    "figure_data_exact": true
+  },
+  "required_correction": [
+    {
+      "severity": "minor_numeric_domain_label",
+      "location": "Norm matching, controls and uncertainty, first sentence",
+      "observed": "Maximum relative RMS matched-norm gap was6.898929187e-08",
+      "reason": "This number is the maximum for all_nonsource only. The independently checked acceptance domains include primary_scored as well.",
+      "required": "Either explicitly label the current number all-nonsource, or preferably report maximum across both acceptance domains6.906689988e-08. The1e-5 acceptance result is unchanged.",
+      "all_nonsource_maximum": 6.89892918738428e-08,
+      "primary_scored_maximum": 6.906689987996758e-08
+    }
+  ],
+  "claims": [
+    {
+      "claim": "24 primary contrasts;9 conditional intervals excludezero;15 includezero",
+      "status": "verified",
+      "scope": "Conditional unadjusted paired bootstrap,4 passage clusters/source; correlated arms/starts/views are not independent replications."
+    },
+    {
+      "claim": "All64 early-only passage/start/direction mean laterKL values positive",
+      "status": "verified",
+      "scope": "Recorded planned secondary metric, not a new population test or independent reconstruction of unsaved vocabulary distributions. Ethics/BOS/PC early argmax agreement is exactly1."
+    },
+    {
+      "claim": "Early-only interventions have a cross-position consequence through remaining L11 attention",
+      "status": "supported_conditional_architectural_inference",
+      "basis": "The only external intervention changes earlierL10writes; laterL10 postattention/MLP/block rows and incomingL11QKV remain baseline bytes by runtime guard. The fixed GPT2 architecture has one remaining attention block; following MLP/finalnormalization/readout are rowwise. This is controlled finite computation, not mere observational correlation.",
+      "limit": "Full ordinary timing nodes remain runtime fingerprints/flags. No separate earlierK-versusV/head/direction/path localization has been established."
+    },
+    {
+      "claim": "Natural-start code has opposing early-only and later-only PC effects",
+      "status": "verified",
+      "scope": "Both relevant conditional intervals excludezero with opposite signs; no universal-sign, timing-versus-dose, or effect-fraction interpretation."
+    },
+    {
+      "claim": "Later-only condition is not purely query-local; nonadditivity is not mediation",
+      "status": "correctly_stated",
+      "scope": "Later positions can interact throughL11attention. Supports contain126 versus385 writes; interaction includes attention/residual/readout/loss nonlinearities."
+    },
+    {
+      "claim": "Norm matching is tight but approximate, without proving every amplitude-only explanation excluded",
+      "status": "correctly_stated_after_RMS_domain_correction",
+      "pointwise_maximum": 0.002431434506629515,
+      "pointwise_domain": "q1..511, positive targets, all32inputs\u00d7main/suffix\u00d73supports; sourceq0 has zero target",
+      "optional_label": "Explicitly say pointwise relative gap over positive-target q1..511 in main and suffix/all3supports."
+    },
+    {
+      "claim": "Fresh both-support full-view PC-minus-orth signs repeat, Wiki intervals crosszero",
+      "status": "verified",
+      "scope": "Same frozenF and directions; no independent calibration or hardware/model replication."
+    },
+    {
+      "claim": "All actual study/N/P/R first attempts passed, resource costs are experiment-process wall times",
+      "status": "verified_against_manifests_and_audits",
+      "scope": "149.15679717063904s +150.41618418693542s =299.57298135757446s, including loading/writes/guards; audits separate."
+    },
+    {
+      "claim": "Public-safe rebuild remains pending; publication paused",
+      "status": "honest_scope",
+      "scope": "No second model replay or completed public reconstruction is claimed by this candidate."
+    }
+  ],
+  "visual_review": {
+    "method": "Viewed all3actualPNG artifacts; reviewed plot input selections and builder ordering without rerendering.",
+    "readable": true,
+    "consistent_stratum_and_axis_order": true,
+    "errorbar_and_support_labels_consistent_with_tables": true,
+    "mechanism_diagram_distinguishes_guards_from_unseparated_KV_hypotheses": true,
+    "images": {
+      "figures/later_support_effects.png": {
+        "sha256": "354cbc4e6a77bca1b110e317397a94ab4ce37b4426900a9bff9bfa572bc43767",
+        "bytes": 111970
+      },
+      "figures/mechanism_guarded_path.png": {
+        "sha256": "2b1a2abd6b61ff636e9a6def45236c089f4d6e8cdfac332099be1a30376322d4",
+        "bytes": 138912
+      },
+      "figures/primary_early_later.png": {
+        "sha256": "d8da0c32ec6be3cbf4d4dcb9dd9a5f0862c16f5e48b1576906bce96b016d1d3e",
+        "bytes": 97561
+      }
+    }
+  },
+  "novelty_calibration": {
+    "status": "appropriate_narrow_attribution_no_priority_claim",
+    "primary_sources_rechecked": [
+      {
+        "url": "https://arxiv.org/html/2604.14722v1#A2.SS1",
+        "support": "AppendixB.1 explicitly tests EPE/PE direction swaps with equal removed/added scalar components; generic magnitude-controlled direction dependence is established."
+      },
+      {
+        "url": "https://arxiv.org/html/2602.01203v3#S6.SS2",
+        "support": "v3 discusses implicit allocation gates, multiple sink-like components and multiple interacting gates; not newly discovered here."
+      },
+      {
+        "url": "https://arxiv.org/html/2411.07191v2",
+        "support": "Superweight/activation/distribution phenomena predate this GPT2 transfer line."
+      },
+      {
+        "url": "https://arxiv.org/html/2402.17762v2",
+        "support": "Massive activation and attention-bias phenomena predate this line."
+      }
+    ],
+    "scope": "Specific held-out support intervention and guard/evidence record; no exhaustive absence-of-prior-art or generic new circuit claim."
+  },
+  "next_line": {
+    "recommendation": "Prospectively review fresh-data earlierL11key/earlierL11value donor factorial for both fixed directions.",
+    "reason": "Most directly distinguishes the two remaining architectural inputs to the demonstrated later-readout consequence. Combined donor must first reproduce actual early-write later readout before separating single-donor effects.",
+    "limits": "Keep own baseline laterQKV/residual state; preserve negative/interaction results. No mediation fraction, uniquehead or singledirection claim. Orthogonal ensemble/freshcalibration remain separate generalization questions.",
+    "experiment_or_launch_approval": false
+  },
+  "report_source_or_prose_mutated": false,
+  "model_forwards": 0,
+  "GPU_used": false,
+  "checkpoint_access": false,
+  "file_deletions": 0
+}

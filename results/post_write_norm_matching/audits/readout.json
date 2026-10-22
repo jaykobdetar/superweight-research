@@ -1,0 +1,702 @@
+{
+  "schema": "T20_saved_readout_audit_v1",
+  "status": "passed",
+  "auditor_sha256": "470cc0a3c5db0a8d2e6ddd0367260d497ba20ffe37b41eafcb3d8ca71f54437b",
+  "protocol_sha256": "e562fd57097228fb3348d8a7d564010456651c9dd6bde4540496a11bae338aff",
+  "run_manifest_sha256": "bb46a4f94e7276e79563a9962b1977298fd915667b4b7dbce64ef402a2279164",
+  "execution_review_sha256": "f24c82f650bdb18018f9d86c00753d498ffa7ce1ee307ad61fca70f5d3d12090",
+  "inventory_sha256": "6e03399366029c1f12491262a2402e0d00aeedebda7c39a88e4239a69c23d087",
+  "checkpoint_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "embedding_sha256": "e182e433b37dbdb47448e0413c840edf6965113c1fc8048c63b69795d8cf875a",
+  "weight_tensors_loaded": [
+    "wte.weight"
+  ],
+  "head": "bias-free tied embedding dot product",
+  "query_rows": [
+    1,
+    126,
+    127,
+    510
+  ],
+  "target_positions": [
+    2,
+    127,
+    128,
+    511
+  ],
+  "counts": {
+    "states": 12,
+    "full_vocabulary_rows_per_state": 4,
+    "full_vocabulary_rows": 48
+  },
+  "saved_metric_max_abs": 0.0001,
+  "scope": "Four predetermined full-vocabulary rows and full final hidden fingerprints per state. No ordinary context, hidden, or unsaved vocabulary rows independently reconstructed; runtime guards are provenance, not replayed.",
+  "model_forwards": 0,
+  "gpu_computation": false,
+  "file_deletions": 0,
+  "peak_rss_bytes": 1048313856,
+  "elapsed_seconds": 7.1774115562438965,
+  "states": {
+    "000__baseline": {
+      "nll": [
+        11.204608674913752,
+        1.3700623468121595,
+        3.3404459641130537,
+        2.4886870599098074
+      ],
+      "margin": [
+        1.953033447265625,
+        0.29634857177734375,
+        2.491424560546875,
+        0.8646240234375
+      ],
+      "kl_c_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.599067556730006e-07,
+          "rms": 2.3662299842898424e-07,
+          "symmetric_relative_l2": 3.93318120714674e-08
+        },
+        "kl_c": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00030910767563341324,
+        "rms": 5.061922370852467e-05,
+        "symmetric_relative_l2": 4.4407839361711637e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017336338673670522,
+        "max_error_to_bound_ratio": 0.02092302155611556
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "000__current": {
+      "nll": [
+        11.204608674913752,
+        1.3700623468121595,
+        3.3404459641130537,
+        2.4886870599098074
+      ],
+      "margin": [
+        1.953033447265625,
+        0.29634857177734375,
+        2.491424560546875,
+        0.8646240234375
+      ],
+      "kl_c_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.599067556730006e-07,
+          "rms": 2.3662299842898424e-07,
+          "symmetric_relative_l2": 3.93318120714674e-08
+        },
+        "kl_c": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00030910767563341324,
+        "rms": 5.061922370852467e-05,
+        "symmetric_relative_l2": 4.4407839361711637e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017336338673670522,
+        "max_error_to_bound_ratio": 0.02092302155611556
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "000__remove_full": {
+      "nll": [
+        11.258799254805297,
+        1.3520622043909314,
+        3.2958719449609917,
+        2.4849715879005254
+      ],
+      "margin": [
+        1.963714599609375,
+        0.29325103759765625,
+        2.4073028564453125,
+        0.8706130981445312
+      ],
+      "kl_c_to_trial": [
+        0.00025805175798214756,
+        0.0006447706944128527,
+        0.0012681907950425788,
+        8.778938266356973e-05
+      ],
+      "kl_boundary_to_trial": [
+        0.00025805175798214756,
+        0.0006447706944128527,
+        0.0012681907950425788,
+        8.778938266356973e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.981121838274703e-07,
+          "rms": 2.1481500901714613e-07,
+          "symmetric_relative_l2": 3.560200216927086e-08
+        },
+        "kl_c": {
+          "max_abs": 1.8786201454483106e-07,
+          "rms": 1.422014767568326e-07,
+          "symmetric_relative_l2": 0.00019631571019779472
+        },
+        "kl_boundary": {
+          "max_abs": 1.8786201454483106e-07,
+          "rms": 1.422014767568326e-07,
+          "symmetric_relative_l2": 0.00019631571019779472
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.0003586399601829271,
+        "rms": 4.888941423706135e-05,
+        "symmetric_relative_l2": 4.2983325743422433e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017204318122923064,
+        "max_error_to_bound_ratio": 0.023719021258818567
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "000__orth_full": {
+      "nll": [
+        11.18750151120183,
+        1.4120217870656406,
+        3.4446228274754693,
+        2.4913189498957045
+      ],
+      "margin": [
+        1.9055023193359375,
+        0.26587677001953125,
+        2.4707489013671875,
+        0.8509063720703125
+      ],
+      "kl_c_to_trial": [
+        0.0025086591428546213,
+        0.0008838643486966157,
+        0.0006781293359588916,
+        3.690979803451762e-05
+      ],
+      "kl_boundary_to_trial": [
+        0.0025086591428546213,
+        0.0008838643486966157,
+        0.0006781293359588916,
+        3.690979803451762e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.961468024726855e-07,
+          "rms": 2.9034185198996016e-07,
+          "symmetric_relative_l2": 4.818560378515408e-08
+        },
+        "kl_c": {
+          "max_abs": 1.4703912839652417e-07,
+          "rms": 1.0876788841205417e-07,
+          "symmetric_relative_l2": 7.924388571810774e-05
+        },
+        "kl_boundary": {
+          "max_abs": 1.4703912839652417e-07,
+          "rms": 1.0876788841205417e-07,
+          "symmetric_relative_l2": 7.924388571810774e-05
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00032569848073649155,
+        "rms": 5.2340856604523584e-05,
+        "symmetric_relative_l2": 4.5786588650736036e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01760450098962255,
+        "max_error_to_bound_ratio": 0.02150395992031393
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "000__remove_write_matched": {
+      "nll": [
+        11.258799254805297,
+        1.3552939633517256,
+        3.2968491187630558,
+        2.486675190800002
+      ],
+      "margin": [
+        1.963714599609375,
+        0.29012298583984375,
+        2.4098663330078125,
+        0.873626708984375
+      ],
+      "kl_c_to_trial": [
+        0.00025805175798214756,
+        0.0006016637187837761,
+        0.0012361939094441133,
+        6.947998195510718e-05
+      ],
+      "kl_boundary_to_trial": [
+        0.00025805175798214756,
+        0.0006016637187837761,
+        0.0012361939094441133,
+        6.947998195510718e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.981121838274703e-07,
+          "rms": 1.9398273161632187e-07,
+          "symmetric_relative_l2": 3.2146788252044906e-08
+        },
+        "kl_c": {
+          "max_abs": 2.1664886179950833e-07,
+          "rms": 1.6436341729610224e-07,
+          "symmetric_relative_l2": 0.00023468709686355494
+        },
+        "kl_boundary": {
+          "max_abs": 2.1664886179950833e-07,
+          "rms": 1.6436341729610224e-07,
+          "symmetric_relative_l2": 0.00023468709686355494
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.0003288949127977503,
+        "rms": 4.889480180090436e-05,
+        "symmetric_relative_l2": 4.298853926839021e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01720985091295439,
+        "max_error_to_bound_ratio": 0.021645511901306307
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "000__orth_write_matched": {
+      "nll": [
+        11.201269652771668,
+        1.402170493652923,
+        3.429696405973388,
+        2.491774531377277
+      ],
+      "margin": [
+        1.9586334228515625,
+        0.27370452880859375,
+        2.4724197387695312,
+        0.8522109985351562
+      ],
+      "kl_c_to_trial": [
+        8.986177226872107e-05,
+        0.0005329951146514325,
+        0.0005063206715951619,
+        3.208004493897424e-05
+      ],
+      "kl_boundary_to_trial": [
+        8.986177226872107e-05,
+        0.0005329951146514325,
+        0.0005063206715951619,
+        3.208004493897424e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 5.029913943133124e-07,
+          "rms": 2.6595574819358945e-07,
+          "symmetric_relative_l2": 4.411109031356868e-08
+        },
+        "kl_c": {
+          "max_abs": 3.817896847668322e-07,
+          "rms": 2.883248726378622e-07,
+          "symmetric_relative_l2": 0.0007775185375050272
+        },
+        "kl_boundary": {
+          "max_abs": 3.817896847668322e-07,
+          "rms": 2.883248726378622e-07,
+          "symmetric_relative_l2": 0.0007775185375050272
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00032684790375014927,
+        "rms": 5.206369103877161e-05,
+        "symmetric_relative_l2": 4.5586912837744575e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017540894802732555,
+        "max_error_to_bound_ratio": 0.021856170024743098
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__baseline": {
+      "nll": [
+        11.170992993452758,
+        1.3734609683131607,
+        3.3234144283673173,
+        2.4436221622837593
+      ],
+      "margin": [
+        2.0191574096679688,
+        0.37371826171875,
+        2.5037307739257812,
+        0.84033203125
+      ],
+      "kl_c_to_trial": [
+        0.002824689259605613,
+        0.0017525648875637962,
+        0.00044809956064204655,
+        0.0018215013053282433
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 1.4219543409410562e-07,
+          "rms": 9.94617655397085e-08,
+          "symmetric_relative_l2": 1.659461059772136e-08
+        },
+        "kl_c": {
+          "max_abs": 2.7310833534271994e-07,
+          "rms": 1.7831229226709346e-07,
+          "symmetric_relative_l2": 9.34321211432649e-05
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00024900881192024826,
+        "rms": 4.306335826749951e-05,
+        "symmetric_relative_l2": 3.916871516442811e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.016931710605289987,
+        "max_error_to_bound_ratio": 0.017745857027586777
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__current": {
+      "nll": [
+        11.170992993452758,
+        1.3734609683131607,
+        3.3234144283673173,
+        2.4436221622837593
+      ],
+      "margin": [
+        2.0191574096679688,
+        0.37371826171875,
+        2.5037307739257812,
+        0.84033203125
+      ],
+      "kl_c_to_trial": [
+        0.002824689259605613,
+        0.0017525648875637962,
+        0.00044809956064204655,
+        0.0018215013053282433
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 1.4219543409410562e-07,
+          "rms": 9.94617655397085e-08,
+          "symmetric_relative_l2": 1.659461059772136e-08
+        },
+        "kl_c": {
+          "max_abs": 2.7310833534271994e-07,
+          "rms": 1.7831229226709346e-07,
+          "symmetric_relative_l2": 9.34321211432649e-05
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00024900881192024826,
+        "rms": 4.306335826749951e-05,
+        "symmetric_relative_l2": 3.916871516442811e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.016931710605289987,
+        "max_error_to_bound_ratio": 0.017745857027586777
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__remove_full": {
+      "nll": [
+        11.232473449031954,
+        1.3587902876934381,
+        3.2738490833108043,
+        2.440439898919913
+      ],
+      "margin": [
+        2.0284652709960938,
+        0.3582000732421875,
+        2.4294052124023438,
+        0.8491668701171875
+      ],
+      "kl_c_to_trial": [
+        0.002917881227129747,
+        0.0016193747259630668,
+        0.0013427336180789587,
+        0.0023289397295381343
+      ],
+      "kl_boundary_to_trial": [
+        0.00028845238384682175,
+        0.0007288463034757306,
+        0.0011627693478759049,
+        9.855064688667777e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 5.496804331706073e-07,
+          "rms": 3.014594980672214e-07,
+          "symmetric_relative_l2": 5.012354763454323e-08
+        },
+        "kl_c": {
+          "max_abs": 2.3759066467444329e-07,
+          "rms": 1.8350316339273245e-07,
+          "symmetric_relative_l2": 8.564424712905895e-05
+        },
+        "kl_boundary": {
+          "max_abs": 2.655018862007287e-07,
+          "rms": 1.4408001018424329e-07,
+          "symmetric_relative_l2": 0.00020498494227289034
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00023400031841447344,
+        "rms": 4.2610799242646e-05,
+        "symmetric_relative_l2": 3.885812076481471e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.016807523105266474,
+        "max_error_to_bound_ratio": 0.019214591871134157
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__orth_full": {
+      "nll": [
+        11.1548215290715,
+        1.410268851654872,
+        3.429873879511,
+        2.447240786209744
+      ],
+      "margin": [
+        1.9204559326171875,
+        0.33642578125,
+        2.4764633178710938,
+        0.8360137939453125
+      ],
+      "kl_c_to_trial": [
+        0.005412169225243585,
+        0.0026332348225158626,
+        0.0011455115190596038,
+        0.0018813357202269719
+      ],
+      "kl_boundary_to_trial": [
+        0.0024269830360191193,
+        0.0008979831747250149,
+        0.000769768070653366,
+        2.9609334911061947e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 4.1301930098214257e-07,
+          "rms": 2.4033819450178884e-07,
+          "symmetric_relative_l2": 4.0032475176798606e-08
+        },
+        "kl_c": {
+          "max_abs": 3.1428012038908076e-07,
+          "rms": 1.9933113373872274e-07,
+          "symmetric_relative_l2": 6.220211161053185e-05
+        },
+        "kl_boundary": {
+          "max_abs": 1.3770511402379833e-07,
+          "rms": 8.334249067155931e-08,
+          "symmetric_relative_l2": 6.173500876025221e-05
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.0002938368450031703,
+        "rms": 4.5520340854607896e-05,
+        "symmetric_relative_l2": 4.13761666691075e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017202194091103292,
+        "max_error_to_bound_ratio": 0.019919843152442593
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__remove_write_matched": {
+      "nll": [
+        11.232473449031954,
+        1.3615638004866113,
+        3.2746125108099733,
+        2.441713468905937
+      ],
+      "margin": [
+        2.0284652709960938,
+        0.3553924560546875,
+        2.4312744140625,
+        0.8518905639648438
+      ],
+      "kl_c_to_trial": [
+        0.002917881227129747,
+        0.0016332938130701347,
+        0.001330458220969868,
+        0.0022942054604795036
+      ],
+      "kl_boundary_to_trial": [
+        0.00028845238384682175,
+        0.000691026739245957,
+        0.0011384674611851736,
+        8.46784825144608e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.2247073988855846e-07,
+          "rms": 1.7898489012989055e-07,
+          "symmetric_relative_l2": 2.975781528210649e-08
+        },
+        "kl_c": {
+          "max_abs": 2.3759066467444329e-07,
+          "rms": 1.777120523512382e-07,
+          "symmetric_relative_l2": 8.327791664450694e-05
+        },
+        "kl_boundary": {
+          "max_abs": 8.12006828131151e-08,
+          "rms": 5.213515151411871e-08,
+          "symmetric_relative_l2": 7.637228741116202e-05
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00027654739710669674,
+        "rms": 4.2532214592747786e-05,
+        "symmetric_relative_l2": 3.878527661685995e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.016811930229940056,
+        "max_error_to_bound_ratio": 0.019214591871134157
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    },
+    "111__orth_write_matched": {
+      "nll": [
+        11.167581252965899,
+        1.4005128251203145,
+        3.4096956699433982,
+        2.4478263892611327
+      ],
+      "margin": [
+        2.0053863525390625,
+        0.34674072265625,
+        2.4784622192382812,
+        0.8371658325195312
+      ],
+      "kl_c_to_trial": [
+        0.002988292016022786,
+        0.0022603117877952063,
+        0.0009101040685004591,
+        0.001872683875657684
+      ],
+      "kl_boundary_to_trial": [
+        0.0001119754992572026,
+        0.0004955174296442861,
+        0.0005219571355857494,
+        2.6931043630689065e-05
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.0526163996569267e-07,
+          "rms": 1.6736298071693578e-07,
+          "symmetric_relative_l2": 2.7865380162841026e-08
+        },
+        "kl_c": {
+          "max_abs": 2.260296218992066e-07,
+          "rms": 1.7246363380349097e-07,
+          "symmetric_relative_l2": 8.046311624219483e-05
+        },
+        "kl_boundary": {
+          "max_abs": 3.47794903685005e-07,
+          "rms": 1.8425730395562778e-07,
+          "symmetric_relative_l2": 0.00050550559859827
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00030913479932337395,
+        "rms": 4.4605597419506014e-05,
+        "symmetric_relative_l2": 4.056439026898922e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01712772260325963,
+        "max_error_to_bound_ratio": 0.02127892788382896
+      },
+      "argmax_mismatches": [],
+      "source_hidden_byte_exact": true
+    }
+  },
+  "public_omissions": "All prediction and mismatch token IDs omitted through explicit typed field selection; full private audit commitment retained. No weight or activation payload included."
+}

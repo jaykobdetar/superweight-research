@@ -1,0 +1,19 @@
+# Final T20 repository integration review
+
+**Pass: the pinned v4 payload is accepted for the research release.** No remaining blocker was found. This review did not modify the repository, execute a model, repeat the numerical/projection/readout audits, access checkpoint tensors, or approve a future experiment or visibility change.
+
+The reviewed inventory SHA256 is `e53203b5246a1bbf155fca74f50ae24417b74016e103acd5706e867ebed1ec9a`: **212 changed/new files, 109,462,183 bytes**, relative to base commit `1d61122d371d11e0b68f85d9e407bbc80d492910`. The actual Git changed/untracked file set equals the inventory exactly. All file hashes/sizes and195 declared exact-copy mappings match. The reproduction and numeric packages retain their reviewed41/139-file membership and identities.
+
+Version4 differs from the preserved v3 inventory only by correcting the hypotheses document's failure-ledger link. Every reviewed local link now resolves. The earlier genuine missing-link failure is preserved separately from an initial harness false positive involving safe repository-relative package paths and textual claim labels. Neither required a scientific or payload change.
+
+The scientific report body matches the reviewed draft apart from declared release status and link substitutions; all56 generated table lines remain exact. Release facts, guide routes and README/handoff/novelty wording retain the finite-operation, conditional n=4, approximate-norm, timing/start, negative-result and prior-art limits. Original private audit commitments are explicitly distinguished from reduced public audit-summary hashes. A second776-forward pretrained replay and a general portable full-raw replay comparator remain unperformed.
+
+The plot adapter matches an exact allowlist of text substitutions: repository root, input paths/hash bindings, default output, font-cache location and docstring. Plot mechanics/data selection are unchanged. The existing three-PNG byte-equality rebuild certificate and packaged NumPy-audit pass were checked; neither was rerun. The launcher imports the pinned public backend from the reviewed package and has a fresh optional report path. The HTML builder uses the reviewed report and embeds local figures without active scripts.
+
+Privacy checks combine exact reviewed-package copies with new JSON/private-field and document/source host-locator checks. Valid JSON pointers, two typed repository-relative package paths, ten textual claim identifiers and generic privacy-check source literals are distinguished from private payloads. No source corpora, input/prediction sequences, model weights or full attention/hidden/vocabulary states are included. The fitted calibration arrays were already separately reviewed; private evidence manifests publish commitments, not omitted contents.
+
+The separate non-Git HTML candidate is712,383 bytes. Its rendered body exactly matches the current Markdown report after declared image/link transformation; all three embedded PNG hashes match the released figures and all repository links resolve. Its hash and report/builder identities are in the JSON review. Substituting an exact future commit for `main` may change hrefs and the HTML hash, but must preserve rendered scientific body and images.
+
+The executed independent source is `t20_repository_integration_independent_review_v3.py`. It passed in1.105s with47,552KiB peak RSS. The [evidence JSON](t20_repository_integration_independent_review.json) SHA256 is `8cc8faf8e7056d39e011b5c10b346fefc899b2f2d5db2c624303827f7f34b3a0`.
+
+This acceptance binds the212-file payload **excluding this newly created review record**, avoiding a circular inventory. Adding the review itself must be separately hash-bound. Any other payload change needs its own narrow closure; publication remains a separate parent action within the user's authorization.

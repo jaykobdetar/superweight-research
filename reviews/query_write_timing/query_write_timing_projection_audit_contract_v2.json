@@ -1,0 +1,84 @@
+{
+  "schema": "T21_offline_projection_audit_contract_v2",
+  "status": "prospective_literal_layout_adaptation_for_independent_review",
+  "created_utc": "2026-10-21T23:25:01+00:00",
+  "protocol_sha256": "a17e3e7e8150935950d58df1d2b266dac2bf91a6c65c4a8539d7e28fcf3e0819",
+  "purpose": "Check recorded baseline/full actual L10 Conv1D projection against pinned checkpoint independently; matched returned arrays are separately checked by the exact interpolation audit. No additional model forwards.",
+  "selected_states": "Wiki0 natural, native000, ten arms:10states",
+  "comparisons_per_state": [
+    "incoming_reference.actual_context -> baseline_write",
+    "incoming_reference.delivered_context -> proposed_full_write"
+  ],
+  "shape_each": [
+    512,
+    768
+  ],
+  "weight_header": {
+    "h.10.attn.c_proj.weight": {
+      "dtype": "F32",
+      "shape": [
+        768,
+        768
+      ],
+      "data_offsets": [
+        178808832,
+        181168128
+      ]
+    },
+    "h.10.attn.c_proj.bias": {
+      "dtype": "F32",
+      "shape": [
+        768
+      ],
+      "data_offsets": [
+        181168128,
+        181171200
+      ]
+    }
+  },
+  "header_only_evidence_sha256": "4363d1223cb2b1e3d79d6bbcab7bb8b82704f606ccb9f9c1a05a2dbdd0301a4f",
+  "checkpoint_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "orientation": "Conv1D context@weight+bias, verified installed transformers/pytorch_utils.py forward torch.addmm(self.bias,x.view(-1,x.size(-1)),self.weight)",
+  "numeric_definition": {
+    "D": 768,
+    "k": 1537,
+    "u32": "2^-24",
+    "u64": "2^-53",
+    "minimum_FP32_normal_N": "2^-126",
+    "gamma32": "(k*u32)/(1-k*u32)",
+    "gamma64": "(k*u64)/(1-k*u64)",
+    "FP64_reference": "X64@W64 + bias64, separate addition, CPU one-thread BLAS",
+    "S": "abs(X64)@abs(W64) + abs(bias64)",
+    "dx": "abs(X64) where abs(X64)<N, else0 (exactzero harmless)",
+    "dw": "abs(W64) where abs(W64)<N, else0",
+    "db": "abs(bias64) where abs(bias64)<N, else0",
+    "E_input_flush": "dx@abs(W64) + abs(X64)@dw + dx@dw + db",
+    "coordinate_bound": "up_add(up_multiply(up_add(gamma32_upper,gamma64_upper),S_upper), up_add(up_multiply(up_add(1,gamma32_upper),E_upper), up_divide(k*N, down(1-k*u32))))",
+    "acceptance": "Every finite saved FP32 coordinate error evaluated in FP64 is bounded using upward-enclosed absolute difference (nextafter(abs(saved64-reference64),+infinity), with exact-zero difference kept0), and must be<=coordinate_bound. No fitted maximum-drift threshold, arbitrary epsilon or normal scientific tolerance change.",
+    "rationale": "Positive FP64 GEMM/add magnitudes are inflated using their conservative reduction bounds before use. Explicit directed enclosure of coefficient and subsequentpositiveboundoperations avoids assuming computedbounds cannotrounddown. kE4614 covers3dots+3adds. FP64-reference error, FP32 arithmetic/underflow/operandflush allowances remainprospective. Independent math review required.",
+    "k_E_evaluation": 4614,
+    "positive_evaluation": "All new bound arithmetic in explicit NumPy FP64 arrays. up(v)=nextafter(v,+infinity), down(v)=nextafter(v,-infinity). Positive multiply/add/divide apply up after each operation; exact-zero numerator/product-of-zero/all-zero-sum branch remains0. Every coefficient denominator is rounded down and checkedpositive. No arbitrary additive epsilon.",
+    "gamma32_upper": "up_divide(k*u32, down(1-k*u32)); integer*k*u32 is exact at these values",
+    "gamma64_upper": "up_divide(k*u64, down(1-k*u64))",
+    "gamma64_E_upper": "up_divide(4614*u64, down(1-4614*u64))",
+    "S_upper": "up_divide(S_fl, down(1-gamma64_upper)), where S_fl=abs(X64)@abs(W64)+abs(bias64) separately evaluated; positive3FP32 inputproducts/sums remainnormalFP64 exceptexactzero",
+    "E_upper": "up_divide(E_fl, down(1-gamma64_E_upper)), where E_fl=((dx@abs(W64) + abs(X64)@dw) + dx@dw) + db in declaredseparateFP64operations;3dotsand3adds boundedconservativelybyk_E4614"
+  },
+  "execution_gates": [
+    "Exact approved projection source/contract/decoder source/run manifest review",
+    "Completed planned-segment648forward composite and all32source hashes verified",
+    "Fresh full checkpoint hash/byte size then exact header entries/offsets before decoding ONLY two allowed tensors",
+    "No model loader/GPU; exclusive result/failure writes; rawstudy/checkpoint untouched",
+    "Independent numerical review of final source and synthetic hostile fixtures before actual tensor decoding"
+  ],
+  "current_actual_tensor_decoding_approved": false,
+  "scope_limits": "Bounded CPU reconstruction check; repeated contexts correlated. Actual supported returned writes and timing samples are separately audited by independent N; no causal-timing proof from P. No full-model reconstruction.",
+  "predecessor_contract_sha256": "75691150861d2eb62ab41f33e87b368bb9e1ff64a0c14b5a9c9486bab70c1f02",
+  "clarification": "T21 literal state/count/layout adaptation only; numerical_definition exactly unchanged from reviewed T20 contract v2. No actual T21 outcomes or tensor access.",
+  "projection_comparisons": 20,
+  "projection_coordinates": 7864320,
+  "policy_sha256": "fe306aac7106e94af060048d197afbcef8e9dcb60d1a8c302d7539b9c52bc89a",
+  "inherited_T20_contract_created_utc": "2026-10-21T21:35:04.905730+00:00",
+  "metadata_correction_of_sha256": "d97f788ac3bbb9d6d7c41a56a9748b0438d7095c01d946e420786b2523edd010",
+  "metadata_correction": "Corrected inherited created_utc label only. Numerical definition, tensor headers, counts, protocol/policy and scope are unchanged."
+}

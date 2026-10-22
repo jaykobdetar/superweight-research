@@ -1,0 +1,413 @@
+{
+  "schema": "T21_offline_projection_audit_v1",
+  "status": "passed",
+  "auditor_sha256": "5cd9f47f8e009d83a1f2386493d4c57909d84370d7efb87be3c5586374794499",
+  "contract_sha256": "1f5dbb80a5e082385ec4d8d9669de9f4068f720ad09fbcf6b069f05f736bf00c",
+  "decoder_sha256": "f89320872515c133262d0bf1c4b55e152ef1a55e3d23265576040c6a88fd2b6b",
+  "protocol_sha256": "a17e3e7e8150935950d58df1d2b266dac2bf91a6c65c4a8539d7e28fcf3e0819",
+  "execution_review_sha256": "7092e91307e02706b5c77aa9604db12b34c625529592bc695abdfe26b9399463",
+  "run_manifest_sha256": "c4de3d3473eb93556bcdeb1161d1fc7d88f8c4e20c9fb38ad10b7096058299a9",
+  "inventory_sha256": "13a3de797fbc2f4b88fa3846251f4cd5273723173d9b018826f7da47b07c1a73",
+  "checkpoint_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "header_sha256": "a41dc5e8c2f45cd5f533b4f081e7777de1f8faa3b2527134d4230ae531127b21",
+  "weight_tensors_loaded": [
+    "h.10.attn.c_proj.weight",
+    "h.10.attn.c_proj.bias"
+  ],
+  "weight_sha256": "7a6473a5c23cf4efe0b37d89f183e151d480e31c6b6dc06f56a5c41cc5dbfefa",
+  "bias_sha256": "5488c5c27460f555fd4b983213d51e8f57a91b10e9ce63aecaf1713008ba5c1b",
+  "numeric_constants": {
+    "D": 768,
+    "k": 1537,
+    "u32": 5.960464477539063e-08,
+    "u64": 1.1102230246251565e-16,
+    "N": 1.1754943508222875e-38,
+    "gamma32_upper": 9.162073260939247e-05,
+    "gamma64_upper": 1.7064127888491572e-13,
+    "k_E": 4614,
+    "gamma64_E_upper": 5.122569035623098e-13
+  },
+  "orientation": "context@weight+bias (Conv1D)",
+  "precision_settings_before": {
+    "float32_matmul_precision": "highest",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "flash_sdp_enabled": true,
+    "memory_efficient_sdp_enabled": true,
+    "math_sdp_enabled": true,
+    "cudnn_sdp_enabled": true
+  },
+  "segment_final_precision_guards_checked": [
+    "A",
+    "B"
+  ],
+  "arithmetic_scope": {
+    "assumptions": [
+      "Native GEMM uses full FP32 products/accumulation under recorded highest matmul precision and CUDA matmul TF32 disabled.",
+      "Ordinary IEEE rounding/FTZ arithmetic with no nonfinite GPU intermediates; GPU intermediate finiteness is an assumption, not independently observed by this saved-array audit.",
+      "CPU one-thread FP64 GEMM uses stated operation counts and separately grouped bias/E additions."
+    ],
+    "observed_checks": [
+      "Original X/W/b/saved output finite FP32.",
+      "All CPU FP64 reference/magnitude/flush/enclosure/bound/error intermediates finite."
+    ],
+    "cudnn_tf32_condition": "No condition; unrelated to Conv1D addmm."
+  },
+  "model_forwards": 0,
+  "gpu_computation": false,
+  "file_deletions": 0,
+  "shards": {
+    "000": "bb143a51cc8252f1116b55c05de063baf7adb11feadb6b77c4cbe39df8f52359"
+  },
+  "scope": "10 selected states, two pre-interpolation context projections each; repeated contexts are correlated. Actual matched returned-write interpolation belongs to the norm audit. No full-model/internal reconstruction.",
+  "states_checked": 10,
+  "projection_comparisons": 20,
+  "peak_rss_bytes": 308903936,
+  "elapsed_seconds": 3.282130241394043,
+  "states": {
+    "000__baseline": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      }
+    },
+    "000__current": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      }
+    },
+    "000__remove_full": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.2186028999726662e-05,
+        "rms_error": 4.349526003637926e-07,
+        "max_bound": 0.014647041562258803,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.0027423620821287577,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "e780b3e605f2bfb0823de3a4799992f676118e483688d756628a3219a0677369",
+        "write_sha256": "d885d2da131f8359b999ff0bb9e3f57af28e3865364a0ce879571090f01b1a84"
+      }
+    },
+    "000__orth_full": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 1.6639251279926274e-05,
+        "rms_error": 4.618247266521778e-07,
+        "max_bound": 0.017793396036704608,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.001956365892339785,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "b44d6717c0b8e559088ebe8fb621563632ed69a9a0c446b8242f1baa46388888",
+        "write_sha256": "0ec31acec660b31caee9f29c5cce2df11cbd236cb88287c77aed0f71b0862c81"
+      }
+    },
+    "000__remove_write_matched_early": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.2186028999726662e-05,
+        "rms_error": 4.349526003637926e-07,
+        "max_bound": 0.014647041562258803,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.0027423620821287577,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "e780b3e605f2bfb0823de3a4799992f676118e483688d756628a3219a0677369",
+        "write_sha256": "d885d2da131f8359b999ff0bb9e3f57af28e3865364a0ce879571090f01b1a84"
+      }
+    },
+    "000__remove_write_matched_later": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.2186028999726662e-05,
+        "rms_error": 4.349526003637926e-07,
+        "max_bound": 0.014647041562258803,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.0027423620821287577,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "e780b3e605f2bfb0823de3a4799992f676118e483688d756628a3219a0677369",
+        "write_sha256": "d885d2da131f8359b999ff0bb9e3f57af28e3865364a0ce879571090f01b1a84"
+      }
+    },
+    "000__remove_write_matched_both": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.2186028999726662e-05,
+        "rms_error": 4.349526003637926e-07,
+        "max_bound": 0.014647041562258803,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.0027423620821287577,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "e780b3e605f2bfb0823de3a4799992f676118e483688d756628a3219a0677369",
+        "write_sha256": "d885d2da131f8359b999ff0bb9e3f57af28e3865364a0ce879571090f01b1a84"
+      }
+    },
+    "000__orth_write_matched_early": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 1.6639251279926274e-05,
+        "rms_error": 4.618247266521778e-07,
+        "max_bound": 0.017793396036704608,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.001956365892339785,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "b44d6717c0b8e559088ebe8fb621563632ed69a9a0c446b8242f1baa46388888",
+        "write_sha256": "0ec31acec660b31caee9f29c5cce2df11cbd236cb88287c77aed0f71b0862c81"
+      }
+    },
+    "000__orth_write_matched_later": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 1.6639251279926274e-05,
+        "rms_error": 4.618247266521778e-07,
+        "max_bound": 0.017793396036704608,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.001956365892339785,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "b44d6717c0b8e559088ebe8fb621563632ed69a9a0c446b8242f1baa46388888",
+        "write_sha256": "0ec31acec660b31caee9f29c5cce2df11cbd236cb88287c77aed0f71b0862c81"
+      }
+    },
+    "000__orth_write_matched_both": {
+      "actual_context__baseline_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 2.4755081367899837e-05,
+        "rms_error": 4.503257604783564e-07,
+        "max_bound": 0.018034228216450145,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.002493537330305353,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "6a398507c68b0f2cd1d8f03348d6fc32ab870516316d3a41c6353564b8fa625a",
+        "write_sha256": "905e0ac2f8bd927f813ea89b032379a16e76f09b47e1d641e9d2482759d6cd55"
+      },
+      "delivered_context__proposed_full_write": {
+        "coordinates": 393216,
+        "failed_coordinates": 0,
+        "max_abs_error": 1.6639251279926274e-05,
+        "rms_error": 4.618247266521778e-07,
+        "max_bound": 0.017793396036704608,
+        "min_bound": 0.00015599191506619864,
+        "max_input_flush_budget_upper": 0.0,
+        "error_convention": "FP64 abs difference upward enclosed; exact zero retained",
+        "max_error_to_bound_ratio": 0.001956365892339785,
+        "zero_bound_coordinates": 0,
+        "zero_bound_ratio": "null where bound zero",
+        "passed": true,
+        "context_sha256": "b44d6717c0b8e559088ebe8fb621563632ed69a9a0c446b8242f1baa46388888",
+        "write_sha256": "0ec31acec660b31caee9f29c5cce2df11cbd236cb88287c77aed0f71b0862c81"
+      }
+    }
+  },
+  "public_omissions": "All prediction and mismatch token IDs omitted through explicit typed field selection; full private audit commitment retained. No weight or activation payload included."
+}

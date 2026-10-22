@@ -1,0 +1,2077 @@
+{
+  "status": "passed_with_required_scope_limits",
+  "schema": "Report16_independent_scientific_claim_review_v1",
+  "review_scope": "Frozen completed analysis and N/projection/readout evidence; no duplicated raw numerical audit, model or checkpoint reads. Not approval for any future execution.",
+  "source_sha256": "25228cce5e38ad03d79deb14da612b5fafb440099b52f3d426f05ac37031e966",
+  "input_sha256": {
+    "gpt2_post_write_norm_composite_run/manifest.json": "bb46a4f94e7276e79563a9962b1977298fd915667b4b7dbce64ef402a2279164",
+    "gpt2_post_write_norm_composite_run/post_write_norm_analysis.json": "3fa2df289866b3e6e1914c21372f70a1da9c7ae99f213c4039935b0dd45c31eb",
+    "review/t20_numerical_audit.json": "8c3f3b2ec20f5adafcfe1aee1fc0b76fc3b2e192cca612b75626a41904738e10",
+    "review/t20_projection_audit.json": "203b5bd1d158eb21ac6a6d70f2f39384ec7e769a75a2464cda9326c7b5bf23f3",
+    "review/t20_readout_audit.json": "a205c4c89a9216b7372330f741f0ae0f26f3324d29eb39667593e22c32d2a061"
+  },
+  "analysis_sha256": "3fa2df289866b3e6e1914c21372f70a1da9c7ae99f213c4039935b0dd45c31eb",
+  "audited_manifest_sha256": "bb46a4f94e7276e79563a9962b1977298fd915667b4b7dbce64ef402a2279164",
+  "analysis_definition": "NLL(remove_write_matched)-NLL(orth_write_matched), nats per target; positive means PC edit has higher loss than the fixed orth edit, not necessarily higher loss than baseline.",
+  "claims": [
+    {
+      "id": "primary_signs",
+      "verdict": "supported_with_conditional_scope",
+      "claim": "Native000 matched PC-minus-fixed-orth full-view NLL contrast is positive on Wiki and negative on the other three sources, both starts.",
+      "evidence": "8/8 nominal conditional 95% bootstrap CIs exclude zero; four passage clusters/source, one frozen F and one orth direction."
+    },
+    {
+      "id": "magnitude_alone",
+      "verdict": "supported_with_operational_limits",
+      "claim": "The contrast persists after approximate querywise matching of actual whole-L10 c_proj write-change Euclidean norms.",
+      "evidence": "All 256 RMS-domain checks pass 1e-5; finite operation contrast remains. This does not make magnitude irrelevant or exclude tiny residual mismatch explanations under unbounded downstream sensitivity."
+    },
+    {
+      "id": "position_uniform",
+      "verdict": "contradicted",
+      "claim": "The full-window source signs describe every position range.",
+      "evidence": "Ethics natural000 early positive CI excludes zero and later negative CI excludes zero; Wiki positive early, later mean negative with CI crossing zero; Code early positive mean with wide CI, later negative."
+    },
+    {
+      "id": "endpoints",
+      "verdict": "supported_with_limits",
+      "claim": "The full-view source/start sign pattern persists at zeroV111.",
+      "evidence": "8/8 endpoint nominal CIs exclude zero. T20 tested only 000 and 111, not all eight T19 boundaries; endpoint differences and time effects remain."
+    },
+    {
+      "id": "start_invariance",
+      "verdict": "contradicted_as_equivalence",
+      "claim": "Shared full-view signs prove BOS/natural invariance.",
+      "evidence": "Native000 paired start interactions exclude zero on Wiki, Ethics, Code. Two starts share four passage clusters and are not independent replications."
+    },
+    {
+      "id": "norms_irrelevant",
+      "verdict": "contradicted",
+      "claim": "Norm matching does not affect the contrast.",
+      "evidence": "Matched-minus-full contrast changes exclude zero on Wiki and Ethics, both starts. No mediated fraction follows."
+    },
+    {
+      "id": "universal_benefit",
+      "verdict": "contradicted",
+      "claim": "PC removal universally helps or uniquely causes the observed harm.",
+      "evidence": "Native matched PC raises Wiki mean loss; orth edit lowers Wiki loss; Util BOS PC-effect CI crosses zero; Ethics one of four full-view contrast signs reverses."
+    },
+    {
+      "id": "audit_coverage",
+      "verdict": "supported_if_precise",
+      "claim": "776 planned forwards, 64 shards, 12 snapshots, 24 selected projections, 48 full-vocabulary rows were audited.",
+      "evidence": "Projection coordinates 9,437,184. Ordinary unsaved contexts/hidden/logits have recorded runtime guards, not full independent reconstruction. No 14-snapshot or all-vocabulary-row claim."
+    },
+    {
+      "id": "causal_scope",
+      "verdict": "unsupported_beyond_finite_interventions",
+      "claim": "T20 proves a unique PC circuit, mediation, general sink mechanism, population benefit, generation or fidelity.",
+      "evidence": "Interventions support conditional operation effects only; single checkpoint/layer/F/orth direction, four passages/source and correlated unadjusted contrasts."
+    },
+    {
+      "id": "generic_novelty",
+      "verdict": "contradicted",
+      "claim": "T20 first discovers norm-controlled direction dependence or sink implicit gating.",
+      "evidence": "Ran-Milo et al. Appendix B.1 already uses equal-coefficient direction swaps; Fu et al. v3 derives implicit gates and discusses multiple low-value sink components."
+    }
+  ],
+  "counts": {
+    "planned_and_returned_forwards": 776,
+    "shards": 64,
+    "passage_clusters_per_source": 4,
+    "contrast_definitions": 27,
+    "contrast_rows": 648,
+    "paired_start_rows": 324,
+    "matching_reports": 128,
+    "matching_RMS_domain_checks": 256,
+    "snapshots": 12,
+    "projection_comparisons": 24,
+    "projection_coordinates": 9437184,
+    "full_vocabulary_rows": 48
+  },
+  "primary_and_endpoint_full": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.010476429877376958,
+      "ci95": [
+        0.007228868453309056,
+        0.01372399130144486
+      ],
+      "per_window": [
+        0.008788826901735547,
+        0.005668910004882566,
+        0.014037747766397768,
+        0.013410234836491952
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.008005854041271854,
+      "ci95": [
+        0.0029682776370961728,
+        0.011567820863245704
+      ],
+      "per_window": [
+        0.008541866663693831,
+        0.0003459077749021766,
+        0.012300254502813246,
+        0.010835387223678161
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.00991902055458549,
+      "ci95": [
+        0.00710172647490559,
+        0.012736314634265389
+      ],
+      "per_window": [
+        0.008650232941977087,
+        0.005553220007834092,
+        0.013545417519944092,
+        0.011927211748586686
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.007532414786481589,
+      "ci95": [
+        0.003050053668590902,
+        0.01094992306287712
+      ],
+      "per_window": [
+        0.007473873902013928,
+        0.0007559391181581887,
+        0.0119674488058652,
+        0.009932397319889041
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.012328704913014521,
+      "ci95": [
+        -0.014559928402955502,
+        -0.009368538158984419
+      ],
+      "per_window": [
+        -0.012561279855093588,
+        -0.013554016499113697,
+        -0.007973378712274659,
+        -0.01522614458557614
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.012756214206313565,
+      "ci95": [
+        -0.01429960006407427,
+        -0.010118488798744774
+      ],
+      "per_window": [
+        -0.01447737078318223,
+        -0.014121829344966308,
+        -0.008784041950004262,
+        -0.01364161474710146
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.012316470384065914,
+      "ci95": [
+        -0.01990653235153128,
+        -0.007558535166311886
+      ],
+      "per_window": [
+        -0.02355405636549479,
+        -0.006743137902059715,
+        -0.00896396030964075,
+        -0.0100047269590684
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.01357163209790535,
+      "ci95": [
+        -0.02093006825484267,
+        -0.009212756742621675
+      ],
+      "per_window": [
+        -0.02479432686865435,
+        -0.009337292413407638,
+        -0.009088221071835711,
+        -0.011066688037723704
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.013438387483240666,
+      "ci95": [
+        -0.024443992201215292,
+        -0.0008587628820103665
+      ],
+      "per_window": [
+        0.004199712068571504,
+        -0.016034187733755978,
+        -0.0139906269992367,
+        -0.02792844726854149
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.014171447230124756,
+      "ci95": [
+        -0.024766369932345267,
+        -0.0006568361550510771
+      ],
+      "per_window": [
+        0.0051978801944359,
+        -0.018220985203512008,
+        -0.015961286002443842,
+        -0.027701397908979075
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.014706991928636115,
+      "ci95": [
+        -0.024956430944824803,
+        -0.002703568579531135
+      ],
+      "per_window": [
+        0.002585573922831319,
+        -0.018570996086618496,
+        -0.014350956436486317,
+        -0.028491589114270965
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.014861126972081085,
+      "ci95": [
+        -0.02420297068135402,
+        -0.0022502728675866113
+      ],
+      "per_window": [
+        0.003810369199987562,
+        -0.02043219907030913,
+        -0.015828075664296115,
+        -0.026994602353706654
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.013568104808155845,
+      "ci95": [
+        -0.02233506789521983,
+        -0.005638340501201378
+      ],
+      "per_window": [
+        -0.002918151750083142,
+        -0.016001824120700725,
+        -0.008358529252319613,
+        -0.0269939141095199
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.017772679468501307,
+      "ci95": [
+        -0.02729082034369934,
+        -0.00766350105503294
+      ],
+      "per_window": [
+        -0.003507515627836133,
+        -0.02013145733662336,
+        -0.01659597667691992,
+        -0.030855768232625813
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.017994932795059593,
+      "ci95": [
+        -0.025892454134686937,
+        -0.01014830774686687
+      ],
+      "per_window": [
+        -0.007488491528041985,
+        -0.01812775640334152,
+        -0.01776031660390842,
+        -0.028603166644946443
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.019668311506671476,
+      "ci95": [
+        -0.02448252793368666,
+        -0.01259183779346884
+      ],
+      "per_window": [
+        -0.008945313598116122,
+        -0.020762876561196464,
+        -0.023531410379526996,
+        -0.025433645487846324
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    }
+  ],
+  "early_later": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.048986643997652846,
+      "ci95": [
+        0.0353484735191274,
+        0.06262481447617829
+      ],
+      "per_window": [
+        0.06425921743946317,
+        0.03338400355821136,
+        0.03731294348004344,
+        0.06099041151289342
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.04289410556821327,
+      "ci95": [
+        0.028083410669332842,
+        0.0577048004670937
+      ],
+      "per_window": [
+        0.06279717867414192,
+        0.02072047450051251,
+        0.035446346838153175,
+        0.05261242226004548
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.0021597341308386975,
+      "ci95": [
+        -0.0076097989039558556,
+        0.003944154362817698
+      ],
+      "per_window": [
+        -0.009412394993456807,
+        -0.0034251050673028693,
+        0.006400574172857887,
+        -0.002202010635453
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.0034418534910056753,
+      "ci95": [
+        -0.007800077260836646,
+        0.0019442079834750547
+      ],
+      "per_window": [
+        -0.009260657589734933,
+        -0.00633949693193836,
+        0.004705442955279526,
+        -0.0028727023976289345
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.04675158497163423,
+      "ci95": [
+        0.03545777532891048,
+        0.05804539461435798
+      ],
+      "per_window": [
+        0.06063939799071427,
+        0.034902733771891015,
+        0.036012816885929944,
+        0.05545139123800169
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.04174816718226604,
+      "ci95": [
+        0.029629888327603826,
+        0.05386644603692825
+      ],
+      "per_window": [
+        0.05818051707215721,
+        0.024054028874998856,
+        0.035205747780208796,
+        0.04955237500169929
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.00216666464475912,
+      "ci95": [
+        -0.006895073791324702,
+        0.0036107042782351773
+      ],
+      "per_window": [
+        -0.008408711839640315,
+        -0.004077089195997807,
+        0.0061733021029795054,
+        -0.0023541596463778625
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.0036946289683847944,
+      "ci95": [
+        -0.008026494985746702,
+        0.001534599820355198
+      ],
+      "per_window": [
+        -0.009164243388188886,
+        -0.006888746583304517,
+        0.004342381954908436,
+        -0.0030679078569542106
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.001336369967450235,
+      "ci95": [
+        -0.011469732218843065,
+        0.0073213501508158085
+      ],
+      "per_window": [
+        -0.016487162652617293,
+        -0.003304014751126516,
+        0.0035825590824796194,
+        0.01086313845146325
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.0038058442241024615,
+      "ci95": [
+        -0.014130892797506123,
+        0.007647792317180047
+      ],
+      "per_window": [
+        -0.017987434811416847,
+        -0.007307597628188667,
+        -0.00256126675577395,
+        0.012632922298969618
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.015935564817027625,
+      "ci95": [
+        -0.020781310636872607,
+        -0.01151913518166725
+      ],
+      "per_window": [
+        -0.011273099562155497,
+        -0.016917298322672192,
+        -0.011765170801179003,
+        -0.02378669058210381
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.01569305435672652,
+      "ci95": [
+        -0.02002861816748669,
+        -0.012075760542264558
+      ],
+      "per_window": [
+        -0.013325631023917595,
+        -0.016357749127033916,
+        -0.01082589006061152,
+        -0.022262947215343054
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.007491010518389629,
+      "ci95": [
+        -0.03401047605208052,
+        0.010753135049035745
+      ],
+      "per_window": [
+        -0.048851716479966,
+        0.01099302486649556,
+        -0.002618595691664005,
+        0.01051324523157593
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.009474078837287125,
+      "ci95": [
+        -0.03453293230499188,
+        0.008172820706570771
+      ],
+      "per_window": [
+        -0.047862508737053666,
+        0.005455796991193473,
+        -0.006379448025236378,
+        0.01088984442194807
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.013899824402490824,
+      "ci95": [
+        -0.015995224112278494,
+        -0.011804424692703153
+      ],
+      "per_window": [
+        -0.015253261640433724,
+        -0.012562816310492053,
+        -0.011046033074914252,
+        -0.016737186584123265
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.014916141761546098,
+      "ci95": [
+        -0.017748127472070108,
+        -0.01178904784408541
+      ],
+      "per_window": [
+        -0.01722507969308662,
+        -0.014191274874292503,
+        -0.009977037227751673,
+        -0.018271175251053595
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.011687566108097625,
+      "ci95": [
+        0.0014549729847725956,
+        0.029988987655896415
+      ],
+      "per_window": [
+        0.03903616653821862,
+        0.0004766225269241531,
+        0.004390024358317923,
+        0.002847451008929802
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.010225030836423676,
+      "ci95": [
+        -0.00010573102710098592,
+        0.030142430090737138
+      ],
+      "per_window": [
+        0.040078903747988726,
+        0.00033300911898237473,
+        0.0009437777722873797,
+        -0.00045556729356377446
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.02168284100539808,
+      "ci95": [
+        -0.03352553622461085,
+        -0.010786199003345986
+      ],
+      "per_window": [
+        -0.00723099955428097,
+        -0.021451797350541035,
+        -0.020021778225933762,
+        -0.03802678889083655
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.02217654159571103,
+      "ci95": [
+        -0.03285814207312876,
+        -0.010762845391950382
+      ],
+      "per_window": [
+        -0.006247455659073697,
+        -0.024309014590580436,
+        -0.02150826005352746,
+        -0.036641436079662526
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.00995948730332974,
+      "ci95": [
+        -0.003020087679667993,
+        0.028174144025089998
+      ],
+      "per_window": [
+        0.0365241162907628,
+        -0.006134978206578268,
+        0.00632458390106283,
+        0.0031242272280715966
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.00998475792408815,
+      "ci95": [
+        -0.0026134152391485976,
+        0.029275508182648124
+      ],
+      "per_window": [
+        0.038888115886717145,
+        -0.0055334458478943915,
+        0.006146676587088784,
+        0.00043768507044106286
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.022800680426624975,
+      "ci95": [
+        -0.03443292616613769,
+        -0.012075773832111447
+      ],
+      "per_window": [
+        -0.00855051029164633,
+        -0.0226515644535068,
+        -0.021135118109744777,
+        -0.038865528851601994
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.023013682953636705,
+      "ci95": [
+        -0.032756501560262,
+        -0.012104850441550186
+      ],
+      "per_window": [
+        -0.007699516431595388,
+        -0.02532085247141458,
+        -0.023038541246781286,
+        -0.03599582166475557
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.03096078449172107,
+      "ci95": [
+        -0.019063968146621924,
+        0.08937421153648961
+      ],
+      "per_window": [
+        0.03811698814665565,
+        -0.014065412194459004,
+        0.12385408611347248,
+        -0.024062524098784843
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.022403358988658306,
+      "ci95": [
+        -0.022257952699470174,
+        0.07081806709596528
+      ],
+      "per_window": [
+        0.034249854719428985,
+        -0.01636619151857266,
+        0.09987948663414459,
+        -0.02814971388036769
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.028179146609678185,
+      "ci95": [
+        -0.042964897572914995,
+        -0.016510008156349953
+      ],
+      "per_window": [
+        -0.016382807028700652,
+        -0.016637209283999255,
+        -0.05174079366922024,
+        -0.02795577645679259
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.030955442087256757,
+      "ci95": [
+        -0.04645259985269001,
+        -0.018631793978101996
+      ],
+      "per_window": [
+        -0.015896652773032205,
+        -0.021366935183171787,
+        -0.054814488075862755,
+        -0.03174369231696028
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "early",
+      "name": "000__matched_remove_minus_orth",
+      "mean": 0.02374448163714582,
+      "ci95": [
+        -0.015238098913479492,
+        0.0710414260722736
+      ],
+      "per_window": [
+        0.026047754975494275,
+        -0.014053403911049589,
+        0.09940636940004799,
+        -0.016422793915909395
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "early",
+      "name": "111__matched_remove_minus_orth",
+      "mean": 0.013864939806634946,
+      "ci95": [
+        -0.019025037166434222,
+        0.053596300488910176
+      ],
+      "per_window": [
+        0.016462128097560758,
+        -0.01675791442990171,
+        0.07704770546184747,
+        -0.021292159902966734
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "later",
+      "name": "000__matched_remove_minus_orth",
+      "mean": -0.03169067815562698,
+      "ci95": [
+        -0.047020389915436,
+        -0.01897861286344482
+      ],
+      "per_window": [
+        -0.01849257241201485,
+        -0.01946465331487479,
+        -0.056205635448956404,
+        -0.03259985144666189
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "later",
+      "name": "111__matched_remove_minus_orth",
+      "mean": -0.030671409593850285,
+      "ci95": [
+        -0.047919700763865536,
+        -0.019659740414728843
+      ],
+      "per_window": [
+        -0.0172821304045101,
+        -0.022077004760527874,
+        -0.05653393276497809,
+        -0.026792570445385078
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    }
+  ],
+  "matching_changes_full": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": -0.0030747142653081427,
+      "ci95": [
+        -0.003623453376185082,
+        -0.0025698952606114656
+      ],
+      "per_window": [
+        -0.0023755778136083094,
+        -0.0038616909293684998,
+        -0.002908740716634828,
+        -0.003152847601620934
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": -0.002876236661921161,
+      "ci95": [
+        -0.0030828847102533086,
+        -0.0026640761776095534
+      ],
+      "per_window": [
+        -0.0025442372845110306,
+        -0.003023592856905122,
+        -0.0027949399426669963,
+        -0.0031421765636014953
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": -0.0030619822610359337,
+      "ci95": [
+        -0.0036825641431031952,
+        -0.0024371621333143523
+      ],
+      "per_window": [
+        -0.002132908356332397,
+        -0.0033499234642602183,
+        -0.002782517549120289,
+        -0.003982579674430831
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": -0.003040104043503189,
+      "ci95": [
+        -0.00362560322018024,
+        -0.0025916886038291898
+      ],
+      "per_window": [
+        -0.0024400726598665656,
+        -0.003046536435717062,
+        -0.002759504177283212,
+        -0.003914302901145916
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.0008058273779384395,
+      "ci95": [
+        -0.0006709711698430487,
+        0.0021108711457651363
+      ],
+      "per_window": [
+        0.0008558084143954758,
+        -0.001261080193587727,
+        0.001099355901390986,
+        0.002529225389555023
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.0006615453730988152,
+      "ci95": [
+        -0.000805926605985885,
+        0.0019701181679814272
+      ],
+      "per_window": [
+        0.0002624934856485517,
+        -0.0015565483292161453,
+        0.001445938563704896,
+        0.0024942977722579585
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.001278219554403659,
+      "ci95": [
+        -0.0007341910735563228,
+        0.00279878332837713
+      ],
+      "per_window": [
+        0.0025586864656501618,
+        -0.0018318169199584844,
+        0.00134712848081886,
+        0.0030388801911040986
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.0012225804065657542,
+      "ci95": [
+        -0.0008210554248314628,
+        0.0027880653707023084
+      ],
+      "per_window": [
+        0.001998690126050917,
+        -0.0017609706084589227,
+        0.0014027724216019166,
+        0.0032498296870691057
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.0016618349206579675,
+      "ci95": [
+        0.0008995445671016178,
+        0.002424125274214317
+      ],
+      "per_window": [
+        0.0011553690805294892,
+        0.002699521023561413,
+        0.002148729524867221,
+        0.0006437200536737464
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.001123599834493949,
+      "ci95": [
+        0.00019172144721024686,
+        0.0018278237804405517
+      ],
+      "per_window": [
+        0.001147162191388773,
+        0.0019635305291578753,
+        0.0016921170317232281,
+        -0.0003084104142940802
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.0024755526430009223,
+      "ci95": [
+        0.0016500733942653723,
+        0.003135683609696849
+      ],
+      "per_window": [
+        0.0013038330620975813,
+        0.0033165756598250162,
+        0.002688794390768745,
+        0.0025930074593123464
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.001552694532643395,
+      "ci95": [
+        0.0010595923670149165,
+        0.0021021957044361494
+      ],
+      "per_window": [
+        0.0012145056254024844,
+        0.002398092397447371,
+        0.0016935009990963756,
+        0.0009046791086273487
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.0005370188528142084,
+      "ci95": [
+        -0.0015593208400411784,
+        0.002298191076889222
+      ],
+      "per_window": [
+        0.0010660990509410162,
+        0.002838163571769581,
+        -0.00243446080370191,
+        0.0006782735922481464
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.0006329729720734867,
+      "ci95": [
+        -0.0010291760756554469,
+        0.0021723213011167197
+      ],
+      "per_window": [
+        0.00098699202815844,
+        0.002721576617035648,
+        -0.0017012321102600758,
+        0.0005245553533599345
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matching_difference_of_differences",
+      "mean": 0.0005214712017429513,
+      "ci95": [
+        -0.0006724250230393247,
+        0.0021830420729969102
+      ],
+      "per_window": [
+        0.0003671841154917477,
+        0.0030635507375587068,
+        -0.00045848392068847943,
+        -0.00088636612539017
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "111__matching_difference_of_differences",
+      "mean": 0.0008943522411631322,
+      "ci95": [
+        -0.0003494554252919668,
+        0.002502701478435898
+      ],
+      "per_window": [
+        0.0008741931880220655,
+        0.003402126627214397,
+        -0.00019557396789959824,
+        -0.0005033368826843354
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    }
+  ],
+  "single_arm_native_full": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": 0.0046858824659467,
+      "ci95": [
+        0.0012720061135240712,
+        0.007656037964254292
+      ],
+      "per_window": [
+        -0.0007067906736679674,
+        0.004138244608946184,
+        0.008103679453408397,
+        0.007208396475100187
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 3,
+      "negative_passages": 1
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": -0.005790547411430258,
+      "ci95": [
+        -0.008605230259799979,
+        -0.0026984586373002273
+      ],
+      "per_window": [
+        -0.009495617575403514,
+        -0.0015306653959363814,
+        -0.005934068312989371,
+        -0.006201838361391765
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": 0.004633501292877429,
+      "ci95": [
+        0.0017917439279673264,
+        0.007475258657787531
+      ],
+      "per_window": [
+        0.0001311461362272226,
+        0.00345234171970743,
+        0.007828346548394371,
+        0.007122170767180691
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": -0.00528551926170806,
+      "ci95": [
+        -0.007590575349663897,
+        -0.0030049264589824265
+      ],
+      "per_window": [
+        -0.008519086805749865,
+        -0.002100878288126662,
+        -0.00571707097154972,
+        -0.004805040981405995
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.006126746823864271,
+      "ci95": [
+        -0.011396857903552382,
+        -0.0008566357441761596
+      ],
+      "per_window": [
+        -0.008127557183558842,
+        -0.000918379352929044,
+        -0.0007948921354232752,
+        -0.014666158623545922
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": 0.00620195808915025,
+      "ci95": [
+        0.0022146111157355097,
+        0.010585158527522176
+      ],
+      "per_window": [
+        0.0044337226715347455,
+        0.012635637146184653,
+        0.007178486576851384,
+        0.0005599859620302183
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.005491783657149973,
+      "ci95": [
+        -0.012546999474551401,
+        0.0013011007066976443
+      ],
+      "per_window": [
+        -0.016584691362154125,
+        0.0030361252251385196,
+        -0.0004339238117432309,
+        -0.007984644679841058
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": 0.006824686726915941,
+      "ci95": [
+        0.0036475708338948865,
+        0.009154649812547877
+      ],
+      "per_window": [
+        0.006969365003340666,
+        0.009779263127198234,
+        0.00853003649789752,
+        0.002020082279227342
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.016765975969753377,
+      "ci95": [
+        -0.02844232985011952,
+        -0.006697576671228944
+      ],
+      "per_window": [
+        -0.002765510217418221,
+        -0.018493776032661113,
+        -0.011822266743162224,
+        -0.03398235088577195
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": -0.0033275884865127114,
+      "ci95": [
+        -0.006509562951610093,
+        0.0001127942877482413
+      ],
+      "per_window": [
+        -0.006965222285989725,
+        -0.0024595882989051354,
+        0.0021683602560744752,
+        -0.0060539036172304606
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.01728909466920381,
+      "ci95": [
+        -0.028838088773744497,
+        -0.007162617214349631
+      ],
+      "per_window": [
+        -0.003059342667556031,
+        -0.019472440854730433,
+        -0.01226071518430416,
+        -0.03436387997022461
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": -0.0025821027405676933,
+      "ci95": [
+        -0.005758603723170497,
+        0.0005943982420351102
+      ],
+      "per_window": [
+        -0.00564491659038735,
+        -0.0009014447681119364,
+        0.0020902412521821567,
+        -0.0058722908559536435
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.01007833696104865,
+      "ci95": [
+        -0.012966883918852368,
+        -0.006082403186341123
+      ],
+      "per_window": [
+        -0.0039287507094045715,
+        -0.012543360617150778,
+        -0.010450829297085296,
+        -0.013390407220553957
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": 0.0034897678471071947,
+      "ci95": [
+        -0.001551449502043556,
+        0.0099499804268941
+      ],
+      "per_window": [
+        -0.0010105989593214293,
+        0.0034584635035499467,
+        -0.0020923000447656825,
+        0.013603506888965944
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_remove_effect",
+      "mean": -0.011547016564523616,
+      "ci95": [
+        -0.013826639774176086,
+        -0.00761347761120601
+      ],
+      "per_window": [
+        -0.005721994654124707,
+        -0.013113938133927583,
+        -0.014064206987592254,
+        -0.013287926482449919
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "000__matched_orth_effect",
+      "mean": 0.006447916230535977,
+      "ci95": [
+        0.0025783272227914433,
+        0.012410457525951435
+      ],
+      "per_window": [
+        0.0017664968739172782,
+        0.005013818269413939,
+        0.0036961096163161677,
+        0.015315240162496524
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 4,
+      "negative_passages": 0
+    }
+  ],
+  "endpoint_difference_full": [
+    {
+      "corpus": "wiki_validation",
+      "identity": "natural",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0024705758361051045,
+      "ci95": [
+        -0.004426624988381422,
+        -0.0008289320817347345
+      ],
+      "per_window": [
+        -0.00024696023804171574,
+        -0.005323002229980389,
+        -0.001737493263584522,
+        -0.002574847612813791
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "identity": "bos",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0023866057681039,
+      "ci95": [
+        -0.003992452845776651,
+        -0.001377163877021026
+      ],
+      "per_window": [
+        -0.0011763590399631596,
+        -0.004797280889675903,
+        -0.0015779687140788923,
+        -0.0019948144286976444
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "natural",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0004275092932990443,
+      "ci95": [
+        -0.001579021407529635,
+        0.000985731569423609
+      ],
+      "per_window": [
+        -0.001916090928088643,
+        -0.000567812845852611,
+        -0.000810663237729603,
+        0.0015845298384746798
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "utilitarianism",
+      "identity": "bos",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0012551617138394366,
+      "ci95": [
+        -0.002211106153174769,
+        -0.00040326319743611005
+      ],
+      "per_window": [
+        -0.0012402705031595573,
+        -0.0025941545113479236,
+        -0.00012426076219496096,
+        -0.0010619610786553046
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "identity": "natural",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0007330597468840905,
+      "ci95": [
+        -0.0020787282364815862,
+        0.0006126087427134053
+      ],
+      "per_window": [
+        0.000998168125864396,
+        -0.00218679746975603,
+        -0.0019706590032071425,
+        0.00022704935956241457
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "ethics",
+      "identity": "bos",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.00015413504344496953,
+      "ci95": [
+        -0.0016691611057502165,
+        0.0013608910188602774
+      ],
+      "per_window": [
+        0.0012247952771562431,
+        -0.0018612029836906352,
+        -0.0014771192278097978,
+        0.0014969867605643117
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "natural",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0042045746603454615,
+      "ci95": [
+        -0.007143549099226709,
+        -0.0014744312122954017
+      ],
+      "per_window": [
+        -0.0005893638777529908,
+        -0.0041296332159226345,
+        -0.008237447424600308,
+        -0.0038618541231059123
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "identity": "bos",
+      "view": "full",
+      "name": "endpoint_111_minus_000__matched_remove_minus_orth",
+      "mean": -0.0016733787116118837,
+      "ci95": [
+        -0.004692525849232465,
+        0.0017183608283613538
+      ],
+      "per_window": [
+        -0.0014568220700741374,
+        -0.002635120157854942,
+        -0.005771093775618574,
+        0.003169521157100119
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    }
+  ],
+  "paired_start_matched_full": [
+    {
+      "corpus": "wiki_validation",
+      "view": "full",
+      "name": "bos_minus_natural__000__matched_remove_minus_orth",
+      "mean": -0.0005574093227914689,
+      "ci95": [
+        -0.0011469158058685647,
+        -0.00012714197840346664
+      ],
+      "per_window": [
+        -0.00013859395975845956,
+        -0.00011568999704847371,
+        -0.0004923302464536761,
+        -0.0014830230879052664
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "wiki_validation",
+      "view": "full",
+      "name": "bos_minus_natural__111__matched_remove_minus_orth",
+      "mean": -0.0004734392547902644,
+      "ci95": [
+        -0.0009854913327345116,
+        8.177603149472912e-05
+      ],
+      "per_window": [
+        -0.0010679927616799034,
+        0.0004100313432560121,
+        -0.0003328056969480464,
+        -0.0009029899037891198
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    },
+    {
+      "corpus": "utilitarianism",
+      "view": "full",
+      "name": "bos_minus_natural__000__matched_remove_minus_orth",
+      "mean": 1.2234528948606993e-05,
+      "ci95": [
+        -0.006939227976173967,
+        0.006016148111780861
+      ],
+      "per_window": [
+        -0.010992776510401203,
+        0.006810878597053982,
+        -0.0009905815973660914,
+        0.0052214176265077406
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "utilitarianism",
+      "view": "full",
+      "name": "bos_minus_natural__111__matched_remove_minus_orth",
+      "mean": -0.0008154178915917853,
+      "ci95": [
+        -0.007093985386759649,
+        0.003679731820468213
+      ],
+      "per_window": [
+        -0.010316956085472118,
+        0.0047845369315586694,
+        -0.00030417912183144935,
+        0.002574926709377756
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "ethics",
+      "view": "full",
+      "name": "bos_minus_natural__000__matched_remove_minus_orth",
+      "mean": -0.0012686044453954493,
+      "ci95": [
+        -0.0020754732493013517,
+        -0.0004617356414895468
+      ],
+      "per_window": [
+        -0.0016141381457401849,
+        -0.0025368083528625185,
+        -0.00036032943724961797,
+        -0.0005631418457294757
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "ethics",
+      "view": "full",
+      "name": "bos_minus_natural__111__matched_remove_minus_orth",
+      "mean": -0.0006896797419563283,
+      "ci95": [
+        -0.0017993624306227307,
+        0.0004200029467100741
+      ],
+      "per_window": [
+        -0.0013875109944483377,
+        -0.0022112138667971237,
+        0.00013321033814772676,
+        0.0007067955552724214
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 2,
+      "negative_passages": 2
+    },
+    {
+      "corpus": "optimizers_new",
+      "view": "full",
+      "name": "bos_minus_natural__000__matched_remove_minus_orth",
+      "mean": -0.0044268279869037475,
+      "ci95": [
+        -0.0075828235843518055,
+        -0.0018675924090336693
+      ],
+      "per_window": [
+        -0.004570339777958843,
+        -0.0021259322826407967,
+        -0.009401787351588808,
+        -0.001609252535426542
+      ],
+      "nominal_ci_excludes_zero": true,
+      "positive_passages": 0,
+      "negative_passages": 4
+    },
+    {
+      "corpus": "optimizers_new",
+      "view": "full",
+      "name": "bos_minus_natural__111__matched_remove_minus_orth",
+      "mean": -0.0018956320381701697,
+      "ci95": [
+        -0.006186615836443532,
+        0.0027071425660146198
+      ],
+      "per_window": [
+        -0.0054377979702799895,
+        -0.0006314192245731043,
+        -0.0069354337026070745,
+        0.0054221227447794895
+      ],
+      "nominal_ci_excludes_zero": false,
+      "positive_passages": 1,
+      "negative_passages": 3
+    }
+  ],
+  "matching": {
+    "maximum_relative_RMS_gap": 7.076605544006334e-08,
+    "maximum_positive_target_pointwise_relative_gap": 0.00046238473563656125,
+    "acceptance_relative_RMS": 1e-05,
+    "quantized_to_zero_positive_targets": 0,
+    "norm_equality": "approximate FP32, both q1..511 and scored q1..510; RMS maximum is not a pointwise maximum"
+  },
+  "simple_summary_consistency": {
+    "maximum_mean_error": 0.0,
+    "maximum_full_vs_weighted_views_error": 2.0375851884652657e-15,
+    "bootstrap": "Relies on independently passed N audit; no new bootstrap or tolerance fitting."
+  },
+  "statistical_scope": {
+    "bootstrap_seed": 20261021,
+    "bootstrap_repetitions": 2000,
+    "shared_indices_sha256": "9e2a313244e72f2bfb4300e2497a4b8590cc189411863bdabed15b4922e2d4bc",
+    "cluster": "four passages per corpus, paired starts/arms/boundaries share indices",
+    "calibration": "one fixed F, no fit/population calibration uncertainty",
+    "multiplicity": "unadjusted correlated contrasts, not independent replications",
+    "primary": "native000 matched_remove_minus_orth by corpus/start fullview",
+    "effects": "finite controlled operation contrasts; no mediation fraction/circuit uniqueness"
+  },
+  "literature": [
+    {
+      "url": "https://arxiv.org/html/2604.14722v1#A2.SS1",
+      "version_date": "2026-04-16",
+      "comparison": "Appendix B.1 uses equal-coefficient EPE/PE component swaps, explicitly described as magnitude-preserving direction controls. Generic priority for norm-controlled direction dependence is unavailable. This differs from actual whole-L10 c_proj write-change norm matching here."
+    },
+    {
+      "url": "https://arxiv.org/html/2602.01203v3",
+      "version_date": "2026-05-27",
+      "comparison": "Section3.1/AppendixB derive the non-sink allocation gate under zero/negligible sink value; Section6.2 explicitly allows multiple low-value sink components/gates. T20 neither originates nor refutes that general gate account."
+    }
+  ],
+  "next_question_recommendation": {
+    "priority": "Fresh-heldout native000 early/later query-write factorial before a direction ensemble, conditional on a separate prospective protocol and reviews.",
+    "why": "Observed readout-time reversals make causal transmission across the fixed split immediately informative. T20 splits readouts, not intervention support, so existing data cannot identify which write positions caused later loss.",
+    "minimal_question": "For each fixed PC/orth matched proposal, apply early q1..126 only, later q127..511 only, both, or neither, with identical full512 execution and baseline bytes on inactive queries/q0; compare predeclared early/later/full outcomes.",
+    "paired_target": "Cache own native baseline and both full proposals from identical incoming L10 state; keep the same querywise target/FP32 recipe across support subsets. No rematching based on loss or another support subset.",
+    "identification_limits": [
+      "Later-only cannot change earlier prefix outputs in the causal model, but later edits can influence subsequent later queries through L11 K/V: it is not a purely query-local test.",
+      "Early-only changes to later losses identify cross-position consequences through the remaining attention block in this architecture; they do not separate K from V, individual heads, or prove PC uniqueness.",
+      "On a fixed outcome view, Y(both)-Y(early)-Y(later)+Y(neither) is a finite nonadditivity contrast, not mediation or a fraction. Zero interaction does not imply no early-to-late transmission.",
+      "An early/later readout reversal can also reflect local source/position sensitivity, so T20 alone is not evidence that transmission occurs."
+    ],
+    "followups": [
+      "Preseeded gate-orthogonal direction ensemble tests specificity to the one orth control. Gate-coordinate orthogonality does not imply orthogonality of actual projected writes.",
+      "Pairwise min-norm targets across ensemble members change the matched PC arm per partner; do not reuse one PC matched forward unless a common target for all partners is prespecified. A global minimum changes dose and can shrink it.",
+      "Native-specific calibration is a separate transfer/misfit question; fit independently of evaluation losses and do not change directions and causal timing in one unidentifiable comparison.",
+      "Retain fresh passage clusters, all four sources, paired starts, fixed execution length and existing scored views; no outcome-selected directions, heads, masks or intervals."
+    ],
+    "launch_approved": false
+  },
+  "resources": {
+    "wall_seconds": 0.06123059801757336,
+    "peak_rss_kib": 45056
+  },
+  "model_forwards": 0,
+  "checkpoint_access": false,
+  "gpu_used": false,
+  "file_deletions": 0
+}

@@ -1,0 +1,31 @@
+--- candidate_v1/docs/GPT2_QUERY_WRITE_TIMING_REPRODUCING.md
++++ candidate_v2/docs/GPT2_QUERY_WRITE_TIMING_REPRODUCING.md
+@@ -38,14 +38,14 @@
+ ```bash
+ python -B results/query_write_timing_reproduction/experiments/pulse_transfer/query_write_timing_portable.py rebuild \
+   --package results/query_write_timing_reproduction \
+-  --config private_config.json \
+-  --out t21_new_private_inputs
++  --config config.local.json \
++  --out .reproduce-t21/inputs
+ 
+ python -B results/query_write_timing_reproduction/experiments/pulse_transfer/query_write_timing_portable.py stage-replay \
+   --package results/query_write_timing_reproduction \
+-  --inputs t21_new_private_inputs \
+-  --config private_config.json \
+-  --out t21_new_private_replay
++  --inputs .reproduce-t21/inputs \
++  --config config.local.json \
++  --out .reproduce-t21/replay
+ ```
+ 
+ These are separately optional reader commands, not instructions to repeat the completed local reconstruction. Staging writes commands and frozen sources; it does not run the model. Regenerated provenance metadata is explicitly adapted and inherited, while the token artifact remains byte-exact. No old T20, GPT-2 or Llama model experiment is required to rebuild that metadata. The local reconstruction peaked at 767,852 KiB; the stage step peaked at 675,516 KiB.
+@@ -68,7 +68,7 @@
+ 
+ Use the same six sources and frozen processing described in [the input acquisition guide](GPT2_NATIVE_VALUE_REPRODUCING.md#lawful-separately-obtained-inputs): WikiText validation Arrow (`text` records joined by two newlines), Gutenberg11224 Utilitarianism and Gutenberg3800 Ethics under the frozen `strip_book`, and PyTorch `adadelta.py`, `adamax.py`, `asgd.py` from commit `70d99e998b4955e0049d13a98d77ae1b14db1f45`, joined in that order by two newlines. Supply exact physical/processed SHA256 bytes from `results/query_write_timing_reproduction/metadata/data_manifest.template.json`. Retrieval links do not guarantee a fresh download matches the cached byte container; no text-equivalent Arrow adapter is implemented. Report a mismatch rather than bypassing it. The completed reconstruction used existing lawful local files, not fresh independent downloads.
+ 
+-A private `private_config.json` has this schema (replace each placeholder with your own local path; keep it outside tracked/package directories):
++A private `config.local.json` has this schema (replace each placeholder with your own local path; keep it outside tracked/package directories):
+ 
+ ```json
+ {

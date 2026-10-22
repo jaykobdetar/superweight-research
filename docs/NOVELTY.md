@@ -185,8 +185,25 @@ values on this panel; an8-boundary source-value factorial quantifies controlled
 operation interactions and distinguishes effects relative to the boundary
 baseline from effects relative to intactGPT-2. The allocation edit still changes
 predictions, and its post-projection perturbation magnitude is not matched by
-the current fixed orthogonal control. T20 is planned to test that competing
-explanation. No priority beyond this measured case, unique circuit, universal
+the current fixed orthogonal control. T20 below tests that competing explanation. No priority beyond this measured case, unique circuit, universal
 transfer mechanism, compression benefit or generation-quality gain is established.
 These sources were rechecked for the cited claims; this is not an exhaustive
 proof that no related experiment exists.
+
+
+## T20 actual-write norm control: narrow extension, established direction tests
+
+[Report16](GPT2_POST_WRITE_NORM.md) tests whether the specific frozen-F L10 PC1-versus-fixed-orthogonal loss contrast persists after approximately matching the actual post-`c_proj` residual-write-change norms. It does on this panel, with source- and readout-region-dependent signs. This is a finite intervention result for one checkpoint, layer, calibration and orthogonal control; it neither identifies a unique circuit nor establishes general direction specificity.
+
+Ran-Milo, Ofek and Mendel already test direction through equal-coefficient EPE/PE component swaps, described as magnitude-preserving in [Appendix B.1](https://arxiv.org/html/2604.14722v1#A2.SS1). Their component swap differs from this study's per-query whole-projection write-change norm match. That difference in estimand is not evidence of priority, and generic norm-controlled direction dependence is not a new finding here.
+
+Fu et al.'s [current v3, Section3.1 and AppendixB](https://arxiv.org/html/2602.01203v3) derives implicit non-sink allocation gates; [Section6.2](https://arxiv.org/html/2602.01203v3#S6.SS2) explicitly discusses multiple low-value sink components and interacting gates. The algebra and the possibility of multiple mechanisms are established. Historical reports retain their cited v1 rather than silently changing the version they reviewed.
+
+T20's limited additional evidence is the recorded post-projection norm-controlled contrast across native/zero-value endpoints, paired starts and fresh passages, with negative position-uniformity findings and preserved development-fixture failures. The actual numerical, projection and readout audits passed on their first execution. It does not prove norms irrelevant: matching changes some contrasts, and approximate norm equality plus no downstream sensitivity bound cannot logically exclude every residual-rounding explanation. No exhaustive absence-of-prior-art or priority claim is made. The super-weight/massive-activation and corrected-coordinate attributions in [the full novelty comparison](NOVELTY.md) continue to apply.
+
+
+## T21 guarded support intervention
+
+[Report 17](GPT2_QUERY_WRITE_TIMING.md) adds a finite GPT-2 experiment: early-only matched L10 writes have later consequences while later incoming states remain at baseline bytes. The support/direction/source effects and explicit negative NLL results extend this research chain. They do not establish a unique circuit, a complete causal explanation, or a faithful replacement; different support doses and approximate matching remain limitations.
+
+Query/key/value path interventions are established. [Wang et al., 2022, sections 3 and Appendix B](https://arxiv.org/html/2211.00593v1) traces attention pathways; [Goldowsky-Dill et al., 2023, sections 1–2](https://arxiv.org/html/2304.05969v1) formalizes path-localization hypotheses and treats the evaluation distribution as part of the claim. [Zhang and Nanda, v2, 2024](https://arxiv.org/html/2309.16042v2) shows sensitivity to metrics/corruptions and includes KL. These sources rule out claiming a new generic K/V-patching method or equating a metric effect with intrinsic importance. The prospective K/V split itself is not a completed T21 result. This is a scoped primary-source comparison, not an exhaustive proof of novelty or priority.

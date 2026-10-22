@@ -1,0 +1,53 @@
+{
+  "status": "passed_after_two_reviewer_harness_false_positives",
+  "candidate_changed": false,
+  "scope": "Independent export/privacy review; N/P/R not rerun. Successful source/report are v3.",
+  "attempts": [
+    {
+      "attempt": 1,
+      "source_sha256": "382bfacf906121bf8c79466a46dce38a4b5034d5e82d8d901a8c2848ac9785bb",
+      "log_sha256": "411059fa3b3512eabfd86c58a6c231fee01d5ae23bd334e4666d9bf3f61b8cd8",
+      "classification": "reviewer_harness_false_positive",
+      "reason": "Reviewer scanner misclassified declared RFC6901 JSON pointer as absolute host path; narrowly corrected pointer exception retains hostpath bans.",
+      "preserved_failure_records": [
+        {
+          "file": "t20_numeric_candidate_independent_review_v1_failure_1792622565453700805.json",
+          "sha256": "626481bb04c50ef323ab8f230eb07083d54406f09303178a8d8cc7b1ef55ec26"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "source_sha256": "548328210401330510f02bced654af837fcd93b4efbd056a60a16c2819457d9c",
+      "log_sha256": "c15d7d1b3a5567d700d194359f3055b51e42936263e633c27274b7eb7bee88ba",
+      "classification": "reviewer_harness_false_positive",
+      "reason": "Reviewer compared integer-layer-key Python dictionaries directly to JSON string-key dictionaries; narrowly corrected serialization normalization.",
+      "preserved_failure_records": [
+        {
+          "file": "t20_numeric_candidate_independent_review_v2_failure_1792622591100099508.json",
+          "sha256": "f45d9fc8a96635affeee823dfa81da3387ec1db1d7b2bf5d2608ac9ae97b50ed"
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "source_sha256": "3dfae9ff1d3ab59a7b2bf69d3140a3042e7c578934df66caabf4ad09cb539ef9",
+      "log_sha256": "3674a63c1c47faea7cad87c178c77b91e5a93a9de7304da74c05a9a7430ee64f",
+      "classification": "passed",
+      "reason": "Passed all19,824byteexactarrays/64ledgers/closedmemberships/actualsanitizedNPRviews and publicstatistics.",
+      "preserved_failure_records": []
+    }
+  ],
+  "final_report": "t20_numeric_candidate_independent_review_v3.json",
+  "final_report_sha256": "3674a63c1c47faea7cad87c178c77b91e5a93a9de7304da74c05a9a7430ee64f",
+  "final_source_sha256": "3dfae9ff1d3ab59a7b2bf69d3140a3042e7c578934df66caabf4ad09cb539ef9",
+  "disclosures": [
+    "Reviewer authored original N/P/R, not exporter/public reanalysis.",
+    "Public NumPy reanalysis uses frozen analyzer helpers; upstream N supplied independent statistical recomputation.",
+    "Agreement arrays remain published observations because prediction IDs are omitted."
+  ],
+  "model_forwards": 0,
+  "pretrained_checkpoint_or_header_access": false,
+  "gpu_used": false,
+  "file_deletions": 0
+}
