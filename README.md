@@ -1,185 +1,129 @@
 # Super-weight research
 
-Latest completed extension: [Report 19: native versus value-lesioned calibration](docs/GPT2_CALIBRATION_WORLD_COMPARISON.md).
-The fixed-text calibration comparison completed 16 calibration and 1,160 held-out
-evaluation forwards. Switching center and direction pair changed the
-removal-minus-control later-loss contrast by at most 0.0265 millinats per target
-on this panel; 51 of 64 nominal primary intervals include zero. Four passage
-clusters per stratum and fixed calibration limit inference; this is not
-an equivalence result. See the [self-contained report](reports/report19.html)
-and [reproduction guide](docs/REPRODUCE_GPT2_CALIBRATION_WORLD_COMPARISON.md).
-The supplied numerical observations reproduce every published statistic;
-a second full model replay remains unperformed.
+**What computation depends on a super-weight pulse, and how much of that
+computation can a simpler intervention preserve?**
 
-Earlier completed extension: [Report 18: earlier keys and values](docs/GPT2_L11_KEY_VALUE_DONOR.md).
-Both paths transmit a chosen finite early-write perturbation into later GPT-2
-outputs; 128 combined-KV closure events reproduce the donors byte for byte.
-Signed loss effects can oppose and cancel. This does not establish intrinsic
-path importance or native-pulse necessity. See the [audit/reproduction guide](docs/GPT2_L11_KEY_VALUE_DONOR_REPRODUCING.md)
-for exact readiness and the unperformed second full model replay.
-Earlier extensions are [Report 16: actual-write norm controls](docs/GPT2_POST_WRITE_NORM.md)
-and [Report 17: early-to-later transmission](docs/GPT2_QUERY_WRITE_TIMING.md).
-Self-contained downloads: [Report 16 HTML](reports/report16.html),
-[Report 17 HTML](reports/report17.html), [Report 18 HTML](reports/report18.html).
+This repository studies that question through a causal case study of
+`allenai/OLMo-1B-0724-hf`, followed by separate GPT-2 and Llama investigations.
+Its strongest evidence concerns an OLMo newline-history pathway and the large
+difference between removing one scalar output contribution and removing a
+neuron's whole output. The later models reveal different conditional effects;
+they do not establish a shared super-weight mechanism.
 
+**Research is paused, with completed work through Report 19.** The full previous
+README, including the chronological updates and publication history, is retained
+in the **[research log](RESEARCH_LOG.md)**. Start with the
+[documentation index](docs/README.md) for the complete reading and audit routes.
 
-A reproducible causal case study of the computation around an OLMo-1B super
-weight: earlier newline history, attention K/V pathways, residual components,
-source geometry, and limits of simpler replacements.
+## Strongest supported findings
 
-Start with the [research report](docs/REPORT.md), its
-[primary-literature comparison](docs/NOVELTY.md), and the
-[coordinate correction](docs/COORDINATE_ERRATUM.md). The correction is substantive:
-an older secondary-coordinate experiment used layer2, whereas the cited paper
-lists layer1. Measurements are preserved under their actual coordinates and a
-separate corrected experiment is included.
+| Finding | Evidence and scope |
+| --- | --- |
+| **OLMo: an earlier newline suppresses a later pulse through L0/H14.** Removing the selected attention edge restores the pulse; donor keys and values jointly transfer suppression. | Development-selected head, 16 separate constructed evaluation windows, then 12 eligible unedited book/code cases. [Pathway evidence](docs/REPORT.md#2-a-preceding-newline-suppresses-a-later-pulse). |
+| **OLMo: the layer-0 MLP conditionally relays the history effect.** Endogenous layer-1 attention can amplify it. | Component swaps support a conditional carrier, without identifying a unique minimal circuit or an additive mediation percentage. [Component evidence](docs/REPORT.md#3-the-earlier-mlp-carries-much-of-the-history-effect). |
+| **OLMo: deleting more of the neuron can damage less.** On the matched Wiki panel, scalar-output deletion gives a perplexity ratio of 1933.922, versus 1.445 for the whole neuron output. | Position-local interventions relative to the same native inputs. Whole-output deletion also has severe counterexamples; source K/V and normalized geometry matter. [Comparison and counterexamples](docs/REPORT.md#4-deleting-more-of-the-neuron-can-damage-less). |
 
-The strongest scoped result is a development-selected L0/H14 path through which
-an earlier single-newline token suppresses a later pulse. Separate key/value
-interventions and natural-input tests support that path. A layer-0 MLP output
-conditionally relays it. Downstream, removing one dominant output coordinate
-can be far worse than removing the whole neuron output; mixed source K/V states
-and source-normalized geometry help explain this intervention dependence.
+![OLMo causal pathways and their limits](figures/mechanism.png)
 
-This repository does not claim a universal mechanism, priority over all prior
-work, or a faithful fixed low-rank replacement. Negative experiments and natural
-counterexamples are retained. No UIT knowledge is needed.
+## Mechanism supported by the OLMo interventions
 
-The [model-transfer report](docs/TRANSFER.md) adds GPT-2 and Llama-3.2-3B-Instruct.
-It finds conditional GPT-2 MLP coordinate regrowth and different Llama source
-K/V dependence, including approximate fixed-source replacements. See the
-[transfer reproduction guide](docs/TRANSFER_REPRODUCING.md) for eleven sequential
-batches and their limits. The [GPT-2 follow-up](docs/GPT2_FOLLOWUP.md) localizes
-the conditional L3 writes, separates source K/V transmission, and tests value
-norm against direction. The [query-pathway report](docs/GPT2_QUERY_PATHWAYS.md)
-separates allocation from the conditional non-source value mixture and finds
-opposing loss effects on several corpora. These findings do not establish one
-shared mechanism or faithful output replacement.
+Earlier-token keys change L0/H14 routing, while values help determine the routed
+content; the donor pair jointly transfers suppression. The layer-0 MLP
+conditionally carries that history into production of the later
+pulse. The neuron's output changes the source token's normalized geometry,
+which later attention uses through coupled key/value states and dynamic routing.
+A stable source representation can therefore support context-dependent use.
+The [full OLMo report](docs/REPORT.md) separates these tested steps from open
+explanations and failed replacements.
 
-The [gate-subspace report](docs/GPT2_GATE_SUBSPACES.md) tests centered PCA
-directions with causal retention/removal and matched controls. High calibration
-variance does not yield a faithful scalar replacement: rank-one retention
-raises perplexity about15–29% relative to the zero-value reference, while
-rank-six retention still changes about5–10% of argmax predictions. Two failed
-cross-length runs remain preserved; the completed study uses fixed512 execution.
-See the [standalone reproduction guide](docs/GPT2_GATE_REPRODUCING.md): it
-rebuilds old metadata without rerunning prior model experiments or loading
-Llama weights. Audit exported gate results with
-`python scripts/audit_gate_results.py`; this needs NumPy and no model.
+Here, “scalar deletion” removes one neuron's contribution to one output
+coordinate at a specified token; “whole-neuron-output deletion” removes that
+neuron's full down-projection contribution at that token. Neither means deleting
+the entire MLP or permanently editing the checkpoint. All indices are zero-based.
 
-The [layer-localization report](docs/GPT2_GATE_LOCALIZATION.md) then tests every
-L4–L11 singleton and their joint intervention on fresh passages. L10 PC1 removal
-worsens Wiki loss but improves both books; joint effects do not add in NLL,
-and lower loss still does not preserve predictions. See the
-[localization reproduction guide](docs/GPT2_GATE_LOCALIZATION_REPRODUCING.md).
-`python scripts/audit_localization_results.py` checks all exported numeric
-results without a model. The new primary batch is independently audited;
-a complete second pretrained localization replay remains unperformed.
+## Read by model
 
-The [additive-output report](docs/GPT2_GATE_ADDITIVE.md) separates finite
-output nonadditivity from the nonlinear loss calculation on another fresh
-panel. The terms can oppose each other strongly; small net loss differences
-do not imply faithful predictions or an internal compensating mechanism.
-L10's scoped Wiki-versus-other-source pattern recurs, while a blanket book
-benefit fails on Mill. Follow the [audit/replay quick start](docs/GPT2_GATE_ADDITIVE_QUICKSTART.md)
-or run `python scripts/audit_additive_results.py` with NumPy only. This new
-batch has independent saved-array and CPU readout audits; a complete second
-pretrained replay remains unperformed.
+| Entry point | What it establishes |
+| --- | --- |
+| **[OLMo-1B](docs/models/olmo/README.md)** | Newline history, conditional MLP relay, scalar versus whole-output interventions, source K/V and geometry. Begin here for the main super-weight case study. |
+| **[GPT-2](docs/models/gpt2/README.md)** | Conditional coordinate regrowth, gate interventions, finite early-write transmission and calibration controls. These concern chosen perturbations; a native mechanism linked to the original super weight has not been demonstrated. |
+| **[Llama-3.2-3B-Instruct](docs/models/llama/README.md)** | A different scalar/whole-output pattern, source K/V dependence and approximate fixed replacements on tested panels. |
+| **[Cross-model comparison](docs/models/cross-model/README.md)** | Which signatures failed to transfer, what differs between protocols, and why no universal mechanism follows. |
 
-Transfer numerical audit: `python scripts/audit_transfer.py`. Full rerun:
-`python scripts/run_transfer.py --config transfer-inputs.local.json --work .reproduce-transfer`,
-then `python scripts/compare_transfer.py --work .reproduce-transfer`.
+## Limitations and claim boundaries
 
-The [fresh-calibration report](docs/GPT2_GATE_WIKI_CALIBRATION.md) crosses old and
-fresh Wiki centers and directions. L10's Wiki-harm/non-Wiki-benefit pattern
-persists on this panel, but the reference has source values zeroed. On Ethics,
-the apparent gain largely returns loss toward the intact model. The native-value follow-up below now tests whether that effect survives
-restored source values. Start with
-the [T18 audit/replay guide](docs/GPT2_GATE_WIKI_CALIBRATION_QUICKSTART.md), or run
-`python scripts/audit_wiki_calibration_results.py` using NumPy only. Numerical,
-readout, export and preparation audits passed; a second pretrained T18 replay
-remains unperformed.
+These are fixed-checkpoint, finite-intervention studies. Many later panels have
+only four passages per source, fixed selection/calibration and correlated,
+unadjusted bootstrap intervals. Fresh passages do not establish independence
+from pretraining. A small loss difference does not establish identical
+predictions, faithful generation, absence of an effect or a useful speedup.
 
-The [native-value report](docs/GPT2_NATIVE_VALUE.md) crosses native/zero source
-values upstream, at L10 and downstream on fresh passages. PC1 removal still
-worsens Wiki loss and improves the books/code with native values. Native
-perplexity changes range from about +0.8% on Wiki to −2.2% on Ethics, while
-1.7–4.1% of next-token predictions change. These are scoped controlled effects,
-not a faithful replacement or a unique circuit. The interrupted run was
-recovered with an exact 70-forward continuity check: 2,184 retained scientific
-forwards and 2,272 actual returns. Original missing final guards remain explicit.
-See the [T19 audit/replay guide](docs/GPT2_NATIVE_VALUE_REPRODUCING.md), or run
-`python -B scripts/audit_native_value_results.py` with NumPy only. Independent
-numerical, sampled readout, scientific and actual-export audits passed. A
-complete second pretrained replay remains unperformed.
+The latest GPT-2 calibration comparison is particularly uncertain: **51/64
+nominal primary intervals include zero, and 27/64 mean signs can reverse when
+one passage is omitted**. The largest endpoint calibration shift is about
+0.0265 millinats per later target in the removal-minus-control contrast, not
+the raw removal-arm loss. Four passage clusters per source and one fixed
+fit/control do not support an equivalence or population claim. See
+[Report 19](docs/GPT2_CALIBRATION_WORLD_COMPARISON.md) and its
+[complete per-passage comparisons](results/calibration_world_comparison_report/tables/all_64_primary.csv).
 
-The [actual-write norm-control report](docs/GPT2_POST_WRITE_NORM.md) tests the
-PC-versus-fixed-orthogonal contrast after approximately matching each query's
-actual L10 projected-write-change norm. All eight native source/start mean
-signs persist: Wiki positive, other three sources negative. Early/later signs
-can reverse, and one Ethics passage reverses the aggregate ranking. These are
-conditional finite-operation effects with one calibration and one orthogonal
-control, not a unique direction or a faithful replacement. All776 model calls
-completed without reruns; numerical, sampled projection/readout, scientific and
-restricted-export reviews passed. Start with the [T20 audit/replay guide](docs/GPT2_POST_WRITE_NORM_REPRODUCING.md)
-or `python -B scripts/audit_post_write_norm_results.py` (NumPy only).
-The [research handoff](docs/HANDOFF.md) records the early/later causal-support
-question and unperformed replay limits.
+The [coordinate erratum](docs/COORDINATE_ERRATUM.md) is substantive: an older
+secondary-coordinate experiment used L2 where the cited paper lists L1. Its
+measurements remain attributed to the coordinate actually executed. The
+[prior-literature comparison](docs/NOVELTY.md) and model reports credit closely
+related work; this repository makes no broad novelty or universality claim.
+Failed runs, negative tests and natural counterexamples remain in the record.
 
 ## Quick start
 
-CPU-only numerical audit of the supplied results:
+From the repository root, audit the supplied OLMo numerical results on CPU:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install numpy==1.26.4
-python scripts/audit_results.py
+python -B scripts/audit_results.py
 ```
 
-GPU reproduction of nine core batches, using separately obtained inputs:
+This loads no model. It checks exported loss/KL arrays; it cannot independently
+reconstruct omitted predictions or prove model-hook correctness. The
+[audit index](docs/README.md#cpu-only-numerical-audits) lists all 11 public
+numerical auditors and their model-specific guides.
+
+For a future **OLMo nine-batch model reproduction**, first obtain the exact
+checkpoint and input files and create the ignored `inputs.local.json` described
+in the [reproduction guide](docs/REPRODUCING.md). In a separate environment with
+a compatible CUDA PyTorch build, the recorded route is:
 
 ```bash
-# Install requirements in an environment with a compatible CUDA PyTorch build.
 python -m pip install -r requirements.txt
-# Create inputs.local.json using docs/REPRODUCING.md and manifests/input_sources.json.
 python scripts/prepare_inputs.py --config inputs.local.json --work .reproduce-1
 python scripts/run_core.py --work .reproduce-1
 python scripts/compare_core.py --work .reproduce-1
 ```
 
-The runner uses one offline checkpoint load and4956 sequential forwards.
-The original machine has an8GiB RTX3060Ti and16GiB system RAM; allow at least
-8GiB GPU memory,16GiB system memory, and10GiB free disk for checkpoint, runtime,
-and outputs. Budget roughly10–20minutes after inputs and dependencies are ready;
-downloads and installation are additional. Exact measured validation time and
-peak memory are recorded in the validation manifest. CPU-only audit needs no
-model and is much smaller. Other GPUs/kernels can change FP16 rounding.
+The core route uses 4,956 sequential forwards and covers nine later OLMo batches,
+not every historical experiment. The original-machine allowance was 8 GiB VRAM,
+16 GiB RAM and 10 GiB free disk; versions, hashes, measured resources and
+same-machine validation are linked in the guide. Different hardware can change
+rounding. GPT-2 and Llama use [separate reproduction routes](docs/TRANSFER_REPRODUCING.md);
+later GPT-2 reports have their own guides and unperformed replay limits.
+These commands document reproduction; this documentation update runs no model
+experiments and does not resume the paused research.
 
 ## Contents
 
-- `docs/`: report, protocols, limitations, novelty and correction.
-- `scripts/`: portable preparation, core reproduction, comparison, numeric audit,
-  and figure generation.
-- `experiments/`: archived intervention and analysis code, plus frozen designs.
-  Local input prefixes are replaced with explicit `/EXTERNAL` placeholders.
-- `results/`: all exported historical window metrics, summaries, failed
-  conditions, and per-token loss/KL arrays. Input and prediction token IDs are
-  excluded. Large private raw activation bundles remain local.
-- `reviews/`: independent CPU audits and scientific review notes.
-- `manifests/`: checkpoint, input hashes, seeds, dependencies, export provenance,
-  and validation records.
-- `figures/`: original explanatory diagrams and result plots.
-- `transfer/`: subsequent model comparisons, when executed.
+| Location | Contents |
+| --- | --- |
+| [docs/](docs/README.md) | Model-specific entry points, reports, limitations, hypotheses and reproduction guides. |
+| [RESEARCH_LOG.md](RESEARCH_LOG.md) | Complete earlier README chronology, preserved as a historical snapshot. |
+| [experiments/](experiments/) · [scripts/](scripts/) | Frozen designs and archived code; portable preparation, audit and reproduction tools. |
+| [results/](results/) · [figures/](figures/) · [reports/](reports/) | Exported numerical evidence, counterexamples, figures and self-contained Reports 16–19. |
+| [manifests/](manifests/) · [reviews/](reviews/) | Input/checkpoint hashes, provenance, validation and independent review records. |
+| [results/pulse_transfer/](results/pulse_transfer/) | GPT-2/Llama transfer outputs at their established paths. |
 
-Published to the private [superweight-research repository](https://github.com/jaykobdetar/superweight-research) with explicit owner approval on October 21, 2026.
-Repository privacy, owner admin access and the initial reviewed commit/tree were verified.
-During the Report14 update, a fresh check found the repository public despite
-that earlier verification. It was restored to private before the update;
-the user then clarified that making it public was intentional. Reversing that
-choice was an error. The user manages visibility and has authorized the reviewed
-research-only update at its current setting. The [visibility correction record](reviews/repository_visibility_correction.json)
-preserves this limitation; the earlier check does not establish continuous privacy.
-This repository contains no credentials, checkpoint weights,
-input corpora, or unrelated files. Retrieve external inputs under their own
-terms; hashes and source links are supplied instead of redistribution.
+Model weights, input corpora and private raw activation bundles are not
+redistributed. Exact external sources and hashes are recorded in the guides and
+manifests. The public numerical exports have narrower audit scopes than the
+private original evidence. Existing artifact paths and saved handoffs are
+preserved; the model indexes provide navigation without moving that evidence.
