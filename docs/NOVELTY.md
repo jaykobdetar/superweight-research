@@ -207,3 +207,36 @@ T20's limited additional evidence is the recorded post-projection norm-controlle
 [Report 17](GPT2_QUERY_WRITE_TIMING.md) adds a finite GPT-2 experiment: early-only matched L10 writes have later consequences while later incoming states remain at baseline bytes. The support/direction/source effects and explicit negative NLL results extend this research chain. They do not establish a unique circuit, a complete causal explanation, or a faithful replacement; different support doses and approximate matching remain limitations.
 
 Query/key/value path interventions are established. [Wang et al., 2022, sections 3 and Appendix B](https://arxiv.org/html/2211.00593v1) traces attention pathways; [Goldowsky-Dill et al., 2023, sections 1–2](https://arxiv.org/html/2304.05969v1) formalizes path-localization hypotheses and treats the evaluation distribution as part of the claim. [Zhang and Nanda, v2, 2024](https://arxiv.org/html/2309.16042v2) shows sensitivity to metrics/corruptions and includes KL. These sources rule out claiming a new generic K/V-patching method or equating a metric effect with intrinsic importance. The prospective K/V split itself is not a completed T21 result. This is a scoped primary-source comparison, not an exhaustive proof of novelty or priority.
+
+## T22 earlier-key/value donor extension
+
+[Report 18](GPT2_L11_KEY_VALUE_DONOR.md) completes that prospective split on
+native GPT-2. Actual finite early-L10 write donors supply earlier L11 K-only,
+V-only and joint K/V transplants into baseline recipients. Joint recipients
+close exactly on their donors over the required later states and full logits;
+single paths change distributions, while signed loss effects can oppose and
+cancel. The candidate additional evidence is this controlled finite case,
+with all prespecified strata, weak results, dose differences and numerical
+limits retained. It does not introduce path patching or identify a unique
+mechanism, intrinsic V dominance, native-task necessity or a faithful simpler
+replacement.
+
+[The Super Weight in Large Language Models](https://arxiv.org/html/2411.07191v2)
+already studies exceptional weights, super activations and partial restoration.
+[Massive Activations in Large Language Models](https://arxiv.org/html/2402.17762v2)
+already connects starting/delimiter activations with attention-bias behavior.
+Fu et al.'s [implicit-gate analysis, v3](https://arxiv.org/html/2602.01203v3)
+already provides the allocation algebra and discusses multiple interacting
+sinks/gates. The [GPT-2 attention-sink study](https://arxiv.org/html/2604.14722v1)
+already tests query bias, position/key effects and equal-coefficient directional
+controls. The path-patching and metric/distribution cautions cited above also
+apply. Neither K/V patching, PCA, a norm-controlled directional test nor the
+allocation/mixture decomposition is claimed as new here.
+
+The selected-context algebra is descriptive under a named baseline reference,
+finite FP32 operands and one predetermined panel. Its SVD or cross terms are
+not a new physical mechanism or a mediation fraction. The fit came from
+source-value-zero calibration; a native-calibration comparison remains
+unfinished and supplies no new finding in this release. This comparison was
+checked against the named primary sources; it is not an exhaustive search or
+a claim of priority.

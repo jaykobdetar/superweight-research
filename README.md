@@ -1,12 +1,15 @@
 # Super-weight research
 
-Latest completed extensions: [Report 16: actual-write norm controls](docs/GPT2_POST_WRITE_NORM.md)
+Latest completed extension: [Report 18: earlier keys and values](docs/GPT2_L11_KEY_VALUE_DONOR.md).
+Both paths transmit a chosen finite early-write perturbation into later GPT-2
+outputs; 128 combined-KV closure events reproduce the donors byte for byte.
+Signed loss effects can oppose and cancel. This does not establish intrinsic
+path importance or native-pulse necessity. See the [audit/reproduction guide](docs/GPT2_L11_KEY_VALUE_DONOR_REPRODUCING.md)
+for exact readiness and the unperformed second full model replay.
+Earlier extensions are [Report 16: actual-write norm controls](docs/GPT2_POST_WRITE_NORM.md)
 and [Report 17: early-to-later transmission](docs/GPT2_QUERY_WRITE_TIMING.md).
-Report 17 finds controlled cross-position consequences on a finite GPT-2 panel;
-15 of 24 primary signed-loss intervals include zero. It does not yet separate
-the earlier keys from values. [Audit/replay guide](docs/GPT2_QUERY_WRITE_TIMING_REPRODUCING.md)
-distinguishes exact reanalysis/input rebuilding from an unperformed second model replay.
-Self-contained downloads: [Report 16 HTML](reports/report16.html), [Report 17 HTML](reports/report17.html).
+Self-contained downloads: [Report 16 HTML](reports/report16.html),
+[Report 17 HTML](reports/report17.html), [Report 18 HTML](reports/report18.html).
 
 
 A reproducible causal case study of the computation around an OLMo-1B super

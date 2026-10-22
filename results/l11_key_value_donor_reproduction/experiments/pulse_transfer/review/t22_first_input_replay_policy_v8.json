@@ -1,0 +1,45 @@
+{
+  "status": "prospective_fixed_exact_replay_policy_before_A_r3",
+  "created_utc": "2026-10-22T03:44:37.960759+00:00",
+  "stage": "after_complete_A_r3_before_authorizing_B_r3",
+  "comparison_is_hard_gate": true,
+  "efficacy_analysis_blinded_until_replay_and_full_panel_complete": true,
+  "old_failed_A_r2_manifest": {
+    "path": "gpt2_l11_key_value_donor_run_A_r2/manifest.json",
+    "sha256": "52b418d965d2a98ce514f6bedf423e97fca433e971dfc386649784913bbd09c9"
+  },
+  "old_first_shard": {
+    "path": "gpt2_l11_key_value_donor_run_A_r2/inputs/wiki_validation__0__natural__000.npz",
+    "sha256": "6b97a1fbb0dd7d31a1029be911e79b133fc9d3cccda00fdf26d8a0c91b8f7358",
+    "bytes": 228062734,
+    "actual_tensor_occurrences_from_metadata": 1366
+  },
+  "new_segment_name": "gpt2_l11_key_value_donor_run_A_r3",
+  "new_first_shard_relative_path": "inputs/wiki_validation__0__natural__000.npz",
+  "required_comparator_source_relative_path": "review/t22_first_input_exact_replay_gate_v8.py",
+  "source_binding": "Exact comparator bytehash must be pinned in final producer source closure and independently source-reviewed before model restart; actual comparator execution requires separate root receipt after complete A_r3.",
+  "criteria": [
+    "Every array occurrence matches ordered semantic path, dtype, shape and C-order data bytes; all internal member hashes/ZIP integrity verified. No numeric array exclusion or tolerance.",
+    "All26 first-input ordered forward_completed identity and actual final-hidden/logit fingerprint records match exactly.",
+    "Container/scientific scalar controls checked separately; source/resource/freeze provenance differences recorded explicitly; whole-NPZ SHA equality is not required."
+  ],
+  "mismatch_action": "Preserve both runs and failed comparison; do not authorize B_r3 or interpret efficacy; no tolerance relaxation, input/arm omission, averaging or selective old-shard reuse.",
+  "retained_panel_choice": "Use the preselected complete A_r3/B_r3 776-forward panel only if all guards and replay pass. Prior26 is a technical repeat, never an added sample or retroactive success of failed A_r2.",
+  "accounting": {
+    "prior_failed_returns": 27,
+    "prior_attempts": [
+      1,
+      26
+    ],
+    "retained_planned_forwards": 776,
+    "cumulative_if_complete": 803,
+    "main_suffix_anchor_total": [
+      397,
+      396,
+      10
+    ]
+  },
+  "no_new_model_call_here": true,
+  "metadata_only_old_shard_inspection": true,
+  "outcome_values_not_interpreted_to_choose_policy": true
+}

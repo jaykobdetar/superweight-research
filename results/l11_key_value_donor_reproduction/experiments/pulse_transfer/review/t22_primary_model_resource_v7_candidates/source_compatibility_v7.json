@@ -1,0 +1,38 @@
+{
+  "status": "PASS_SOURCE_ONLY_EXACT_RESOURCE_DELTA_NO_IMPORT_EXECUTION",
+  "original_storage_sha256": "445db76be9121967e93577394b38f0fc809b434c461ed769d5dd91efbb0d2d3d",
+  "candidate_storage_sha256": "96bc2ddaeb91660aca8b73501b62f2835af8747eadb51c9d176664221f27b732",
+  "original_producer_sha256": "810144916de88f8a51dde75e236d83cef11af32dca75e364f1ca94dc4391df25",
+  "candidate_producer_sha256": "873e9d54a34926673a08ed8943d44a787fb59bdc45ea04755e779b33e92ac4e8",
+  "storage_exact_replacements": [
+    [
+      "RSS_LIMIT=3*1024**3",
+      "RSS_LIMIT=4*1024**3"
+    ],
+    [
+      "NON_EVIDENCE_LIMIT=1152*1024**2",
+      "NON_EVIDENCE_LIMIT=2*1024**3"
+    ]
+  ],
+  "producer_exact_replacements": [
+    [
+      "assert observed<=3*1024**2,('CPU peak RSS budget',stage,observed,3*1024**2)",
+      "assert observed<=4*1024**2,('CPU peak RSS budget',stage,observed,4*1024**2)"
+    ],
+    [
+      "meta['host_mem_available_minimum_bytes']=4*1024**3",
+      "meta['host_mem_available_minimum_bytes']=6*1024**3"
+    ],
+    [
+      "'Pre-model host headroom below4GiB'",
+      "'Pre-model host headroom below6GiB'"
+    ]
+  ],
+  "restored_entire_sources_byte_exact": true,
+  "restored_entire_AST_exact": true,
+  "all_storage_functions_byte_unchanged": true,
+  "producer_change_scope": "Only process peak assertion and pre-model host minimum+error wording; scientific/evaluation/observer/ownership/scoring/counter/intervention/schedule source text unchanged",
+  "candidates_not_activated": true,
+  "original_canonical_bytes_rechecked_unchanged": true,
+  "models_fake_forwards_tokenizers_NPZ_decodes_array_imports": 0
+}

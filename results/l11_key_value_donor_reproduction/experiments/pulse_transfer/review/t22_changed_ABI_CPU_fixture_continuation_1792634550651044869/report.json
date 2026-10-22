@@ -1,0 +1,1432 @@
+{
+  "status": "passed_changed_ABI_CPU_composite_after_fixture_failure",
+  "checks": [
+    "inherited_normal_template_membership",
+    "inherited_synthetic_input_binding",
+    "donor_projection_bytes_expected_reason",
+    "donor_projection_bytes_complete_failure_roundtrip",
+    "recipe_commitment_expected_reason",
+    "recipe_commitment_complete_failure_roundtrip",
+    "baseline_reference_bytes_expected_reason",
+    "baseline_reference_bytes_complete_failure_roundtrip",
+    "receipt_missing_expected_reason",
+    "receipt_missing_complete_failure_roundtrip",
+    "receipt_false_expected_reason",
+    "receipt_false_complete_failure_roundtrip",
+    "q511_attention_write_expected_reason",
+    "q511_attention_write_complete_failure_roundtrip",
+    "q511_block_hidden_expected_reason",
+    "q511_block_hidden_complete_failure_roundtrip",
+    "q511_final_hidden_expected_reason",
+    "q511_final_hidden_complete_failure_roundtrip",
+    "q511_logits_expected_reason",
+    "q511_logits_complete_failure_roundtrip",
+    "actual_delivered_Q_expected_reason",
+    "actual_delivered_Q_complete_failure_roundtrip",
+    "actual_delivered_source_expected_reason",
+    "actual_delivered_source_complete_failure_roundtrip",
+    "actual_delivered_later_expected_reason",
+    "actual_delivered_later_complete_failure_roundtrip",
+    "actual_delivered_head_expected_reason",
+    "actual_delivered_head_complete_failure_roundtrip",
+    "model_end_callback_expected_reason",
+    "model_end_callback_complete_failure_roundtrip",
+    "callback_observed_not_returned",
+    "callback_complete_actual_output",
+    "after_return_journal_expected_reason",
+    "after_return_journal_complete_failure_roundtrip",
+    "return_owner_before_journal",
+    "unhooked_observation_journal_expected_reason",
+    "unhooked_observation_journal_complete_failure_roundtrip",
+    "unhooked_actual_owner",
+    "unhooked_readout_is_current_operand",
+    "native_pop_then_fail_complete_failure_roundtrip",
+    "native_override_owns_popped_operands",
+    "roster_late_hook_expected_reason",
+    "roster_late_hook_complete_failure_roundtrip",
+    "roster_prepended_hook_expected_reason",
+    "roster_prepended_hook_complete_failure_roundtrip",
+    "post_closure_before_processed_complete_failure_roundtrip",
+    "retired_receipt_not_reconstructed",
+    "single_CPU_owned_failure_pointer",
+    "live_orth_donor_suffix_comparison_complete_failure_roundtrip",
+    "live_donor_both_refs_owned",
+    "failed_suffix_expected128_actual512",
+    "signedzero_subnormal_support_copy",
+    "all_parameters_unchanged",
+    "CPU_only"
+  ],
+  "check_count": 54,
+  "expected_rejections": [
+    {
+      "name": "donor_projection_bytes",
+      "error_type": "AssertionError",
+      "reason": "donor QKV cache provenance/bytes mismatch",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 10,
+        "observation_origins": {
+          "hook_model_end": 10,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/donor_projection_bytes",
+      "bytes": 7012638,
+      "sha256": "82bb4b6c67712058811f1f48c1bba26e033f96fa7b94c3c257695f703c475153"
+    },
+    {
+      "name": "recipe_commitment",
+      "error_type": "AssertionError",
+      "reason": "fixed matched arithmetic cache changed between supports",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 13,
+        "forward_passes": 12,
+        "fully_processed_forwards": 12,
+        "evaluation_forwards": 6,
+        "suffix_forwards": 6,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "orth_write_matched_early",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 12,
+        "observation_origins": {
+          "hook_model_end": 12,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 6,
+          "donor_later": 2,
+          "recipient_upstream": 2,
+          "KV_closure": 2,
+          "source_q0": 10,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "orth_write_matched_early",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/recipe_commitment",
+      "bytes": 6239109,
+      "sha256": "e2b5e4d7a2d9e7e5d792f7519673bbac4fa838491be80b486722a0b7c6df982d"
+    },
+    {
+      "name": "baseline_reference_bytes",
+      "error_type": "AssertionError",
+      "reason": "baseline L11 reference absent/changed",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 3,
+        "forward_passes": 2,
+        "fully_processed_forwards": 2,
+        "evaluation_forwards": 1,
+        "suffix_forwards": 1,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "current",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 2,
+        "observation_origins": {
+          "hook_model_end": 2,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "baseline",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 0,
+          "suffix": 1,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "current",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "baseline",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "baseline",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/baseline_reference_bytes",
+      "bytes": 4171611,
+      "sha256": "c6daa0abb547b2d9ca9c9e61c99d2b909feed95d99cb30eaaca256acaf3c0709"
+    },
+    {
+      "name": "receipt_missing",
+      "error_type": "AssertionError",
+      "reason": "all four actual KV closures required before singles",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 16,
+        "forward_passes": 16,
+        "fully_processed_forwards": 16,
+        "evaluation_forwards": 8,
+        "suffix_forwards": 8,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_k",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 16,
+        "observation_origins": {
+          "hook_model_end": 16,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 8,
+          "donor_later": 4,
+          "recipient_upstream": 4,
+          "KV_closure": 4,
+          "source_q0": 14,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/receipt_missing",
+      "bytes": 7745372,
+      "sha256": "2c4bef346042df7776478ca014bbb152a136603e9c8e1da34e064323a4674718"
+    },
+    {
+      "name": "receipt_false",
+      "error_type": "AssertionError",
+      "reason": "four KV closure receipts/provenance/retirement required before singles",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 16,
+        "forward_passes": 16,
+        "fully_processed_forwards": 16,
+        "evaluation_forwards": 8,
+        "suffix_forwards": 8,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_k",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 16,
+        "observation_origins": {
+          "hook_model_end": 16,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 8,
+          "donor_later": 4,
+          "recipient_upstream": 4,
+          "KV_closure": 4,
+          "source_q0": 14,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "orth_l11_kv",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/receipt_false",
+      "bytes": 7745504,
+      "sha256": "219e794e7fc2beb119ef9676d8c695c6aa8eb9b2c4ed66477ea9f0abd2c1da5d"
+    },
+    {
+      "name": "q511_attention_write",
+      "error_type": "AssertionError",
+      "reason": "actual later combined-KV closure: attention_write",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 11,
+        "observation_origins": {
+          "hook_model_end": 11,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/q511_attention_write",
+      "bytes": 7759337,
+      "sha256": "d0ca1c3c6de5a58936c3cb4280db5cfa32dcc032b9a2db4b1a66b6fd47a1bd1b"
+    },
+    {
+      "name": "q511_block_hidden",
+      "error_type": "AssertionError",
+      "reason": "actual later combined-KV closure: block_hidden",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 11,
+        "observation_origins": {
+          "hook_model_end": 11,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/q511_block_hidden",
+      "bytes": 7759404,
+      "sha256": "116222d0c99b70829992eb9a85bcc5bee421ad6282bb37b0e4ebf6c5eade5372"
+    },
+    {
+      "name": "q511_final_hidden",
+      "error_type": "AssertionError",
+      "reason": "actual later combined-KV closure: final_hidden",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 11,
+        "observation_origins": {
+          "hook_model_end": 11,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/q511_final_hidden",
+      "bytes": 7759465,
+      "sha256": "993fd2a5f7d7b34aa851c3db1aa103ea730ad509cc6d4b298fcbbb6e236b1ed9"
+    },
+    {
+      "name": "q511_logits",
+      "error_type": "AssertionError",
+      "reason": "actual later combined-KV closure: logits",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 11,
+        "observation_origins": {
+          "hook_model_end": 11,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/q511_logits",
+      "bytes": 7812439,
+      "sha256": "55cdf337d7bdd4be3660dc2bda2cf21fbde6b3c62f37d39571519070ee84e665"
+    },
+    {
+      "name": "actual_delivered_Q",
+      "error_type": "AssertionError",
+      "reason": "timing must observe actual post-transplant QKV",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 10,
+        "observation_origins": {
+          "hook_model_end": 10,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/actual_delivered_Q",
+      "bytes": 7728082,
+      "sha256": "f6516391f52ccd265f7a986d9d94902a6de7d9560a861e6175825d42b747c602"
+    },
+    {
+      "name": "actual_delivered_source",
+      "error_type": "AssertionError",
+      "reason": "timing baseline byte guard: l11_qkv",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 10,
+        "observation_origins": {
+          "hook_model_end": 10,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/actual_delivered_source",
+      "bytes": 7728540,
+      "sha256": "414a5025bd61e1f746db11cb99e27e4d0a6ab766da42ff984ff6b985030e0cb9"
+    },
+    {
+      "name": "actual_delivered_later",
+      "error_type": "AssertionError",
+      "reason": "timing must observe actual post-transplant QKV",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 10,
+        "observation_origins": {
+          "hook_model_end": 10,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/actual_delivered_later",
+      "bytes": 12331366,
+      "sha256": "c5db1fd7d4b8298e30a439a7022d55de30aba82afcaffcd6bc9c96fd46c05a6b"
+    },
+    {
+      "name": "actual_delivered_head",
+      "error_type": "AssertionError",
+      "reason": "timing must observe actual post-transplant QKV",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 10,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 5,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 10,
+        "observation_origins": {
+          "hook_model_end": 10,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/actual_delivered_head",
+      "bytes": 7728390,
+      "sha256": "3208c36f384af8202c064f7490cfae1a68212a9533d5ca02a00cceda6dd6b59e"
+    },
+    {
+      "name": "model_end_callback",
+      "error_type": "AssertionError",
+      "reason": "model-output observation callback: synthetic journal refusal: model_output_observed",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 1,
+        "forward_passes": 0,
+        "fully_processed_forwards": 0,
+        "evaluation_forwards": 0,
+        "suffix_forwards": 0,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 1,
+        "observation_origins": {
+          "hook_model_end": 1,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {},
+        "last_processed": {}
+      },
+      "capsule": "artifacts/model_end_callback",
+      "bytes": 3863776,
+      "sha256": "30785968a92de33dab867a297297bb2f23cc8927bce3164d424db5cea3a69ee1"
+    },
+    {
+      "name": "after_return_journal",
+      "error_type": "OSError",
+      "reason": "synthetic journal refusal: model_returned",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 1,
+        "forward_passes": 1,
+        "fully_processed_forwards": 0,
+        "evaluation_forwards": 1,
+        "suffix_forwards": 0,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 1,
+        "observation_origins": {
+          "hook_model_end": 1,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_processed": {}
+      },
+      "capsule": "artifacts/after_return_journal",
+      "bytes": 4044118,
+      "sha256": "f1a4a7432cab3120ed7784ca2a755fc52b3c8917f7eb9ff558d4e6b7584c75c0"
+    },
+    {
+      "name": "unhooked_observation_journal",
+      "error_type": "OSError",
+      "reason": "synthetic journal refusal: model_output_observed",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 2,
+        "forward_passes": 2,
+        "fully_processed_forwards": 1,
+        "evaluation_forwards": 1,
+        "suffix_forwards": 0,
+        "anchor_forwards": 1,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 2,
+        "observation_origins": {
+          "hook_model_end": 1,
+          "runner_after_return": 1
+        },
+        "last_output_observed": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/unhooked_observation_journal",
+      "bytes": 3653121,
+      "sha256": "6d42c7d533ef4ecf433565250ffa6aece483fa0834485812020b533b30d1fc2e"
+    },
+    {
+      "name": "native_pop_then_fail",
+      "error_type": "AssertionError",
+      "reason": "{'context_max_abs_error': 1.0, 'native_reconstruction_error': 1.0, 'explicit_source_reconstruction_error': 1.0, 'source_complement_max_abs': 2.7730129659175873e-07, 'ideal_mass_max_abs': 2.980232238769531e-07, 'decomposition_fp64': {'max_abs': 0.9999999789049403, 'rms': 0.009029920357406638, 'symmetric_relative_l2': 0.2396645599045311}, 'min_mass': 0.4988214075565338, 'max_mass': 0.9980619549751282, 'mass_zeros': 0, 'mass_ones': 0, 'mass_above_one_roundoff': 0}",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 1,
+        "forward_passes": 0,
+        "fully_processed_forwards": 0,
+        "evaluation_forwards": 0,
+        "suffix_forwards": 0,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 0,
+        "observation_origins": {
+          "hook_model_end": 0,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {},
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {},
+        "last_processed": {}
+      },
+      "capsule": "artifacts/native_pop_then_fail",
+      "bytes": 3922418,
+      "sha256": "aa6d47b419b1eb7fb2047677a85e59647a252d40eed0c4f11eefecbfc7ab71cf"
+    },
+    {
+      "name": "roster_late_hook",
+      "error_type": "AssertionError",
+      "reason": "owned/native failure dispatch or hook roster/order changed",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 1,
+        "forward_passes": 0,
+        "fully_processed_forwards": 0,
+        "evaluation_forwards": 0,
+        "suffix_forwards": 0,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 0,
+        "observation_origins": {
+          "hook_model_end": 0,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {},
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {},
+        "last_processed": {}
+      },
+      "capsule": "artifacts/roster_late_hook",
+      "bytes": 2444,
+      "sha256": "0a6ab33bf4c3d2009b8925613509446ff769e6f801b67d1db29b31e63f284ef0"
+    },
+    {
+      "name": "roster_prepended_hook",
+      "error_type": "AssertionError",
+      "reason": "owned/native failure dispatch or hook roster/order changed",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 1,
+        "forward_passes": 0,
+        "fully_processed_forwards": 0,
+        "evaluation_forwards": 0,
+        "suffix_forwards": 0,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 0,
+        "observation_origins": {
+          "hook_model_end": 0,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {},
+        "control_counts": {
+          "current": 0,
+          "suffix": 0,
+          "donor_later": 0,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 0,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "baseline",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {},
+        "last_processed": {}
+      },
+      "capsule": "artifacts/roster_prepended_hook",
+      "bytes": 2444,
+      "sha256": "0a6ab33bf4c3d2009b8925613509446ff769e6f801b67d1db29b31e63f284ef0"
+    },
+    {
+      "name": "post_closure_before_processed",
+      "error_type": "OSError",
+      "reason": "synthetic post-capture resource recording refusal",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 11,
+        "forward_passes": 11,
+        "fully_processed_forwards": 10,
+        "evaluation_forwards": 6,
+        "suffix_forwards": 5,
+        "anchor_forwards": 0,
+        "active": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "model_outputs_observed": 11,
+        "observation_origins": {
+          "hook_model_end": 11,
+          "runner_after_return": 0
+        },
+        "last_output_observed": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 5,
+          "donor_later": 2,
+          "recipient_upstream": 0,
+          "KV_closure": 0,
+          "source_q0": 8,
+          "anchors": 0
+        },
+        "last_attempted": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "remove_l11_kv",
+          "variant": "main",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "remove_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/post_closure_before_processed",
+      "bytes": 12247823,
+      "sha256": "0dda9afde7ef428087ea6e167721a1d8933ab2d85a8ba204148bf61e6b1f2145"
+    },
+    {
+      "name": "live_orth_donor_suffix_comparison",
+      "error_type": "AssertionError",
+      "reason": "{'kind': 'suffix', 'logits_exact': True, 'hidden_exact': True, 'source_exact': True, 'gate_exact': True, 'gate_norm_exact': True, 'write_norm_exact': True, 'context_exact': True, 'write_exact': True, 'l11_prefix_exact': True, 'l11_norm_exact': True, 'mask_exact': True, 'loss_exact': False, 'pred_exact': True, 'kl_c_exact': False, 'kl_boundary_exact': False, 'agreement_c_exact': True, 'agreement_boundary_exact': True}",
+      "progress": {
+        "phase": "synthetic_changed_ABI",
+        "forward_attempts": 16,
+        "forward_passes": 16,
+        "fully_processed_forwards": 16,
+        "evaluation_forwards": 7,
+        "suffix_forwards": 7,
+        "anchor_forwards": 2,
+        "active": {
+          "arm": "orth_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "model_outputs_observed": 16,
+        "observation_origins": {
+          "hook_model_end": 15,
+          "runner_after_return": 1
+        },
+        "last_output_observed": {
+          "arm": "orth_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "control_counts": {
+          "current": 2,
+          "suffix": 6,
+          "donor_later": 3,
+          "recipient_upstream": 2,
+          "KV_closure": 2,
+          "source_q0": 11,
+          "anchors": 2
+        },
+        "last_attempted": {
+          "arm": "orth_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_returned": {
+          "arm": "orth_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        },
+        "last_processed": {
+          "arm": "orth_write_matched_early",
+          "variant": "suffix",
+          "synthetic": true
+        }
+      },
+      "capsule": "artifacts/live_orth_donor_suffix_comparison",
+      "bytes": 15592540,
+      "sha256": "5116431672a56775287dca506901b46f4ab6161c279477f805cd229e3576b151"
+    }
+  ],
+  "codec_routes": [
+    {
+      "route": "buffered",
+      "status": "inherited_completed_stage_before_saved_cases",
+      "files": {
+        "artifacts/codec_buffered/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_buffered/journal.jsonl": "1c7e848d8d94ae0e6e794ddb9acfde2d25b9d1d70eebf137184e30dfc6aee1bf",
+        "artifacts/persistent_buffered/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_buffered/journal_preservation_error_000001.json": "7bfa5babf07db87f1ec144b4682d31ac7806c45b552d4e21220d9e8252c2a343",
+        "artifacts/persistent_buffered/journal_preservation_error_000002.json": "dbc70416f878af8742838576d5db56e69c56d265e65eb87da36a4eab2580531b"
+      }
+    },
+    {
+      "route": "stream_frozen",
+      "status": "inherited_completed_stage_before_saved_cases",
+      "files": {
+        "artifacts/codec_stream_frozen/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_stream_frozen/journal.jsonl": "a88ee4fa1fe9fdd21a3d06c8079a5da7138e8553eb1cb10e9ca80ff958ddbd70",
+        "artifacts/persistent_stream_frozen/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000001.json": "32a1eddcda91511ac2a5e69a6650dd79bdc92e5ac626d54122a7a0c796683dbc",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000002.json": "9ec3dd3ac759d97b9badbd134f32399db0a41892d023c45101ba9c1d94ba3bf3",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000003.json": "0b7319c5940c516769a5f3d3d094b47341c820004660c19bd416f872e83c990d"
+      }
+    },
+    {
+      "route": "stream_bounded",
+      "status": "inherited_completed_stage_before_saved_cases",
+      "files": {
+        "artifacts/codec_stream_bounded/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_stream_bounded/journal.jsonl": "e3cef43916a49eac679292efb7e443f46396697209158b858e225afbb2f907c8",
+        "artifacts/persistent_stream_bounded/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000001.json": "682f647981bb99241d65f4cbc81791c1e15e54e99593c51760e32359aba296a1",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000002.json": "a81e208611b4986c96061c53ceaed68f7311550d742e0f5ee4b9ce2eab861d05",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000003.json": "13b6700b0efc3ab2ae08e235e95ef2b54fb757b06f81e943359948e68b9a1066"
+      }
+    }
+  ],
+  "production_AST": {
+    "ev": "16593bf8e9fc8d7956dda9bfecb6b652b2d58bf7f4f8cf3637d276652f48b9ea",
+    "progress": "90b77794d59f1af196a3c17b0f500ffbc65d065e3edc3ea428fd8f6c3d7c4635",
+    "check": "90051405abf756b089ad983ac65f17642f150609bfb0d8bab2868a5e0acebc63",
+    "resource_owners": "dc540318340a840c9a4ebd78c209f62490cedc5a0221e588a9236b90b761d0c9",
+    "capsule": "8b984d0ca8db07762641b76df3812a6cd426ffaac7b2bf7f309750a574a9980b"
+  },
+  "first_attempt": {
+    "directory": "review/t22_changed_ABI_CPU_fixture_1792633335041035762",
+    "report_sha256": "0c79c4c8a370a29ab6bc2152a35bbbf0ae03ac13be3bfd6d7b66ba63b28803a3",
+    "source_sha256": "0345ef4ba7314602878e78f1fb7d46657ba5fb18afbbd00a3e5d7df0b7d3fbc6",
+    "status": "failed_changed_ABI_fixture",
+    "reported_ev_invocations": 28,
+    "complete_failure_sha256": "88f7c305d903fb6a42fea041605d39bea2ed3fbcd56009b1c8b29bb62f4841b7"
+  },
+  "inherited_successful_schedule": {
+    "input_sha256": "a7eb8d9d3e00073dc282fc279027544201177b65208cd79a04eebfc88aebe885",
+    "array_paths_sha256": "679a0d7cb913d0659ba75ffc4c86d9a024b9f8bc42a6803ca814c46342996169",
+    "scope": "Original source reached durable save after26schedule assertions; no claim that later unperformed checks passed."
+  },
+  "inherited_expected_rejections": [
+    {
+      "name": "wrong_order",
+      "capsule_sha256": "40140179f47bc21c093da2e3043c639fc1c47e24e5da7a161802359e5b1b1df6",
+      "array_paths_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "name": "variant_hash",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/variant_hash",
+      "capsule_sha256": "cdcd9aa83bd0bbad18115b243aecbe681c2d1ec222a945361879b30be19c4d17",
+      "array_paths_sha256": "9c66b23fd33b06ef3ec82eeb3db28e234e06f84466c9f481d5d77b40ac03f90c"
+    },
+    {
+      "name": "donor_binding_variant",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/donor_binding_variant",
+      "capsule_sha256": "61b4f683aab6308f100bada3b197ddb2347f02387f3d4436295790555285dfaf",
+      "array_paths_sha256": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8"
+    },
+    {
+      "name": "donor_binding_direction",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/donor_binding_direction",
+      "capsule_sha256": "3f407a600057edee6845617e50f6fa533621a3d229e8223c44e1b7e0e77785a5",
+      "array_paths_sha256": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8"
+    },
+    {
+      "name": "donor_binding_F_digest",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/donor_binding_F_digest",
+      "capsule_sha256": "7d4efc7545957f4a0eca9288e1cbee993e43dd7772c0998cbd71585454469b4e",
+      "array_paths_sha256": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8"
+    },
+    {
+      "name": "donor_binding_layout_version",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/donor_binding_layout_version",
+      "capsule_sha256": "55de3c7b62e142df36f4f5ef779f84a131ba822163d9236e429bac5bd237f6fd",
+      "array_paths_sha256": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8"
+    },
+    {
+      "name": "donor_binding_actual_token_sha256",
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088/artifacts/donor_binding_actual_token_sha256",
+      "capsule_sha256": "075317586e49f69518c410645ad2fefb538ee93e803fcfe8aea6fe3e3113d80d",
+      "array_paths_sha256": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8"
+    }
+  ],
+  "no_successful_schedule_rerun": true,
+  "first_failure_retained": true,
+  "continuation": {
+    "fresh_remaining_hostile_instances": 21,
+    "ev_invocations": 183,
+    "actual_counts": {
+      "forward_attempts": 181,
+      "model_outputs_observed": 171,
+      "forward_passes": 166,
+      "fully_processed_forwards": 163
+    },
+    "previous_failed_continuation": {
+      "directory": "review/t22_changed_ABI_CPU_fixture_continuation_1792634146400277088",
+      "report_sha256": "9bca37cdba6d9748380e3ca83bd09aff71f2473670d941a10c7b904f5ee354e0",
+      "source_sha256": "d18ec329ab920ec70a228d7e0fbeffac9b31e0542b7d4f1655a8937687b592e4",
+      "status": "failed_changed_ABI_fixture",
+      "reported_ev_invocations": 67,
+      "completed_codec_and_case_file_hashes": {
+        "report.json": "9bca37cdba6d9748380e3ca83bd09aff71f2473670d941a10c7b904f5ee354e0",
+        "artifacts/codec_buffered/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_buffered/journal.jsonl": "1c7e848d8d94ae0e6e794ddb9acfde2d25b9d1d70eebf137184e30dfc6aee1bf",
+        "artifacts/codec_partial/failure_state.npz": "d7078b13764c7af6e1664da01765de25b68494ea46df4400e692ed809495599f",
+        "artifacts/codec_partial/failure_stream_error.json": "b3103d1289d5fc5175ad08cf6be435fd8474d7a181ef5fa3bebeec664e8ee25c",
+        "artifacts/codec_partial/journal.jsonl": "d33207298d5de203695d55aaf9d796bf736e5550c661f5a20e1afe5a104122b9",
+        "artifacts/codec_stream_bounded/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_stream_bounded/journal.jsonl": "e3cef43916a49eac679292efb7e443f46396697209158b858e225afbb2f907c8",
+        "artifacts/codec_stream_frozen/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/codec_stream_frozen/journal.jsonl": "a88ee4fa1fe9fdd21a3d06c8079a5da7138e8553eb1cb10e9ca80ff958ddbd70",
+        "artifacts/donor_binding_F_digest/array_paths.json": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8",
+        "artifacts/donor_binding_F_digest/failure_state.npz": "7d4efc7545957f4a0eca9288e1cbee993e43dd7772c0998cbd71585454469b4e",
+        "artifacts/donor_binding_F_digest/journal.jsonl": "9a0c8372e814c006605222cc41fe223fa70bab43c20e1551778f487229baddd0",
+        "artifacts/donor_binding_F_digest/partial_boundary.npz": "7ef3ebebb487c5967a0772b7209ea48f216954deb0ff97776b1082838087ad0f",
+        "artifacts/donor_binding_actual_token_sha256/array_paths.json": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8",
+        "artifacts/donor_binding_actual_token_sha256/failure_state.npz": "075317586e49f69518c410645ad2fefb538ee93e803fcfe8aea6fe3e3113d80d",
+        "artifacts/donor_binding_actual_token_sha256/journal.jsonl": "e7a5ebe024b9a73591d429424225fee88689286c1fb854f6a7a3330ff0e8da4f",
+        "artifacts/donor_binding_actual_token_sha256/partial_boundary.npz": "7ef3ebebb487c5967a0772b7209ea48f216954deb0ff97776b1082838087ad0f",
+        "artifacts/donor_binding_direction/array_paths.json": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8",
+        "artifacts/donor_binding_direction/failure_state.npz": "3f407a600057edee6845617e50f6fa533621a3d229e8223c44e1b7e0e77785a5",
+        "artifacts/donor_binding_direction/journal.jsonl": "9f30dac88f8a416f9b3b069925a5be789e292cb385d11a0c139c7b1917e16c4b",
+        "artifacts/donor_binding_direction/partial_boundary.npz": "7ef3ebebb487c5967a0772b7209ea48f216954deb0ff97776b1082838087ad0f",
+        "artifacts/donor_binding_layout_version/array_paths.json": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8",
+        "artifacts/donor_binding_layout_version/failure_state.npz": "55de3c7b62e142df36f4f5ef779f84a131ba822163d9236e429bac5bd237f6fd",
+        "artifacts/donor_binding_layout_version/journal.jsonl": "4c1f59b1f53a567096dd37a031e5481d3e86916a4254a6916c77cad2a14dfa68",
+        "artifacts/donor_binding_layout_version/partial_boundary.npz": "7ef3ebebb487c5967a0772b7209ea48f216954deb0ff97776b1082838087ad0f",
+        "artifacts/donor_binding_variant/array_paths.json": "3d118da054e3aaed95a7520df4c928a7feec641848d9bbb43117eedb217e09a8",
+        "artifacts/donor_binding_variant/failure_state.npz": "61b4f683aab6308f100bada3b197ddb2347f02387f3d4436295790555285dfaf",
+        "artifacts/donor_binding_variant/journal.jsonl": "957f0fd57ff0d2ceb556f8bc0f057cf4f902e1ed91f5f91f4a1e0b75f0219b0a",
+        "artifacts/donor_binding_variant/partial_boundary.npz": "7ef3ebebb487c5967a0772b7209ea48f216954deb0ff97776b1082838087ad0f",
+        "artifacts/persistent_buffered/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_buffered/journal_preservation_error_000001.json": "7bfa5babf07db87f1ec144b4682d31ac7806c45b552d4e21220d9e8252c2a343",
+        "artifacts/persistent_buffered/journal_preservation_error_000002.json": "dbc70416f878af8742838576d5db56e69c56d265e65eb87da36a4eab2580531b",
+        "artifacts/persistent_stream_bounded/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000001.json": "682f647981bb99241d65f4cbc81791c1e15e54e99593c51760e32359aba296a1",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000002.json": "a81e208611b4986c96061c53ceaed68f7311550d742e0f5ee4b9ce2eab861d05",
+        "artifacts/persistent_stream_bounded/journal_preservation_error_000003.json": "13b6700b0efc3ab2ae08e235e95ef2b54fb757b06f81e943359948e68b9a1066",
+        "artifacts/persistent_stream_frozen/failure_state.npz": "96a43c962b25cb293b4f1e5830fa85a6520ed6c04afb87f15914fcf2a0227f00",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000001.json": "32a1eddcda91511ac2a5e69a6650dd79bdc92e5ac626d54122a7a0c796683dbc",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000002.json": "9ec3dd3ac759d97b9badbd134f32399db0a41892d023c45101ba9c1d94ba3bf3",
+        "artifacts/persistent_stream_frozen/journal_preservation_error_000003.json": "0b7319c5940c516769a5f3d3d094b47341c820004660c19bd416f872e83c990d",
+        "artifacts/tiny_header_guard/journal.jsonl": "03c58118ef3756b7595bcab26b014ff6d2a467a07bb29018e0ffb50de63311fa",
+        "artifacts/variant_hash/array_paths.json": "9c66b23fd33b06ef3ec82eeb3db28e234e06f84466c9f481d5d77b40ac03f90c",
+        "artifacts/variant_hash/failure_state.npz": "cdcd9aa83bd0bbad18115b243aecbe681c2d1ec222a945361879b30be19c4d17",
+        "artifacts/variant_hash/journal.jsonl": "34d348a57a5fd6d79a3d26ee449e298ec5af587f8669624199e56b0dd52b79e2",
+        "artifacts/variant_hash/partial_boundary.npz": "17276c2a9c1a9e8304dbe4eb4c30885b3168d7ecf94cf982663cc5a2ba903a91"
+      },
+      "missing_unexpected_prefix_raw": true,
+      "missing_raw_scope": "Unexpected mutation error escaped before preservation; v5 finally cleared ACTIVE. No complete_failure artifact was saved for the unfinished10-call donor projection prefix. This missing raw is not reconstructed or relabeled preserved."
+    },
+    "codec_stage_rerun": false,
+    "six_completed_cases_rerun": false
+  },
+  "cumulative_ev_invocations": 278,
+  "partial_normal_refusals": [
+    {
+      "case": "actual_delivered_later",
+      "error_type": "MemoryError",
+      "error": "('Normal encoding admission rejected; owned evidence retained for failure fallback', {'current_rss_bytes': 1046953984, 'array_occurrences': 611, 'serialized_raw_array_bytes': 10637614, 'npz_upper_bytes': 12088903, 'owned_CPU_backing_storage_bytes': 50102178, 'non_evidence_observed_bytes': 996851806, 'non_evidence_allowance_bytes': 939524096, 'non_evidence_budget_passed': False, 'numpy_normalization_bytes': 0, 'normalization_allowance_bytes': 33554432, 'normalization_budget_passed': True, 'header_phase_upper_bytes': 1148665856, 'buffered_phase_upper_bytes': 1174817312, 'rss_limit_bytes': 3221225472, 'buffered_admitted': False, 'stream_admitted': True, 'bounded_stream_phase_upper_bytes': 1115111424, 'bounded_stream_admitted': True, 'ownership_scope': 'Existing CPU backing intervals for declared live owners only; no codec/storage deduplication.'})",
+      "complete_partial_payload_attached": true,
+      "normal_guard_unchanged": true
+    },
+    {
+      "case": "unhooked_observation_journal",
+      "error_type": "MemoryError",
+      "error": "('Normal encoding admission rejected; owned evidence retained for failure fallback', {'current_rss_bytes': 981823488, 'array_occurrences': 123, 'serialized_raw_array_bytes': 3469718, 'npz_upper_bytes': 4600293, 'owned_CPU_backing_storage_bytes': 6464066, 'non_evidence_observed_bytes': 975359422, 'non_evidence_allowance_bytes': 939524096, 'non_evidence_budget_passed': False, 'numpy_normalization_bytes': 0, 'normalization_allowance_bytes': 33554432, 'normalization_budget_passed': True, 'header_phase_upper_bytes': 1083535360, 'buffered_phase_upper_bytes': 1092837444, 'rss_limit_bytes': 3221225472, 'buffered_admitted': False, 'stream_admitted': True, 'bounded_stream_phase_upper_bytes': 1049980928, 'bounded_stream_admitted': True, 'ownership_scope': 'Existing CPU backing intervals for declared live owners only; no codec/storage deduplication.'})",
+      "complete_partial_payload_attached": true,
+      "normal_guard_unchanged": true
+    },
+    {
+      "case": "post_closure_before_processed",
+      "error_type": "MemoryError",
+      "error": "('Normal encoding admission rejected; owned evidence retained for failure fallback', {'current_rss_bytes': 979759104, 'array_occurrences': 611, 'serialized_raw_array_bytes': 10637614, 'npz_upper_bytes': 12088903, 'owned_CPU_backing_storage_bytes': 37450760, 'non_evidence_observed_bytes': 942308344, 'non_evidence_allowance_bytes': 939524096, 'non_evidence_budget_passed': False, 'numpy_normalization_bytes': 0, 'normalization_allowance_bytes': 33554432, 'normalization_budget_passed': True, 'header_phase_upper_bytes': 1081470976, 'buffered_phase_upper_bytes': 1107622432, 'rss_limit_bytes': 3221225472, 'buffered_admitted': False, 'stream_admitted': True, 'bounded_stream_phase_upper_bytes': 1047916544, 'bounded_stream_admitted': True, 'ownership_scope': 'Existing CPU backing intervals for declared live owners only; no codec/storage deduplication.'})",
+      "complete_partial_payload_attached": true,
+      "normal_guard_unchanged": true
+    }
+  ],
+  "all_fresh_instances_actual_counts": {
+    "forward_attempts": 181,
+    "model_outputs_observed": 171,
+    "forward_passes": 166,
+    "fully_processed_forwards": 163
+  },
+  "harness_ev_invocations_including_pre_model_rejections": 183,
+  "pretrained_forwards": 0,
+  "tokenizer_checkpoint_access": false,
+  "gpu_used": false,
+  "deletions": 0,
+  "architecture": {
+    "positions": 512,
+    "width": 24,
+    "heads": 12,
+    "vocab": 37
+  },
+  "scope": "Small random causal ABI/codec witness only; not pretrained effects, CUDA equality, production RSS/storage certificate, or launch approval.",
+  "source_sha256": "5a2b8d7790b2754c3dd926e2f6cf1497d063e3e6c3ce480f9d59491d8b1e0c86",
+  "dependency_sha256": {
+    "fresh_inputs.py": "3bfd96e50e84a09640b6c199768312bec59ef146973f0aa8c1aff3046a130f0a",
+    "fresh_inputs_v2.py": "7a0d251b577c6af917d92ba5ccf6b3b6f57df6ff2d2cae78f539206baf330519",
+    "gate_inputs.py": "437f2ef8df2e6d6ac5cc55fc95bf163790200bace66a72ab5bf855da34626b6d",
+    "gate_l11_key_value_donor.py": "1a4b9ed45d3ae621e76751f5c2f7639bd3db2a4eacc5e9f4b0003a90dec8cf28",
+    "gate_native_value.py": "b206ecb881bf0a74f9b86166e2d173153f7e26716fa6ebd00b41fd8ef2d1bcfd",
+    "gate_native_value_storage.py": "b4b7f8932a93136fcccc2ad423bd2bc89fd57c84c052273f15ef36cbdd63d78e",
+    "gate_query_write_timing.py": "f9f2eb64795b6b40ce19a2b6187e4dbb7263d838ff152bf2d081b06260a0f0ab",
+    "gate_wiki_storage.py": "83937417a830e700679169efb3e39a7e001e93484138b42376cde66fb419aa06",
+    "gate_write_norm.py": "62e8b4c67a522043a6cb315b97c7cee34f84dc853cfcb4121679344b4b06445f",
+    "gpt2_gate_native_value.py": "7ec659a8ddd786e77b1c2f2f19fe0b86178af2824d20915eac5fe784cbaf384f",
+    "gpt2_gate_subspace.py": "6e2ff4492a1f39c9e598f4434fdc58b2ac9a68f8e976323039ec42a05297b76e",
+    "gpt2_l11_key_value_donor.py": "bbe4738a194c5fffdb041d5e51260f3adceb52a0b492c78da753d77e27fb0241",
+    "gpt2_layer_writes.py": "b6c166e03d792401b25b30696f1f1a4413679f5741b26bd0d00824822c82be24",
+    "gpt2_query_source.py": "c1deeaf4035ff74ea8d7f724b93feadfc593d4785272921cf201728fb802f4a5",
+    "gpt2_regrowth_kv.py": "b85e7bf18ccc04d96b121bebbef8272d435da9553153f9a003a1982dbba087b8",
+    "gpt2_writes.py": "fc1a98cbeb9e3d6e779ef0f61cc7c934be2cd2d127da24dfea2f146015a00181",
+    "l11_key_value_donor_storage.py": "95a95a71b255d30b603dd250e64e40e7dad19e682c79df481fbc1dd77bcfc491",
+    "llama_source_kv.py": "84a96ee919c422f72df04c9a55765368095e0ca2c03265c74a1f1afe20f1a1e2",
+    "merge_l11_key_value_donor.py": "0320773adf7213fecacc3e2315c088803ddc7b832e9318713d9aa7f2ec89ef95",
+    "native_prefix_diagnostic.py": "561c3342d4810ece74a9f183c83c3e7bd81ab952eabf4c21b1d977a81ad40d4d",
+    "post_write_norm_storage.py": "f7d8068b85f4521c7d7409c88de0b1e9a2c6fc582238525db975c2df22ead0d3",
+    "review/gate_native_value_hook_tests.py": "5c26c2fa3be640c97716a62db71eb7b30d0c4ec6b7596274da14330fe8044c99",
+    "review/gate_query_write_timing_cpu_tests.py": "6aabd404c4c35e2273e9186566f72340f4589821b5a8cbbdc854dfb927a7c5a1",
+    "run_transfer.py": "16a0240a8c679de05c8875e50304b1bc9aabe90e2c4c376b2fc89eeaec0de044"
+  },
+  "wall_seconds": 85.10644599003717,
+  "peak_rss_kib": 1028444
+}

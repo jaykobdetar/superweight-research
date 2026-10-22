@@ -1,0 +1,81 @@
+{
+  "status": "conditional_resource_design_accepted_not_restart_approval",
+  "created_utc": "2026-10-22T03:20:24.023322+00:00",
+  "scope": "Independent source/resource design and bounded standard-library failure metadata review. No model, GPU, tokenizer, checkpoint, array payload decode, fixture or restart.",
+  "bindings": {
+    "failed_manifest_sha256": "c5a29c7c0d129b06cf3f134b7bc17df22000724b908495af5117597521dcf70b",
+    "failure_capsule_sha256": "65f95e8ac204da2390c7e3f8b77eade78909c90349f3bd2e1cb85df76f2c0856",
+    "failure_capsule_bytes": 99469852,
+    "producer_sha256": "810144916de88f8a51dde75e236d83cef11af32dca75e364f1ca94dc4391df25",
+    "storage_sha256": "445db76be9121967e93577394b38f0fc809b434c461ed769d5dd91efbb0d2d3d",
+    "hook_sha256": "1a4b9ed45d3ae621e76751f5c2f7639bd3db2a4eacc5e9f4b0003a90dec8cf28"
+  },
+  "observed": {
+    "model_returns": 1,
+    "fully_processed_forwards": 1,
+    "main": 1,
+    "suffix": 0,
+    "anchors": 0,
+    "peak_process_rss_kib": 1879664,
+    "guard_before_forward_2": {
+      "current_rss_bytes": 1722986496,
+      "owned_cpu_bytes": 78457602,
+      "R0_bytes": 1644528894,
+      "old_R0_cap_bytes": 1207959552,
+      "old_header_upper_bytes": 3471646538,
+      "old_absolute_cap_bytes": 3221225472
+    }
+  },
+  "capsule_metadata": {
+    "metadata_json_bytes": 220824,
+    "npz_members": 238,
+    "tensor_occurrences": 237,
+    "raw_array_bytes": 112494990,
+    "hook_failure_populated": true,
+    "hook_failure_owner_families": 28,
+    "selected_uncommitted_baseline_preserved": true,
+    "l11_current_fields": 8,
+    "generic_current_readout_hidden_metrics": null,
+    "hook_capture_error": "Intentional AssertionError after _fail assigned complete hook_failure; field name does not establish missing capture.",
+    "scope_limit": "No full dense previous baseline logits are claimed recovered: next ev reset generic current pointers before guard2; journal retains their fingerprint and selected baseline readout rows are in the partial payload. Reinstalled native transient caches are not reconstructed. No original final after-model/version/precision success guards."
+  },
+  "source_phase_assessment": {
+    "CPU_handoff": "Already-owned CPU arrays attach without cloning; GPU cpu(x)=detach().cpu().clone() briefly owns handoff and final copies. Final copy belongs in the future raw owner universe; one largest extra temporary is sufficient for that operation.",
+    "fingerprint": "CPU/GPU contiguous normalization and bytes can coexist; two largest-identity temporaries conservatively cover a single fingerprint call. No claim this bounds arbitrary allocator growth or unrelated CPU owners.",
+    "bounded_capture_3GiB_candidate_bytes": 3181794598,
+    "bounded_capture_3GiB_margin_bytes": 39430874,
+    "three_GiB_route_verdict": "Conditional arithmetic fits declared universe, but narrow margin and normal buffer worst case require extra routing/source review. Prefer unchanged existing routes under primary-model-only4GiB amendment."
+  },
+  "preferred_resource_only_design": {
+    "primary_model_RSS_limit_bytes": 4294967296,
+    "review_jobs_RSS_limit_bytes": 3221225472,
+    "primary_model_R0_limit_bytes": 2147483648,
+    "known_header_upper_bytes": 3974601292,
+    "known_header_margin_bytes": 320366004,
+    "normal_buffer_upper_with_all_known_live_raw_bytes": 3834522832,
+    "normal_buffer_margin_bytes": 460444464,
+    "normal_bound_terms": {
+      "R0": 2147483648,
+      "all_known_future_live_CPU_raw": 760300838,
+      "normal_retained_contiguous_copies": 250815648,
+      "normal_npz_upper": 255670845,
+      "archive_buffer_factor": 2.25,
+      "workspace_plus_normalization": 100663296
+    },
+    "routes": "Keep current codec, strict normal buffer admission and existing failure direct/bounded streaming. Failure buffered refusal is expected and can use existing direct stream.",
+    "remaining_conditions": [
+      "Prospective resource amendment and exact producer/storage/N guard literal/source binding review; no implicit scientific, codec, storage-cap or tolerance change.",
+      "Fresh prelaunch host MemAvailable/no concurrent coordinator-owned heavy-job record. Suggested admission6GiB available for4GiB process plus2GiB host reserve; do not inspect/stop unrelated jobs.",
+      "Runtime measured R0<=2GiB, actual per-write admission and absolute4GiB peak remain enforced; future excess fails candidly with complete owned preservation attempted. This is source-specific declared-universe feasibility, not proof of allocator/host availability."
+    ]
+  },
+  "minimal_recovery_accounting": {
+    "clean_restart_planned_returns": 776,
+    "old_failed_baseline_returns": 1,
+    "combined_actual_returns_if_complete": 777,
+    "input_selection": "Keep original accepted inputs, F, precision/model identity and all scientific operations fixed; no new selection or effect inspection.",
+    "reuse": "Do not combine the uncommitted baseline as a committed group. Preserve original failed directory and missing final-guard status.",
+    "continuity": "If prospectively adopted, compare the restarted scheduled baseline full hidden/logit fingerprints and saved selected baseline arrays with original evidence without any extra model call; report mismatch as well as match. This is compatibility evidence, not independent replication.",
+    "authorization": "No restart, live source edit, new fixture or model operation authorized by this review."
+  }
+}

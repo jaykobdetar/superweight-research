@@ -1,0 +1,1219 @@
+{
+  "schema": "T22_saved_readout_audit_v1",
+  "status": "passed",
+  "auditor_sha256": "1c99359b7cc4092e8fc2daaddd02c1df34d5866da161bf153ba1c6a2f6ce118e",
+  "protocol_sha256": "6238ea83f978705b0069e3b476f3e867ba95f08fbae2864d6e92827b88e2f159",
+  "run_manifest_sha256": "602d85764807d4678e6b61e5aa2e42244b29680a5b457c6e2bf230f7adf1d288",
+  "execution_review_sha256": "8f24dda08c50f7f25095cd8038521d88701a787439c6c74a6e78954ac52c5759",
+  "inventory_sha256": "65f8f6c2636b189e899348d053cf3f7f2a0e931482741a83b38d2236710c5b8f",
+  "checkpoint_sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707",
+  "embedding_sha256": "e182e433b37dbdb47448e0413c840edf6965113c1fc8048c63b69795d8cf875a",
+  "weight_tensors_loaded": [
+    "wte.weight"
+  ],
+  "head": "bias-free tied embedding dot product",
+  "query_rows": [
+    1,
+    126,
+    127,
+    510
+  ],
+  "target_positions": [
+    2,
+    127,
+    128,
+    511
+  ],
+  "counts": {
+    "states": 12,
+    "full_vocabulary_rows_per_state": 4,
+    "full_vocabulary_rows": 48
+  },
+  "saved_metric_max_abs": 0.0001,
+  "policy_sha256": "8504adac426349b0b05a919c20355f14a8813ac74b87e5ff80f06f6795fb6fcf",
+  "small_KL_scope": "Selected48rows only; FP64KL uses savedGPUlogits, separate from embedding-dot. Signed values retained;1e-4 consistency PASS does not imply sensitivity for1e-6effects or a whole-panel bound.",
+  "scope": "Twelve T22 main end states; four predetermined full-vocabulary rows and full final hidden fingerprints per state. Timing samples are separate causal-control evidence. No ordinary context, hidden, or unsaved vocabulary rows independently reconstructed; runtime guards are provenance, not replayed.",
+  "model_forwards": 0,
+  "gpu_computation": false,
+  "file_deletions": 0,
+  "small_KL_summary": {
+    "signed_kl_error_min": -3.059938791552811e-07,
+    "signed_kl_error_max": 2.536818350685479e-07,
+    "maximum_absolute_kl_error": 3.059938791552811e-07,
+    "negative_saved_fp32_kl_count": 0,
+    "exact_zero_saved_fp32_kl_count": 8,
+    "negative_fp64_kl_count": 0,
+    "exact_zero_fp64_kl_count": 8,
+    "undefined_ratio_count": 8
+  },
+  "peak_rss_bytes": 1107992576,
+  "elapsed_seconds": 5.560776472091675,
+  "states": {
+    "000__baseline": {
+      "nll": [
+        6.760706885114338,
+        0.10805450818385388,
+        0.9620875841685288,
+        4.751569791935749
+      ],
+      "margin": [
+        0.7012863159179688,
+        4.353981018066406,
+        1.0404052734375,
+        0.5819473266601562
+      ],
+      "kl_c_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.471120765402569e-07,
+          "rms": 1.9957024426863758e-07,
+          "symmetric_relative_l2": 4.797380305666932e-08
+        },
+        "kl_c": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00031813909009770214,
+        "rms": 5.250148162456906e-05,
+        "symmetric_relative_l2": 4.773021002424682e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017744485475302975,
+        "max_error_to_bound_ratio": 0.020151534198301457
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__current": {
+      "nll": [
+        6.760706885114338,
+        0.10805450818385388,
+        0.9620875841685288,
+        4.751569791935749
+      ],
+      "margin": [
+        0.7012863159179688,
+        4.353981018066406,
+        1.0404052734375,
+        0.5819473266601562
+      ],
+      "kl_c_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kl_boundary_to_trial": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.471120765402569e-07,
+          "rms": 1.9957024426863758e-07,
+          "symmetric_relative_l2": 4.797380305666932e-08
+        },
+        "kl_c": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        },
+        "kl_boundary": {
+          "max_abs": 0.0,
+          "rms": 0.0,
+          "symmetric_relative_l2": 0.0
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00031813909009770214,
+        "rms": 5.250148162456906e-05,
+        "symmetric_relative_l2": 4.773021002424682e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017744485475302975,
+        "max_error_to_bound_ratio": 0.020151534198301457
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 0.0,
+          "fp64_kl_saved_gpu_logits": 0.0,
+          "signed_kl_error": 0.0,
+          "absolute_kl_error": 0.0,
+          "absolute_reference_kl": 0.0,
+          "absolute_error_to_signal": null,
+          "reference_is_exact_zero": true
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__remove_full": {
+      "nll": [
+        6.7162072737401175,
+        0.11291919121911079,
+        0.9649277235576312,
+        4.75300118363837
+      ],
+      "margin": [
+        0.6778488159179688,
+        4.3210906982421875,
+        1.0098800659179688,
+        0.551849365234375
+      ],
+      "kl_c_to_trial": [
+        0.0006246562715926302,
+        0.00017219327517266884,
+        0.000263795449001803,
+        0.00023045923632548479
+      ],
+      "kl_boundary_to_trial": [
+        0.0006246562715926302,
+        0.00017219327517266884,
+        0.000263795449001803,
+        0.00023045923632548479
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.3053234343706208e-07,
+          "rms": 1.798103223700182e-07,
+          "symmetric_relative_l2": 4.34058937735225e-08
+        },
+        "kl_c": {
+          "max_abs": 1.9918481548300213e-07,
+          "rms": 1.4351557942796415e-07,
+          "symmetric_relative_l2": 0.00038957335671956165
+        },
+        "kl_boundary": {
+          "max_abs": 1.9918481548300213e-07,
+          "rms": 1.4351557942796415e-07,
+          "symmetric_relative_l2": 0.00038957335671956165
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00034402157385216015,
+        "rms": 5.259084299234173e-05,
+        "symmetric_relative_l2": 4.783735389508058e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01772790261491336,
+        "max_error_to_bound_ratio": 0.0221420389747057
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0006248554564081132,
+          "fp64_kl_saved_gpu_logits": 0.0006246562715926302,
+          "signed_kl_error": 1.9918481548300213e-07,
+          "absolute_kl_error": 1.9918481548300213e-07,
+          "absolute_reference_kl": 0.0006246562715926302,
+          "absolute_error_to_signal": 0.0003188710728464447,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 0.0001723705790936947,
+          "fp64_kl_saved_gpu_logits": 0.00017219327517266884,
+          "signed_kl_error": 1.7730392102584648e-07,
+          "absolute_kl_error": 1.7730392102584648e-07,
+          "absolute_reference_kl": 0.00017219327517266884,
+          "absolute_error_to_signal": 0.0010296797064116058,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.00026371958665549755,
+          "fp64_kl_saved_gpu_logits": 0.000263795449001803,
+          "signed_kl_error": -7.586234630546293e-08,
+          "absolute_kl_error": 7.586234630546293e-08,
+          "absolute_reference_kl": 0.000263795449001803,
+          "absolute_error_to_signal": 0.00028758019364065837,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 0.00023053353652358055,
+          "fp64_kl_saved_gpu_logits": 0.00023045923632548479,
+          "signed_kl_error": 7.430019809576507e-08,
+          "absolute_kl_error": 7.430019809576507e-08,
+          "absolute_reference_kl": 0.00023045923632548479,
+          "absolute_error_to_signal": 0.0003224006088036696,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__orth_full": {
+      "nll": [
+        6.856766019413417,
+        0.10787803964414353,
+        0.9143248246740112,
+        4.722272027280835
+      ],
+      "margin": [
+        0.7138290405273438,
+        4.373603820800781,
+        1.1658477783203125,
+        0.5535202026367188
+      ],
+      "kl_c_to_trial": [
+        0.0019200904093776103,
+        5.982614412392977e-05,
+        0.0013895479528733138,
+        0.0004784539578056894
+      ],
+      "kl_boundary_to_trial": [
+        0.0019200904093776103,
+        5.982614412392977e-05,
+        0.0013895479528733138,
+        0.0004784539578056894
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.3812322372539505e-07,
+          "rms": 2.4177529739247724e-07,
+          "symmetric_relative_l2": 5.7728292301742557e-08
+        },
+        "kl_c": {
+          "max_abs": 2.9022657314502383e-07,
+          "rms": 1.4834189256380202e-07,
+          "symmetric_relative_l2": 0.00012266272536374902
+        },
+        "kl_boundary": {
+          "max_abs": 2.9022657314502383e-07,
+          "rms": 1.4834189256380202e-07,
+          "symmetric_relative_l2": 0.00012266272536374902
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.000347931273154245,
+        "rms": 5.251273588880203e-05,
+        "symmetric_relative_l2": 4.793053915476065e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017785624596399274,
+        "max_error_to_bound_ratio": 0.021444744169288706
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0019198001828044653,
+          "fp64_kl_saved_gpu_logits": 0.0019200904093776103,
+          "signed_kl_error": -2.9022657314502383e-07,
+          "absolute_kl_error": 2.9022657314502383e-07,
+          "absolute_reference_kl": 0.0019200904093776103,
+          "absolute_error_to_signal": 0.00015115255600859942,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 5.983779556117952e-05,
+          "fp64_kl_saved_gpu_logits": 5.982614412392977e-05,
+          "signed_kl_error": 1.165143724974867e-08,
+          "absolute_kl_error": 1.165143724974867e-08,
+          "absolute_reference_kl": 5.982614412392977e-05,
+          "absolute_error_to_signal": 0.00019475494234782596,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.0013895872980356216,
+          "fp64_kl_saved_gpu_logits": 0.0013895479528733138,
+          "signed_kl_error": 3.93451623078786e-08,
+          "absolute_kl_error": 3.93451623078786e-08,
+          "absolute_reference_kl": 0.0013895479528733138,
+          "absolute_error_to_signal": 2.831508061777968e-05,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 0.00047840806655585766,
+          "fp64_kl_saved_gpu_logits": 0.0004784539578056894,
+          "signed_kl_error": -4.5891249831752235e-08,
+          "absolute_kl_error": 4.5891249831752235e-08,
+          "absolute_reference_kl": 0.0004784539578056894,
+          "absolute_error_to_signal": 9.591570742192434e-05,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__remove_write_matched_early": {
+      "nll": [
+        6.7199604883836415,
+        0.11233159731503906,
+        0.9672285127839639,
+        4.754022933277193
+      ],
+      "margin": [
+        0.6798019409179688,
+        4.3242950439453125,
+        1.0259170532226562,
+        0.579803466796875
+      ],
+      "kl_c_to_trial": [
+        0.0005207657340136137,
+        0.00012959806360648743,
+        3.2154156990169444e-05,
+        1.2068032061537198e-06
+      ],
+      "kl_boundary_to_trial": [
+        0.0005207657340136137,
+        0.00012959806360648743,
+        3.2154156990169444e-05,
+        1.2068032061537198e-06
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.350105917121482e-07,
+          "rms": 2.463708706937591e-07,
+          "symmetric_relative_l2": 5.9445590234398604e-08
+        },
+        "kl_c": {
+          "max_abs": 2.9180582284597887e-07,
+          "rms": 2.1509995266036303e-07,
+          "symmetric_relative_l2": 0.0008002033886798052
+        },
+        "kl_boundary": {
+          "max_abs": 2.9180582284597887e-07,
+          "rms": 2.1509995266036303e-07,
+          "symmetric_relative_l2": 0.0008002033886798052
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00034870557314548023,
+        "rms": 5.257851221753563e-05,
+        "symmetric_relative_l2": 4.784828805375381e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739574161454393,
+        "max_error_to_bound_ratio": 0.023292892576478028
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0005204739281907678,
+          "fp64_kl_saved_gpu_logits": 0.0005207657340136137,
+          "signed_kl_error": -2.9180582284597887e-07,
+          "absolute_kl_error": 2.9180582284597887e-07,
+          "absolute_reference_kl": 0.0005207657340136137,
+          "absolute_error_to_signal": 0.0005603399067695774,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 0.00012985174544155598,
+          "fp64_kl_saved_gpu_logits": 0.00012959806360648743,
+          "signed_kl_error": 2.536818350685479e-07,
+          "absolute_kl_error": 2.536818350685479e-07,
+          "absolute_reference_kl": 0.00012959806360648743,
+          "absolute_error_to_signal": 0.0019574508137623833,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 3.2123178243637085e-05,
+          "fp64_kl_saved_gpu_logits": 3.2154156990169444e-05,
+          "signed_kl_error": -3.097874653235934e-08,
+          "absolute_kl_error": 3.097874653235934e-08,
+          "absolute_reference_kl": 3.2154156990169444e-05,
+          "absolute_error_to_signal": 0.0009634445257523167,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 1.0207731975242496e-06,
+          "fp64_kl_saved_gpu_logits": 1.2068032061537198e-06,
+          "signed_kl_error": -1.8603000862947021e-07,
+          "absolute_kl_error": 1.8603000862947021e-07,
+          "absolute_reference_kl": 1.2068032061537198e-06,
+          "absolute_error_to_signal": 0.15415107258653915,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__remove_l11_kv": {
+      "nll": [
+        6.756133995193981,
+        0.109246792737324,
+        0.9672285127839639,
+        4.754022933277193
+      ],
+      "margin": [
+        0.6982879638671875,
+        4.329139709472656,
+        1.0259170532226562,
+        0.579803466796875
+      ],
+      "kl_c_to_trial": [
+        9.15227019290278e-06,
+        2.1657232483634936e-05,
+        3.2154156990169444e-05,
+        1.2068032061537198e-06
+      ],
+      "kl_boundary_to_trial": [
+        9.15227019290278e-06,
+        2.1657232483634936e-05,
+        3.2154156990169444e-05,
+        1.2068032061537198e-06
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.350105917121482e-07,
+          "rms": 2.4879145623715677e-07,
+          "symmetric_relative_l2": 5.98181066177341e-08
+        },
+        "kl_c": {
+          "max_abs": 1.8603000862947021e-07,
+          "rms": 1.0058458548666441e-07,
+          "symmetric_relative_l2": 0.005046654308739463
+        },
+        "kl_boundary": {
+          "max_abs": 1.8603000862947021e-07,
+          "rms": 1.0058458548666441e-07,
+          "symmetric_relative_l2": 0.005046654308739463
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00034870557314548023,
+        "rms": 5.2632769270737965e-05,
+        "symmetric_relative_l2": 4.781407997441863e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739574161454393,
+        "max_error_to_bound_ratio": 0.023292892576478028
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 9.165978553937748e-06,
+          "fp64_kl_saved_gpu_logits": 9.15227019290278e-06,
+          "signed_kl_error": 1.3708361034967762e-08,
+          "absolute_kl_error": 1.3708361034967762e-08,
+          "absolute_reference_kl": 9.15227019290278e-06,
+          "absolute_error_to_signal": 0.0014978099144841734,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 2.1725893020629883e-05,
+          "fp64_kl_saved_gpu_logits": 2.1657232483634936e-05,
+          "signed_kl_error": 6.866053699494678e-08,
+          "absolute_kl_error": 6.866053699494678e-08,
+          "absolute_reference_kl": 2.1657232483634936e-05,
+          "absolute_error_to_signal": 0.003170328297802104,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 3.2123178243637085e-05,
+          "fp64_kl_saved_gpu_logits": 3.2154156990169444e-05,
+          "signed_kl_error": -3.097874653235934e-08,
+          "absolute_kl_error": 3.097874653235934e-08,
+          "absolute_reference_kl": 3.2154156990169444e-05,
+          "absolute_error_to_signal": 0.0009634445257523167,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 1.0207731975242496e-06,
+          "fp64_kl_saved_gpu_logits": 1.2068032061537198e-06,
+          "signed_kl_error": -1.8603000862947021e-07,
+          "absolute_kl_error": 1.8603000862947021e-07,
+          "absolute_reference_kl": 1.2068032061537198e-06,
+          "absolute_error_to_signal": 0.15415107258653915,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__orth_write_matched_early": {
+      "nll": [
+        6.856766019413417,
+        0.10769940959661166,
+        0.9369502988966556,
+        4.749941643216696
+      ],
+      "margin": [
+        0.7138290405273438,
+        4.372161865234375,
+        1.0941696166992188,
+        0.57861328125
+      ],
+      "kl_c_to_trial": [
+        0.0019200904093776103,
+        5.7688408828725316e-05,
+        0.00024571598121106257,
+        2.276926531306361e-06
+      ],
+      "kl_boundary_to_trial": [
+        0.0019200904093776103,
+        5.7688408828725316e-05,
+        0.00024571598121106257,
+        2.276926531306361e-06
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.3574550310777607e-07,
+          "rms": 2.5735451346227424e-07,
+          "symmetric_relative_l2": 6.131545263885629e-08
+        },
+        "kl_c": {
+          "max_abs": 2.9022657314502383e-07,
+          "rms": 1.5728146860837304e-07,
+          "symmetric_relative_l2": 0.00016242971255954323
+        },
+        "kl_boundary": {
+          "max_abs": 2.9022657314502383e-07,
+          "rms": 1.5728146860837304e-07,
+          "symmetric_relative_l2": 0.00016242971255954323
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00034467518545966414,
+        "rms": 5.263330168249962e-05,
+        "symmetric_relative_l2": 4.793877303883061e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739609687270216,
+        "max_error_to_bound_ratio": 0.022575150689914267
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 0.0019198001828044653,
+          "fp64_kl_saved_gpu_logits": 0.0019200904093776103,
+          "signed_kl_error": -2.9022657314502383e-07,
+          "absolute_kl_error": 2.9022657314502383e-07,
+          "absolute_reference_kl": 0.0019200904093776103,
+          "absolute_error_to_signal": 0.00015115255600859942,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 5.769229028373957e-05,
+          "fp64_kl_saved_gpu_logits": 5.7688408828725316e-05,
+          "signed_kl_error": 3.881455014250737e-09,
+          "absolute_kl_error": 3.881455014250737e-09,
+          "absolute_reference_kl": 5.7688408828725316e-05,
+          "absolute_error_to_signal": 6.728310059261e-05,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.00024570897221565247,
+          "fp64_kl_saved_gpu_logits": 0.00024571598121106257,
+          "signed_kl_error": -7.008995410104357e-09,
+          "absolute_kl_error": 7.008995410104357e-09,
+          "absolute_reference_kl": 0.00024571598121106257,
+          "absolute_error_to_signal": 2.8524784491261245e-05,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 2.3979810066521168e-06,
+          "fp64_kl_saved_gpu_logits": 2.276926531306361e-06,
+          "signed_kl_error": 1.210544753457556e-07,
+          "absolute_kl_error": 1.210544753457556e-07,
+          "absolute_reference_kl": 2.276926531306361e-06,
+          "absolute_error_to_signal": 0.053165736215609,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__orth_l11_kv": {
+      "nll": [
+        6.770786373482979,
+        0.11060910472347665,
+        0.9369502988966556,
+        4.749941643216696
+      ],
+      "margin": [
+        0.7042465209960938,
+        4.3453216552734375,
+        1.0941696166992188,
+        0.57861328125
+      ],
+      "kl_c_to_trial": [
+        3.820715973727799e-05,
+        4.728217866254846e-05,
+        0.00024571598121106257,
+        2.276926531306361e-06
+      ],
+      "kl_boundary_to_trial": [
+        3.820715973727799e-05,
+        4.728217866254846e-05,
+        0.00024571598121106257,
+        2.276926531306361e-06
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 5.940504305412819e-07,
+          "rms": 3.3116613253731505e-07,
+          "symmetric_relative_l2": 7.956518368129483e-08
+        },
+        "kl_c": {
+          "max_abs": 2.491080759266977e-07,
+          "rms": 1.4813073884087422e-07,
+          "symmetric_relative_l2": 0.0011703732120757775
+        },
+        "kl_boundary": {
+          "max_abs": 2.491080759266977e-07,
+          "rms": 1.4813073884087422e-07,
+          "symmetric_relative_l2": 0.0011703732120757775
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00034467518545966414,
+        "rms": 5.253182732633431e-05,
+        "symmetric_relative_l2": 4.788185636649484e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739609687270216,
+        "max_error_to_bound_ratio": 0.022575150689914267
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 3.810221824096516e-05,
+          "fp64_kl_saved_gpu_logits": 3.820715973727799e-05,
+          "signed_kl_error": -1.049414963128349e-07,
+          "absolute_kl_error": 1.049414963128349e-07,
+          "absolute_reference_kl": 3.820715973727799e-05,
+          "absolute_error_to_signal": 0.00274664479208711,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 4.703307058662176e-05,
+          "fp64_kl_saved_gpu_logits": 4.728217866254846e-05,
+          "signed_kl_error": -2.491080759266977e-07,
+          "absolute_kl_error": 2.491080759266977e-07,
+          "absolute_reference_kl": 4.728217866254846e-05,
+          "absolute_error_to_signal": 0.005268540557417518,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.00024570897221565247,
+          "fp64_kl_saved_gpu_logits": 0.00024571598121106257,
+          "signed_kl_error": -7.008995410104357e-09,
+          "absolute_kl_error": 7.008995410104357e-09,
+          "absolute_reference_kl": 0.00024571598121106257,
+          "absolute_error_to_signal": 2.8524784491261245e-05,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 2.3979810066521168e-06,
+          "fp64_kl_saved_gpu_logits": 2.276926531306361e-06,
+          "signed_kl_error": 1.210544753457556e-07,
+          "absolute_kl_error": 1.210544753457556e-07,
+          "absolute_reference_kl": 2.276926531306361e-06,
+          "absolute_error_to_signal": 0.053165736215609,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__remove_l11_k": {
+      "nll": [
+        6.760550528074749,
+        0.10750257367969321,
+        0.9596061071102095,
+        4.752186701155174
+      ],
+      "margin": [
+        0.701202392578125,
+        4.354393005371094,
+        1.0451736450195312,
+        0.5808792114257812
+      ],
+      "kl_c_to_trial": [
+        1.362912599263009e-07,
+        2.834152564093085e-06,
+        3.6818012692123007e-06,
+        2.310154806045178e-07
+      ],
+      "kl_boundary_to_trial": [
+        1.362912599263009e-07,
+        2.834152564093085e-06,
+        3.6818012692123007e-06,
+        2.310154806045178e-07
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.5906911657890284e-07,
+          "rms": 2.3545019617496286e-07,
+          "symmetric_relative_l2": 5.659929062455052e-08
+        },
+        "kl_c": {
+          "max_abs": 2.0051748529964196e-07,
+          "rms": 1.1633440371811806e-07,
+          "symmetric_relative_l2": 0.04999294131405627
+        },
+        "kl_boundary": {
+          "max_abs": 2.0051748529964196e-07,
+          "rms": 1.1633440371811806e-07,
+          "symmetric_relative_l2": 0.04999294131405627
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00033397232581933167,
+        "rms": 5.2436477015458076e-05,
+        "symmetric_relative_l2": 4.760076970228274e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017744006698353233,
+        "max_error_to_bound_ratio": 0.021078368366220214
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 8.349434210686013e-08,
+          "fp64_kl_saved_gpu_logits": 1.362912599263009e-07,
+          "signed_kl_error": -5.279691781944078e-08,
+          "absolute_kl_error": 5.279691781944078e-08,
+          "absolute_reference_kl": 1.362912599263009e-07,
+          "absolute_error_to_signal": 0.387383004955641,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 2.7982168830931187e-06,
+          "fp64_kl_saved_gpu_logits": 2.834152564093085e-06,
+          "signed_kl_error": -3.593568099996622e-08,
+          "absolute_kl_error": 3.593568099996622e-08,
+          "absolute_reference_kl": 2.834152564093085e-06,
+          "absolute_error_to_signal": 0.01267951537092551,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 3.4812837839126587e-06,
+          "fp64_kl_saved_gpu_logits": 3.6818012692123007e-06,
+          "signed_kl_error": -2.0051748529964196e-07,
+          "absolute_kl_error": 2.0051748529964196e-07,
+          "absolute_reference_kl": 3.6818012692123007e-06,
+          "absolute_error_to_signal": 0.05446178938999102,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 3.302557161077857e-07,
+          "fp64_kl_saved_gpu_logits": 2.310154806045178e-07,
+          "signed_kl_error": 9.92402355032679e-08,
+          "absolute_kl_error": 9.92402355032679e-08,
+          "absolute_reference_kl": 2.310154806045178e-07,
+          "absolute_error_to_signal": 0.4295826203662956,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__remove_l11_v": {
+      "nll": [
+        6.756278650910138,
+        0.10972231190906523,
+        0.9699038507018539,
+        4.753409437378843
+      ],
+      "margin": [
+        0.6986236572265625,
+        4.330329895019531,
+        1.0207748413085938,
+        0.5809478759765625
+      ],
+      "kl_c_to_trial": [
+        8.548155114449487e-06,
+        2.674212876051711e-05,
+        4.073925576712634e-05,
+        7.392928892192535e-07
+      ],
+      "kl_boundary_to_trial": [
+        8.548155114449487e-06,
+        2.674212876051711e-05,
+        4.073925576712634e-05,
+        7.392928892192535e-07
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 2.4151311872611103e-07,
+          "rms": 1.5812642450500353e-07,
+          "symmetric_relative_l2": 3.801869724168897e-08
+        },
+        "kl_c": {
+          "max_abs": 1.1220843255473252e-07,
+          "rms": 7.124704752391184e-08,
+          "symmetric_relative_l2": 0.0028731700806550226
+        },
+        "kl_boundary": {
+          "max_abs": 1.1220843255473252e-07,
+          "rms": 7.124704752391184e-08,
+          "symmetric_relative_l2": 0.0028731700806550226
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.00033610199801614726,
+        "rms": 5.225452284025798e-05,
+        "symmetric_relative_l2": 4.7542339283830906e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739965982688448,
+        "max_error_to_bound_ratio": 0.022669280756854596
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 8.621202141512185e-06,
+          "fp64_kl_saved_gpu_logits": 8.548155114449487e-06,
+          "signed_kl_error": 7.304702706269865e-08,
+          "absolute_kl_error": 7.304702706269865e-08,
+          "absolute_reference_kl": 8.548155114449487e-06,
+          "absolute_error_to_signal": 0.008545355820605388,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 2.6854337193071842e-05,
+          "fp64_kl_saved_gpu_logits": 2.674212876051711e-05,
+          "signed_kl_error": 1.1220843255473252e-07,
+          "absolute_kl_error": 1.1220843255473252e-07,
+          "absolute_reference_kl": 2.674212876051711e-05,
+          "absolute_error_to_signal": 0.004195942423267382,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 4.0787504985928535e-05,
+          "fp64_kl_saved_gpu_logits": 4.073925576712634e-05,
+          "signed_kl_error": 4.824921880219467e-08,
+          "absolute_kl_error": 4.824921880219467e-08,
+          "absolute_reference_kl": 4.073925576712634e-05,
+          "absolute_error_to_signal": 0.0011843421754682208,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 7.322232704609632e-07,
+          "fp64_kl_saved_gpu_logits": 7.392928892192535e-07,
+          "signed_kl_error": -7.069618758290272e-09,
+          "absolute_kl_error": 7.069618758290272e-09,
+          "absolute_reference_kl": 7.392928892192535e-07,
+          "absolute_error_to_signal": 0.009562676526966596,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__orth_l11_k": {
+      "nll": [
+        6.760162642471303,
+        0.10851693801816197,
+        0.9634265060532435,
+        4.7518415029461005
+      ],
+      "margin": [
+        0.7012939453125,
+        4.344673156738281,
+        1.0397567749023438,
+        0.5794143676757812
+      ],
+      "kl_c_to_trial": [
+        6.933513106191783e-07,
+        3.4552670294549155e-06,
+        5.240334888529264e-06,
+        1.0565233822383253e-06
+      ],
+      "kl_boundary_to_trial": [
+        6.933513106191783e-07,
+        3.4552670294549155e-06,
+        5.240334888529264e-06,
+        1.0565233822383253e-06
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 3.2685931415643577e-07,
+          "rms": 2.583746443123265e-07,
+          "symmetric_relative_l2": 6.211047246554713e-08
+        },
+        "kl_c": {
+          "max_abs": 3.059938791552811e-07,
+          "rms": 1.8127519101664234e-07,
+          "symmetric_relative_l2": 0.056622957865767605
+        },
+        "kl_boundary": {
+          "max_abs": 3.059938791552811e-07,
+          "rms": 1.8127519101664234e-07,
+          "symmetric_relative_l2": 0.056622957865767605
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.0003563646907309703,
+        "rms": 5.235361587511368e-05,
+        "symmetric_relative_l2": 4.757479110070572e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.01774348959711367,
+        "max_error_to_bound_ratio": 0.02366025490916966
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 3.8735743146389723e-07,
+          "fp64_kl_saved_gpu_logits": 6.933513106191783e-07,
+          "signed_kl_error": -3.059938791552811e-07,
+          "absolute_kl_error": 3.059938791552811e-07,
+          "absolute_reference_kl": 6.933513106191783e-07,
+          "absolute_error_to_signal": 0.4413258826640447,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 3.483437467366457e-06,
+          "fp64_kl_saved_gpu_logits": 3.4552670294549155e-06,
+          "signed_kl_error": 2.817043791154151e-08,
+          "absolute_kl_error": 2.817043791154151e-08,
+          "absolute_reference_kl": 3.4552670294549155e-06,
+          "absolute_error_to_signal": 0.008152897495735816,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 5.060137482360005e-06,
+          "fp64_kl_saved_gpu_logits": 5.240334888529264e-06,
+          "signed_kl_error": -1.801974061692589e-07,
+          "absolute_kl_error": 1.801974061692589e-07,
+          "absolute_reference_kl": 5.240334888529264e-06,
+          "absolute_error_to_signal": 0.03438662032147959,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 1.1239462764933705e-06,
+          "fp64_kl_saved_gpu_logits": 1.0565233822383253e-06,
+          "signed_kl_error": 6.742289425504524e-08,
+          "absolute_kl_error": 6.742289425504524e-08,
+          "absolute_reference_kl": 1.0565233822383253e-06,
+          "absolute_error_to_signal": 0.06381580889597038,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    },
+    "000__orth_l11_v": {
+      "nll": [
+        6.771272904307494,
+        0.11024842966795513,
+        0.9351739876761309,
+        4.749489925383334
+      ],
+      "margin": [
+        0.70428466796875,
+        4.3546600341796875,
+        1.0960769653320312,
+        0.5810089111328125
+      ],
+      "kl_c_to_trial": [
+        3.922284634515959e-05,
+        4.208739044809234e-05,
+        0.00026499307252957093,
+        8.797198871601266e-07
+      ],
+      "kl_boundary_to_trial": [
+        3.922284634515959e-05,
+        4.208739044809234e-05,
+        0.00026499307252957093,
+        8.797198871601266e-07
+      ],
+      "saved_metric_errors": {
+        "loss": {
+          "max_abs": 5.047440583411111e-07,
+          "rms": 2.952829520418763e-07,
+          "symmetric_relative_l2": 7.094454344924846e-08
+        },
+        "kl_c": {
+          "max_abs": 2.6198507018703127e-07,
+          "rms": 1.6402556897575497e-07,
+          "symmetric_relative_l2": 0.0012095993717424704
+        },
+        "kl_boundary": {
+          "max_abs": 2.6198507018703127e-07,
+          "rms": 1.6402556897575497e-07,
+          "symmetric_relative_l2": 0.0012095993717424704
+        }
+      },
+      "readout_vs_cpu_fp64": {
+        "max_abs": 0.0003270866256457339,
+        "rms": 5.2346084098120256e-05,
+        "symmetric_relative_l2": 4.773418393565321e-07
+      },
+      "dot_product_bound": {
+        "gamma_2n": 9.156111704562795e-05,
+        "max_abs_bound": 0.017739948846455716,
+        "max_error_to_bound_ratio": 0.02139659902798667
+      },
+      "source_hidden_byte_exact": true,
+      "small_KL_saved_gpu_logit_diagnostics": [
+        {
+          "query": 1,
+          "saved_fp32_kl": 3.896086127497256e-05,
+          "fp64_kl_saved_gpu_logits": 3.922284634515959e-05,
+          "signed_kl_error": -2.6198507018703127e-07,
+          "absolute_kl_error": 2.6198507018703127e-07,
+          "absolute_reference_kl": 3.922284634515959e-05,
+          "absolute_error_to_signal": 0.006679399752929005,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 126,
+          "saved_fp32_kl": 4.193780478090048e-05,
+          "fp64_kl_saved_gpu_logits": 4.208739044809234e-05,
+          "signed_kl_error": -1.495856671918623e-07,
+          "absolute_kl_error": 1.495856671918623e-07,
+          "absolute_reference_kl": 4.208739044809234e-05,
+          "absolute_error_to_signal": 0.003554168257980994,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 127,
+          "saved_fp32_kl": 0.00026509538292884827,
+          "fp64_kl_saved_gpu_logits": 0.00026499307252957093,
+          "signed_kl_error": 1.0231039927733297e-07,
+          "absolute_kl_error": 1.0231039927733297e-07,
+          "absolute_reference_kl": 0.00026499307252957093,
+          "absolute_error_to_signal": 0.00038608707126076293,
+          "reference_is_exact_zero": false
+        },
+        {
+          "query": 510,
+          "saved_fp32_kl": 8.013739716261625e-07,
+          "fp64_kl_saved_gpu_logits": 8.797198871601266e-07,
+          "signed_kl_error": -7.834591553396403e-08,
+          "absolute_kl_error": 7.834591553396403e-08,
+          "absolute_reference_kl": 8.797198871601266e-07,
+          "absolute_error_to_signal": 0.08905779746195906,
+          "reference_is_exact_zero": false
+        }
+      ],
+      "argmax_mismatches": []
+    }
+  },
+  "private_report_sha256": "5335d5375f7036aaa853011137875d6abe17b174722f4519aa7bde5320d0b222",
+  "public_omissions": "Prediction and mismatch token IDs removed by explicit state-field selection; private report SHA retained. No activation, source text, checkpoint or private filesystem-history payload."
+}

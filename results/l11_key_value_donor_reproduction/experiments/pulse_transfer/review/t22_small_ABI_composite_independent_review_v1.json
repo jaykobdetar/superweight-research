@@ -1,0 +1,87 @@
+{
+  "status": "passed_bounded_small_ABI_composite_provenance_and_failure_template_review",
+  "reviewed_utc": "2026-10-22T02:09:36.279156+00:00",
+  "composite_report_sha256": "bafa266aa3b9e3ac9ab5889ba1dc81a9e78d33036dc89bad9a92dadcaef7ead5",
+  "source_sha256": "5a2b8d7790b2754c3dd926e2f6cf1497d063e3e6c3ce480f9d59491d8b1e0c86",
+  "production_source_sha256": {
+    "gpt2_l11_key_value_donor.py": "bbe4738a194c5fffdb041d5e51260f3adceb52a0b492c78da753d77e27fb0241",
+    "l11_key_value_donor_storage.py": "95a95a71b255d30b603dd250e64e40e7dad19e682c79df481fbc1dd77bcfc491",
+    "gate_l11_key_value_donor.py": "1a4b9ed45d3ae621e76751f5c2f7639bd3db2a4eacc5e9f4b0003a90dec8cf28"
+  },
+  "lineage": {
+    "original_report_sha256": "0c79c4c8a370a29ab6bc2152a35bbbf0ae03ac13be3bfd6d7b66ba63b28803a3",
+    "second_failed_report_sha256": "9bca37cdba6d9748380e3ca83bd09aff71f2473670d941a10c7b904f5ee354e0",
+    "both_original_statuses_remain_FAILED": true,
+    "inherited_schedule_calls": 26,
+    "inherited_rejection_cases": 7,
+    "new_rejection_cases": 21,
+    "tail_ev_invocations": 183,
+    "cumulative_ev_invocations": 278,
+    "ev_is_not_model_return_count": true,
+    "new_case_counts": {
+      "forward_attempts": 181,
+      "model_outputs_observed": 171,
+      "forward_passes": 166,
+      "fully_processed_forwards": 163
+    },
+    "unfinished_second_attempt_prefix_calls": 10,
+    "unfinished_second_attempt_raw_unavailable_explicit": true,
+    "codec_stage_and_completed_schedule_not_repeated": true,
+    "inherited_stage_files_and_all21_new_capsule_hashes_independently_checked": true
+  },
+  "failure_template": {
+    "path": "pulse_transfer/review/t22_changed_ABI_CPU_fixture_continuation_1792634550651044869/artifacts/live_orth_donor_suffix_comparison/failure_state.npz",
+    "sha256": "5116431672a56775287dca506901b46f4ab6161c279477f805cd229e3576b151",
+    "archive_bytes": 15592540,
+    "descriptor_sha256": "e910a1ea91906ee8df5cf203f120b0764670485da472bd2d6af42af304d0dfef",
+    "array_occurrences": 1482,
+    "small_raw_array_bytes": 43092606,
+    "metadata_JSON_bytes": 2672017,
+    "every_NPY_header_shape_dtype_C_order_member_and_array_byte_SHA_checked": true,
+    "full_decoded_array_tree_loaded": false,
+    "live_orth_reference_leaves": 10,
+    "orth_variants": [
+      "main",
+      "suffix"
+    ],
+    "PC_closure_receipts_retained": true,
+    "suffix_index_occurrences": 4,
+    "comparison_readout_shapes": {
+      "left": [
+        128,
+        37
+      ],
+      "right": [
+        512,
+        37
+      ]
+    },
+    "generic_third_readout_and_current_hidden_absent": true,
+    "uncommitted_boundary_present_in_descriptors": true
+  },
+  "production_AST": {
+    "ev_progress_check_resource_owners_exact_under_actual_Python3_12_3": true,
+    "resource_owner_retention_correction_present_v5_and_v6": true,
+    "hostile_mutations_only_wrapped_in_inference_mode": true,
+    "unexpected_preserver_keeps_ACTIVE_when_hostile_not_durably_completed": true
+  },
+  "normal_admission_refusals": {
+    "count": 3,
+    "each_complete_partial_payload_attached": true,
+    "no_claim_R0_fits_production": true
+  },
+  "author_run_resources": {
+    "wall_seconds": 85.10644599003717,
+    "peak_RSS_kib": 1028444
+  },
+  "review_scope": "Standard-library JSON/AST/hash and streamed ZIP/NPY bytes only; no Torch/NumPy import, tensor tree decode, fixture rerun, model, checkpoint, tokenizer, GPU or deletion. Template semantics are bound to runtime fixture/source; width scaling and whole-layout resource fit are not yet certified.",
+  "remaining_gates": [
+    "Complete production failure shape map and independently reviewed execution contract.",
+    "Separate root GO and measured whole-layout entropy/stream/RSS witness.",
+    "Future actual model launch remains unapproved."
+  ],
+  "review_diagnostics_preserved": [
+    "Exploratory descriptor summary requested absent bytes field and raised KeyError; actual declared field raw_bytes then used.",
+    "A combined read-only review stopped before writing any report on cross-version AST hash comparison: default Python3.13 ast.dump differs from production Python3.12.3. Isolated standard-library AST check under exact production interpreter with -I -S matched all four recorded hashes. No component/source/input/threshold was changed; no failed candidate test was relabelled passed."
+  ]
+}
