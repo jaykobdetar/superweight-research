@@ -1,0 +1,110 @@
+{
+  "schema": "T23_independent_actual_calibration_audit_result_acceptance_v1",
+  "status": "passed",
+  "decision": "Calibration acceptance precondition satisfied for fixed18-arm evaluation SOURCE preparation only; evaluation execution is NOT authorized",
+  "scope": "JSON/source/proof result review only; no auditor rerun, arrays, refits, model, checkpoint, tokenizer or GPU access",
+  "result_sha256": "50f41e1e4f31c2ecc123ef9c8f71b119a3512fd1795d1deca54f03cb073eba47",
+  "root_execution_sha256": "0e15f7f0b2407d0fc12907c18d841d65158ed03e38e7cd73de2cb4deed7732ca",
+  "actual_audit_GO_sha256": "e9691685ed15384ec796bf073806754980303fc66c755e73d9fedd5000dc2888",
+  "auditor_activation_proof_sha256": "4bc228aeb96b6540608f8b85ee5827d8e01647f89e09f4dda7a1cd86eab55ab6",
+  "source_peer_review_sha256": "dcd6648718f5854d2008f1101ddf802914be57760a628fd98d235a128098c20d",
+  "auditor_sha256": "7f8a805da91e4e2b09a42ebebf3ce8d0e9749b24c8da1227030c2adc5acadeb2",
+  "policy_sha256": "db559c8e7f19d4a731236a5ef147ce88a1ef0f788b7265ef53c38a524a9f4fee",
+  "core_sha256": "c4861291e4b4b0b574b5d1696a2cc33cb500b7bcdf044b84efd2be3656b344a6",
+  "run_manifest_sha256": "f71a3c3b8af737f240b9d559b0786c90501f89dae7ef3a2fba2efacc004f6b2a",
+  "run_inventory_sha256": "3f7bcf8ffb6f1874aebb7d271862728d7be4954e20904b8deb6b4937be6a6aaf",
+  "all26_sources_live_and_frozen_unchanged": true,
+  "sole_approval_literal_reversal_verified": true,
+  "fixed_policy_and_math_unchanged": true,
+  "verified_result_coverage": {
+    "arrays_verified": 920,
+    "raw_bytes_verified": 174963712,
+    "PE_arrays_byte_exact": 64,
+    "new_calibration_calls": 16,
+    "world_raw_arrays": 256,
+    "full_spectra": 128,
+    "LOO_spectra": 512,
+    "principal_cosine_rank_records": 1536,
+    "unresolved_principal_cosine_rank_records": 0,
+    "saved_r_b_basis_matrices": 64,
+    "inherited_QR_matrices_byte_exact": 32
+  },
+  "full_and_LOO_error_ranges": {
+    "mean": {
+      "minimum": 0.0,
+      "maximum": 1.0658141036401503e-14,
+      "observed_max_below_fixed_absolute_component": 1e-10
+    },
+    "covariance": {
+      "minimum": 6.245004513516506e-17,
+      "maximum": 1.1368683772161603e-13,
+      "observed_max_below_fixed_absolute_component": 1e-10
+    },
+    "singular_values": {
+      "minimum": 4.884981308350689e-15,
+      "maximum": 1.9895196601282805e-13,
+      "observed_max_below_fixed_absolute_component": 1e-09
+    },
+    "eigenvalues": {
+      "minimum": 4.163336342344337e-17,
+      "maximum": 4.618527782440651e-14,
+      "observed_max_below_fixed_absolute_component": 1e-09
+    },
+    "cumulative_explained_variance": {
+      "minimum": 0.0,
+      "maximum": 9.992007221626409e-16,
+      "observed_max_below_fixed_absolute_component": 1e-12
+    }
+  },
+  "saved_basis_error_ranges": {
+    "orthogonality": {
+      "minimum": 6.661338147750939e-16,
+      "maximum": 2.6645352591003757e-15
+    },
+    "reconstruction": {
+      "minimum": 5.329070518200751e-15,
+      "maximum": 5.684341886080802e-14
+    },
+    "maximum_eigen_residual": {
+      "minimum": 3.552713678800501e-15,
+      "maximum": 1.8013368574543165e-13
+    }
+  },
+  "LOO_maximum_cosine_absolute_error": 1.8635093468333253e-13,
+  "LOO_minimum_policy_normalized_cut_gap": 0.0004276191397341311,
+  "leading_diagnostic_ranges": {
+    "normalized_leading_PC_eigen_residual": {
+      "minimum": 2.345044181466369e-16,
+      "maximum": 6.294738754666935e-15
+    },
+    "top_PC_absolute_cosine": {
+      "minimum": 0.9999999999999996,
+      "maximum": 1.0000000000000013
+    },
+    "top_PC_projector_Frobenius_difference": {
+      "minimum": 5.373797613131436e-16,
+      "maximum": 2.398460234501185e-15
+    }
+  },
+  "zero_covariance_normalized_diagnostics": 0,
+  "scope_cautions": [
+    "All1536rank cuts resolved under prospective scale-floor policy; this does not create saved LOO primitive bases or certify every primitive diagnostic",
+    "LeadingPC residual/projector values are descriptive relative-precision diagnostics; no posthoc threshold or fit selection",
+    "The absolute cosine diagnostic may round slightly above1; it is not clipped or interpreted as a probability",
+    "No full SDPA/logit/weight/tokenizer reconstruction; runtime fingerprints and model/version/hook guards remain source-bound provenance",
+    "Exact QR archive inheritance checks delivered controls; no independent RNG uniqueness claim",
+    "Result review trusts the separately source-reviewed one actual NumPy audit for artifact arithmetic; it does not duplicate that audit"
+  ],
+  "audit_resources": {
+    "root_wall_seconds": 1.346241096034646,
+    "audit_report_wall_seconds": 1.2783681659493595,
+    "peak_rss_bytes": 84148224,
+    "Torch_imported": false,
+    "GPU_used": false
+  },
+  "actual_calibration_forwards": 16,
+  "heldout_evaluation_forwards": 0,
+  "evaluation_run_authorized": false,
+  "no_new_payload_reads_or_calculations": true,
+  "acceptance_script_sha256": "bdbc084d3f2b0907e4b8415ccfe7280905fc3c79a1728cf2b7ee48b4093f3813"
+}

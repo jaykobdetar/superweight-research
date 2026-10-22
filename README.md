@@ -1,6 +1,17 @@
 # Super-weight research
 
-Latest completed extension: [Report 18: earlier keys and values](docs/GPT2_L11_KEY_VALUE_DONOR.md).
+Latest completed extension: [Report 19: native versus value-lesioned calibration](docs/GPT2_CALIBRATION_WORLD_COMPARISON.md).
+The fixed-text calibration comparison completed 16 calibration and 1,160 held-out
+evaluation forwards. Switching center and direction pair changed the
+removal-minus-control later-loss contrast by at most 0.0265 millinats per target
+on this panel; 51 of 64 nominal primary intervals include zero. Four passage
+clusters per stratum and fixed calibration limit inference; this is not
+an equivalence result. See the [self-contained report](reports/report19.html)
+and [reproduction guide](docs/REPRODUCE_GPT2_CALIBRATION_WORLD_COMPARISON.md).
+The supplied numerical observations reproduce every published statistic;
+a second full model replay remains unperformed.
+
+Earlier completed extension: [Report 18: earlier keys and values](docs/GPT2_L11_KEY_VALUE_DONOR.md).
 Both paths transmit a chosen finite early-write perturbation into later GPT-2
 outputs; 128 combined-KV closure events reproduce the donors byte for byte.
 Signed loss effects can oppose and cancel. This does not establish intrinsic

@@ -240,3 +240,29 @@ source-value-zero calibration; a native-calibration comparison remains
 unfinished and supplies no new finding in this release. This comparison was
 checked against the named primary sources; it is not an exhaustive search or
 a claim of priority.
+
+
+## T23 calibration-world control (Report 19)
+
+The [completed comparison](GPT2_CALIBRATION_WORLD_COMPARISON.md) crosses the
+source-value-zero and native-value calibration center and direction pair while
+evaluating native GPT-2. It uses the same four calibration texts, fresh held-out
+passages, actual within-cell early-write norm matching, all 64 primary rows and
+independent saved-artifact checks. The endpoint contrast shift is small on this
+panel, with conditional and numerical uncertainty retained. That does not
+establish equivalence, absence of calibration effects or intrinsic PC importance.
+The preceding T22 statement that this comparison was unfinished describes the
+T22 release; T23 is now complete.
+
+[Super Weight, v2](https://arxiv.org/html/2411.07191v2),
+[Massive Activations, v2](https://arxiv.org/html/2402.17762v2),
+[Fu et al., v3](https://arxiv.org/html/2602.01203v3) and the
+[GPT-2 attention-bias study](https://arxiv.org/html/2604.14722v1) were rechecked
+for this scoped comparison. Exceptional weights/activations, attention-bias and
+allocation-gate accounts, source-value approximations and GPT-2 positional/key
+circuits are established work. Centering/PCA, finite direction interventions,
+matched controls and path patching are established methods. The candidate
+increment is this measured finite calibration-center/direction-pair control,
+not a new gate identity, a new GPT-2 super weight, universal mechanism, priority
+claim or faithful replacement. A four-source comparison is not an exhaustive
+absence-of-prior-art search.
