@@ -1,0 +1,237 @@
+{
+  "checkpoint": "native OLMo-1B-0724 step954000",
+  "metadata_sha256": "743d81315a9aee7bb5fb31b2af9dc1dd24d2713e7dc670c04c1e9a8ee1059297",
+  "metadata_bytes": 294328,
+  "user_uploaded_copy_exactly_matches_archived_official": true,
+  "status": "Frozen acquisition specification, subsequently executed within cap; see inputs/optimizer_slices/receipt.json. This derivation script itself makes no network requests.",
+  "minimal_row_requests": [
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg",
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "global_elements": [
+        14450688,
+        14458880
+      ],
+      "local_elements": [
+        8806400,
+        8814592
+      ],
+      "tensor_relative_bytes": [
+        35225600,
+        35258368
+      ],
+      "bytes": 32768
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg_sq",
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "global_elements": [
+        14450688,
+        14458880
+      ],
+      "local_elements": [
+        8806400,
+        8814592
+      ],
+      "tensor_relative_bytes": [
+        35225600,
+        35258368
+      ],
+      "bytes": 32768
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__step",
+      "file": "rank_8.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "global_elements": [
+        0,
+        1
+      ],
+      "local_elements": [
+        0,
+        1
+      ],
+      "tensor_relative_bytes": [
+        0,
+        4
+      ],
+      "bytes": 4
+    },
+    {
+      "tensor": "num_param_groups",
+      "file": "rank_0.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_0.safetensors",
+      "global_elements": [
+        0,
+        1
+      ],
+      "local_elements": [
+        0,
+        1
+      ],
+      "tensor_relative_bytes": [
+        0,
+        8
+      ],
+      "bytes": 8
+    },
+    {
+      "tensor": "param_group0",
+      "file": "rank_0.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_0.safetensors",
+      "global_elements": [
+        0,
+        6871
+      ],
+      "local_elements": [
+        0,
+        6871
+      ],
+      "tensor_relative_bytes": [
+        0,
+        6871
+      ],
+      "bytes": 6871
+    },
+    {
+      "tensor": "state_keys",
+      "file": "rank_0.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_0.safetensors",
+      "global_elements": [
+        0,
+        46
+      ],
+      "local_elements": [
+        0,
+        46
+      ],
+      "tensor_relative_bytes": [
+        0,
+        46
+      ],
+      "bytes": 46
+    }
+  ],
+  "minimal_payload_bytes": 72465,
+  "files": {
+    "rank_0.safetensors": {
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_0.safetensors",
+      "tensor_payload_bytes_excluding_header": 159980305
+    },
+    "rank_8.safetensors": {
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "tensor_payload_bytes_excluding_header": 159973384
+    },
+    "rank_9.safetensors": {
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "tensor_payload_bytes_excluding_header": 159973380
+    }
+  },
+  "header_rule": "For each file read its first 8 bytes as little-endian u64 H, reject H>1MiB, then read exactly H bytes of JSON. Validate all tensor offsets, dtypes, shapes and file bounds. Each absolute interval equals 8+H+header[tensor].data_offsets[0]+tensor_relative_bytes. Never reuse model-shard offsets for optimizer shards.",
+  "serialization": "param_group0 and state_keys are U8 pickle bytes in the verified May 2024 official serializer. Inspect with pickletools and a primitive-only decoder; never use pickle.loads, torch.load, GLOBAL, REDUCE, BUILD or arbitrary imports. Reject unsupported opcodes.",
+  "minimal_hard_cap_including_headers_bytes": 524288,
+  "optional_columns_not_authorized_by_this_plan": [
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg",
+      "column": 1710,
+      "file": "rank_8.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "first_global_element": 1710,
+      "first_local_element": 1710,
+      "element_stride": 8192,
+      "count": 689,
+      "bytes": 2756,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg",
+      "column": 1710,
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "first_global_element": 5645998,
+      "first_local_element": 1710,
+      "element_stride": 8192,
+      "count": 1359,
+      "bytes": 5436,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg_sq",
+      "column": 1710,
+      "file": "rank_8.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "first_global_element": 1710,
+      "first_local_element": 1710,
+      "element_stride": 8192,
+      "count": 689,
+      "bytes": 2756,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg_sq",
+      "column": 1710,
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "first_global_element": 5645998,
+      "first_local_element": 1710,
+      "element_stride": 8192,
+      "count": 1359,
+      "bytes": 5436,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg",
+      "column": 8041,
+      "file": "rank_8.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "first_global_element": 8041,
+      "first_local_element": 8041,
+      "element_stride": 8192,
+      "count": 689,
+      "bytes": 2756,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg",
+      "column": 8041,
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "first_global_element": 5652329,
+      "first_local_element": 8041,
+      "element_stride": 8192,
+      "count": 1359,
+      "bytes": 5436,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg_sq",
+      "column": 8041,
+      "file": "rank_8.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_8.safetensors",
+      "first_global_element": 8041,
+      "first_local_element": 8041,
+      "element_stride": 8192,
+      "count": 689,
+      "bytes": 2756,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    },
+    {
+      "tensor": "state.transformer.blocks.1.ff_out.weight.__exp_avg_sq",
+      "column": 8041,
+      "file": "rank_9.safetensors",
+      "url": "https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors",
+      "first_global_element": 5652329,
+      "first_local_element": 8041,
+      "element_stride": 8192,
+      "count": 1359,
+      "bytes": 5436,
+      "caution": "Discontiguous four-byte reads; naive HTTP ranges have high request overhead. Not included in minimal row plan."
+    }
+  ],
+  "optional_column_tensor_bytes": 32768,
+  "optional_columns_require_matching_weight_columns": true,
+  "interpretation": "One late-state observation can diagnose current adaptive scaling, not establish historical causality or an authentic next gradient. Saved moments reconstruct the stored direction, not a new batch update.",
+  "this_script_attempts_no_network": true
+}

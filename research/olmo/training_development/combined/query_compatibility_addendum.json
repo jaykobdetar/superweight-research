@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-22T23:39:42.297644+00:00",
+  "label": "Exploratory after observing the 800k functional result, before computing the hybrid diagnostic",
+  "checkpoints": [
+    {
+      "phase": "phase2",
+      "name": "step120000-tokens251B"
+    },
+    {
+      "phase": "phase3",
+      "name": "step256000-tokens536B"
+    },
+    {
+      "phase": "phase3",
+      "name": "step512000-tokens1073B"
+    },
+    {
+      "phase": "phase3",
+      "name": "step800000-tokens1677B"
+    },
+    {
+      "phase": "phase3",
+      "name": "step1200000-tokens2515B"
+    },
+    {
+      "phase": "phase2",
+      "name": "main"
+    }
+  ],
+  "conditions": [
+    "newline_U",
+    "newline_R",
+    "newline_R_edge_H14",
+    "newline_R_edge_H0"
+  ],
+  "scope": "Reuse four original fixed panels and existing prefix tensors, one checkpoint at a time. Cross normalized pre-MLP1 query states with selected gate/up/down rows. Native-coordinate diagnostic, not training intervention or natural intermediate model. No new prompt or download."
+}

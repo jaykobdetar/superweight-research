@@ -1,0 +1,66 @@
+COMPLETED Q1 CONTINUATION, CUTOFF 2026-10-23 06:16 UTC
+
+1. Standalone compact numerical verification, no model or corpus required:
+   OPENBLAS_NUM_THREADS=1 python audit_compact.py
+   python -c "import json,hashlib,pathlib; r=pathlib.Path('.'); m=json.loads((r/'MANIFEST.json').read_text()); assert all(hashlib.sha256((r/x['path']).read_bytes()).hexdigest()==x['sha256'] for x in m['files']); print('Manifest verified')"
+Run from this snapshot's directory. Python3 and NumPy are required. This checks
+retained-array hashes, original-to-export receipt correspondence,28 paired
+per-target loss outputs,8 numerical controls, saved factorial interactions and
+80 primary donor writes. It does NOT run a learned forward or establish an
+independent audit. The snapshot never downloads anything automatically.
+
+2. Publication-safety transformation:
+Original executed code and receipts are retained. Full token arrays, per-token
+argmax IDs, sparse token identities in routing diagnostics, and logs are omitted.
+Argmax IDs are replaced by booleans recording agreement with the native world.
+EXPORT_DERIVATION.json identifies every omission, original SHA256 and exported
+SHA256, plus byte hashes/shapes/dtypes of every retained numerical array. Raw
+receipts intentionally still name the original result SHA256. Do not compare
+those raw hashes directly to transformed NPZ files without this mapping.
+All numerical arrays retained from originals are unchanged. No whole model is
+included. compact_weight_slices.npz contains only4 L0 columns and one L1 row.
+
+3. Full model replay needs externally acquired model tensors and corpus inputs.
+Executed original scripts live in continuation/. They preserve the original
+cloud paths and frozen source-selection code, rather than claiming portability.
+The shared_model_provenance/ directory identifies the validated code, config,
+acquisition manifest, all10 prior validation comparisons and model provenance.
+The exact model is allenai/OLMo-1B-0724-hf revision
+d7cbab742d80589e714b1a2d7f838dcd21cbe143. All indices are zero-based, FP32 NumPy.
+
+Natural source windows must be reconstructed from the pinned research repository
+and public source corpus rather than redistributed here. The frozen protocol
+records full512-token hashes, exact starts and first256-token input hashes:
+DuBois start32768, optimizer code start12000. For context holdouts, starts are
+Wiki64082, DuBois42448, Hobbes73992 and optimizer9712. m0_donors/protocol.json
+records hashes and all edits. Source-loading and tokenization details are in
+Q2's companion input-reconstruction export; use the exact tokenizer from the
+pinned model. Do not replace failed hash matches by approximately similar text.
+The4 discovery prompts are synthetic probes in the earlier12-point training
+study's phase2 protocol. This snapshot omits their token arrays as well.
+
+For replay in the original validated cloud layout, with independently obtained
+inputs and weights present (not executed by the compact audit):
+   OPENBLAS_NUM_THREADS=1 python continuation/collect_h14_prefix.py
+   OPENBLAS_NUM_THREADS=1 python continuation/decompose_m0.py
+   OPENBLAS_NUM_THREADS=1 python continuation/run_m0_donors.py --execute
+   OPENBLAS_NUM_THREADS=1 python continuation/execute_validated_study.py
+   OPENBLAS_NUM_THREADS=1 python continuation/run_axis_controls.py
+The execution wrapper handles the alternate-writer study only; M0 donors have
+their own validation gate. Original scripts use frozen protocols and refuse changed provenance. Do not replay into this immutable
+snapshot; work in a fresh copy and separate output directory. Full replay must
+respect one heavy job at a time,4GB/process and the10-comparison validation gate.
+
+4. Audit boundary:
+Independent audit was complete for shared-forward math, hook algebra,180 factor
+values, LayerNorm feasibility, symmetric M0 decomposition and88 M0 donor
+receipts. Independent audit files are copied verbatim in independent_audits/.
+The28 downstream runs and head14-only K/V arithmetic were internally checked but
+had NOT received separate independent review at the cutoff. A later independent
+review must be a separately dated artifact. See REPORT_CONTINUATION.txt for
+scientific caveats and scope. Earlier first-phase reports are historical and
+must not be mistaken for the later result or later download/compute scope.
+
+5. Not included and not claimed complete:
+L2 K-only/V-only causal mediation; H12/M0 crossed carrier tests; training causes;
+full native-framework numerical equivalence; arbitrary-prompt generalization.

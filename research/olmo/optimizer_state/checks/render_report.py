@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+"""Render the audited training-origin constraints as a short research addendum."""
+import json,pathlib,csv,html
+from reportlab.lib import colors
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+pdfmetrics.registerFont(TTFont("DV", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
+pdfmetrics.registerFont(TTFont("DV-Bold", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"))
+pdfmetrics.registerFont(TTFont("DVMono", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"))
+pdfmetrics.registerFontFamily("DV",normal="DV",bold="DV-Bold",italic="DV",boldItalic="DV-Bold")
+from reportlab.lib.styles import getSampleStyleSheet,ParagraphStyle
+from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.pagesizes import A4
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,PageBreak,KeepTogether
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+OUT=ROOT/'deliverables'; OUT.mkdir(exist_ok=True)
+styles=getSampleStyleSheet()
+styles.add(ParagraphStyle(name='TitleX',fontName='DV-Bold',fontSize=23,leading=27,textColor=colors.HexColor('#12324A'),spaceAfter=14))
+styles.add(ParagraphStyle(name='HeadX',fontName='DV-Bold',fontSize=13,leading=16,textColor=colors.HexColor('#12324A'),spaceBefore=12,spaceAfter=6))
+styles.add(ParagraphStyle(name='BodyX',fontName='DV',fontSize=9.5,leading=13.5,spaceAfter=7))
+styles.add(ParagraphStyle(name='SmallX',fontName='DV',fontSize=8,leading=10.5,spaceAfter=5))
+styles.add(ParagraphStyle(name='EqX',fontName='DVMono',fontSize=8.7,leading=12,backColor=colors.HexColor('#F0F4F7'),borderPadding=7,spaceBefore=5,spaceAfter=9))
+S=[]; plain=[]
+def p(text,style='BodyX'):
+    S.append(Paragraph(text,styles[style])); plain.append(text.replace('<b>','').replace('</b>',''))
+def h(t): p(t,'HeadX')
+def page(): S.append(PageBreak());plain.append('\n--- PAGE ---\n')
+def table(rows,widths):
+    cells=[[Paragraph(str(x),styles['SmallX']) for x in row] for row in rows]
+    t=Table(cells,colWidths=widths,repeatRows=1,hAlign='LEFT')
+    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E8F0F5')),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.35,colors.HexColor('#B8C8D2')),('LEFTPADDING',(0,0),(-1,-1),6),('RIGHTPADDING',(0,0),(-1,-1),6),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6)]))
+    S.append(t);S.append(Spacer(1,9));plain.extend([' | '.join(map(str,row)) for row in rows])
+
+p('Adam, ongoing learning<br/>and the super-weight\'s origin','TitleX')
+p('OLMo-1B-0724 training-origin addendum | 23 October 2026 | Post-hoc, offline analysis','SmallX')
+h('What this adds')
+p('<b>1. Real Adam state rejects a simple tiny-denominator account at 954k.</b> In the inspected output row, the primary has the largest first-moment magnitude and largest second moment, hence the <b>smallest</b> inverse-denominator gain. Its saved adaptive push nevertheless points strongly enough upward to overcome the current decay direction. This late snapshot diagnoses maintenance, not emergence.')
+p('<b>2. Epsilon filters the comparison weights much more strongly.</b> It exceeds the RMS moment for 6,850 of 8,192 row entries, but is only 1.48% of RMS for the primary. At fixed moments, removing epsilon changes the primary\'s absolute-update rank from 101st to 2,149th. A training epsilon intervention cannot be interpreted as merely removing Adam\'s coordinate preference.')
+p('<b>3. The large coefficient needs continued support.</b> Its rise from 0.65438 at 512k to 1.01725 at 800k cannot come from ordinary nonnegative decay alone. Under the released schedule, its slower long-term decline also requires substantial ongoing optimizer support. Ancient momentum cannot supply this over hundreds of thousands of steps.')
+p('<b>4. Initialization is a genuine confound, but initial scalar size does not pick the winner.</b> Coordinatewise 3-sigma truncation already breaks rotational invariance. Yet the final primary ranked only 4,245th of 8,192 initially; whole-row initial/final absolute-rank correlation is 0.00226.')
+h('Scope and provenance')
+p('Inputs: 39 checkpoints with explicit training steps plus exact released main; a 54,988-byte HF identity retrieval; and 74,641 bytes of native optimizer headers/settings/moment slices. The original eight-point probe and four adaptive points are unchanged. This addendum performs no model inference, new gradients, model updates or training.')
+p('Exact released model: allenai/OLMo-1B-0724-hf at d7cbab742d80589e714b1a2d7f838dcd21cbe143. Main has no independently established exact training step and is excluded from all step-dependent budget calculations. The separate native identity comparison uses HF fee32c35e310e1bc659181564529d157b8093ebf at step954000-tokens2000B.','SmallX')
+p('The native configuration is a late restart snapshot, not a certified history. Its LR matches the actual saved 954k optimizer LR exactly, but earlier decay counterfactuals remain conditional. One complete native/HF model row is byte-identical; whole-checkpoint/trainer/data-order identity remains unverified.','SmallX')
+
+page();p('The update budget, not a gradient reconstruction','TitleX')
+p('For standard AdamW, let q be the signed, bias-corrected adaptive update, excluding decoupled weight decay. Positive q pushes the scalar upward. With constant decay coefficient lambda:')
+p('w_t = (1 - lambda*eta_t)*w_(t-1) + eta_t*q_t<br/>q_t = -mhat_t / (sqrt(vhat_t) + epsilon)<br/>P = product_(t=a+1..b) (1-lambda*eta_t)<br/>w_b - P*w_a = sum_t eta_t*P_(t+1..b)*q_t<br/>weighted_mean(q) = lambda*(w_b-P*w_a)/(1-P)','EqX')
+p('The last equality follows by telescoping. It is exact for this recurrence, not an estimate of raw gradients. If 0 &lt; lambda*eta_t &lt; 1, all averaging weights are positive. It cannot reveal batchwise signs, cancellation, gradient variance, momentum resets or which tokens mattered.')
+h('Conditional calculation for the primary scalar')
+table([['Interval','Observed start / end','Decay-only endpoint','Mean signed adaptive push'],
+       ['120k to 256k','1.41836 / 1.22539','0.0075533','+0.12244'],
+       ['120k to 512k','1.41836 / 0.65438','0.00000128','+0.06544'],
+       ['512k to 800k','0.65438 / 1.01725','0.0005804','+0.10176'],
+       ['120k to 1,431k','1.41836 / 0.64354','3.30 x 10^-12','+0.06435']], [102,119,111,150])
+p('Scenario: AdamW lambda=0.1; peak LR=4e-4; cosine floor=4e-5; 512 sequences x 4096 tokens per step; token warmup equivalent to 5,000 steps; cosine endpoint 3 trillion tokens. The 2,000-step warmup reported elsewhere is included as a separate sensitivity scenario. The saved scheduler code starts warmup at 10% of peak, not zero.','SmallX')
+h('A conservative check and a useful negative result')
+p('Even if the LR were only the configured floor throughout 120k to 1,431k, the old coefficient would contribute just 0.00749, versus the observed 0.64354. Pure decay would instead require an equivalent constant LR of about 6.03e-6, well below that floor. Unknown historical overrides could change this conclusion; the archived configuration alone does not exclude them.')
+p('A shrinking coefficient is not automatically being unlearned. For example, writer 4820 moves from -1.80584 at 56k to -1.18861 at 88k. Under the cosine scenario, decay alone would yield -0.50529: the net adaptive update still reinforces the negative coefficient. Under the floor-only scenario the inferred sign reverses. Therefore this writer-specific interpretation is schedule-sensitive, not an unconditional finding.')
+
+page();p('Optimizer memory and initialization','TitleX')
+h('Old Adam momentum is too short-lived to explain long maintenance')
+p('For beta1=0.9 and beta2=0.95, Cauchy-Schwarz bounds the late-step normalized coordinate update by C = sqrt[(1-beta1)^2 / ((1-beta2)*(1-beta1^2/beta2))] = 1.164965, before epsilon further reduces it. If all subsequent gradients become zero, the normalized momentum decays by beta1/sqrt(beta2) = 0.923381 per step: a half-life of 8.70 steps.')
+p('At LR at most 4e-4, the total future displacement supplied by old momentum is at most 0.00562, even ignoring weight decay. Hence standard, consistently accumulated old moments cannot by themselves explain persistence over hundreds of thousands of steps. This bound assumes unchanged betas, valid moments accumulated from zero initialization, nonnegative epsilon and late-step bias corrections. Arbitrary transplanted or altered optimizer states invalidate the premise.')
+h('The initial distribution has a coordinate preference already')
+p('The released implementation selects a 3-sigma cutoff for Mitchell initialization and passes it to truncated-normal sampling. For L1 ff_out the nominal standard deviation is 1/sqrt(2*8192*2). The initial row has maximum absolute coefficient 2.99236 sigma and raw kurtosis 2.82975; the theoretical 3-sigma truncated-Gaussian kurtosis is 2.82889. Four inspected gate/up rows also stay inside their predicted cutoff.')
+p('For independent, unit-variance coordinates with kurtosis kappa, a unit-direction projection has fourth moment 3 + (kappa-3)*sum_i u_i^4. A dense direction and a coordinate axis therefore differ even though their variances agree. Here kappa is below 3: truncation initially suppresses axis tails rather than directly creating large axis outliers. Its presence is a confound to control, not evidence that it is the principal cause.')
+h('Initial scalar size does not pick the final winner')
+table([['Final neuron','Initial absolute rank / 8192','Final coefficient'],['1710','4245','+0.63229'],['3950','7845','+0.25012'],['4786','8158','-0.24256'],['7845','82','-0.21016']], [114,225,143])
+p('Across all 8,192 entries in this retrospectively selected row: signed Pearson correlation = 0.01076; absolute-rank Spearman correlation = 0.00226. These are descriptive, single-run statistics. They do not rule out causal effects of initial gate/up alignment, embeddings, other layers, or optimizer interaction.','SmallX')
+
+page();p('A sharper basis test','TitleX')
+h('What the architecture does and does not select')
+p('For the idealized model, take an orthogonal residual-space transform R that fixes the all-ones vector. Nonaffine centered LayerNorm commutes with R, including its epsilon. Rotate embeddings and residual-writing outputs by R, and transform all residual-reading projections and the unembedding inversely. Q/K/V values, RoPE, QKV clipping, SwiGLU inputs and logits remain unchanged. No rotation is applied across SwiGLU hidden neurons.')
+p('Uniform matrixwise weight decay and global Euclidean gradient clipping respect this reparameterization. SGD and momentum SGD respect it when momentum is co-transformed. Coordinatewise Adam generally does not. Coordinatewise initialization truncation and finite-precision arithmetic supply additional possible symmetry breaking. A residual rotation is a function-preserving reparameterization, not a claim that neuron 1710 can be arbitrarily mixed through SwiGLU.')
+h('A small observed optimization footprint in a functionally null direction')
+p('For a gate/up row receiving exact centered LayerNorm output, adding a constant to every weight changes no preactivation. Its raw task-gradient row sum is therefore zero. Yet neuron 1710 gate-row mean rises from 0.00051474 at initialization to 0.00297149 at 126k, a 5.77-fold increase despite decay. A coordinate-normalized update can produce this: the zero-sum gradient (1,1,-2) becomes an approximately nonzero-mean sign-normalized update.')
+p('This increase cannot come from idealized SGD plus nonnegative decay with zero-initialized momentum, even with the actual truncated initialization. It is consistent with basis-sensitive optimization, but mixed-precision arithmetic is an alternative contributor. It does not establish that the null component causes the super-weight: at 126k it is only 0.67% of gate-row energy and is exactly invisible in the ideal forward pass. Re-centering this row would be a numerical/gauge control, not a proposed cure for the mechanism.')
+h('Do not rotate Adam second moments as if they were ordinary vectors')
+p('The first moment transforms linearly, but the stored diagonal second moment omits cross-coordinate correlations. Two gradient histories can have identical stored m and v but different rotated v. The included two-step counterexample verifies this exactly. A credible basis experiment must either restart moments in <b>both</b> matched arms, or explicitly retain/conjugate the entire optimizer algorithm in its original basis. Naively rotating v is not authentic continuation.')
+p('Numerical algebra checks: LayerNorm equivariance error 3.89e-16; SGD equivariance error 4.44e-16; nonzero Adam update mismatch 0.663 in an arbitrary test array. These are algebra checks, not an OLMo training experiment.','SmallX')
+
+p('Related experiments support testing, not transferring conclusions: <link href="https://transformer-circuits.pub/2023/privileged-basis/index.html" color="#174E78">Elhage et al. (2023)</link> investigate basis dependence; <link href="https://papers.nips.cc/paper_files/paper/2024/file/986292a930c3692168b177a770025ab3-Paper-Conference.pdf" color="#174E78">He et al. (2024)</link> vary adaptivity and non-diagonal preconditioning; <link href="https://arxiv.org/html/2601.22966v1" color="#174E78">Qiu et al. (2026)</link> distinguish normalization-mediated residual sinks from token-specific massive activations. Their settings are not this exact OLMo run.','SmallX')
+
+page();p('What the authentic Adam state says','TitleX')
+p('Official native step954000 optimizer slices provide both complete moment rows for L1 ff_out output coordinate 1764. Settings were inspected with a primitive-only data decoder, never pickle execution or torch.load. All 12 requests were exact HTTP 206 byte ranges: 74,641 bytes total, including headers. Model row 1764 is independently byte-identical between native and pinned HF releases.')
+h('The primary is strongly damped, not favored by a small denominator')
+table([['Quantity, within this row','Primary neuron 1710','Corrected second 8041'],
+       ['Weight','+0.904274','+0.00342061'],
+       ['First moment m','-1.72333e-4','-9.59525e-7'],
+       ['Second moment v','4.59132e-7','4.59658e-11'],
+       ['Descending |m| / v ranks','1 / 1','5000 / 6529'],
+       ['Inverse (sqrt(v)+epsilon)','1454.35 (smallest)','59595.44'],
+       ['Signed adaptive push q','+0.250632','+0.0571833'],
+       ['Descending |q| rank','101','4801']], [208,137,137])
+p('The primary RMS moment is 86.60 times the row median, and its v is about 7,500 times the median. It holds 48.64% of the squared first-moment norm but only 0.0743% of squared adaptive-update norm. Adam therefore disperses, rather than amplifies, this particular concentration of the saved first moment. These are row-local statistics; m is a momentum average, not the current gradient.')
+h('Epsilon changes which coordinates survive normalization')
+p('Actual epsilon=1e-5 preserves 98.55% of the primary\'s epsilon-free update, versus 43.90% for the median coordinate. Without epsilon, the primary\'s |q| rank would be 2,149; with actual epsilon it is 101. At epsilon=1e-4, with the same frozen moments, it becomes rank 1 even though its absolute push falls from 0.2506 to 0.2216. This predicts relative concentration for this frozen arithmetic only, not a training outcome.')
+h('Settings and limits')
+p('Saved beta=(0.9,0.95), decay=0.1, LR=0.00013046107895981594 and epsilon=1e-5. The LR exactly equals the released cosine scenario at checkpoint label 954000. The tensor\'s optimizer counter is 954001, so the checkpoint label must not be substituted for the stored counter. Both bias corrections are numerically 1 at this age. The reason for the one-step offset is not established.')
+p('The saved adaptive direction (+0.25063) exceeds the opposing current decay direction (0.09043). This is not a reconstructed exact last update or a predicted next minibatch: checkpoint timing, a new gradient and full historical state matter. High moments may be a consequence of the mature circuit. One row also cannot establish residual-axis selection inside the primary\'s full output column.','SmallX')
+
+p('Sources for this snapshot: <link href="https://olmo-checkpoints.org/ai2-llm/olmo1b-0724/step954000/optim/rank_9.safetensors" color="#174E78">official optimizer rank9</link> (moment rows), rank8 (counter), rank0 (settings); <link href="https://github.com/allenai/OLMo-core/blob/b2c3c09453305b79692a1a6166ab26ef876fbbd1/src/olmo_core/distributed/checkpoint.py" color="#174E78">May 2024 official serializer</link>. The latter matches the format, but is not identified as the actual training revision. Exact byte ranges and hashes accompany the report.','SmallX')
+
+page();p('Next tests and reproducibility','TitleX')
+h('Priority experiments, not yet executed')
+p('<b>A. Authentic maintenance replay.</b> The late moment-row diagnostic is now complete. Before training intervention, resume a verified complete native checkpoint and reproduce an untreated successor. Log new gradients and primary/competing writers\' m, v, LR, decay and projections. A late 954k replay tests maintenance, not historical onset. Full output-column moments would next distinguish residual-axis concentration from this row\'s across-neuron comparison.')
+p('<b>B. Separate initialization basis from optimizer basis.</b> Starting with a co-rotated realized step-0 model preserves the initial function exactly. Cross native versus rotated initialization orientation with native versus conjugated Adam orientation; use matching data order and paired seeds. A consistently co-rotated model and optimizer is the identity control. A coordinate permutation is an additional control. FP32 versus mixed precision separates numerical effects. Compare coordinate concentration and functional circuit onset separately, at matched loss as well as matched steps.')
+p('<b>C. Distinguish adaptive damping from reduced learning speed.</b> The measured epsilon/sqrt(v) disparity now makes this control essential: compare epsilon changes with update-norm/progress-matched controls and report absolute and relative concentration separately. In the frozen state, increasing epsilon reduces absolute push while increasing relative primary concentration. Training can alter the moments themselves, so neither frozen trend establishes its causal effect.')
+p('<b>D. Ask why the mechanism is useful only after baseline provenance is settled.</b> Token-boundary frequency, packing/reset conventions and backward-only attention/value-gradient changes remain plausible functional pressures. They require controlled training variants, not inference-time ablation alone. The present evidence does not prioritize a particular corpus source or claim frequency caused the circuit.')
+h('Native identity check: stronger evidence, deliberately narrow scope')
+p('HF step954000 output row 1764 and the verified native rank9 row both hash to:<br/><font name="DVMono" size="7.7">13ada3b9aebad0385385edeea85184fdf93ad7d6002f23c6a8a6bc345268f4f8</font>')
+p('Native tensor slice: global elements [5,644,288, 16,777,216); row offset 8,806,400 elements within that slice; file bytes [70,687,224, 70,719,992). HF row bytes [738,341,544, 738,374,312). A row match does not authenticate the remaining weights, optimizer state, trainer state or data order.','SmallX')
+h('What remains useful to acquire')
+p('A dense July-1B native checkpoint manifest; resumable model/optimizer/trainer/RNG states near 120k-256k and 512k-800k; exact training-code revision and effective restart/config history; ordered tokenized-data identities and sampler/cursor records. The user successfully downloaded the native model shard, so this is not a general checkpoint-access blocker. No Ai2 message has been sent.')
+h('Reproduction and sources')
+p('Run checks/analyze_training_constraints.py and checks/analyze_optimizer_snapshot.py offline. The first verifies 136 archived trajectory inputs (1.88 MB); the second verifies all new moment/settings receipts. Both reproduce the numerical results without network or training. Acquisition scripts are separately guarded against reruns. Original evidence was preserved.','SmallX')
+p('Primary sources: <link href="https://github.com/allenai/OLMo/blob/main/olmo/model.py" color="#174E78">OLMo model implementation</link>; <link href="https://github.com/allenai/OLMo/blob/main/olmo/initialization.py" color="#174E78">initializer</link>; <link href="https://github.com/allenai/OLMo/blob/main/olmo/optim.py" color="#174E78">optimizer/scheduler</link>; <link href="https://github.com/allenai/OLMoE/issues/32#issuecomment-2856649755" color="#174E78">native release announcement</link>; <link href="https://arxiv.org/abs/1412.6980" color="#174E78">Adam</link>; <link href="https://arxiv.org/abs/1711.05101" color="#174E78">AdamW</link>. Archived code hashes are recorded, but the actual historical training commit remains unidentified.','SmallX')
+
+
+def footer(c,d):
+    c.setStrokeColor(colors.HexColor('#B8C8D2'));c.line(45,39,A4[0]-45,39)
+    c.setFont('DV',8);c.setFillColor(colors.HexColor('#476274'))
+    c.drawString(45,27,'OLMo-1B-0724 | Training-origin constraints | No training performed')
+    c.drawRightString(A4[0]-45,27,str(d.page))
+doc=SimpleDocTemplate(str(OUT/'training_origin_constraints.pdf'),pagesize=A4,rightMargin=45,leftMargin=45,topMargin=42,bottomMargin=51,title='OLMo-1B-0724: Training-origin constraints',author='Research analysis')
+doc.build(S,onFirstPage=footer,onLaterPages=footer)
+(OUT/'training_origin_constraints.txt').write_text('\n\n'.join(plain)+'\n')
+print(OUT/'training_origin_constraints.pdf')

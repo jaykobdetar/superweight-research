@@ -1,0 +1,315 @@
+{
+  "scope": "Real-arithmetic LayerNorm-domain feasibility, not reachability by any token prefix or downstream causal test.",
+  "theorem": "For centered row matrix A of full row rank, min ||h||^2 subject to A h=b is b^T(AA^T)^(-1)b. LayerNorm inputs satisfy ||h||^2<2048 for positive epsilon.",
+  "row_order": [
+    "gate_1710",
+    "up_1710",
+    "gate_3950",
+    "up_3950",
+    "gate_4786",
+    "up_4786"
+  ],
+  "gram_condition_number": 56.41842784762731,
+  "singular_values": [
+    1.5229344475722872,
+    1.2907894652845713,
+    0.439863517874563,
+    0.3270909389000028,
+    0.2624300626868749,
+    0.2027546019327117
+  ],
+  "row_cosines": [
+    [
+      1.0,
+      -0.07117880757577354,
+      0.6745107688856228,
+      0.10595515838779575,
+      0.7671535682559859,
+      0.15044892697758633
+    ],
+    [
+      -0.07117880757577354,
+      1.0,
+      -0.11978704040493021,
+      -0.1952876305409515,
+      -0.14857811439033955,
+      0.12297747664128558
+    ],
+    [
+      0.6745107688856228,
+      -0.11978704040493021,
+      1.0,
+      -0.22397299406128013,
+      0.7614031096325621,
+      0.27600533515700865
+    ],
+    [
+      0.10595515838779575,
+      -0.1952876305409515,
+      -0.22397299406128013,
+      1.0,
+      -0.03339138533099128,
+      0.06180503349191651
+    ],
+    [
+      0.7671535682559859,
+      -0.14857811439033955,
+      0.7614031096325621,
+      -0.03339138533099128,
+      1.0,
+      0.2787889092808744
+    ],
+    [
+      0.15044892697758633,
+      0.12297747664128558,
+      0.27600533515700865,
+      0.06180503349191651,
+      0.2787889092808744,
+      1.0
+    ]
+  ],
+  "cases": [
+    {
+      "panel": "water_cycle",
+      "primary_donor": "R",
+      "pair_donor": "E",
+      "minimum_squared_norm": 1834.3119664261108,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.475285202023,
+      "feasible_at_chosen_radius": true,
+      "impossible_any_ideal_layernorm_input": false,
+      "max_feature_error": 3.907985046680551e-14,
+      "gate_up": [
+        -10.199591415877489,
+        -4.434413004475427,
+        8.392972100557799,
+        -2.254563115444755,
+        11.124031811691722,
+        1.3164470196176237
+      ],
+      "primary_axis": 0.0010634919568476558,
+      "pair_axis": -8.28882729935333
+    },
+    {
+      "panel": "water_cycle",
+      "primary_donor": "E",
+      "pair_donor": "R",
+      "minimum_squared_norm": 2235.5763061058715,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.475285202023,
+      "feasible_at_chosen_radius": false,
+      "impossible_any_ideal_layernorm_input": true
+    },
+    {
+      "panel": "water_cycle",
+      "primary_donor": "E",
+      "pair_donor": "unconstrained_R_nullspace",
+      "chosen_squared_norm": 2045.475285202023,
+      "primary_feature_error": 1.6431300764452317e-14,
+      "gate_up": [
+        21.166206828610026,
+        -23.28275871248083,
+        3.4995278837765382,
+        1.6708322984920683,
+        6.273994200301687,
+        -0.440263278225534
+      ],
+      "primary_axis": -311.6270777896,
+      "pair_axis": 2.089570837819698
+    },
+    {
+      "panel": "library",
+      "primary_donor": "R",
+      "pair_donor": "E",
+      "minimum_squared_norm": 1916.62180584104,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.2914640683782,
+      "feasible_at_chosen_radius": true,
+      "impossible_any_ideal_layernorm_input": false,
+      "max_feature_error": 4.263256414560601e-14,
+      "gate_up": [
+        -10.51519667596438,
+        -2.0737580406149805,
+        8.484509488450401,
+        -2.177855036877788,
+        11.121663156094176,
+        1.1590432762798941
+      ],
+      "primary_axis": 0.0003739637676672839,
+      "pair_axis": -7.7520687235024655
+    },
+    {
+      "panel": "library",
+      "primary_donor": "E",
+      "pair_donor": "R",
+      "minimum_squared_norm": 2300.136272612026,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.2914640683782,
+      "feasible_at_chosen_radius": false,
+      "impossible_any_ideal_layernorm_input": true
+    },
+    {
+      "panel": "library",
+      "primary_donor": "E",
+      "pair_donor": "unconstrained_R_nullspace",
+      "chosen_squared_norm": 2045.2914640683782,
+      "primary_feature_error": 1.84297022087776e-14,
+      "gate_up": [
+        21.24508077801592,
+        -22.546380839331018,
+        3.398315573778956,
+        1.8988900634770842,
+        6.108387343072764,
+        -0.22734866365379078
+      ],
+      "primary_axis": -302.8955824610715,
+      "pair_axis": 1.8990279070394935
+    },
+    {
+      "panel": "bread",
+      "primary_donor": "R",
+      "pair_donor": "E",
+      "minimum_squared_norm": 1893.3749427879413,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.4044128668806,
+      "feasible_at_chosen_radius": true,
+      "impossible_any_ideal_layernorm_input": false,
+      "max_feature_error": 4.618527782440651e-14,
+      "gate_up": [
+        -10.445381249741512,
+        -3.7772137205600793,
+        8.479082858673092,
+        -2.207281489003705,
+        11.127875067593116,
+        1.080870429880977
+      ],
+      "primary_axis": 0.0007255535993068359,
+      "pair_axis": -7.602150018549419
+    },
+    {
+      "panel": "bread",
+      "primary_donor": "E",
+      "pair_donor": "R",
+      "minimum_squared_norm": 2271.5673420209455,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.4044128668806,
+      "feasible_at_chosen_radius": false,
+      "impossible_any_ideal_layernorm_input": true
+    },
+    {
+      "panel": "bread",
+      "primary_donor": "E",
+      "pair_donor": "unconstrained_R_nullspace",
+      "chosen_squared_norm": 2045.4044128668806,
+      "primary_feature_error": 1.9761969838327786e-14,
+      "gate_up": [
+        21.317270538731005,
+        -22.665490135891773,
+        3.412448462406627,
+        1.8576260414086283,
+        6.18615363016102,
+        -0.24253846953525274
+      ],
+      "primary_axis": -305.5303982361303,
+      "pair_axis": 1.8992227203093324
+    },
+    {
+      "panel": "programming",
+      "primary_donor": "R",
+      "pair_donor": "E",
+      "minimum_squared_norm": 1909.1261107039973,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.1021093525646,
+      "feasible_at_chosen_radius": true,
+      "impossible_any_ideal_layernorm_input": false,
+      "max_feature_error": 5.3290705182007514e-14,
+      "gate_up": [
+        -10.708501753704223,
+        -2.188614803480616,
+        8.558164876410018,
+        -2.3622843043282415,
+        10.844219166301675,
+        0.7857348007913205
+      ],
+      "primary_axis": 0.0003312858067045702,
+      "pair_axis": -7.126594247156744
+    },
+    {
+      "panel": "programming",
+      "primary_donor": "E",
+      "pair_donor": "R",
+      "minimum_squared_norm": 2349.0280341643747,
+      "layernorm_squared_norm_ceiling": 2048,
+      "chosen_squared_norm": 2045.1021093525646,
+      "feasible_at_chosen_radius": false,
+      "impossible_any_ideal_layernorm_input": true
+    },
+    {
+      "panel": "programming",
+      "primary_donor": "E",
+      "pair_donor": "unconstrained_R_nullspace",
+      "chosen_squared_norm": 2045.1021093525646,
+      "primary_feature_error": 3.341771304121721e-14,
+      "gate_up": [
+        21.239933878568763,
+        -22.67425824825,
+        3.644433013366897,
+        1.5540546154929267,
+        5.832175895341431,
+        -0.7168420955507995
+      ],
+      "primary_axis": -304.53973349985114,
+      "pair_axis": 2.3930602328402006
+    }
+  ],
+  "delta_decompositions": [
+    {
+      "panel": "water_cycle",
+      "primary_feature_span_delta_energy": 0.20182305415557855,
+      "backup_gate_change_share_in_primary_span": [
+        0.5870198845200166,
+        0.6831595429869933
+      ],
+      "backup_up_change_share_in_primary_span": [
+        -0.5229859369914402,
+        0.23859883714291555
+      ]
+    },
+    {
+      "panel": "library",
+      "primary_feature_span_delta_energy": 0.20684752438718654,
+      "backup_gate_change_share_in_primary_span": [
+        0.581931616802014,
+        0.6795434550638231
+      ],
+      "backup_up_change_share_in_primary_span": [
+        -0.5293575577841907,
+        0.2707131908676652
+      ]
+    },
+    {
+      "panel": "bread",
+      "primary_feature_span_delta_energy": 0.20716243234386028,
+      "backup_gate_change_share_in_primary_span": [
+        0.5815757802123768,
+        0.6815396536286943
+      ],
+      "backup_up_change_share_in_primary_span": [
+        -0.4969055392963455,
+        0.30028164791693546
+      ]
+    },
+    {
+      "panel": "programming",
+      "primary_feature_span_delta_energy": 0.21075423383921424,
+      "backup_gate_change_share_in_primary_span": [
+        0.5926944525843846,
+        0.6792884559977717
+      ],
+      "backup_up_change_share_in_primary_span": [
+        -0.5750088234036428,
+        0.2505521138042635
+      ]
+    }
+  ]
+}

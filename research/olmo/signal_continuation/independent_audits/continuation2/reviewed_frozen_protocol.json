@@ -1,0 +1,469 @@
+{
+  "model": "allenai/OLMo-1B-0724-hf",
+  "revision": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "dtype": "FP32 NumPy; not bit-equivalent to original FP16 experiments",
+  "selection": "Two previously known natural newline-column failures plus matched controlled The-source counterparts. Exploratory mechanism test, not new population estimate.",
+  "source_position": 0,
+  "sequence_length": 256,
+  "conditions": "No attention masks; source-local L1 output changes only.",
+  "score": "Query indices1..254 primary; query0 and query relative to first later187 separately. NLL[t] predicts ids[t+1].",
+  "stopping": "No interpretation if numerical reconstruction/add-back max NLL error exceeds1e-3 or mean absolute exceeds1e-4; pause for diagnosis.",
+  "panels": [
+    {
+      "name": "dubois__32768__natural187",
+      "source_window": "dubois__32768",
+      "source_window_sha256": "c530a32f04a30fcec057ea12e848a74e11c504a629a2b73d6949ee91749725f2",
+      "input_sha256": "c18a333d6ef2762d167ae0e6c63ab57a9a2c0a8b88599e4124e4998b30aaa655",
+      "source_token": 187,
+      "first_later187": 16,
+      "input_kind": "archived natural prefix",
+      "group_name": "newline_positive",
+      "group": [
+        2476,
+        2637,
+        7845
+      ],
+      "treatments": [
+        {
+          "name": "native_no_hook",
+          "hook": null
+        },
+        {
+          "name": "reconstruct_native",
+          "hook": {
+            "name": "reconstruct_native",
+            "positions": [
+              0
+            ],
+            "drop": [],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "drop1710",
+          "hook": {
+            "name": "drop1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_drop_only",
+          "hook": {
+            "name": "newline_positive_drop_only",
+            "positions": [
+              0
+            ],
+            "drop": [
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_drop_with1710",
+          "hook": {
+            "name": "newline_positive_drop_with1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_same_world_addback",
+          "hook": {
+            "name": "newline_positive_same_world_addback",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": [
+              2476,
+              2637,
+              7845
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "dubois__32768__controlled510",
+      "source_window": "dubois__32768",
+      "source_window_sha256": "c530a32f04a30fcec057ea12e848a74e11c504a629a2b73d6949ee91749725f2",
+      "input_sha256": "5dc1e228ca7e5f9a138aeb35796070a1e41af112c5e0fa3dca0df3d5b52e1b69",
+      "source_token": 510,
+      "first_later187": 16,
+      "input_kind": "controlled source-token replacement; suffix fixed",
+      "group_name": "source_negative",
+      "group": [
+        7579,
+        7845,
+        6947,
+        2637
+      ],
+      "treatments": [
+        {
+          "name": "native_no_hook",
+          "hook": null
+        },
+        {
+          "name": "reconstruct_native",
+          "hook": {
+            "name": "reconstruct_native",
+            "positions": [
+              0
+            ],
+            "drop": [],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "drop1710",
+          "hook": {
+            "name": "drop1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_drop_only",
+          "hook": {
+            "name": "source_negative_drop_only",
+            "positions": [
+              0
+            ],
+            "drop": [
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_drop_with1710",
+          "hook": {
+            "name": "source_negative_drop_with1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_same_world_addback",
+          "hook": {
+            "name": "source_negative_same_world_addback",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": [
+              7579,
+              7845,
+              6947,
+              2637
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "optimizers__12000__natural187",
+      "source_window": "optimizers__12000",
+      "source_window_sha256": "41986b291d5c32468a2c0e0d0b40096cff13b3bd4e63b494e8fd720bd267669d",
+      "input_sha256": "bf38facd7f0efdc66cec486166b6b3928e87918c652a29c26cad627bdf4d5054",
+      "source_token": 187,
+      "first_later187": 4,
+      "input_kind": "archived natural prefix",
+      "group_name": "newline_positive",
+      "group": [
+        2476,
+        2637,
+        7845
+      ],
+      "treatments": [
+        {
+          "name": "native_no_hook",
+          "hook": null
+        },
+        {
+          "name": "reconstruct_native",
+          "hook": {
+            "name": "reconstruct_native",
+            "positions": [
+              0
+            ],
+            "drop": [],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "drop1710",
+          "hook": {
+            "name": "drop1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_drop_only",
+          "hook": {
+            "name": "newline_positive_drop_only",
+            "positions": [
+              0
+            ],
+            "drop": [
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_drop_with1710",
+          "hook": {
+            "name": "newline_positive_drop_with1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "newline_positive_same_world_addback",
+          "hook": {
+            "name": "newline_positive_same_world_addback",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              2476,
+              2637,
+              7845
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": [
+              2476,
+              2637,
+              7845
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "optimizers__12000__controlled510",
+      "source_window": "optimizers__12000",
+      "source_window_sha256": "41986b291d5c32468a2c0e0d0b40096cff13b3bd4e63b494e8fd720bd267669d",
+      "input_sha256": "134baa217ef6d42b5448d8db178193327a5549c13a8f07c13839129a5483d940",
+      "source_token": 510,
+      "first_later187": 4,
+      "input_kind": "controlled source-token replacement; suffix fixed",
+      "group_name": "source_negative",
+      "group": [
+        7579,
+        7845,
+        6947,
+        2637
+      ],
+      "treatments": [
+        {
+          "name": "native_no_hook",
+          "hook": null
+        },
+        {
+          "name": "reconstruct_native",
+          "hook": {
+            "name": "reconstruct_native",
+            "positions": [
+              0
+            ],
+            "drop": [],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "drop1710",
+          "hook": {
+            "name": "drop1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_drop_only",
+          "hook": {
+            "name": "source_negative_drop_only",
+            "positions": [
+              0
+            ],
+            "drop": [
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_drop_with1710",
+          "hook": {
+            "name": "source_negative_drop_with1710",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": []
+          }
+        },
+        {
+          "name": "source_negative_same_world_addback",
+          "hook": {
+            "name": "source_negative_same_world_addback",
+            "positions": [
+              0
+            ],
+            "drop": [
+              1710,
+              7579,
+              7845,
+              6947,
+              2637
+            ],
+            "keep": null,
+            "partial_group": [],
+            "remove_part": null,
+            "addback": [
+              7579,
+              7845,
+              6947,
+              2637
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "hook_sha256": "f02bce6e277f4b93bea33cf8cafb48ffa226241b5b6735f59ee6fe6052db6e8b",
+  "runner_sha256": "a2cd6082523c7f082e935a7370c748ebfe113233f71859781b12c75576cc0c8b"
+}

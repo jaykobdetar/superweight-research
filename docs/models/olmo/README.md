@@ -3,7 +3,13 @@
 [Overview](../../../README.md) · [Documentation index](../../README.md) ·
 [Research log](../../../RESEARCH_LOG.md)
 
-Start with the [full research report](../../REPORT.md). This is one pinned
+Start with the [current OLMo synthesis](../../olmo/RESEARCH_UPDATE_2026_10_23.md),
+then the [original research report](../../REPORT.md). The newer work separates
+signal production, native function and training development; its
+[publication scope](../../olmo/PUBLICATION_SCOPE.md) identifies which results are
+complete and which remain pending.
+
+The original report concerns one pinned
 `allenai/OLMo-1B-0724-hf` checkpoint at revision
 `d7cbab742d80589e714b1a2d7f838dcd21cbe143`, FP16/native SDPA. The primary target is
 `layers[1].mlp.down_proj.weight[1764,1710]`. All indices are zero-based.
@@ -70,3 +76,4 @@ The [checkpoint manifest](../../../manifests/checkpoint.json),
 record distinct evidence scopes. Public exports omit input/prediction token IDs
 and private activations. Neither a numerical PASS nor original-machine replay
 is an independent researcher replication.
+

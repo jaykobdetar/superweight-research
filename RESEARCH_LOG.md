@@ -197,3 +197,13 @@ preserves this limitation; the earlier check does not establish continuous priva
 This repository contains no credentials, checkpoint weights,
 input corpora, or unrelated files. Retrieve external inputs under their own
 terms; hashes and source links are supplied instead of redistribution.
+
+
+
+---
+
+## 2026-10-23: OLMo research integration
+
+The preceding README history is preserved verbatim as its historical snapshot.
+New OLMo-specific work is indexed in the [October 23 synthesis](docs/olmo/RESEARCH_UPDATE_2026_10_23.md): coefficient and functional development, alternate signal writers, native-source reanalysis, authentic optimizer-state evidence, and the independent review of Reports 1–19.
+The [publication scope](docs/olmo/PUBLICATION_SCOPE.md) records exact cutoff and audit boundaries, including unfinished work excluded from findings. The [claim-to-evidence map](docs/olmo/CLAIM_EVIDENCE_MAP.md) distinguishes measurements, causal interventions and hypotheses.

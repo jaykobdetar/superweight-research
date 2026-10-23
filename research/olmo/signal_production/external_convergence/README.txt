@@ -1,0 +1,1 @@
+These tables and receipts were produced by the separate computational-role analysis from exact public input/output joins. They supply convergent source187 behavioral evidence cited in REPORT.txt. The present L1 replay does not recompute their downstream losses. Full scripts and target-level arrays are in that companion investigation.

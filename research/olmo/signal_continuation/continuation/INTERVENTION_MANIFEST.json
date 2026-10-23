@@ -1,0 +1,441 @@
+{
+  "scope": "Source-local L1-output treatments. Not parameter ablations or new training.",
+  "callback": "mlp_hook(layer_idx, normalized_input, activations, native_output)",
+  "array_convention": "batch1 [sequence,width]; activation is post-SwiGLU",
+  "groups": {
+    "source_negative": [
+      7579,
+      7845,
+      6947,
+      2637
+    ],
+    "newline_positive": [
+      2476,
+      2637,
+      7845
+    ],
+    "h14_query": [
+      3950,
+      4786
+    ]
+  },
+  "selection": "Exploratory groups frozen from the preceding 21-state analysis, not held-out discoveries.",
+  "primary_stage": "2x2 primary1710 presence x selected-group presence; same-world add-back on one representative each.",
+  "conditional_stage": "Only after effect: axis/complement decomposition, group-only versus carry-only sufficiency.",
+  "falsifier": "Local alignment improvement without loss/KV rescue does not establish a behavioral mechanism.",
+  "output_indexing": "NLL index t uses query t to predict target t+1. Local edit p may affect t>=p; report t>p separately.",
+  "specifications": {
+    "source_negative": [
+      {
+        "name": "reconstruct_native",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "drop1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "source_negative_drop_only",
+        "positions": [
+          0
+        ],
+        "drop": [
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "source_negative_drop_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "source_negative_same_world_addback",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": [
+          7579,
+          7845,
+          6947,
+          2637
+        ]
+      },
+      {
+        "name": "source_negative_axis_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "remove_part": "axis",
+        "addback": []
+      },
+      {
+        "name": "source_negative_complement_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "remove_part": "complement",
+        "addback": []
+      },
+      {
+        "name": "source_negative_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [
+          7579,
+          7845,
+          6947,
+          2637
+        ],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "carry_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      }
+    ],
+    "newline_positive": [
+      {
+        "name": "reconstruct_native",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "drop1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "newline_positive_drop_only",
+        "positions": [
+          0
+        ],
+        "drop": [
+          2476,
+          2637,
+          7845
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "newline_positive_drop_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          2476,
+          2637,
+          7845
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "newline_positive_same_world_addback",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          2476,
+          2637,
+          7845
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": [
+          2476,
+          2637,
+          7845
+        ]
+      },
+      {
+        "name": "newline_positive_axis_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          2476,
+          2637,
+          7845
+        ],
+        "remove_part": "axis",
+        "addback": []
+      },
+      {
+        "name": "newline_positive_complement_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          2476,
+          2637,
+          7845
+        ],
+        "remove_part": "complement",
+        "addback": []
+      },
+      {
+        "name": "newline_positive_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [
+          2476,
+          2637,
+          7845
+        ],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "carry_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      }
+    ],
+    "h14_query": [
+      {
+        "name": "reconstruct_native",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "drop1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "h14_query_drop_only",
+        "positions": [
+          0
+        ],
+        "drop": [
+          3950,
+          4786
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "h14_query_drop_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          3950,
+          4786
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "h14_query_same_world_addback",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710,
+          3950,
+          4786
+        ],
+        "keep": null,
+        "partial_group": [],
+        "remove_part": null,
+        "addback": [
+          3950,
+          4786
+        ]
+      },
+      {
+        "name": "h14_query_axis_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          3950,
+          4786
+        ],
+        "remove_part": "axis",
+        "addback": []
+      },
+      {
+        "name": "h14_query_complement_remove_with1710",
+        "positions": [
+          0
+        ],
+        "drop": [
+          1710
+        ],
+        "keep": null,
+        "partial_group": [
+          3950,
+          4786
+        ],
+        "remove_part": "complement",
+        "addback": []
+      },
+      {
+        "name": "h14_query_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [
+          3950,
+          4786
+        ],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      },
+      {
+        "name": "carry_only",
+        "positions": [
+          0
+        ],
+        "drop": [],
+        "keep": [],
+        "partial_group": [],
+        "remove_part": null,
+        "addback": []
+      }
+    ]
+  },
+  "code_sha256": "f02bce6e277f4b93bea33cf8cafb48ffa226241b5b6735f59ee6fe6052db6e8b"
+}

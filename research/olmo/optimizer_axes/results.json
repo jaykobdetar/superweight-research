@@ -1,0 +1,85 @@
+{
+  "checkpoint": "native OLMo-1B-0724 step954000",
+  "column_neuron": 1710,
+  "focal_residual_coordinate": 1764,
+  "sampled_other_coordinates": 128,
+  "other_population_size": 2047,
+  "sample_selection_frozen_before_retrieval": true,
+  "payload_bytes": 1024,
+  "metrics": {
+    "abs_m": {
+      "focal_value": 0.00017233270045835525,
+      "sample_median": 0.0001338809888693504,
+      "focal_over_sample_median": 1.2872081534035311,
+      "sample_greater": 50,
+      "sample_less": 78,
+      "sample_equal": 0,
+      "other_population_greater_count_95_percent_interval": [
+        631,
+        978
+      ],
+      "other_population_greater_fraction_95_percent_interval": [
+        0.3082559843673669,
+        0.4777723497801661
+      ]
+    },
+    "v": {
+      "focal_value": 4.5913236590422457e-07,
+      "sample_median": 2.0080859712834354e-06,
+      "focal_over_sample_median": 0.22864178748820083,
+      "sample_greater": 128,
+      "sample_less": 0,
+      "sample_equal": 0,
+      "other_population_greater_count_95_percent_interval": [
+        1991,
+        2047
+      ],
+      "other_population_greater_fraction_95_percent_interval": [
+        0.9726428920371275,
+        1.0
+      ]
+    },
+    "gain": {
+      "focal_value": 1454.3485768386522,
+      "sample_median": 700.7385272033034,
+      "focal_over_sample_median": 2.075451142444043,
+      "sample_greater": 0,
+      "sample_less": 128,
+      "sample_equal": 0,
+      "other_population_greater_count_95_percent_interval": [
+        0,
+        56
+      ],
+      "other_population_greater_fraction_95_percent_interval": [
+        0.0,
+        0.027357107962872496
+      ]
+    },
+    "abs_q": {
+      "focal_value": 0.2506318176543707,
+      "sample_median": 0.09869557766440876,
+      "focal_over_sample_median": 2.539443241383982,
+      "sample_greater": 10,
+      "sample_less": 118,
+      "sample_equal": 0,
+      "other_population_greater_count_95_percent_interval": [
+        81,
+        280
+      ],
+      "other_population_greater_fraction_95_percent_interval": [
+        0.03957010258915486,
+        0.13678553981436248
+      ]
+    }
+  },
+  "epsilon_dominant_sample_count": 0,
+  "median_epsilon_over_rms": 0.007056835321400967,
+  "uncertainty": "Each reported interval separately inverts the exact without-replacement hypergeometric sampling distribution at two-sided95%. No adjustment for looking at four correlated metrics. No actual full-column rank has been measured.",
+  "limits": [
+    "One late snapshot and one hidden neuron; not historical causality.",
+    "Selection excludes focal1764 by design.",
+    "m is a first moment, not the current gradient.",
+    "No output-column model weights were retrieved; no weight-axis concentration correlation estimated.",
+    "No new gradient, optimizer update or training was performed."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "Frozen before any model outputs from this assay",
+  "reason": "Parent requested usage controls and an unscaled known-carrier assay control before interpreting null donor effects.",
+  "unchanged_input_manifest_sha256": "7c7afdea710322f8bfe287b0146d370637d5dce3baf6fcd8c86ff5a813f95ff1",
+  "additional_baseline_worlds": {
+    "postboundary_maskp": "Mask first-newline p at queries>p in layers2..15;16additional forwards.",
+    "postboundary_mask0p": "Mask both source0 and first-newline p at queries>p in layers2..15;16additional forwards."
+  },
+  "usage_effects": {
+    "native": "Correct-label NLL(maskp) minus correct-label NLL(native).",
+    "postboundary_mask0": "Correct-label NLL(mask0p) minus correct-label NLL(mask0)."
+  },
+  "usage_gate": "Report each recipient's continuous cost and each reciprocal-pair mean. A pair passes the descriptive p-usage gate in a world if its mean correct-label NLL cost is>0.01nats. This is not a significance test. Keep it separate from both-label discrimination and retain all pairs.",
+  "additional_condition": {
+    "ordinary_raw": "Opposite-label paraphrase fact-token V replaces recipient fact-token V at p-2 without rescaling, queries>p, layers2..15. Known-carrier positive assay control. Not an exact distance match."
+  },
+  "clarification": "ordinary_normmatched is a query-dependent message perturbation with post-W_O aggregate norm matching, not a single fixed donor-value replacement. p_from_source0 is substantive and has no null requirement. Only identity and source0-to-same-source0 cross-content are exact-null controls.",
+  "expanded_default_counts": {"recipient_baselines":64,"donor_baselines":24,"interventions":256,"total":344},
+  "identity_binding": "All results bind input/protocol/amendment/content-runner/algebra/core-runner hashes and the passing10-case FP32 validation artifact. NPZ cache checksums are verified on resume. RLIMIT_AS and RSS cap are both4,000,000,000bytes."
+}

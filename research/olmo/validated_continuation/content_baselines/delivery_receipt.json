@@ -1,0 +1,73 @@
+{
+  "status": "Preparation and authorized64-forward baseline stage complete; donor stage not run.",
+  "reviewed_forward_runner_sha256": "29a76fc2e8635b9d5e8b94bfde52107cf936152a089f56d22dcfb3f408749501",
+  "algebra_sha256": "72a56fb4385c0f56dd1bb963384690e471ddccbf409ad520d0f6a175b33826be",
+  "input_manifest_sha256": "7c7afdea710322f8bfe287b0146d370637d5dce3baf6fcd8c86ff5a813f95ff1",
+  "contrast_protocol_sha256": "84c1555f9a1d830da37b6d4c06d7574c19eac6e6bbb8c6d50b3a59b123b20b6f",
+  "amendment_sha256": "3fb81976e864b9731fb269d074f0d15208cd80e33a619ea0a5aafef409a2ba8b",
+  "baseline_count": 64,
+  "donor_forward_count": 0,
+  "intervention_forward_count": 0,
+  "baseline_runtime_seconds_sum": 156.39173221588135,
+  "per_forward_median_seconds": 2.4134491682052612,
+  "per_forward_min_seconds": 2.140752077102661,
+  "per_forward_max_seconds": 3.075639009475708,
+  "peak_rss_bytes": 444731392,
+  "rlimit_as_bytes": 4000000000,
+  "synthetic_checks": {
+    "status": "passed",
+    "seed": 20261023,
+    "heavy_model_forwards": 0,
+    "algebra_max_abs_error": 1.1920928955078125e-07,
+    "post_wo_norm": {
+      "post_wo_norm_max_abs_error": 3.351194619582998e-07,
+      "target_post_wo_norm_max": 3.424898423077937,
+      "scale_max": 8.642032171964733
+    },
+    "checks": [
+      "value replacement algebra",
+      "strict prefix identity",
+      "identity donor null",
+      "input immutability",
+      "masked source0 null",
+      "post-W_O aggregate norm matching",
+      "postboundary-mask prefix identity",
+      "current-V propagation",
+      "no false exact-distance-match claim"
+    ]
+  },
+  "baseline_analysis": {
+    "completed_baselines": 64,
+    "planned_baselines": 64,
+    "complete": true,
+    "forward_seconds_sum": 156.39173221588135,
+    "peak_rss_bytes": 444731392,
+    "max_manual_target_logit_error": 7.62939453125e-06,
+    "native_positive_margin_count": 16,
+    "mask0_positive_margin_count": 16,
+    "mean_p_usage_native_nats": -0.005843602683112237,
+    "mean_p_usage_mask0_nats": -0.06281794279165198,
+    "mean_source0_p_interaction_nats": -0.056974340108539745,
+    "all_four_world_complete_group_prefix_controls_exact": true,
+    "prefix_groups_checked": 16,
+    "cache_checksums_verified": 64,
+    "note": "Usage costs are correct-label NLL differences, not generic next-token loss. Routing diagnostics are descriptive only."
+  },
+  "baseline_qualified_priority_pairs": [
+    "mira_color",
+    "emma_season"
+  ],
+  "priority_selection_reason": "Both reciprocal mask0 p-removal NLL costs positive and pair means>.01. Selected from baseline data only; all8 pairs retained.",
+  "remaining_full_default_forward_count": 280,
+  "remaining_full_default_seconds_at_observed_baseline_mean": 684.2138284444809,
+  "short_priority_forward_count": 54,
+  "short_priority_seconds_at_observed_baseline_mean": 131.9555240571499,
+  "short_priority_conditions": [
+    "identity",
+    "matched",
+    "mismatched",
+    "source0",
+    "p_from_source0",
+    "ordinary_raw"
+  ]
+}

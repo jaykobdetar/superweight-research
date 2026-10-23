@@ -10,7 +10,11 @@ difference between removing one scalar output contribution and removing a
 neuron's whole output. The later models reveal different conditional effects;
 they do not establish a shared super-weight mechanism.
 
-**Research is paused, with completed work through Report 19.** The full previous
+**New OLMo research separates signal production, native use, and training development.**
+Read the [October 23 synthesis](docs/olmo/RESEARCH_UPDATE_2026_10_23.md) for the
+checkpoint trajectory, alternate writers, native-source analysis and actual Adam
+state, with explicit limits and [publication cutoff](docs/olmo/PUBLICATION_SCOPE.md).
+GPT-2 and Llama remain separate investigations. The full previous
 README, including the chronological updates and publication history, is retained
 in the **[research log](RESEARCH_LOG.md)**. Start with the
 [documentation index](docs/README.md) for the complete reading and audit routes.
@@ -22,6 +26,20 @@ in the **[research log](RESEARCH_LOG.md)**. Start with the
 | **OLMo: an earlier newline suppresses a later pulse through L0/H14.** Removing the selected attention edge restores the pulse; donor keys and values jointly transfer suppression. | Development-selected head, 16 separate constructed evaluation windows, then 12 eligible unedited book/code cases. [Pathway evidence](docs/REPORT.md#2-a-preceding-newline-suppresses-a-later-pulse). |
 | **OLMo: the layer-0 MLP conditionally relays the history effect.** Endogenous layer-1 attention can amplify it. | Component swaps support a conditional carrier, without identifying a unique minimal circuit or an additive mediation percentage. [Component evidence](docs/REPORT.md#3-the-earlier-mlp-carries-much-of-the-history-effect). |
 | **OLMo: deleting more of the neuron can damage less.** On the matched Wiki panel, scalar-output deletion gives a perplexity ratio of 1933.922, versus 1.445 for the whole neuron output. | Position-local interventions relative to the same native inputs. Whole-output deletion also has severe counterexamples; source K/V and normalized geometry matter. [Comparison and counterexamples](docs/REPORT.md#4-deleting-more-of-the-neuron-can-damage-less). |
+
+### New developmental and optimizer evidence
+
+- **Large coefficient does not mean mature circuit.** The primary weight becomes
+  dominant long before the tested final-model H14 newline role appears. Twelve
+  functional checkpoints distinguish coefficient growth from pathway development.
+- **Adam comparisons depend on which coordinates are compared.** At native
+  step 954000 the primary has the largest second moment across neurons in its
+  output row. Yet within that same neuron, it has lower second moment than all
+  128 preselected other residual axes, giving about twice their median adaptive
+  gain. These are different comparisons, not evidence of historical cause.
+
+See the [OLMo synthesis](docs/olmo/RESEARCH_UPDATE_2026_10_23.md) for source links,
+negative findings, checkpoint identities and what remains unknown.
 
 ![OLMo causal pathways and their limits](figures/mechanism.png)
 
@@ -52,7 +70,8 @@ the entire MLP or permanently editing the checkpoint. All indices are zero-based
 
 ## Limitations and claim boundaries
 
-These are fixed-checkpoint, finite-intervention studies. Many later panels have
+The causal studies use finite interventions; the new developmental study also
+compares training checkpoints, without establishing historical training cause. Many later panels have
 only four passages per source, fixed selection/calibration and correlated,
 unadjusted bootstrap intervals. Fresh passages do not establish independence
 from pretraining. A small loss difference does not establish identical
@@ -108,13 +127,14 @@ not every historical experiment. The original-machine allowance was 8 GiB VRAM,
 same-machine validation are linked in the guide. Different hardware can change
 rounding. GPT-2 and Llama use [separate reproduction routes](docs/TRANSFER_REPRODUCING.md);
 later GPT-2 reports have their own guides and unperformed replay limits.
-These commands document reproduction; this documentation update runs no model
-experiments and does not resume the paused research.
+These commands document the earlier reproduction route. The new OLMo packages
+have separate [offline audits and replay boundaries](docs/olmo/PUBLICATION_SCOPE.md).
 
 ## Contents
 
 | Location | Contents |
 | --- | --- |
+| [research/olmo/](research/olmo/) | New model-specific compact evidence, scripts, protocols and stage-specific reports. |
 | [docs/](docs/README.md) | Model-specific entry points, reports, limitations, hypotheses and reproduction guides. |
 | [RESEARCH_LOG.md](RESEARCH_LOG.md) | Complete earlier README chronology, preserved as a historical snapshot. |
 | [experiments/](experiments/) · [scripts/](scripts/) | Frozen designs and archived code; portable preparation, audit and reproduction tools. |
@@ -127,3 +147,4 @@ redistributed. Exact external sources and hashes are recorded in the guides and
 manifests. The public numerical exports have narrower audit scopes than the
 private original evidence. Existing artifact paths and saved handoffs are
 preserved; the model indexes provide navigation without moving that evidence.
+

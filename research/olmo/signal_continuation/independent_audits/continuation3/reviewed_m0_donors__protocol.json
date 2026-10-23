@@ -1,0 +1,96 @@
+{
+  "group": [
+    1091,
+    3419,
+    6535,
+    4798
+  ],
+  "treatments": {
+    "sham_reproject": [],
+    "single1091": [
+      1091
+    ],
+    "other_top3": [
+      3419,
+      6535,
+      4798
+    ],
+    "top4": [
+      1091,
+      3419,
+      6535,
+      4798
+    ],
+    "full_m0_output": null
+  },
+  "panels": [
+    {
+      "name": "water_cycle",
+      "split": "discovery"
+    },
+    {
+      "name": "library",
+      "split": "discovery"
+    },
+    {
+      "name": "bread",
+      "split": "discovery"
+    },
+    {
+      "name": "programming",
+      "split": "discovery"
+    },
+    {
+      "name": "wiki_validation__64082",
+      "split": "context_holdout",
+      "source_window": "wiki_validation__64082",
+      "source_full_sha256": "60b6990c6ebb31d30cb47e2aca91d21813b34b7470b071fa5ce71cfb0b7c115b"
+    },
+    {
+      "name": "dubois__42448",
+      "split": "context_holdout",
+      "source_window": "dubois__42448",
+      "source_full_sha256": "217354ef3bea947c93ff8c342f0aaab6c22bfd73617854a00dcb61cd9ca3d822"
+    },
+    {
+      "name": "hobbes__73992",
+      "split": "context_holdout",
+      "source_window": "hobbes__73992",
+      "source_full_sha256": "fafeb25b1be4b14f5b9a91f89c97c3f924211ac41fa7cb8cad442342d9f5e0a4"
+    },
+    {
+      "name": "optimizers__9712",
+      "split": "context_holdout",
+      "source_window": "optimizers__9712",
+      "source_full_sha256": "9e052c367cac49c324eb3e584f983a1039b9f9050c4c3203259f99ad6393b4ef"
+    }
+  ],
+  "checkpoint": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "q": 128,
+  "p": 64,
+  "selection": "Top4 L0 neurons by mean absolute contribution to L1 neuron1710 gate numerator on4 discovery panels, frozen before donor tests. Split1091/rest3 is a2x2, not a value sweep.",
+  "interventions": "At L0 MLP output q128, replace selected post-SwiGLU activations by opposite-world donor values and freshly project. Keep all other positions and activations; L1 attention remains endogenous. Full-output donor is positive control.",
+  "heldout": "Four archived windows selected before donor effects; replace all187/535 tokens with209, then force0=510 and64=128=187. These are controlled heldout contexts, not naturally occurring text.",
+  "score": "Prefix outcomes only: L1 primary gate/up/write, alternate-pair writes, source geometry, normalized state. No downstream loss.",
+  "input_sha256": {
+    "water_cycle__R": "e5f0f9fee09930c7844e7b65be693a0327d6b6045b232e524b94da23d1b6e380",
+    "water_cycle__E": "e5f0f9fee09930c7844e7b65be693a0327d6b6045b232e524b94da23d1b6e380",
+    "library__R": "3fbad2f2d576706394ca434ec75fde4a20350af542577e979a36180a2e048f33",
+    "library__E": "3fbad2f2d576706394ca434ec75fde4a20350af542577e979a36180a2e048f33",
+    "bread__R": "71ae023d863a3885e6f229a15b4443279f8ea4f68e8640012e6847a5f09d86ba",
+    "bread__E": "71ae023d863a3885e6f229a15b4443279f8ea4f68e8640012e6847a5f09d86ba",
+    "programming__R": "6e3816b5070c7b9ffbe05d7c6db1ab9b9bddc2d09b7b954d2b988f5434f3da6b",
+    "programming__E": "6e3816b5070c7b9ffbe05d7c6db1ab9b9bddc2d09b7b954d2b988f5434f3da6b",
+    "wiki_validation__64082__R": "80c342a53e961c6186b463f3545f59b8eece67a23c009c1322c99df5c3ea5408",
+    "wiki_validation__64082__E": "80c342a53e961c6186b463f3545f59b8eece67a23c009c1322c99df5c3ea5408",
+    "dubois__42448__R": "41792372f205ff7d04ec282d1566bf07ffc15720c77a390dff06f68173ae1c7f",
+    "dubois__42448__E": "41792372f205ff7d04ec282d1566bf07ffc15720c77a390dff06f68173ae1c7f",
+    "hobbes__73992__R": "b4819a3cfb662feeeb378e6edad348b43e0cbd56f58975707ce78086d1f89741",
+    "hobbes__73992__E": "b4819a3cfb662feeeb378e6edad348b43e0cbd56f58975707ce78086d1f89741",
+    "optimizers__9712__R": "32cd26697b69e6ffd4ccc9ccb44c93bd7e0d2759b121be19105331b846a63bf3",
+    "optimizers__9712__E": "32cd26697b69e6ffd4ccc9ccb44c93bd7e0d2759b121be19105331b846a63bf3"
+  },
+  "runner_sha256": "4e61884486aabbd12a2b12ec5bdc07bcefffa2033accf573dc0f8891cfaeb20e",
+  "trace_sha256": "195fe6e8211953d699aa3d220c37739e43297cd679c7968ad137133d6a35aa43",
+  "group_selection_sha256": "7f74899852c93e245fe944b69479507366d5b25d4f46c94e23655bf30217d59c"
+}

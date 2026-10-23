@@ -1,0 +1,26 @@
+{
+  "created_unix": 1792734076.6113694,
+  "original_protocol_sha256": "32f7f99b647568b304657eff1d522c70103976f907e582bb2a2d2b51df1819ab",
+  "reason": "Original global source0 mask changes later source p construction in layers2+, so add a complementary native-prefix access test. No outputs from full forward or fresh panel have been obtained.",
+  "preserve_original_conditions": true,
+  "additional_conditions": [
+    "post_mask0",
+    "post_mask0p",
+    "post_maskr",
+    "post_mask0r"
+  ],
+  "reuse_conditions": [
+    "native",
+    "maskp"
+  ],
+  "new_query_scope": "All masked edges only for q>=p+1, identical for source0,sourcep and ordinary r=p-1; layers2..15. Prefix positions0..p remain native through all layers.",
+  "primary_affected_targets": "p+2..255, same frozen windows and token hashes",
+  "complementary_estimand": "(post_mask0p-maskp)-(post_mask0-native); subtract corresponding post_mask0r/post_maskr ordinary-source interaction",
+  "required_exact_controls": [
+    "Per-layer hidden prefix SHA256 matches native for positions0..p.",
+    "TargetNLLs at positions1..p+1 exactly match native."
+  ],
+  "interpretation": "Redundancy of downstream access to native prefix sources, not proof of identical source content. Later query states evolve endogenously.",
+  "added_forward_count": 96,
+  "total_distinct_forward_count": 240
+}

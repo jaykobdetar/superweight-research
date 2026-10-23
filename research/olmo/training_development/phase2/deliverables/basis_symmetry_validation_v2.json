@@ -1,0 +1,49 @@
+{
+  "label": "Post-hoc numerical sanity check of an analytic architecture symmetry",
+  "checkpoint": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "reflection_vector_sum": 5.960464477539063e-08,
+  "reflection_vector_squared_norm": 1.0,
+  "transformed_basis_direction_max_absolute_coordinate": 0.07857794660302397,
+  "memory_after_transforms_max_rss": 738664448,
+  "peak_rss_bytes": 737943552,
+  "tests": [
+    {
+      "probe": "single_The",
+      "activation_max_scaled_error": 2.384185791015625e-07,
+      "premlp_equivariance_max_scaled_error": 2.7707872618520923e-07,
+      "attention_l0_max_absolute_error": 0.0
+    },
+    {
+      "probe": "single_period",
+      "activation_max_scaled_error": 9.120825552599854e-07,
+      "premlp_equivariance_max_scaled_error": 1.1482785566840903e-06,
+      "attention_l0_max_absolute_error": 0.0
+    },
+    {
+      "probe": "water_cycle",
+      "activation_max_scaled_error": 7.897615432739258e-07,
+      "premlp_equivariance_max_scaled_error": 1.9401002191443695e-06,
+      "attention_l0_max_absolute_error": 1.7136335372924805e-07
+    },
+    {
+      "probe": "library",
+      "activation_max_scaled_error": 2.726912498474121e-06,
+      "premlp_equivariance_max_scaled_error": 1.7846409718913492e-06,
+      "attention_l0_max_absolute_error": 8.046627044677734e-07
+    },
+    {
+      "probe": "bread",
+      "activation_max_scaled_error": 8.344650268554688e-07,
+      "premlp_equivariance_max_scaled_error": 2.5066187845368404e-06,
+      "attention_l0_max_absolute_error": 3.725290298461914e-07
+    },
+    {
+      "probe": "programming",
+      "activation_max_scaled_error": 1.2516975402832031e-06,
+      "premlp_equivariance_max_scaled_error": 1.8477439880371094e-06,
+      "attention_l0_max_absolute_error": 1.4901161193847656e-07
+    }
+  ],
+  "passed": true,
+  "scope": "Selected activations and prefix hidden-state equivariance only; the down scalar was not rotated, so its unchanged numeric contribution is not claimed as a physical scalar in a rotated model. Global function preservation is an algebraic statement with every residual input/output projection and final unembedding transformed consistently. No rotated full-model logits or training were run."
+}

@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "input_manifest_sha256": "7c7afdea710322f8bfe287b0146d370637d5dce3baf6fcd8c86ff5a813f95ff1",
+  "frozen_before_model_evaluation": true,
+  "primary_scope": "frozen_all",
+  "primary_patched_layers": [2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "primary_frozen_attention_layers": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "patched_queries": "strictly greater than first-newline position p",
+  "secondary_scope": "single_layer_endogenous",
+  "secondary_preselected_layer": 8,
+  "secondary_attention_rule": "At layer 8 replay baseline P; at all other layers allow endogenous recipient routing. Layer 8 P would naturally equal baseline because all earlier layers are unmodified.",
+  "conditions": {
+    "identity": "Recipient p V at recipient p, exact replay integrity control.",
+    "matched": "Independent paraphrase, same fact label, donor p V at recipient p.",
+    "mismatched": "Same paraphrase template, opposite label, donor p V at recipient p.",
+    "irrelevant": "Unrelated room/window fact, donor p V at recipient p.",
+    "source0": "Unrelated-content donor source0 V at recipient source0; same initial token 510. Exact causal negative control, not a test of p.",
+    "p_from_source0": "Recipient source0 V at recipient p. Preserves p routing but removes later-fact information from the supplied p value.",
+    "ordinary_normmatched": "Opposite-label paraphrase fact-token V at recipient fact-token position p-2, only for queries>p; perturbation scaled per query so aggregate post-W_O norm matches the mismatched newline-p perturbation. Known-carrier positive control, not an exact distance match."
+  },
+  "worlds": {
+    "native": "All attention sources accessible.",
+    "postboundary_mask0": "Source0 excluded only at queries>p, layers2..15. Prefix<=p remains native. P replay uses this world's baseline, not unmasked native P."
+  },
+  "primary_measure": "Per recipient log P(correct)-log P(foil); primary donor-label contrast is matched margin minus mismatched margin. Average the two reciprocal recipients within each pair before aggregating pairs.",
+  "strong_transfer_definition": "Baseline and matched-donor correct-minus-foil margins positive, mismatched-donor margin negative, in both reciprocal label directions. Report each world separately.",
+  "baseline_gate": "Both reciprocal baseline margins >0 in that world. Retain every example and report all-example results plus separately labeled baseline-qualified subset. Never exclude or tune from donor effects.",
+  "whole_input_oracle": "The opposite recipient input differs in exactly one pre-newline fact token. Its baseline supplies the attainable opposite-label preference benchmark, expressed in the original recipient's correct/foil orientation.",
+  "null_controls": "Identity and source0 cross-content interventions must preserve prediction margin within1e-4 and prefix per-layer SHA256 exactly. Manual observed-target logit must agree with streamed full-vocabulary target_logit within1e-3.",
+  "negative_result_limit": "No transfer does not show that p lacks payload: direct fact access may dominate, donor signal may be weak, or fixed routing may remove necessary decoding paths.",
+  "semantic_claim_limit": "This is a one-token fact-information assay, not proof of abstract semantics. Context and lexical identity remain correlated.",
+  "source_role_limit": "Short controlled prompts do not establish that their first newline is an attention sink or replicate long native corpus routing."
+}

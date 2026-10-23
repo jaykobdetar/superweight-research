@@ -1,0 +1,215 @@
+OLMo SIGNAL PRODUCTION: CAUSAL CONTINUATION
+Completed-results cutoff: 23 October 2026, 06:16 UTC
+
+Model: allenai/OLMo-1B-0724-hf
+Revision: d7cbab742d80589e714b1a2d7f838dcd21cbe143
+All indices are zero-based. All new inference is FP32 NumPy, CPU only.
+
+MAIN FINDINGS
+
+1. The H14 history effect now has a concrete early MLP carrier. Reciprocal
+activation-donor experiments identify L0 neurons 1091, 3419, 6535 and 4798 as a
+conditionally sufficient/necessary group for the large L1 primary pulse in
+eight controlled contexts. This is not a unique minimal circuit or a claim
+about downstream loss. Neuron1091 alone induces much of the pulse, but is not
+strictly necessary for every residual negative write.
+
+2. Alternate L1 writers are behaviorally relevant after neuron1710 is removed.
+Deleting the selected negative-writing group makes two controlled The-source
+prefixes worse mainly in the 1710-deleted background. These small panels do not
+establish a universal backup set.
+
+3. For source0 newline187, removing positive canceling writers 2476/2637/7845
+partially rescues full-model loss after1710 deletion. Critically, removing their
+axial opposition alone does not reproduce the rescue. Their axial and off-axis
+components interact strongly. The useful source cannot be reduced to simply
+making coordinate1764 more negative.
+
+1. EARLY CAUSAL CHAIN: H14 TO L0 MLP TO L1 MLP
+
+Four archived prose probes hold q128=newline187 fixed and compare p64=space209
+with p64=newline187, or remove only the L0/H14 q128-to-p64 attention edge. Sixteen
+fresh two-layer passes reproduce the previous normalized L1 inputs: native U/R
+states are bitwise identical; edge/H0 controls differ by at most2.65e-5. All
+positions before q stay bitwise unchanged under the edge interventions.
+
+An independent head14-only replay matches the actual changed pre-M0 residual
+within8.20e-8. The previous and current newline have identical L0 value vectors,
+because position enters Q/K through RoPE rather than being added to embeddings.
+Nevertheless, in this fixed distance64 setup, the prior newline receives about
+249.614 times the self-newline attention weight. Its attention mass is .928-.954.
+After its edge is removed, self-newline receives only .052-.084; most remaining
+weight goes to other content. This positional ratio is specific to the tested
+token pair and relative distance, not a claim about every previous newline.
+
+A query-local H14 K/V factorial in the p64-space recipient identifies the first
+MLP gate switch. Supplying the newline value without its key leaves source mass
+at .00074-.00119 and L0 neuron1091 strongly active. Supplying the newline key
+without its value redirects attention but also leaves1091 active. Joint K+V
+changes flip1091's gate negative and move its activation from approximately
+-10 to +.53-.61. All other heads and query positions stay in the recipient
+world in this arithmetic intervention; it is not a global key replacement.
+
+In the native history-suppressed versus edge-blocked probes,1091's gate moves
+from about -2.03..-2.41 to +4.44..+5.25; its up factor stays negative. The gate
+switch produces the activation sign switch. Swapping only the up factor does
+not reproduce it, while swapping only the gate produces an even larger negative
+activation. Thus the first gate switch is distinct from the later backup pair's
+joint gate/up switch.
+
+The L0-neuron output decomposition uses the centered L1 gate/up rows as linear
+features of the pre-L1-MLP residual. It splits the gate/up changes into A0, M0,
+A1 and a symmetric normalization interaction. For n/s, the identity is
+Delta(n/s) = Delta(n)*mean(1/s) + mean(n)*Delta(1/s).
+M0 then splits exactly by individual neuron activation changes. Floating-point
+closure error is below1.28e-6 for components and4.93e-6 for neurons. These are
+signed arithmetic allocations, not percentages of mediation or performance.
+
+Neuron1091 is the largest M0 contributor to the1710 gate change and to both
+alternate-writer up changes in all four discovery probes. The selected top-four
+group for the1710 gate is1091/3419/6535/4798, frozen before causal donor tests.
+
+2. RECIPROCAL L0 NEURON TESTS, INCLUDING FROZEN CONTEXT HOLDOUTS
+
+At L0/q128 only, selected post-SwiGLU activations are replaced by opposite-world
+values and freshly projected. All other neurons/positions remain native and
+L1 attention is endogenous. Tests use a2x2 split of1091 versus the other three,
+plus sham-reprojection and whole-M0-output donor controls. Four discovery probes
+and four independently selected controlled context holdouts give80 interventions
+plus8 heldout native passes. Holdouts come from archived Wiki, DuBois, Hobbes and
+optimizer-code windows; they are edited probes, not unmodified natural text.
+
+Primary raw coordinate1764 writes across all eight contexts:
+
+Suppressed recipient, edge-world donors:
+  Single1091:             -247.91 to -199.68
+  Other three only:         -7.27 to   +2.67
+  All four:              -292.73 to -263.73
+  Whole-M0 output:        -312.41 to -287.10
+
+Edge-blocked recipient, suppressed-world donors:
+  Native/reprojected:     -311.60 to -285.58
+  Single1091 restoration:  -31.34 to   +3.01
+  Other three restoration:-283.74 to -243.76
+  All four restoration:    +.000058 to +.010915
+  Whole-M0 restoration:    +.000015 to +.002811
+
+The four-neuron group therefore transfers or suppresses the large pulse under
+these conditional interventions. Single1091 is a strong carrier, but one
+discovery case retains a -31.34 pulse after its restoration. The other three
+contribute substantial interaction/amplification. Whole-M0 donation is a module
+comparator, not assumed restoration of every opposite-world component.
+
+All88 run identities/checksums were independently audited. Selected-column
+reconstruction errors are at most2.11e-6; the additional effective-activation
+audit gives2.46e-6. Sham normalized-state deviation is at most2.60e-5.
+Important schema: per-run m0_activations are native pre-hook activations.
+effective_activations.npz separately stores the actual donor-swapped arrays.
+
+3. ALTERNATE L1 FACTORS ARE NOT COPIES OF THE PRIMARY FACTOR
+
+In all four H14 discovery panels, the alternate pair3950/4786 has a combined
+centered-axis write of about -.010..-.017 in the suppressed state. Supplying
+only edge-world gates gives +3.26..+3.85. Supplying only edge-world up factors
+gives +.042..+.054. Supplying both gives -8.29..-7.13. Both one-factor hybrids
+have the wrong sign for the large negative pair write. This fixed-node
+arithmetic interaction is not proof of natural-prefix reachability.
+
+An explicit LayerNorm-domain check illustrates that caveat. The exact six
+factor targets for edge-world primary1710 plus suppressed-world pair3950/4786
+require minimum squared input norm2235.58-2349.03, exceeding the ideal ceiling
+2048. The reverse combination is feasible. Matching only the primary's
+edge-world factors while retaining the suppressed nullspace direction is also
+feasible and gives a POSITIVE pair write. Therefore a strong primary does not
+mathematically force negative backup writes. Only the exact six-factor target
+combination is impossible, not every form of backup suppression.
+
+4. FULL-MODEL SOURCE-LOCAL ALTERNATE-WRITER FACTORIAL
+
+The shared streamed FP32 implementation passed10 frozen comparisons against
+archived full-model losses before these experiments. Our24 full forwards use
+two exact archived256-token newline-start prefixes (DuBois32768 and optimizer
+12000), plus matched source-token510 replacements. Each panel has native,
+reconstructed-native, drop1710, drop-selected-group, joint-drop and same-world
+add-back conditions. Only L1 output at source position0 is modified. Scored
+NLL indices1..254 predict target positions2..255, identical within each panel.
+
+All eight reconstruction/add-back checks pass: maximum per-target NLL error
+1.87e-5, maximum mean absolute error2.86e-6. A separate matched-segment check
+reproduces the original DuBois FP16 column-lesion mean5.069168 with new FP32
+mean5.069185. The old whole512-token mean differs because it scores more targets.
+Peak RSS for the new full-forward/control jobs is below548MB.
+
+For sourceThe510, negative writers7579/7845/6947/2637 have little cost when
+removed in the intact model (-.00009 and-.00096 mean NLL change). Their deletion
+on top of1710 deletion adds .09944 and.02499 NLL. Positive primary-by-group
+interactions are .09953 and.02595. This supports conditional behavioral
+relevance, not universal necessity or uniqueness of the selected group.
+
+The extra joint-lesion harm is concentrated before the first later newline:
+DuBois joint cost1.123 before versus.06165 after, compared with1710-only .153
+versus.01254. Code joint cost1.321 before versus.02757 after. These pre-boundary
+bins contain only15 and3 queries, respectively; report their small size rather
+than treating them as independent population samples. No additional newline
+mask was applied in this Q1 experiment.
+
+5. NEWLINE CANCELLATION RESCUE IS A JOINT GEOMETRY EFFECT
+
+For source187, the positive alternate trio2476/2637/7845 partly cancels existing
+negative writers. Whole-trio deletion after1710 deletion changes source alignment
+from-.00973 to-.65124. It now also produces a real, partial behavioral rescue.
+
+Mean NLL on the matched254 targets:
+                                      DuBois       Optimizer code
+  Native                              3.293963     1.739449
+  Remove1710 column                   5.069185     3.163742
+  Remove trio only, native1710         3.297223     1.742598
+  Remove1710 and whole trio            4.078297     1.980111
+  Remove1710 and trio AXIS only        5.250598     3.057247
+  Remove1710 and trio COMPLEMENT only  5.120599     2.959813
+
+The final four controls use the exact centered coordinate1764 unit axis.
+The complementary raw vector includes the group's mean, making the two
+components algebraically sum to its full output. They are vector-component
+interventions, not neuron ablations. Axis-only source alignment improves to
+-.43293 but does not reproduce the joint loss rescue; in DuBois it worsens loss.
+Finite axis-by-complement interactions are-1.22371 and-.87321 NLL. These numbers
+are factorial interactions, not mediation fractions. Joint deletion remains
+worse than native, so this is not full recovery.
+
+L2 source K/V and later source-attention trajectories are saved as diagnostics.
+Matched source-token/treatment states and L2 keys are bitwise identical across
+the two different suffixes. Their different losses thus reflect contextual use,
+not different production at source0. No new K-only/V-only mediation experiment
+is included in this cutoff; diagnostics alone do not establish which projection
+causes the loss improvement.
+
+6. AUDIT BOUNDARY, LIMITS, AND FOLLOW-ON WORK
+
+Independent review is complete for the streamed-forward math, source hook
+algebra, all180 alternate-factor arithmetic values, the LayerNorm feasibility
+calculation, M0 decomposition, and all88 M0 donor receipts. The28 new downstream
+forwards and head14-only K/V arithmetic have passed implementation and internal
+checks, but had NOT yet received separate independent review at this cutoff.
+Do not label that final independent audit complete without its later receipt.
+
+The H14 carrier result does not establish the same neurons as the carrier for
+H12 empty-history behavior. The earlier H12 value/routing evidence remains a
+distinct mechanism. Neither result proves a training origin. Selected groups
+remain exploratory; the four fixed context holdouts strengthen transfer within
+this intervention design, not a claim across arbitrary prompts or models.
+
+Queued separately, not included: L2 K/V mediator donor controls with source0's
+own state held native; crossed H12/M0 tests; broader untouched-context validation.
+
+SOURCE AND PROVENANCE LINKS
+
+Pinned research repository:
+https://github.com/jaykobdetar/superweight-research/tree/0bf1747a8d1b4e6a0adfa3aab72005f7b13df096
+Pinned model:
+https://huggingface.co/allenai/OLMo-1B-0724-hf/tree/d7cbab742d80589e714b1a2d7f838dcd21cbe143
+Official forward reference:
+https://github.com/huggingface/transformers/blob/v4.40.2/src/transformers/models/olmo/modeling_olmo.py
+
+Raw outputs, frozen protocols, code identities, receipts and compact analyses
+accompany this report. Full checkpoint weights are excluded from the snapshot.

@@ -1,0 +1,304 @@
+START run_prefix.py main --half
+main fp16approx water_cycle U -304.3060302734375 R 0.0010601291432976723
+main fp16approx library U -296.4019775390625 R 0.000371165806427598
+main fp16approx bread U -300.986328125 R 0.0007206224836409092
+main fp16approx programming U -297.9827880859375 R 0.00033347634598612785
+DONE /workspace/shared/olmo_training_origins/phase2/results/main/fp16_approx.json seconds 10.802008152008057 RSS 401911808 singleThe -258.304443359375 singlePeriod -253.878173828125
+START run_prefix.py main
+main fp32 water_cycle U -304.4427185058594 R 0.001063391100615263
+main fp32 library U -296.5216979980469 R 0.0003739287203643471
+main fp32 bread U -301.0219421386719 R 0.000725486665032804
+main fp32 programming U -298.0820007324219 R 0.0003312552289571613
+DONE /workspace/shared/olmo_training_origins/phase2/results/main/float32.json seconds 6.730320453643799 RSS 402522112 singleThe -258.5177917480469 singlePeriod -253.87164306640625
+START validate_endpoint.py
+{
+  "protocol_sha256": "03b2692ddf8c39a4cb13e9cf089757d1a3cd099440fc3420e812c033f345b899",
+  "passed": true,
+  "checks": [
+    {
+      "check": "FP16-style source pulse 510",
+      "observed": -258.304443359375,
+      "reference": -258.62060546875,
+      "relative_error": 0.0012224938875305623,
+      "pass": true
+    },
+    {
+      "check": "FP16-style source pulse 15",
+      "observed": -253.878173828125,
+      "reference": -253.878173828125,
+      "relative_error": 0.0,
+      "pass": true
+    },
+    {
+      "check": "causal prefix float32",
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "check": "self-only same token water_cycle",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token library",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token bread",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token programming",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "mature newline_U",
+      "median_abs_pulse": 299.5519714355469,
+      "all_values": [
+        304.4427185058594,
+        296.5216979980469,
+        301.0219421386719,
+        298.0820007324219
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R",
+      "median_abs_pulse": 0.0005497076926985756,
+      "all_values": [
+        0.001063391100615263,
+        0.0003739287203643471,
+        0.000725486665032804,
+        0.0003312552289571613
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R_edge_H14",
+      "median_abs_pulse": 305.00640869140625,
+      "all_values": [
+        311.5978698730469,
+        302.8671569824219,
+        305.5016784667969,
+        304.5111389160156
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R_edge_H0",
+      "median_abs_pulse": 0.000549581804079935,
+      "all_values": [
+        0.0010619350941851735,
+        0.00037329550832509995,
+        0.00072586809983477,
+        0.0003325401048641652
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature H12 restoration",
+      "median_fraction": 1.8418423521867646,
+      "all_values": [
+        1.850371306530259,
+        1.835654628305355,
+        1.8043794459223916,
+        1.8480300760681743
+      ],
+      "pass": true
+    }
+  ],
+  "scope": "Numerical source-pulse references, code/formula parity and exact invariants plus qualitative replication on new fixed probes. Does not execute the full Transformers/CUDA reference implementation; no bit-exact SDPA claim."
+}
+START acquire_prefix.py step2000-tokens4B
+step2000-tokens4B jobs 262 bytes 339214336 all8 2713714688 used 341387102
+step2000-tokens4B done 20 / 262 used 677242718
+step2000-tokens4B done 40 / 262 used 677668702
+step2000-tokens4B done 60 / 262 used 678061918
+step2000-tokens4B done 80 / 262 used 678438750
+step2000-tokens4B done 100 / 262 used 678774622
+step2000-tokens4B done 120 / 262 used 678938462
+step2000-tokens4B done 140 / 262 used 679176030
+step2000-tokens4B done 160 / 262 used 679552862
+step2000-tokens4B done 180 / 262 used 679864158
+step2000-tokens4B done 200 / 262 used 680027998
+step2000-tokens4B done 220 / 262 used 680232798
+step2000-tokens4B done 240 / 262 used 680396638
+step2000-tokens4B done 260 / 262 used 680593246
+COMPLETE step2000-tokens4B used 680601438
+START run_prefix.py step2000-tokens4B
+step2000-tokens4B fp32 water_cycle U -0.007330451626330614 R -0.0031883385963737965
+step2000-tokens4B fp32 library U -0.0046441638842225075 R -0.002115873387083411
+step2000-tokens4B fp32 bread U -0.007722596172243357 R -0.004391069523990154
+step2000-tokens4B fp32 programming U -0.005657838191837072 R -0.002548960968852043
+DONE /workspace/shared/olmo_training_origins/phase2/results/step2000-tokens4B/float32.json seconds 7.2085065841674805 RSS 402575360 singleThe -0.0013094829628244042 singlePeriod 0.0008676830912008882
+step2000-tokens4B fp16approx water_cycle U -0.007325969636440277 R -0.0031960662454366684
+step2000-tokens4B fp16approx library U -0.004641618579626083 R -0.002115778625011444
+step2000-tokens4B fp16approx bread U -0.007718801498413086 R -0.004390068352222443
+step2000-tokens4B fp16approx programming U -0.005658157169818878 R -0.002546515315771103
+DONE /workspace/shared/olmo_training_origins/phase2/results/step2000-tokens4B/fp16_approx.json seconds 9.924641609191895 RSS 405008384 singleThe -0.0013068551197648048 singlePeriod 0.0008683651685714722
+START acquire_prefix.py step4000-tokens8B
+step4000-tokens8B jobs 262 bytes 339214336 all8 2713714688 used 680601438
+step4000-tokens8B done 20 / 262 used 1016244062
+step4000-tokens8B done 40 / 262 used 1016923998
+step4000-tokens8B done 60 / 262 used 1017268062
+step4000-tokens8B done 80 / 262 used 1017620318
+step4000-tokens8B done 100 / 262 used 1017956190
+step4000-tokens8B done 120 / 262 used 1018152798
+step4000-tokens8B done 140 / 262 used 1018414942
+step4000-tokens8B done 160 / 262 used 1018718046
+step4000-tokens8B done 180 / 262 used 1019078494
+step4000-tokens8B done 200 / 262 used 1019283294
+step4000-tokens8B done 220 / 262 used 1019447134
+step4000-tokens8B done 240 / 262 used 1019610974
+step4000-tokens8B done 260 / 262 used 1019799390
+COMPLETE step4000-tokens8B used 1019815774
+START run_prefix.py step4000-tokens8B
+step4000-tokens8B fp32 water_cycle U -0.15036702156066895 R -0.019293352961540222
+step4000-tokens8B fp32 library U -0.13137933611869812 R -0.005142160225659609
+step4000-tokens8B fp32 bread U -0.1534946858882904 R -0.0045632896944880486
+step4000-tokens8B fp32 programming U -0.14096778631210327 R -0.003246427746489644
+DONE /workspace/shared/olmo_training_origins/phase2/results/step4000-tokens8B/float32.json seconds 6.830442667007446 RSS 402591744 singleThe -0.16097013652324677 singlePeriod -0.14672675728797913
+step4000-tokens8B fp16approx water_cycle U -0.1502368450164795 R -0.019291311502456665
+step4000-tokens8B fp16approx library U -0.13140606880187988 R -0.005120256915688515
+step4000-tokens8B fp16approx bread U -0.15330708026885986 R -0.004554182291030884
+step4000-tokens8B fp16approx programming U -0.14112848043441772 R -0.0032477332279086113
+DONE /workspace/shared/olmo_training_origins/phase2/results/step4000-tokens8B/fp16_approx.json seconds 9.76656198501587 RSS 404832256 singleThe -0.16108500957489014 singlePeriod -0.14696192741394043
+START acquire_prefix.py step8000-tokens16B
+step8000-tokens16B jobs 262 bytes 339214336 all8 2713714688 used 1019815774
+step8000-tokens16B done 20 / 262 used 1355433822
+step8000-tokens16B done 40 / 262 used 1356064606
+step8000-tokens16B done 60 / 262 used 1356547934
+step8000-tokens16B done 80 / 262 used 1356924766
+step8000-tokens16B done 100 / 262 used 1357178718
+step8000-tokens16B done 120 / 262 used 1357367134
+step8000-tokens16B done 140 / 262 used 1357621086
+step8000-tokens16B done 160 / 262 used 1357932382
+step8000-tokens16B done 180 / 262 used 1358292830
+step8000-tokens16B done 200 / 262 used 1358456670
+step8000-tokens16B done 220 / 262 used 1358661470
+step8000-tokens16B done 240 / 262 used 1358825310
+step8000-tokens16B done 260 / 262 used 1359013726
+COMPLETE step8000-tokens16B used 1359030110
+START run_prefix.py step8000-tokens16B
+step8000-tokens16B fp32 water_cycle U -0.810023844242096 R 0.014393234625458717
+step8000-tokens16B fp32 library U -0.6632274389266968 R 0.01175495982170105
+step8000-tokens16B fp32 bread U -0.6442386507987976 R -0.0064674378372728825
+step8000-tokens16B fp32 programming U -0.470081090927124 R -0.008021191693842411
+DONE /workspace/shared/olmo_training_origins/phase2/results/step8000-tokens16B/float32.json seconds 7.345844030380249 RSS 403628032 singleThe -1.5238823890686035 singlePeriod -1.6984331607818604
+step8000-tokens16B fp16approx water_cycle U -0.8108277320861816 R 0.014357365667819977
+step8000-tokens16B fp16approx library U -0.6617674827575684 R 0.011723488569259644
+step8000-tokens16B fp16approx bread U -0.6442604064941406 R -0.00647527351975441
+step8000-tokens16B fp16approx programming U -0.46968984603881836 R -0.008034497499465942
+DONE /workspace/shared/olmo_training_origins/phase2/results/step8000-tokens16B/fp16_approx.json seconds 10.293575286865234 RSS 404676608 singleThe -1.5226154327392578 singlePeriod -1.696685791015625
+START acquire_prefix.py step56000-tokens117B
+step56000-tokens117B jobs 262 bytes 339214336 all8 2713714688 used 1359030110
+step56000-tokens117B done 20 / 262 used 1694664542
+step56000-tokens117B done 40 / 262 used 1695205214
+step56000-tokens117B done 60 / 262 used 1695672158
+step56000-tokens117B done 80 / 262 used 1696106334
+step56000-tokens117B done 100 / 262 used 1696343902
+step56000-tokens117B done 120 / 262 used 1696581470
+step56000-tokens117B done 140 / 262 used 1696786270
+step56000-tokens117B done 160 / 262 used 1697122142
+step56000-tokens117B done 180 / 262 used 1697482590
+step56000-tokens117B done 200 / 262 used 1697671006
+step56000-tokens117B done 220 / 262 used 1697875806
+step56000-tokens117B done 240 / 262 used 1698039646
+step56000-tokens117B done 260 / 262 used 1698228062
+COMPLETE step56000-tokens117B used 1698244446
+START run_prefix.py step56000-tokens117B
+step56000-tokens117B fp32 water_cycle U 0.1098228394985199 R 0.02215360477566719
+step56000-tokens117B fp32 library U 0.18948493897914886 R 0.04642786458134651
+step56000-tokens117B fp32 bread U 0.12915395200252533 R 0.033497266471385956
+step56000-tokens117B fp32 programming U 0.21387839317321777 R 0.056494615972042084
+DONE /workspace/shared/olmo_training_origins/phase2/results/step56000-tokens117B/float32.json seconds 7.314972877502441 RSS 403697664 singleThe -18.670513153076172 singlePeriod 0.0010352866956964135
+step56000-tokens117B fp16approx water_cycle U 0.1096111536026001 R 0.022020801901817322
+step56000-tokens117B fp16approx library U 0.1892566680908203 R 0.04644674062728882
+step56000-tokens117B fp16approx bread U 0.12900996208190918 R 0.03347477316856384
+step56000-tokens117B fp16approx programming U 0.21417546272277832 R 0.056382715702056885
+DONE /workspace/shared/olmo_training_origins/phase2/results/step56000-tokens117B/fp16_approx.json seconds 10.577393531799316 RSS 404746240 singleThe -18.673324584960938 singlePeriod 0.001059024129062891
+START acquire_prefix.py step80000-tokens167B
+step80000-tokens167B jobs 262 bytes 339214336 all8 2713714688 used 1698244446
+step80000-tokens167B done 20 / 262 used 2033878878
+step80000-tokens167B done 40 / 262 used 2034526046
+step80000-tokens167B done 60 / 262 used 2034894686
+step80000-tokens167B done 80 / 262 used 2035312478
+step80000-tokens167B done 100 / 262 used 2035599198
+step80000-tokens167B done 120 / 262 used 2035795806
+step80000-tokens167B done 140 / 262 used 2036057950
+step80000-tokens167B done 160 / 262 used 2036402014
+step80000-tokens167B done 180 / 262 used 2036721502
+step80000-tokens167B done 200 / 262 used 2036885342
+step80000-tokens167B done 220 / 262 used 2037090142
+step80000-tokens167B done 240 / 262 used 2037253982
+step80000-tokens167B done 260 / 262 used 2037442398
+COMPLETE step80000-tokens167B used 2037458782
+START run_prefix.py step80000-tokens167B
+step80000-tokens167B fp32 water_cycle U 0.05194607004523277 R 0.013813888654112816
+step80000-tokens167B fp32 library U 0.07237987965345383 R 0.014418859034776688
+step80000-tokens167B fp32 bread U 0.050968658179044724 R 0.01560814306139946
+step80000-tokens167B fp32 programming U 0.054396841675043106 R 0.012999440543353558
+DONE /workspace/shared/olmo_training_origins/phase2/results/step80000-tokens167B/float32.json seconds 7.07074761390686 RSS 403628032 singleThe -74.00312042236328 singlePeriod 0.021757647395133972
+step80000-tokens167B fp16approx water_cycle U 0.051799774169921875 R 0.013787984848022461
+step80000-tokens167B fp16approx library U 0.07240676879882812 R 0.014484882354736328
+step80000-tokens167B fp16approx bread U 0.050811767578125 R 0.015614032745361328
+step80000-tokens167B fp16approx programming U 0.05444622039794922 R 0.01306462287902832
+DONE /workspace/shared/olmo_training_origins/phase2/results/step80000-tokens167B/fp16_approx.json seconds 9.375502347946167 RSS 404545536 singleThe -73.9638671875 singlePeriod 0.02205371856689453
+START acquire_prefix.py step88000-tokens184B
+step88000-tokens184B jobs 262 bytes 339214336 all8 2713714688 used 2037458782
+step88000-tokens184B done 20 / 262 used 2373076830
+step88000-tokens184B done 40 / 262 used 2373732190
+step88000-tokens184B done 60 / 262 used 2374125406
+step88000-tokens184B done 80 / 262 used 2374510430
+step88000-tokens184B done 100 / 262 used 2374813534
+step88000-tokens184B done 120 / 262 used 2375010142
+step88000-tokens184B done 140 / 262 used 2375296862
+step88000-tokens184B done 160 / 262 used 2375575390
+step88000-tokens184B done 180 / 262 used 2375935838
+step88000-tokens184B done 200 / 262 used 2376140638
+step88000-tokens184B done 220 / 262 used 2376304478
+step88000-tokens184B done 240 / 262 used 2376468318
+step88000-tokens184B done 260 / 262 used 2376656734
+COMPLETE step88000-tokens184B used 2376673118
+START run_prefix.py step88000-tokens184B
+step88000-tokens184B fp32 water_cycle U 0.03187211975455284 R 0.006915598642081022
+step88000-tokens184B fp32 library U 0.023797618225216866 R 0.003909476101398468
+step88000-tokens184B fp32 bread U 0.01682097651064396 R 0.004477653652429581
+step88000-tokens184B fp32 programming U 0.022903528064489365 R 0.004250847268849611
+DONE /workspace/shared/olmo_training_origins/phase2/results/step88000-tokens184B/float32.json seconds 7.508942365646362 RSS 403591168 singleThe -97.97874450683594 singlePeriod -0.018265819177031517
+step88000-tokens184B fp16approx water_cycle U 0.031804293394088745 R 0.006929878145456314
+step88000-tokens184B fp16approx library U 0.02380572259426117 R 0.003913789987564087
+step88000-tokens184B fp16approx bread U 0.01676660031080246 R 0.004479009658098221
+step88000-tokens184B fp16approx programming U 0.022836774587631226 R 0.004267645999789238
+DONE /workspace/shared/olmo_training_origins/phase2/results/step88000-tokens184B/fp16_approx.json seconds 10.506322860717773 RSS 404508672 singleThe -97.8973388671875 singlePeriod -0.01784004271030426
+START acquire_prefix.py step120000-tokens251B
+step120000-tokens251B jobs 262 bytes 339214336 all8 2713714688 used 2376673118
+step120000-tokens251B done 20 / 262 used 2712340318
+step120000-tokens251B done 40 / 262 used 2712921950
+step120000-tokens251B done 60 / 262 used 2713339742
+step120000-tokens251B done 80 / 262 used 2713741150
+step120000-tokens251B done 100 / 262 used 2714027870
+step120000-tokens251B done 120 / 262 used 2714224478
+step120000-tokens251B done 140 / 262 used 2714462046
+step120000-tokens251B done 160 / 262 used 2714822494
+step120000-tokens251B done 180 / 262 used 2715109214
+step120000-tokens251B done 200 / 262 used 2715354974
+step120000-tokens251B done 220 / 262 used 2715518814
+step120000-tokens251B done 240 / 262 used 2715690846
+step120000-tokens251B done 260 / 262 used 2715871070
+COMPLETE step120000-tokens251B used 2715887454
+START run_prefix.py step120000-tokens251B
+step120000-tokens251B fp32 water_cycle U 0.0033198059536516666 R -0.0010094890603795648
+step120000-tokens251B fp32 library U 0.0010096252663061023 R -0.0004934497992508113
+step120000-tokens251B fp32 bread U 0.0006077573052607477 R -0.00031676332582719624
+step120000-tokens251B fp32 programming U 0.0033378377556800842 R 0.0006507350481115282
+DONE /workspace/shared/olmo_training_origins/phase2/results/step120000-tokens251B/float32.json seconds 6.84240198135376 RSS 403718144 singleThe -152.2647705078125 singlePeriod -0.10613514482975006
+step120000-tokens251B fp16approx water_cycle U 0.00333472341299057 R -0.0010121818631887436
+step120000-tokens251B fp16approx library U 0.0010128580033779144 R -0.0004973011091351509
+step120000-tokens251B fp16approx bread U 0.0006004124879837036 R -0.00031710974872112274
+step120000-tokens251B fp16approx programming U 0.0033401325345039368 R 0.0006517991423606873
+DONE /workspace/shared/olmo_training_origins/phase2/results/step120000-tokens251B/fp16_approx.json seconds 10.379668235778809 RSS 404635648 singleThe -152.165771484375 singlePeriod -0.10645151138305664
+ALL EIGHT CHECKPOINTS COMPLETE

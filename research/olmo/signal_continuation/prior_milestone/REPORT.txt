@@ -1,0 +1,266 @@
+WHAT PRODUCES THE OLMo SUPER-WEIGHT SIGNAL?
+Bounded causal-production investigation, 23 October 2026
+
+Model: allenai/OLMo-1B-0724-hf
+Exact revision: d7cbab742d80589e714b1a2d7f838dcd21cbe143
+Repository reviewed: jaykobdetar/superweight-research at
+0bf1747a8d1b4e6a0adfa3aab72005f7b13df096
+All layer, head, neuron and coordinate indices are zero-based.
+
+MAIN ANSWER
+
+The dominant pulse is a history-dependent SwiGLU write, not a constant scalar
+inserted independently of the rest of the network. Early attention changes the
+input direction seen by the layer-1 MLP. The layer-0 MLP is a conditional carrier
+of the newline-history effect, and layer-1 attention strongly amplifies it.
+Neuron 1710's gate changes from negative to positive while its up factor becomes
+strongly negative, producing a large negative output at coordinate 1764.
+
+The new result is that neuron 1710 is not the only producer of the surviving
+coordinate-1764 signal. Other layer-1 MLP neurons already make negative writes
+in the same forward pass. After the entire 1710 output column is deleted, these
+pre-existing writes, not mostly the incoming residual, supply the remaining
+negative axis for four of the five tested source tokens. This is not adaptive
+compensation: deleting a down-projection output does not change that layer's
+already-computed neuron activations.
+
+The alternate writers are context-dependent. Neuron 7579 is the largest negative
+alternate writer for all five tested first-token states. Later H14-induced
+newline states instead have leading contributions from neurons 3950 and 4786.
+For a single newline at source position 0, substantial positive alternate writes
+nearly cancel the negative ones. That exception leaves almost no negative axis
+after whole-column deletion. It is a concrete local mechanism consistent with
+the previously recorded newline-source column failures, not yet a demonstrated
+behavioral rescue target.
+
+1. WHAT WAS ACTUALLY RUN
+
+The recovered evidence contained normalized inputs to the final checkpoint's
+layer-1 MLP, but not its full matrices. Exactly three official pinned tensors
+were acquired with verified HTTP byte ranges: layer-1 gate, up and down weights,
+201,326,592 bytes total (192 MiB). No other layer, full checkpoint, GPU, training
+run or downstream inference was acquired or executed.
+
+The complete layer-1 MLP was replayed on 21 cached FP32 inputs:
+- Five single-token source-position-0 states: The (510), period (15), newline (187),
+  double-newline (535) and space (209).
+- Four fixed synthetic prose panels, each with four q=128 newline conditions:
+  no earlier newline, an earlier newline at p=64, the same earlier-newline world
+  with only L0/H14 q-to-p blocked, and its H0 edge control.
+
+The incoming centered residual was reconstructed from the cached normalized
+direction and its recorded centered norm. Its mean is immaterial to the
+non-affine LayerNorm geometry studied here. Full-column deletion zeroed neuron
+1710's activation before a fresh down projection. Scalar-edge deletion replaced
+only output coordinate 1764 with the corresponding no-1710 value. Neither means
+deleting the entire down-projection row or changing the weight at every token.
+
+All cached selected rows match the newly acquired matrices bitwise. Reconstructed
+known contributions have maximum scaled error 4.12e-7; normalized-state recovery
+has maximum absolute error 1.98e-6. Direct exclusion avoids the roughly 1.88e-4
+roundoff possible when subtracting a dominant write from a rounded full output.
+Peak analysis RSS was about 233 MiB. An independent FP64 audit checked provenance,
+all 21 states, 189 masked-neuron interventions, 147 geometry conditions, 16
+gate/up factorials and 16 carry/other-MLP swaps. No substantive defect was found.
+
+This is an extension of the existing NumPy prefix computation, not an independent
+native-framework or full-model replication. The original public experiments use
+FP16; new local replay results below use the pinned FP32 weights and FP32 cache.
+
+2. THE EARLY CAUSAL PATHS MUST REMAIN DISTINCT
+
+H14: prior-newline history
+
+The public controlled experiment changes a p=64 space (209) to newline (187) while
+keeping q=128 newline (187) and the suffix fixed. L0/H14's mass on p changes from
+roughly .001 to .94-.96. Blocking only that edge restores the later pulse; H0
+and sham-edge controls do not. In a no-prior-newline recipient, earlier-newline
+donor K and V jointly suppress the pulse; either alone is insufficient. Thus
+redirecting attention and supplying the appropriate value content both matter.
+
+The public 28-case component factorial was reanalyzed from its 448 rows. At q,
+the residual before the layer-1 MLP is embedding + A0 + M0 + A1. Here A0 is the
+layer-0 attention output, M0 its MLP output, and A1 layer-1 attention output.
+- With the other two components frozen clean, the M0 donor induces a pulse
+  from -75.92 to -124.41. A0 alone or A1 alone does not.
+- M0+A1 donor outputs induce -131.60 to -311.10.
+- Swapping only M0 while leaving later A1 endogenous induces -131.92 to -308.26.
+- Restoring clean M0 in the edge-blocked world suppresses the pulse to 0-.00220.
+- The finite M0-by-A1 factorial interaction ranges from -197.88 to -55.69,
+  median -188.33. This is a conditional interaction, not a mediation percentage.
+All factorial interaction closures are exact, and a local FP16 scalar-factor
+replay reproduces all 448 recorded pulse values exactly.
+
+In the four newly replayed endpoint panels, the suppressed primary gate is
+-10.71 to -10.20, versus +21.17 to +21.32 after H14-edge removal. The up factor
+moves from -4.43..-2.07 to -23.28..-22.55. The normalized input norms change only
+about 0.5%, whereas their directions change substantially. Positive rescaling
+alone cannot reverse a gate's sign; this is not merely an input-norm effect.
+
+A neuron-local 2x2 factor replay makes the proximate interaction explicit:
+- Suppressed gate + edge-world up: +.00343 to +.00558, still no negative pulse.
+- Edge-world gate + suppressed up: -59.35 to -27.86, partial negative write.
+- Both edge-world factors: -311.60 to -302.87.
+The gate is necessary for the large negative write in these donor combinations;
+the up change strongly amplifies it. These are scalar-node interventions, not
+proof that all factors can be independently induced by natural prefix inputs.
+
+H12: empty early-attention history
+
+This is a different intervention. A later The/period token is made self-only in
+the first two attention layers, rather than changing an earlier newline edge.
+The public 64-case H12 experiment was checked separately:
+- Ordinary gates are negative; isolated gates are approximately +14.78.
+- The isolated H12 context transplanted into the ordinary world induces a large
+  pulse; the reciprocal ordinary H12 context suppresses the isolated pulse.
+- Replacing H12 context by the current source position 0 value exactly reproduces the
+  isolated-donor pulse. Replacing it by the current boundary value, or merely
+  making that H12 query self-only, does not reproduce the negative pulse.
+- The latter two controls agree exactly, as do the source position 0-value/donor controls.
+- Swapping both scalar gate/up factors exactly reconstructs the isolated pulse.
+  Up alone leaves it near zero; gate alone is much smaller and sometimes has the
+  wrong sign because the ordinary up factor can be positive.
+
+This identifies a feature-content-and-routing interaction. It does not identify
+H12 as the relay for H14 newline suppression; the prior reciprocal H12 swaps
+failed to transfer that newline state. The two phenomena cannot be conflated.
+
+3. WHERE THE SURVIVING SIGNAL COMES FROM
+
+Let P center a residual vector, and let e be the unit vector at coordinate 1764.
+Define the unit centered axis u = P e / sqrt(1-1/2048). For neuron j, its signed
+axis write is a_j * (Wdown[1764,j] - mean(Wdown[:,j])) / sqrt(1-1/2048).
+The post-MLP source is the incoming centered residual plus these neuron writes.
+
+After the whole 1710 column is removed:
+
+Token                 Incoming axis    Other-MLP axis    Total axis    Alignment
+The (510)                    -0.6154          -9.3000          -9.9154       -.8441
+Period (15)                  -0.3830          -5.3776          -5.7605       -.7299
+Newline (187)                +0.0192          -0.1238          -0.1046       -.0097
+Double-newline (535)         -0.3895          -8.7687          -9.1583       -.8529
+Space (209)                  -0.6536          -6.6349          -7.2885       -.7610
+
+For the four non-single-newline examples, other neurons supply 91.0-95.7% of the
+signed remaining negative axis. These are signed decomposition shares, not
+nonnegative causal fractions or percentages of model performance. They are
+unstable when positive and negative components cancel.
+
+For The (510), the largest alternate axis writes are 7579(-3.9293), 7845(-1.7096),
+6947(-1.5685) and 2637(-1.1212). Neuron7579 alone is not necessary for a negative
+alignment: deleting it after 1710 leaves The at -.6981 and period at -.3186.
+Retaining only 7579 plus the incoming residual is sufficient for a negative
+alignment around -.74 to -.81 across these five states, but not for faithful
+source vectors, later K/V, or useful model behavior. No unique minimal circuit
+has been established.
+
+At q=128 after H14-edge removal, the surviving axis is -9.72 to -11.38; 98.5-99.7%
+of that signed axis comes from other MLP neurons. The leading pair 3950/4786
+accounts for about 68.6-76.5% of the other-neuron net axis. Their activation signs
+and roles differ from those at source position 0. A universal fixed backup set is therefore
+not supported.
+
+With 1710 absent, swapping only the edge-world other-MLP output into the suppressed
+recipient yields alignment -.728 to -.766. Swapping only the incoming residual
+does not: alignment remains about -.017 to -.041. This is conditional sufficiency
+for the local source geometry, not a demonstrated downstream rescue.
+
+4. WHY DELETING MORE CAN DAMAGE LESS
+
+The primary weight accounts for 97.9049% of its column's squared norm, but the
+remaining 2.0951% is multiplied by a very large activation. Scalar-edge deletion
+leaves this large off-axis complement intact. Whole-column deletion removes it.
+
+For source The (510):
+- Native: axis -268.46, orthogonal norm 37.66, alignment -.9903.
+- Delete only (1764,1710): axis about -10.00, orthogonal norm 37.66, alignment -.2567.
+- Delete all 1710 outputs: axis -9.915, orthogonal norm 6.30, alignment -.8441.
+
+The remaining negative coordinate barely changes between the two lesions; the
+large change is the orthogonal contamination and therefore LayerNorm direction.
+This clarifies why a small squared-weight complement need not be small relative
+to the residual left after the dominant contribution is removed.
+
+The public full-model experiments already establish that the distorted source
+is subsequently used through coupled K/V pathways: column-world source K in a
+scalar-deleted recipient nearly restores the tested controlled losses, whereas
+the corresponding V-only replacement does not. Geometry-donor experiments also
+show that alignment and orthogonal direction interact. The new replay ends at
+the source state that feeds L2 normalization; it does not recompute any K/V map,
+attention probabilities or downstream losses.
+
+5. THE SINGLE-NEWLINE EXCEPTION IS CANCELLATION
+
+For source 187, alternate negative writes sum to -7.91913 and positive writes to
++7.79537. Their net is only -.12376. Adding incoming +.01918 leaves -.10459.
+Thus alternate negative writers are present, but are almost canceled.
+
+The positive columns 2476 (+2.34633), 2637 (+1.42561), 7845 (+1.28574) contribute much
+of this opposition. Removing these three full columns, in addition to 1710,
+changes local source alignment from -.00973 to -.65124. This surgical result
+demonstrates a local cancellation mechanism. It has not been run through later
+layers, so it must not be described as perplexity rescue.
+
+The independent computational-role investigation verified by exact source and
+token hashes that the original problematic DuBois source position 0 window begins token 187.
+Its public column-deleted L2 alignment is -.0096, consistent with this FP32 replay.
+Across its broader 32-window join, all three source position 0 token 187 cases have recorded
+whole-column perplexity ratios 7.03-10.62. This is convergent evidence, not proof
+that the three-column intervention above fixes those cases. In particular, a
+later newline with a real prefix has different alternate writers and must not
+be treated as equivalent to a source position 0 newline.
+
+6. THE CORRECT SECOND PAPER COORDINATE
+
+The checked coordinate is layer 1, output1764, neuron 8041. For ideal non-affine
+LayerNorm input h, sum(h)=0 and ||h||^2<=2048. Center the gate/up rows g,v.
+Because |SiLU(g.h)| <= |g.h| and the symmetric bilinear form has spectral radius
+(||g||||v||+|g.v|)/2,
+
+|w SiLU(g.h)(v.h)| <= |w| * 1024 * (||g||||v|| + |g.v|).
+
+The newly acquired full matrices independently reproduce 0.16032984931200406.
+This is a prompt-independent real-arithmetic bound on the RAW coordinate 1764
+write, not a sampled maximum, floating-point-certified theorem, or bound on
+downstream importance. The analogous centered-axis bound is 0.16069531; the
+whole-column L2 bound is 25.72159. It would be incorrect to infer that neuron 8041
+is globally negligible from the scalar bound.
+
+7. WHAT REMAINS UNPROVEN AND THE NEXT DISCRIMINATING TEST
+
+The work now traces an upstream history-dependent gate and several concrete
+alternate writers into the immediate source geometry. It does not identify
+every necessary layer-0 MLP neuron or complete the downstream behavioral circuit.
+Selected alternate sets are exploratory and were chosen after looking at these
+same states. No held-out selection claim, training-causal claim or universal
+token generalization is justified.
+
+The next useful test is not another scalar-value sweep. On a separate frozen
+panel, run paired native and whole 1710-deleted recipients with:
+1. Alternate-writer group removal and exact same-world add-back controls.
+2. For source 187, remove the positive trio or patch only its net axis while
+   preserving matched orthogonal/norm controls. Test whether loss is rescued.
+3. Patch the resulting L2 source K and V separately and jointly, then distinguish
+   early transmission from later dynamic query effects. Keep source position,
+   scoring span and target IDs fixed; report per-window failures.
+4. For the upstream path, localize which layer-0 MLP features cause the gate
+   rotation using component/feature interventions, not weight-magnitude sweeps.
+
+A downstream result requires later weights and a validated full-model execution
+or blockwise equivalent. Those resources were not acquired under this bounded
+extension. The existing work can nominate exact interventions, but cannot claim
+their behavioral outcomes before that test is run.
+
+PRIMARY EVIDENCE AND REPRODUCTION
+
+Pinned public research report:
+https://github.com/jaykobdetar/superweight-research/blob/0bf1747a8d1b4e6a0adfa3aab72005f7b13df096/docs/REPORT.md
+Pinned early-path experiment sources:
+https://github.com/jaykobdetar/superweight-research/tree/0bf1747a8d1b4e6a0adfa3aab72005f7b13df096/experiments/pulse_continuation
+Exact official checkpoint:
+https://huggingface.co/allenai/OLMo-1B-0724-hf/tree/d7cbab742d80589e714b1a2d7f838dcd21cbe143
+
+The accompanying files contain scripts, all new numerical results, compact
+cached inputs, source/revision hashes, transfer receipts, and the independent
+audit. Bulk weight tensors are deliberately excluded from the portable bundle.
+See REPRODUCE.txt for reconstruction and scope boundaries.

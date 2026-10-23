@@ -1,0 +1,1184 @@
+{
+  "schema": 1,
+  "model": "allenai/OLMo-1B-0724-hf",
+  "revision": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "precision": "FP32",
+  "tokenizer_sha256": "a094266ac6c4982efba277bc251349a5a6d6ad37efb39a2a90f53d8be2a40a40",
+  "runner_sha256": "6cc4a613a411db7e011ba86f5b284985646b24e53c37c43abe52299949342f78",
+  "patch_layers": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "worlds": [
+    "native",
+    "postboundary_mask0"
+  ],
+  "donor_effects_seen_before_freeze": false,
+  "measured_contrast": "log P(correct) - log P(foil), equal to logit(correct) - logit(foil)",
+  "primary_paired_contrast": "margin(same-label paraphrase) - margin(opposite-label paraphrase)",
+  "gate": "Both reciprocal native baseline margins > 0, separately recomputed for mask0 world. All examples retained.",
+  "all_baselines_archived": true,
+  "sequences": [
+    {
+      "pair_id": "mira_color",
+      "labels": [
+        "red",
+        "blue"
+      ],
+      "label_ids": [
+        2502,
+        4797
+      ],
+      "p": 11,
+      "fact_pos": 9,
+      "query_pos": 16,
+      "n": 18,
+      "recipients": [
+        {
+          "text": "The note says that Mira's color is red.\nMira's color is red",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            353,
+            8432,
+            434,
+            3295,
+            310,
+            2502,
+            15,
+            187,
+            46,
+            8432,
+            434,
+            3295,
+            310,
+            2502
+          ],
+          "sha256": "9733930aa3da57c059fe4a02cd7b46b3aa04ff6dbe7ea2d3dae6f9ea8d1e7368"
+        },
+        {
+          "text": "The note says that Mira's color is blue.\nMira's color is red",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            353,
+            8432,
+            434,
+            3295,
+            310,
+            4797,
+            15,
+            187,
+            46,
+            8432,
+            434,
+            3295,
+            310,
+            2502
+          ],
+          "sha256": "6d44b1e8b3ee9c12ea8a30811d8f178ec68476d6109ca4c95d72b2eb40cfb039"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Mira's color as red.\nMira's color is red",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            353,
+            8432,
+            434,
+            3295,
+            347,
+            2502,
+            15,
+            187,
+            46,
+            8432,
+            434,
+            3295,
+            310,
+            2502
+          ],
+          "sha256": "267c4b8bd9ca3f818599c7ec883ad9dbca6b2d8db3d7dfbb97585664f4831622"
+        },
+        {
+          "text": "The record now lists Mira's color as blue.\nMira's color is red",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            353,
+            8432,
+            434,
+            3295,
+            347,
+            4797,
+            15,
+            187,
+            46,
+            8432,
+            434,
+            3295,
+            310,
+            2502
+          ],
+          "sha256": "04c4ebfe35d7ddb9a52db289e909096a18405cc39893a412190f0b0b2d3e27d5"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has a window.\nMira's color is red",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          247,
+          3497,
+          15,
+          187,
+          46,
+          8432,
+          434,
+          3295,
+          310,
+          2502
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 9,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "lena_pet",
+      "labels": [
+        "cat",
+        "dog"
+      ],
+      "label_ids": [
+        5798,
+        4370
+      ],
+      "p": 12,
+      "fact_pos": 10,
+      "query_pos": 18,
+      "n": 20,
+      "recipients": [
+        {
+          "text": "The note says that Lena's pet is a cat.\nLena's pet is a cat",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            418,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            5798,
+            15,
+            187,
+            45,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            5798
+          ],
+          "sha256": "8574af96a44d4dcc14f6ce7f74b08126c41b6ef684f132df13795d7207fdf28b"
+        },
+        {
+          "text": "The note says that Lena's pet is a dog.\nLena's pet is a cat",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            418,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            4370,
+            15,
+            187,
+            45,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            5798
+          ],
+          "sha256": "8b25bdbeda611e4dcf35f23d790230f5f5aede2e76fcbe53a9b1bd80ccb9a675"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Lena's pet as a cat.\nLena's pet is a cat",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            418,
+            6736,
+            434,
+            7590,
+            347,
+            247,
+            5798,
+            15,
+            187,
+            45,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            5798
+          ],
+          "sha256": "00a7a66102d3e9114c9a00bb1a04ca7b7e7513686fd279e924486723b22e172a"
+        },
+        {
+          "text": "The record now lists Lena's pet as a dog.\nLena's pet is a cat",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            418,
+            6736,
+            434,
+            7590,
+            347,
+            247,
+            4370,
+            15,
+            187,
+            45,
+            6736,
+            434,
+            7590,
+            310,
+            247,
+            5798
+          ],
+          "sha256": "f1aaef820e03c672a85af461b3171562078802675d0d1847f53e9e714dc378c1"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has a large window.\nLena's pet is a cat",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          247,
+          1781,
+          3497,
+          15,
+          187,
+          45,
+          6736,
+          434,
+          7590,
+          310,
+          247,
+          5798
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 10,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "noah_fruit",
+      "labels": [
+        "banana",
+        "pear"
+      ],
+      "label_ids": [
+        36767,
+        27887
+      ],
+      "p": 11,
+      "fact_pos": 9,
+      "query_pos": 17,
+      "n": 19,
+      "recipients": [
+        {
+          "text": "The note says that Noah's fruit is a banana.\nNoah's fruit is a banana",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            32794,
+            434,
+            9279,
+            310,
+            247,
+            36767,
+            15,
+            187,
+            2302,
+            1240,
+            434,
+            9279,
+            310,
+            247,
+            36767
+          ],
+          "sha256": "e3b7494726ca2039d47f999bf20eea32662ecf3728a18137449958ab47a2e68b"
+        },
+        {
+          "text": "The note says that Noah's fruit is a pear.\nNoah's fruit is a banana",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            32794,
+            434,
+            9279,
+            310,
+            247,
+            27887,
+            15,
+            187,
+            2302,
+            1240,
+            434,
+            9279,
+            310,
+            247,
+            36767
+          ],
+          "sha256": "f4428493dd5aa541f7d6bf9c1bb8c58eff40b5bf9681b3584a9dfb22179d4243"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Noah's fruit as a banana.\nNoah's fruit is a banana",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            32794,
+            434,
+            9279,
+            347,
+            247,
+            36767,
+            15,
+            187,
+            2302,
+            1240,
+            434,
+            9279,
+            310,
+            247,
+            36767
+          ],
+          "sha256": "e3db7befd236be5049196cf33ad8605b357bbc61ff3e63b4d2324af6483f6e63"
+        },
+        {
+          "text": "The record now lists Noah's fruit as a pear.\nNoah's fruit is a banana",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            32794,
+            434,
+            9279,
+            347,
+            247,
+            27887,
+            15,
+            187,
+            2302,
+            1240,
+            434,
+            9279,
+            310,
+            247,
+            36767
+          ],
+          "sha256": "394fa857cf2dc07d095884871b797a8040c0c98390172fecf7f0c1fae02d9549"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has a window.\nNoah's fruit is a banana",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          247,
+          3497,
+          15,
+          187,
+          2302,
+          1240,
+          434,
+          9279,
+          310,
+          247,
+          36767
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 9,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "sara_drink",
+      "labels": [
+        "tea",
+        "coffee"
+      ],
+      "label_ids": [
+        10331,
+        8574
+      ],
+      "p": 10,
+      "fact_pos": 8,
+      "query_pos": 15,
+      "n": 17,
+      "recipients": [
+        {
+          "text": "The note says that Sara's drink is tea.\nSara's drink is tea",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            31336,
+            434,
+            5484,
+            310,
+            10331,
+            15,
+            187,
+            52,
+            4595,
+            434,
+            5484,
+            310,
+            10331
+          ],
+          "sha256": "2456f81a6e51780162785117f150201a2500b00290b73eaea1dbf978a1b4aa19"
+        },
+        {
+          "text": "The note says that Sara's drink is coffee.\nSara's drink is tea",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            31336,
+            434,
+            5484,
+            310,
+            8574,
+            15,
+            187,
+            52,
+            4595,
+            434,
+            5484,
+            310,
+            10331
+          ],
+          "sha256": "95d1d49ac74796a576f528e087bf81a433d4613f96843d0691608316ceda2140"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Sara's drink as tea.\nSara's drink is tea",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            31336,
+            434,
+            5484,
+            347,
+            10331,
+            15,
+            187,
+            52,
+            4595,
+            434,
+            5484,
+            310,
+            10331
+          ],
+          "sha256": "4b9b3611792d0c51c17b00d2777212cba7296582555d962c4f9071ee43f85689"
+        },
+        {
+          "text": "The record now lists Sara's drink as coffee.\nSara's drink is tea",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            31336,
+            434,
+            5484,
+            347,
+            8574,
+            15,
+            187,
+            52,
+            4595,
+            434,
+            5484,
+            310,
+            10331
+          ],
+          "sha256": "225bfe7f29ead8e07f7b8984fea670d57e98c9300edd1fc46ef62f47c5c17024"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has windows.\nSara's drink is tea",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          8323,
+          15,
+          187,
+          52,
+          4595,
+          434,
+          5484,
+          310,
+          10331
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 8,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "owen_key",
+      "labels": [
+        "gold",
+        "silver"
+      ],
+      "label_ids": [
+        5328,
+        9711
+      ],
+      "p": 10,
+      "fact_pos": 8,
+      "query_pos": 15,
+      "n": 17,
+      "recipients": [
+        {
+          "text": "The note says that Owen's key is gold.\nOwen's key is gold",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            29927,
+            434,
+            2234,
+            310,
+            5328,
+            15,
+            187,
+            48,
+            15082,
+            434,
+            2234,
+            310,
+            5328
+          ],
+          "sha256": "9a4a1a1c163ae9e71f118db7a2f6b7de8ca91a7e5dd5387afe1101cf7b34a56a"
+        },
+        {
+          "text": "The note says that Owen's key is silver.\nOwen's key is gold",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            29927,
+            434,
+            2234,
+            310,
+            9711,
+            15,
+            187,
+            48,
+            15082,
+            434,
+            2234,
+            310,
+            5328
+          ],
+          "sha256": "28a5967e9cc439176026618cd8e4055a2f597a9ff93f1cb91aecbec94ccd718e"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Owen's key as gold.\nOwen's key is gold",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            29927,
+            434,
+            2234,
+            347,
+            5328,
+            15,
+            187,
+            48,
+            15082,
+            434,
+            2234,
+            310,
+            5328
+          ],
+          "sha256": "b8164e40313bab6d69c64a75c2b0e1dcd78bab2d1c16611379b8f51e6e447f5e"
+        },
+        {
+          "text": "The record now lists Owen's key as silver.\nOwen's key is gold",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            29927,
+            434,
+            2234,
+            347,
+            9711,
+            15,
+            187,
+            48,
+            15082,
+            434,
+            2234,
+            310,
+            5328
+          ],
+          "sha256": "cd8a9cc4b0fe131d75da0d6e9d1134e2303de50ac2340e1df142341835cbbcca"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has windows.\nOwen's key is gold",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          8323,
+          15,
+          187,
+          48,
+          15082,
+          434,
+          2234,
+          310,
+          5328
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 8,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "emma_season",
+      "labels": [
+        "summer",
+        "winter"
+      ],
+      "label_ids": [
+        5768,
+        8986
+      ],
+      "p": 10,
+      "fact_pos": 8,
+      "query_pos": 15,
+      "n": 17,
+      "recipients": [
+        {
+          "text": "The note says that Emma's season is summer.\nEmma's season is summer",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            25975,
+            434,
+            2952,
+            310,
+            5768,
+            15,
+            187,
+            11223,
+            785,
+            434,
+            2952,
+            310,
+            5768
+          ],
+          "sha256": "df3584d447edf199c20ae53c23713d41b9664a95497f1f5a1b69a4d4db6f4be6"
+        },
+        {
+          "text": "The note says that Emma's season is winter.\nEmma's season is summer",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            25975,
+            434,
+            2952,
+            310,
+            8986,
+            15,
+            187,
+            11223,
+            785,
+            434,
+            2952,
+            310,
+            5768
+          ],
+          "sha256": "284429bc393b3412a50adb8e97b33d3c58260f2d72321203442ef91f9e1bfa16"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Emma's season as summer.\nEmma's season is summer",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            25975,
+            434,
+            2952,
+            347,
+            5768,
+            15,
+            187,
+            11223,
+            785,
+            434,
+            2952,
+            310,
+            5768
+          ],
+          "sha256": "7314f9bd98e1b93c350e0b8f12fd01fa0c70b05ea0d3e5804e281969830bc3ff"
+        },
+        {
+          "text": "The record now lists Emma's season as winter.\nEmma's season is summer",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            25975,
+            434,
+            2952,
+            347,
+            8986,
+            15,
+            187,
+            11223,
+            785,
+            434,
+            2952,
+            310,
+            5768
+          ],
+          "sha256": "3a17bcf3531838c78a7feccb836271e82ff3ebb69eb9117bf645aea9d756c37f"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has windows.\nEmma's season is summer",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          8323,
+          15,
+          187,
+          11223,
+          785,
+          434,
+          2952,
+          310,
+          5768
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 8,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "liam_shape",
+      "labels": [
+        "circle",
+        "square"
+      ],
+      "label_ids": [
+        9096,
+        6278
+      ],
+      "p": 11,
+      "fact_pos": 9,
+      "query_pos": 17,
+      "n": 19,
+      "recipients": [
+        {
+          "text": "The note says that Liam's shape is a circle.\nLiam's shape is a circle",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            44123,
+            434,
+            5281,
+            310,
+            247,
+            9096,
+            15,
+            187,
+            45,
+            16726,
+            434,
+            5281,
+            310,
+            247,
+            9096
+          ],
+          "sha256": "d7b8cb7e5f0c18e1756d2d1f61c46ccb79363e829c3d516b1cc10349c4fec0d0"
+        },
+        {
+          "text": "The note says that Liam's shape is a square.\nLiam's shape is a circle",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            44123,
+            434,
+            5281,
+            310,
+            247,
+            6278,
+            15,
+            187,
+            45,
+            16726,
+            434,
+            5281,
+            310,
+            247,
+            9096
+          ],
+          "sha256": "9e511ee5b8587b20ae04979f5a059798f9bed0e5da30886e0d184ed2adeff46e"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Liam's shape as a circle.\nLiam's shape is a circle",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            44123,
+            434,
+            5281,
+            347,
+            247,
+            9096,
+            15,
+            187,
+            45,
+            16726,
+            434,
+            5281,
+            310,
+            247,
+            9096
+          ],
+          "sha256": "2ca90d54616bd8423df0c3ce7913d885fd197447b88d7fd27f0992c1acde8dd1"
+        },
+        {
+          "text": "The record now lists Liam's shape as a square.\nLiam's shape is a circle",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            44123,
+            434,
+            5281,
+            347,
+            247,
+            6278,
+            15,
+            187,
+            45,
+            16726,
+            434,
+            5281,
+            310,
+            247,
+            9096
+          ],
+          "sha256": "70067d561ba170cdae23593902284240323c09fd52d7339fa36d8c50fd209168"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has a window.\nLiam's shape is a circle",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          247,
+          3497,
+          15,
+          187,
+          45,
+          16726,
+          434,
+          5281,
+          310,
+          247,
+          9096
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 9,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    },
+    {
+      "pair_id": "nora_shirt",
+      "labels": [
+        "black",
+        "white"
+      ],
+      "label_ids": [
+        2806,
+        3168
+      ],
+      "p": 11,
+      "fact_pos": 9,
+      "query_pos": 16,
+      "n": 18,
+      "recipients": [
+        {
+          "text": "The note says that Nora's shirt is black.\nNora's shirt is black",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            427,
+            6464,
+            434,
+            14133,
+            310,
+            2806,
+            15,
+            187,
+            47,
+            6464,
+            434,
+            14133,
+            310,
+            2806
+          ],
+          "sha256": "600bd405983343835585545cf8c337d89d1031fe547a30a2c32c4fa9109a6b2b"
+        },
+        {
+          "text": "The note says that Nora's shirt is white.\nNora's shirt is black",
+          "ids": [
+            510,
+            3877,
+            2296,
+            326,
+            427,
+            6464,
+            434,
+            14133,
+            310,
+            3168,
+            15,
+            187,
+            47,
+            6464,
+            434,
+            14133,
+            310,
+            2806
+          ],
+          "sha256": "fcc4197ff073b22aa026e92b11e564ec34501ddec99003fbd64feb1b18890534"
+        }
+      ],
+      "paraphrases": [
+        {
+          "text": "The record now lists Nora's shirt as black.\nNora's shirt is black",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            427,
+            6464,
+            434,
+            14133,
+            347,
+            2806,
+            15,
+            187,
+            47,
+            6464,
+            434,
+            14133,
+            310,
+            2806
+          ],
+          "sha256": "c2a898b3061792124422b5623bf9eb709da623ee79e906705457d44bda7a868e"
+        },
+        {
+          "text": "The record now lists Nora's shirt as white.\nNora's shirt is black",
+          "ids": [
+            510,
+            1924,
+            1024,
+            10894,
+            427,
+            6464,
+            434,
+            14133,
+            347,
+            3168,
+            15,
+            187,
+            47,
+            6464,
+            434,
+            14133,
+            310,
+            2806
+          ],
+          "sha256": "55e759945754998237c0322d0364266375c0cc63141df2206ab2d7848634cb32"
+        }
+      ],
+      "irrelevant": {
+        "text": "The book states that every quiet room has a window.\nNora's shirt is black",
+        "ids": [
+          510,
+          1984,
+          3054,
+          326,
+          1046,
+          7107,
+          2316,
+          556,
+          247,
+          3497,
+          15,
+          187,
+          47,
+          6464,
+          434,
+          14133,
+          310,
+          2806
+        ]
+      },
+      "ordinary_source_control": {
+        "position": 9,
+        "distance_mismatch_tokens": 2,
+        "description": "Known fact-token carrier; nearest fact word, not an exact distance match."
+      }
+    }
+  ]
+}

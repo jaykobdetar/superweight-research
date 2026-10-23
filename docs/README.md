@@ -2,10 +2,10 @@
 
 [Research overview](../README.md) · **[Complete research log](../RESEARCH_LOG.md)**
 
-Research is paused through Report 19. These indexes organize completed work;
-they do not approve or schedule the hypotheses and proposed experiments retained
-in the archive. Existing reports, raw exports, scripts and handoffs keep their
-established paths.
+Reports 1–19 retain their established paths. The [October 23 OLMo synthesis](olmo/RESEARCH_UPDATE_2026_10_23.md) adds the newer model-specific work, with a
+[claim-to-evidence map](olmo/CLAIM_EVIDENCE_MAP.md) and explicit
+[publication cutoff and audit commands](olmo/PUBLICATION_SCOPE.md). Proposed or
+running work is not represented as a completed result.
 
 ## Model-specific reading routes
 
@@ -64,3 +64,4 @@ universal mechanism. Later reports explicitly record unperformed second replays.
   [chronological README snapshot](../RESEARCH_LOG.md). Historical publication
   status in frozen reports belongs to its recorded date; current reproduction
   readiness is described in the linked guides.
+

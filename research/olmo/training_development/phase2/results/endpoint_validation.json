@@ -1,0 +1,101 @@
+{
+  "protocol_sha256": "03b2692ddf8c39a4cb13e9cf089757d1a3cd099440fc3420e812c033f345b899",
+  "passed": true,
+  "checks": [
+    {
+      "check": "FP16-style source pulse 510",
+      "observed": -258.304443359375,
+      "reference": -258.62060546875,
+      "relative_error": 0.0012224938875305623,
+      "pass": true
+    },
+    {
+      "check": "FP16-style source pulse 15",
+      "observed": -253.878173828125,
+      "reference": -253.878173828125,
+      "relative_error": 0.0,
+      "pass": true
+    },
+    {
+      "check": "causal prefix float32",
+      "error": 0.0,
+      "pass": true
+    },
+    {
+      "check": "self-only same token water_cycle",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token library",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token bread",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "self-only same token programming",
+      "error": 1.8160412558566952e-07,
+      "pass": true
+    },
+    {
+      "check": "mature newline_U",
+      "median_abs_pulse": 299.5519714355469,
+      "all_values": [
+        304.4427185058594,
+        296.5216979980469,
+        301.0219421386719,
+        298.0820007324219
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R",
+      "median_abs_pulse": 0.0005497076926985756,
+      "all_values": [
+        0.001063391100615263,
+        0.0003739287203643471,
+        0.000725486665032804,
+        0.0003312552289571613
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R_edge_H14",
+      "median_abs_pulse": 305.00640869140625,
+      "all_values": [
+        311.5978698730469,
+        302.8671569824219,
+        305.5016784667969,
+        304.5111389160156
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature newline_R_edge_H0",
+      "median_abs_pulse": 0.000549581804079935,
+      "all_values": [
+        0.0010619350941851735,
+        0.00037329550832509995,
+        0.00072586809983477,
+        0.0003325401048641652
+      ],
+      "pass": true
+    },
+    {
+      "check": "mature H12 restoration",
+      "median_fraction": 1.8418423521867646,
+      "all_values": [
+        1.850371306530259,
+        1.835654628305355,
+        1.8043794459223916,
+        1.8480300760681743
+      ],
+      "pass": true
+    }
+  ],
+  "scope": "Numerical source-pulse references, code/formula parity and exact invariants plus qualitative replication on new fixed probes. Does not execute the full Transformers/CUDA reference implementation; no bit-exact SDPA claim."
+}
