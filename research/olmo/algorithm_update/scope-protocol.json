@@ -1,0 +1,449 @@
+{
+  "version": "1.0",
+  "freeze_utc": "2026-10-23T10:34:00Z",
+  "study": "Prospective two-source operator scope challenge",
+  "max_forward_passes": 24,
+  "runner_sha256": "4c477652999c042318d91558b685d9b8a32a33d065a0186dd256e1f564e21715",
+  "output_dir": "/EVIDENCE_ROOT/superweight_algorithm_search/weight_composition/h10_scope",
+  "model": "allenai/OLMo-1B-0724-hf",
+  "revision": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "bounds": {
+    "threads": 2,
+    "address_space_bytes": 4000000000,
+    "prefix_length": 129,
+    "stop_layer": 1,
+    "LM_head_forbidden": true,
+    "downloads_forbidden": true,
+    "total_forward_wall_seconds_stop": 180,
+    "process_timeout_seconds": 60,
+    "failed_or_uncertain_attempts_count": true,
+    "retry_without_new_review_forbidden": true
+  },
+  "input_archive_sha256": "43da48bd2147aaf74b6ec71e54cb0c3a7ccf30e3aba3671d5fbeba31412d2e87",
+  "backgrounds": [
+    {
+      "name": "scope_wiki142001",
+      "source_file": "/EVIDENCE_ROOT/olmo_computational_role/inputs/wiki_validation_partial_ids.npy",
+      "source_sha256": "36bf4d0676cb8704f1363413c907a73fe95037e20658580557ce87a17288ac0b",
+      "offset": 142001,
+      "length": 129
+    },
+    {
+      "name": "scope_optimizers6017",
+      "source_file": "/EVIDENCE_ROOT/olmo_computational_role/inputs/optimizers_ids.npy",
+      "source_sha256": "58a3d899098280848f11c4f26e7a8ef456cc729481c33477b63ff4ce51e14d01",
+      "offset": 6017,
+      "length": 129
+    }
+  ],
+  "cells": [
+    {
+      "id": "scope_wiki142001__p32",
+      "background": "scope_wiki142001",
+      "source": 32,
+      "query": 128,
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879"
+    },
+    {
+      "id": "scope_wiki142001__p96",
+      "background": "scope_wiki142001",
+      "source": 96,
+      "query": 128,
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2"
+    },
+    {
+      "id": "scope_wiki142001__none",
+      "background": "scope_wiki142001",
+      "source": null,
+      "query": 128,
+      "input_sha256": "613b4642d4abbab90996d5a2e08bfebf7ac4cafbe16c0af136f0d7d37f78b262"
+    },
+    {
+      "id": "scope_optimizers6017__p32",
+      "background": "scope_optimizers6017",
+      "source": 32,
+      "query": 128,
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616"
+    },
+    {
+      "id": "scope_optimizers6017__p96",
+      "background": "scope_optimizers6017",
+      "source": 96,
+      "query": 128,
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b"
+    },
+    {
+      "id": "scope_optimizers6017__none",
+      "background": "scope_optimizers6017",
+      "source": null,
+      "query": 128,
+      "input_sha256": "3834a7576ae79fd9fe4fc6be2e2f1b0d1d522e6d77e2e445b0c682ea9b42c2be"
+    }
+  ],
+  "authorized_runs": [
+    {
+      "stage": "baseline",
+      "cell": "scope_wiki142001__p32",
+      "stem": "scope_wiki142001__p32__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p32",
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879",
+      "source": 32
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_wiki142001__p32",
+      "stem": "scope_wiki142001__p32__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p32",
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879",
+      "source": 32,
+      "native_stem": "scope_wiki142001__p32__Rnative"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p32",
+      "stem": "scope_wiki142001__p32__lambda1",
+      "condition": "lambda1",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p32",
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879",
+      "source": 32,
+      "native_stem": "scope_wiki142001__p32__Rnative",
+      "donor_stem": "scope_wiki142001__p32__E",
+      "lambda": 1.0
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p32",
+      "stem": "scope_wiki142001__p32__gate_minus2",
+      "condition": "gate_minus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p32",
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879",
+      "source": 32,
+      "native_stem": "scope_wiki142001__p32__Rnative",
+      "donor_stem": "scope_wiki142001__p32__E",
+      "lambda_from_prediction_key": "gate_minus2"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p32",
+      "stem": "scope_wiki142001__p32__gate_plus2",
+      "condition": "gate_plus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p32",
+      "input_sha256": "04a39cef529dbe29f75409cfe9158c7d6464226ea2ce37939f3665278554a879",
+      "source": 32,
+      "native_stem": "scope_wiki142001__p32__Rnative",
+      "donor_stem": "scope_wiki142001__p32__E",
+      "lambda_from_prediction_key": "gate_plus2"
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_wiki142001__p96",
+      "stem": "scope_wiki142001__p96__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p96",
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2",
+      "source": 96
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_wiki142001__p96",
+      "stem": "scope_wiki142001__p96__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p96",
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2",
+      "source": 96,
+      "native_stem": "scope_wiki142001__p96__Rnative"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p96",
+      "stem": "scope_wiki142001__p96__lambda1",
+      "condition": "lambda1",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p96",
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2",
+      "source": 96,
+      "native_stem": "scope_wiki142001__p96__Rnative",
+      "donor_stem": "scope_wiki142001__p96__E",
+      "lambda": 1.0
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p96",
+      "stem": "scope_wiki142001__p96__gate_minus2",
+      "condition": "gate_minus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p96",
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2",
+      "source": 96,
+      "native_stem": "scope_wiki142001__p96__Rnative",
+      "donor_stem": "scope_wiki142001__p96__E",
+      "lambda_from_prediction_key": "gate_minus2"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__p96",
+      "stem": "scope_wiki142001__p96__gate_plus2",
+      "condition": "gate_plus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__p96",
+      "input_sha256": "b046f159478eb2b577c4931bc1fb086cb39dc767d7a30c4e8f8411a9f3eca5a2",
+      "source": 96,
+      "native_stem": "scope_wiki142001__p96__Rnative",
+      "donor_stem": "scope_wiki142001__p96__E",
+      "lambda_from_prediction_key": "gate_plus2"
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_wiki142001__none",
+      "stem": "scope_wiki142001__none__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__none",
+      "input_sha256": "613b4642d4abbab90996d5a2e08bfebf7ac4cafbe16c0af136f0d7d37f78b262",
+      "source": null
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_wiki142001__none",
+      "stem": "scope_wiki142001__none__selfonly",
+      "condition": "selfonly",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_wiki142001__none",
+      "input_sha256": "613b4642d4abbab90996d5a2e08bfebf7ac4cafbe16c0af136f0d7d37f78b262",
+      "source": null,
+      "native_stem": "scope_wiki142001__none__Rnative"
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_optimizers6017__p32",
+      "stem": "scope_optimizers6017__p32__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p32",
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616",
+      "source": 32
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_optimizers6017__p32",
+      "stem": "scope_optimizers6017__p32__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p32",
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616",
+      "source": 32,
+      "native_stem": "scope_optimizers6017__p32__Rnative"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p32",
+      "stem": "scope_optimizers6017__p32__lambda1",
+      "condition": "lambda1",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p32",
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616",
+      "source": 32,
+      "native_stem": "scope_optimizers6017__p32__Rnative",
+      "donor_stem": "scope_optimizers6017__p32__E",
+      "lambda": 1.0
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p32",
+      "stem": "scope_optimizers6017__p32__gate_minus2",
+      "condition": "gate_minus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p32",
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616",
+      "source": 32,
+      "native_stem": "scope_optimizers6017__p32__Rnative",
+      "donor_stem": "scope_optimizers6017__p32__E",
+      "lambda_from_prediction_key": "gate_minus2"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p32",
+      "stem": "scope_optimizers6017__p32__gate_plus2",
+      "condition": "gate_plus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p32",
+      "input_sha256": "5cc6b2bd27ab3774ff7f1d5a2dce2f8446ad0393142c86fb1f47746a549d2616",
+      "source": 32,
+      "native_stem": "scope_optimizers6017__p32__Rnative",
+      "donor_stem": "scope_optimizers6017__p32__E",
+      "lambda_from_prediction_key": "gate_plus2"
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_optimizers6017__p96",
+      "stem": "scope_optimizers6017__p96__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p96",
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b",
+      "source": 96
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_optimizers6017__p96",
+      "stem": "scope_optimizers6017__p96__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p96",
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b",
+      "source": 96,
+      "native_stem": "scope_optimizers6017__p96__Rnative"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p96",
+      "stem": "scope_optimizers6017__p96__lambda1",
+      "condition": "lambda1",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p96",
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b",
+      "source": 96,
+      "native_stem": "scope_optimizers6017__p96__Rnative",
+      "donor_stem": "scope_optimizers6017__p96__E",
+      "lambda": 1.0
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p96",
+      "stem": "scope_optimizers6017__p96__gate_minus2",
+      "condition": "gate_minus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p96",
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b",
+      "source": 96,
+      "native_stem": "scope_optimizers6017__p96__Rnative",
+      "donor_stem": "scope_optimizers6017__p96__E",
+      "lambda_from_prediction_key": "gate_minus2"
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__p96",
+      "stem": "scope_optimizers6017__p96__gate_plus2",
+      "condition": "gate_plus2",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__p96",
+      "input_sha256": "9ce58d45959a92daaa9fee1f4b07d0c0ed65292780da8e6eb869bd812c85a27b",
+      "source": 96,
+      "native_stem": "scope_optimizers6017__p96__Rnative",
+      "donor_stem": "scope_optimizers6017__p96__E",
+      "lambda_from_prediction_key": "gate_plus2"
+    },
+    {
+      "stage": "baseline",
+      "cell": "scope_optimizers6017__none",
+      "stem": "scope_optimizers6017__none__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__none",
+      "input_sha256": "3834a7576ae79fd9fe4fc6be2e2f1b0d1d522e6d77e2e445b0c682ea9b42c2be",
+      "source": null
+    },
+    {
+      "stage": "outcome",
+      "cell": "scope_optimizers6017__none",
+      "stem": "scope_optimizers6017__none__selfonly",
+      "condition": "selfonly",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+      "input_key": "scope_optimizers6017__none",
+      "input_sha256": "3834a7576ae79fd9fe4fc6be2e2f1b0d1d522e6d77e2e445b0c682ea9b42c2be",
+      "source": null,
+      "native_stem": "scope_optimizers6017__none__Rnative"
+    }
+  ],
+  "freshness": "Fixed raw offsets absent earlier recovered-window list and distinct from previous H10 cases. New to this intervention campaign, not claims of unseen training text. No selection on model outcomes.",
+  "input_transform": "129-token slice; replace187/535 with209, set0=510 and128=187; add exactly one prior187 at32 or96, or none. R/E share token arrays.",
+  "carrier_indices": [
+    1091,
+    3419,
+    6535,
+    4798
+  ],
+  "primary_neuron": 1710,
+  "write_coordinate": 1764,
+  "head": 10,
+  "phase_order": "First exactly10 baseline/donor passes only: four source-present Rnative/E pairs and two source-absent Rnative. Then freeze prediction JSON/NPZ/receipt and independent prediction-code audit, before any outcome. Phase2 at most14 outcomes; skip unavailable root conditions as explicit applicability failures, never replace them.",
+  "prediction_receipt_path": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/prediction_freeze_receipt.json",
+  "independent_code_gate_path": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/prediction_code_gate.json",
+  "operator": {
+    "normalization": "P=I-11T/2048; n(x)=Px/sqrt(||Px||\u00b2/2048+1e-5). Clipping remains elementwise\u00b18 beforeRoPE.",
+    "inputs": "Native recipient full L0 poststates, L1 preMLP, H10 context; nativeR and matching E selected M0 activations. No treated outcome values may enter prediction.",
+    "carrier": "dz=E_selected-R_selected; xq(lambda)=nativeL0query+Wdown0[:,S]*(lambda*dz). Historical source xp remains native.",
+    "query_key_value": "q=Rq clip(WQ,H10 n(xq)); kq=Rq clip(WK,H10 n(xq)); vq=clip(WV,H10 n(xq)); kp=Rp clip(WK,H10 n(xp)); vp=clip(WV,H10 n(xp)).",
+    "two_source": "pi=sigmoid(q dot(kq-kp)/sqrt128); c2=(1-pi)*vp+pi*vq. For no-source, fixed specialization c2=vq, not a learned fallback.",
+    "preMLP": "rhat=nativeL1preMLP+Wdown0[:,S]*(lambda*dz)+WO,H10*(c2-nativeH10context). All other attention heads held native in predictor only.",
+    "primary": "ghat=g1710 dot n(rhat); uhat=u1710 dot n(rhat); pulsehat=Wdown1[1764,1710]*ghat*sigmoid(ghat)*uhat.",
+    "scope": "Conditional local predictor; observed native baseline and donor are inputs, not autonomous computation from tokens. The unclipped quadratic formula/11-generator span are architectural identities. Source/head selection from previous study is fixed, not retuned here."
+  },
+  "lambda_selection": {
+    "interval": [
+      0,
+      1
+    ],
+    "grid_points": 1001,
+    "target_gate_values": [
+      -2,
+      2
+    ],
+    "root_rule": "Evaluate the frozen reduced predictor on the increasing uniform 1001-point grid. Select the earliest below-to-above crossing for each target, with initial exact equality accepted; perform 50 bisections. Require both roots and lambda_minus < lambda_plus. No extended interval, adjusted target, fitting or outcome-based fallback.",
+    "missing_root": "Record applicability failure; skip unavailable root outcomes. Continue remaining already-declared conditions only.",
+    "future_data_prohibited": true
+  },
+  "hooks": {
+    "Rnative": "No intervention.",
+    "E": "L0 H14 query128 edge to designated source setzero, renormalize other probability mass, recomputeH14 context. Prefixqueries untouched.",
+    "lambda1": "At L0 query128 replace selected4 post-SiLU activations by Rselected+1*(Eselected-Rselected); reproject completequeryMLProw.",
+    "gate_minus2": "Same hook with frozen predictor-selected lambda_minus; otherMLPneurons native.",
+    "gate_plus2": "Same hook with frozen predictor-selected lambda_plus; otherMLPneurons native.",
+    "selfonly": "Only for no-source: at L1query128 replaceH10 preWOcontext by its actual selfvalue at128; no carrier intervention. Otherheads unchanged."
+  },
+  "criteria": {
+    "source_present_lambda1": {
+      "selected_source_mass_min": 0.95,
+      "pulse_relative_error_max": 0.1,
+      "std_relative_error_max": 0.05,
+      "gate_relative_error_max": 0.1,
+      "up_relative_error_max": 0.1
+    },
+    "near_threshold": {
+      "gate_sign_correct": true,
+      "gate_absolute_error_max": 0.5,
+      "up_absolute_error_max": 1.0,
+      "pulse_absolute_error_max": "max(1,0.10*abs(actualpulse))",
+      "std_relative_error_report_only": true,
+      "selected_source_mass_report_only": true
+    },
+    "no_source_native_fidelity": {
+      "pulse_absolute_difference_max": "max(1,0.10*abs(nativepulse))",
+      "std_relative_difference_max": 0.05,
+      "H10_projected_message_relative_error_max": 0.05,
+      "denominator": "Native no-source output for fidelity; separately score parameter-predicted selfonly output vs actualselfonly to verifyimplementation."
+    },
+    "predictor_numeric_replay": {
+      "gate_absolute_error_max": 0.0005,
+      "pulse_absolute_error_max": 0.01,
+      "std_absolute_error_max": 1e-05
+    },
+    "baseline_comparison": "Also score frozenA1 directrelay on each carrier outcome. Report all percase errors; no average-only success or posthoccriterion relaxation."
+  },
+  "controls": "Input, dependency, code, protocol and result hashes; exactly authorized source index; no changes to earlier0..127states versus native. Capture before/aftercontext and verify exactselfonly context. Carrier edits change only4activations atquery and completequeryrow reprojection. Validate generalizedlambda/sourcehook on cachedarrays before inference. No extraidentityforwards without revisedbudget.",
+  "negative_criteria": "Numerical/provenance/prefix/hook failure stops remaining execution. Substantive model failures remain valid outcomes; report them and continue remaining fixedmatrix withoutrefit. Missing or unordered roots count as failed switch applicability. No newheads/sources/backgroundsurrogates added. Headonly one-source specialization is predeclared, not retrofitted after no-source results.",
+  "provenance": "The earlier compactnorm surrogate failed frozen5%pulse criteria5.031512%/9.580395% and remainsfailed. The present unfittedselectedweightoperator was derivedafterthat test; this is its first prospective scopechallenge.",
+  "input_archive": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/inputs.npz",
+  "operator_sha256": "36cff408a70552c3c0d1f4e596970f54c0e0b79043201b413007f88d3ce4a00f",
+  "prediction_receipt": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_scope_protocol/prediction_freeze_receipt.json",
+  "prediction_runner_sha256": "79221a17760e7e5b7f12f06c537fff92758af7b9d15513ca11a4302776b8ba0c"
+}

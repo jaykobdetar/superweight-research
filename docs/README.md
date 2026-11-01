@@ -7,6 +7,10 @@ Reports 1–19 retain their established paths. The [October 23 OLMo synthesis](o
 [publication cutoff and audit commands](olmo/PUBLICATION_SCOPE.md). Proposed or
 running work is not represented as a completed result.
 
+The later [conditional-algorithm and Adam-control supplement](olmo/CONDITIONAL_ALGORITHM_AND_ADAM_CONTROL.md)
+separates a tested amplification branch from its near-threshold failures and a
+descriptive adaptive optimizer control.
+
 ## Model-specific reading routes
 
 | Model or scope | Start here | Main evidence |
