@@ -9,6 +9,10 @@ signal production, native function and training development; its
 [publication scope](../../olmo/PUBLICATION_SCOPE.md) identifies which results are
 complete and which remain pending.
 
+The later [conditional-algorithm and Adam-control supplement](../../olmo/CONDITIONAL_ALGORITHM_AND_ADAM_CONTROL.md)
+adds a bounded H10 amplification test, the two-source predictor's transition
+failures and a separately selected late-checkpoint 8041 control.
+
 The original report concerns one pinned
 `allenai/OLMo-1B-0724-hf` checkpoint at revision
 `d7cbab742d80589e714b1a2d7f838dcd21cbe143`, FP16/native SDPA. The primary target is

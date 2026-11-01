@@ -19,6 +19,11 @@ README, including the chronological updates and publication history, is retained
 in the **[research log](RESEARCH_LOG.md)**. Start with the
 [documentation index](docs/README.md) for the complete reading and audit routes.
 
+The later [conditional-algorithm and Adam-control supplement](docs/olmo/CONDITIONAL_ALGORITHM_AND_ADAM_CONTROL.md)
+adds a bounded carrier-to-H10 amplification result, an explicit near-threshold
+failure of its two-source reduction, and a separately selected 8041 optimizer
+control. These results do not establish a complete algorithm or training cause.
+
 ## Strongest supported findings
 
 | Finding | Evidence and scope |

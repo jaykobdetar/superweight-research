@@ -1,0 +1,29 @@
+{
+  "design": "Adaptive negative control, same128 preselected other axes; native954k only",
+  "primary_neuron": 1710,
+  "control_neuron": 8041,
+  "focal_axis": 1764,
+  "primary_focal_v_over_sample_median": 0.22864178748820083,
+  "control_focal_v_over_sample_median": 1.919436411422038,
+  "primary_sampled_axes_with_lower_v": 0,
+  "control_sampled_axes_with_lower_v": 127,
+  "primary_focal_gain_over_sample_median": 2.075451142444043,
+  "control_focal_gain_over_sample_median": 0.8875919871345479,
+  "paired_v_spearman": -0.09593595495330526,
+  "paired_log_v_pearson": 0.026991090587531772,
+  "paired_first_moment_pearson": -0.1564877132720836,
+  "paired_first_moment_same_sign_count": 62,
+  "focal_primary_to_control_v_ratio": 9988.565291232622,
+  "sampled_primary_to_control_v_ratio_min": 17529.440541670683,
+  "sampled_primary_to_control_v_ratio_median": 86266.53702016684,
+  "sampled_primary_to_control_v_ratio_max": 173265.3235119639,
+  "primary_epsilon_dominant_sample_count": 0,
+  "control_epsilon_dominant_sample_count": 127,
+  "conclusion": "The focal low-v axis advantage is not shared by the small-coefficient8041 control. It is therefore not a universal per-axis property across these two neurons. Feature-conditioned batch-gradient history matters; historical causal direction remains unidentified.",
+  "limits": [
+    "One adaptive control and one late checkpoint, not all neurons or causal training.",
+    "Epsilon regimes differ; raw v and epsilon-adjusted gain are reported separately.",
+    "m is a stored first moment, not the current gradient.",
+    "Paired correlation summaries are descriptive, not causal or training-seed uncertainty."
+  ]
+}

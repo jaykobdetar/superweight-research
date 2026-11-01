@@ -1,0 +1,261 @@
+{
+  "version": "1.0",
+  "frozen_utc": "2026-10-23T10:16:00Z",
+  "max_forward_passes": 16,
+  "model": "allenai/OLMo-1B-0724-hf",
+  "revision": "d7cbab742d80589e714b1a2d7f838dcd21cbe143",
+  "bounds": {
+    "threads": 2,
+    "address_space_bytes": 4000000000,
+    "prefix_length": 129,
+    "last_layer_inclusive": 1,
+    "LM_head_forbidden": true,
+    "downloads_forbidden": true,
+    "total_forward_wall_seconds_stop": 180,
+    "each_process_timeout_seconds": 60,
+    "attempts_including_failed_count_against_budget": true,
+    "no_automatic_retry": true
+  },
+  "fresh_backgrounds": [
+    {
+      "id": "fresh_wiki151001",
+      "corpus_path": "/EVIDENCE_ROOT/olmo_computational_role/inputs/wiki_validation_partial_ids.npy",
+      "corpus_sha256": "36bf4d0676cb8704f1363413c907a73fe95037e20658580557ce87a17288ac0b",
+      "offset": 151001,
+      "length": 129,
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f"
+    },
+    {
+      "id": "fresh_optimizers4333",
+      "corpus_path": "/EVIDENCE_ROOT/olmo_computational_role/inputs/optimizers_ids.npy",
+      "corpus_sha256": "58a3d899098280848f11c4f26e7a8ef456cc729481c33477b63ff4ce51e14d01",
+      "offset": 4333,
+      "length": 129,
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3"
+    }
+  ],
+  "fresh_inputs_sha256": "c7da5cc79e3400a6d33e4b9d355996907f98569036f1ef20edcb975fb986ce6d",
+  "freshness_scope": "Offsets fixed without reading outcomes and absent the recovered-window list; new carrier-intervention contexts, not claims of unseen training data or unseen corpus.",
+  "input_transform": "Copy 129 tokens at fixed offset; replace tokens 187 and 535 by 209; set token0=510 and tokens64,128=187. Identical token arrays in R and E.",
+  "carrier_indices": [
+    1091,
+    3419,
+    6535,
+    4798
+  ],
+  "source": 64,
+  "query": 128,
+  "head": 10,
+  "hooks": {
+    "Rnative": "Native forward without M0 intervention.",
+    "E": "Only L0 H14 attention edge query128/source64 is set to zero and remaining source probabilities renormalized; recompute H14 context. No later intervention.",
+    "Rtop4": "In native R, replace only the four selected L0 post-SiLU activations at query128 by E-donor activations from the same token prefix; reproject the entire query MLP output row with original W_down0.",
+    "sameworld_H10_sham": "Rtop4 plus replace L1 pre-W_O H10 context at query128 by saved same-context Rtop4 H10 context.",
+    "top4_H10_clamped": "Rtop4 plus replace L1 pre-W_O H10 context at query128 by saved same-context Rnative H10 context. Other heads stay endogenous Rtop4.",
+    "top4_nonH10_clamped": "Rtop4 plus replace all 15 non-H10 L1 pre-W_O contexts at query128 by saved same-context Rnative contexts. H10 stays endogenous Rtop4."
+  },
+  "stage_A_gate": {
+    "gold_comparison": "Compare each of four outputs with frozen original cache. Native may differ by row-reprojection rounding, so these are toleranced, not bitwise.",
+    "normalized_max_absolute_error_le": 0.0005,
+    "primary_raw_write_absolute_error_le": 0.01,
+    "head10_projected_delta_relative_L2_error_le": 0.05,
+    "head10_midpoint_norm2_allocation_absolute_error_le": 1.0,
+    "head10_rank_requirement": "H10 must have most negative direct-capture signed midpoint squared-norm allocation in both old contexts.",
+    "head_delta_comparison": "Direct W_O,h times (Rtop4 context_h minus Rnative context_h), compared to frozen reconstructed_A1_heads.npz matching R/top4 case. Center vectors before relative L2. Midpoint allocation is <P(x_direct+x_actual), P(delta_h)> (squared residual norm, no division by 2048); x_direct=Rnative preMLP+(Rtop4 M0output-Rnative M0output).",
+    "stop_if_any_fail": true,
+    "no_stage_B_until_independent_audit_pass": true
+  },
+  "stage_B_order": "Run Rnative and E donors for both fresh contexts first. Release only native baseline states and R/E M0 activations for frozen compact predictions. Record prediction artifact hash before running any Rtop4 or clamp outcome. Then execute four remaining conditions per context.",
+  "prospective_predictions": {
+    "denominator": "All pulse ratios use the same-context endogenous Rtop4 primary1710 raw write at coordinate1764, not Rnative or an oracle denominator.",
+    "high_pulse_domain": "Require Rtop4 primary raw write < -100 and positive primary gate in each fresh context. Failure counts as failure of applicability/generalization, not an excluded case.",
+    "H10_necessity": "In each fresh context, abs(primary pulse under top4_H10_clamped)/abs(primary Rtop4 pulse) <= 0.75.",
+    "H10_conditional_sufficiency": "In each fresh context top4_nonH10_clamped pulse has same sign as Rtop4 and abs(pulse_clamped-pulse_top4)/abs(pulse_top4) <= 0.20; abs(std_clamped-std_top4)/std_top4 <=0.10.",
+    "sameworld_identity": "Sameworld H10 sham must be bitwise equal to Rtop4 in L0 effective activations/postlayer, L1 context before/after hook, preMLP, normalized, activations, MLP output and postlayer; unchanged earlier-prefix hashes identical.",
+    "scope": "Necessity and sufficiency conditional on selected carrier intervention and fixed controlled prefixes only. Not a complete source-to-behavior algorithm; no mediation percentage from signed norm allocation."
+  },
+  "capture_requirements": "Save query128 head contexts before/after hook, all L1 head probabilities at query128, all L1 values, full L0 poststates, query L1 preMLP/normalized/activations/outputs and input/dependency/code/protocol/result hashes. Earlier positions0..127 unchanged bitwise versus same-context Rnative.",
+  "negative_criteria": "Any StageA validation failure stops StageB. Any StageB sham or prefix identity failure invalidates causal outcomes and stops remaining runs. Any substantive prediction failure is reported without retuning; do not add contexts/heads/conditions under this protocol. Failed or uncertain execution consumes an attempt; inspect receipt before any retry.",
+  "authorized_runs": [
+    {
+      "stage": "A",
+      "context": "water_cycle",
+      "stem": "A__water_cycle__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/inputs.npz",
+      "input_key": "water_cycle__R",
+      "input_sha256": "e5f0f9fee09930c7844e7b65be693a0327d6b6045b232e524b94da23d1b6e380",
+      "gold_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/water_cycle__R__sham_reproject.npz",
+      "gold_sha256": "d5022541f4d5e56b220515c97b926798681705211e15e9aa1092148cb7cdef57"
+    },
+    {
+      "stage": "A",
+      "context": "water_cycle",
+      "stem": "A__water_cycle__Rtop4",
+      "condition": "Rtop4",
+      "input_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/inputs.npz",
+      "input_key": "water_cycle__R",
+      "input_sha256": "e5f0f9fee09930c7844e7b65be693a0327d6b6045b232e524b94da23d1b6e380",
+      "gold_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/water_cycle__R__top4.npz",
+      "gold_sha256": "859dadea00ef96497bc202abaf442f4e57ab7348856b593c93a669be2a54ef47",
+      "donor_file": "/EVIDENCE_ROOT/superweight_algorithm_search/weight_composition/h10_study/stageA_water_cycle_E_donor.npz",
+      "donor_sha256": "237c5de93ff3db689e13dfabef3d31700237a7a578ae12fb55691bea80064b78",
+      "native_stem": "A__water_cycle__Rnative"
+    },
+    {
+      "stage": "A",
+      "context": "wiki_validation__64082",
+      "stem": "A__wiki_validation__64082__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/inputs.npz",
+      "input_key": "wiki_validation__64082__R",
+      "input_sha256": "80c342a53e961c6186b463f3545f59b8eece67a23c009c1322c99df5c3ea5408",
+      "gold_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/wiki_validation__64082__R__sham_reproject.npz",
+      "gold_sha256": "b963da9a6b5e3cf07f7d4a54e42c1da8e4c38735aa6104b9b4ec081af742207e"
+    },
+    {
+      "stage": "A",
+      "context": "wiki_validation__64082",
+      "stem": "A__wiki_validation__64082__Rtop4",
+      "condition": "Rtop4",
+      "input_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/inputs.npz",
+      "input_key": "wiki_validation__64082__R",
+      "input_sha256": "80c342a53e961c6186b463f3545f59b8eece67a23c009c1322c99df5c3ea5408",
+      "gold_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/wiki_validation__64082__R__top4.npz",
+      "gold_sha256": "7b0f26bbba996b1b58f965c7e68708febbb675ae3974c3ebdfc1d78b79be1c5d",
+      "donor_file": "/EVIDENCE_ROOT/olmo_signal_production/continuation/m0_donors/wiki_validation__64082__E__native.npz",
+      "donor_sha256": "22e33db3f96d238aa582f8f0ecf8a1aeeafc8c695dc17c8a5770b23fb67c784f",
+      "native_stem": "A__wiki_validation__64082__Rnative"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f",
+      "native_stem": "B__fresh_wiki151001__Rnative"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__Rtop4",
+      "condition": "Rtop4",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f",
+      "native_stem": "B__fresh_wiki151001__Rnative",
+      "donor_stem": "B__fresh_wiki151001__E"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__sameworld_H10_sham",
+      "condition": "sameworld_H10_sham",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f",
+      "native_stem": "B__fresh_wiki151001__Rnative",
+      "donor_stem": "B__fresh_wiki151001__E",
+      "sham_stem": "B__fresh_wiki151001__Rtop4"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__top4_H10_clamped",
+      "condition": "top4_H10_clamped",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f",
+      "native_stem": "B__fresh_wiki151001__Rnative",
+      "donor_stem": "B__fresh_wiki151001__E"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_wiki151001",
+      "stem": "B__fresh_wiki151001__top4_nonH10_clamped",
+      "condition": "top4_nonH10_clamped",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_wiki151001",
+      "input_sha256": "ec5db5daace21e0dde3595f16c779cb45a6421ae3c316d4eeb85cd7be244326f",
+      "native_stem": "B__fresh_wiki151001__Rnative",
+      "donor_stem": "B__fresh_wiki151001__E"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__Rnative",
+      "condition": "Rnative",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__E",
+      "condition": "E",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3",
+      "native_stem": "B__fresh_optimizers4333__Rnative"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__Rtop4",
+      "condition": "Rtop4",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3",
+      "native_stem": "B__fresh_optimizers4333__Rnative",
+      "donor_stem": "B__fresh_optimizers4333__E"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__sameworld_H10_sham",
+      "condition": "sameworld_H10_sham",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3",
+      "native_stem": "B__fresh_optimizers4333__Rnative",
+      "donor_stem": "B__fresh_optimizers4333__E",
+      "sham_stem": "B__fresh_optimizers4333__Rtop4"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__top4_H10_clamped",
+      "condition": "top4_H10_clamped",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3",
+      "native_stem": "B__fresh_optimizers4333__Rnative",
+      "donor_stem": "B__fresh_optimizers4333__E"
+    },
+    {
+      "stage": "B",
+      "context": "fresh_optimizers4333",
+      "stem": "B__fresh_optimizers4333__top4_nonH10_clamped",
+      "condition": "top4_nonH10_clamped",
+      "input_file": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/fresh_inputs.npz",
+      "input_key": "fresh_optimizers4333",
+      "input_sha256": "b09fc476e7adb3d901d9196721ca5e68533dc2474577eb0cb77ca52d15f2a4b3",
+      "native_stem": "B__fresh_optimizers4333__Rnative",
+      "donor_stem": "B__fresh_optimizers4333__E"
+    }
+  ],
+  "runner_sha256": "5560e6677a4e444d4cba20d31798d8d15daaa9ae5bd6ffd8dfa922e36aad13ee",
+  "stageA_gate_receipt": "/EVIDENCE_ROOT/superweight_algorithm_search/independent_audit/h10_protocol/stageA_gate.json"
+}
