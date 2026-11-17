@@ -114,7 +114,10 @@ python -B scripts/audit_results.py
 This loads no model. It checks exported loss/KL arrays; it cannot independently
 reconstruct omitted predictions or prove model-hook correctness. The
 [audit index](docs/README.md#cpu-only-numerical-audits) lists all 11 public
-numerical auditors and their model-specific guides.
+numerical auditors and their model-specific guides. To find checks by name, run
+`python -B scripts/audits.py list`. The [working guide](docs/WORKING_WITH_EVIDENCE.md)
+shows how to run one or all without writing into the evidence, and how to
+distinguish archived programs from maintained launchers.
 
 For a future **OLMo nine-batch model reproduction**, first obtain the exact
 checkpoint and input files and create the ignored `inputs.local.json` described
