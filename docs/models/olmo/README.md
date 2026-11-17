@@ -13,6 +13,8 @@ The later [conditional-algorithm and Adam-control supplement](../../olmo/CONDITI
 adds a bounded H10 amplification test, the two-source predictor's transition
 failures and a separately selected late-checkpoint 8041 control.
 
+The [fixed-H14 vector study](../../../research/olmo/fixed_h14_susceptibility/README.md) tests a single intervention derived from Python snippets on later newlines in eight literary works. The data distinguish intact prediction drift from vulnerability to the scalar lesion.
+
 The original report concerns one pinned
 `allenai/OLMo-1B-0724-hf` checkpoint at revision
 `d7cbab742d80589e714b1a2d7f838dcd21cbe143`, FP16/native SDPA. The primary target is

@@ -24,6 +24,8 @@ adds a bounded carrier-to-H10 amplification result, an explicit near-threshold
 failure of its two-source reduction, and a separately selected 8041 optimizer
 control. These results do not establish a complete algorithm or training cause.
 
+A [November fixed-H14 intervention](research/olmo/fixed_h14_susceptibility/README.md) made later predictions sensitive to a single scalar deletion in 24/24 literary passages. The edit alone usually had a much smaller effect. This is a one-checkpoint result, not a claim about attention sinks or training.
+
 ## Strongest supported findings
 
 | Finding | Evidence and scope |

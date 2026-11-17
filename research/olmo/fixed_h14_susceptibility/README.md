@@ -1,0 +1,39 @@
+# A fixed H14 edit creates scalar-lesion sensitivity on a literary holdout
+**17 November 2026 | OLMo-1B-0724, one recovered FP16 checkpoint | Local inference only**
+
+One vector derived from eight Python snippets reproduced its effect in **24/24 previously unexamined literary passages from eight authors**, without changing the vector or its amplitude. It was tested at a newline with an earlier newline already present in the text. Applying the vector alone changed the intact next-token distribution by a median **0.0196 nat**. Deleting the target scalar contribution *after* applying it changed that distribution by **1.856 nats**. Deleting the same contribution without the vector gave **0.0000061 nat**. The effect is the creation of a strong vulnerability under this particular deletion, not an improvement or collapse of the intact language model.
+
+## Exactly what was held out
+Four prose works (*Emma*, *Alice’s Adventures in Wonderland*, *Moby-Dick*, and *The Man Who Was Thursday*) and four verse or drama works (Blake’s *Poems*, *Paradise Lost*, *Hamlet* and *Leaves of Grass*) came from [NLTK’s Project Gutenberg selections](https://www.nltk.org/book/ch02.html). Three windows per book were chosen by a deterministic layout rule near 20%, 50% and 80% through its token sequence. No text, direction, threshold or sample was selected using its model response. All 24 windows qualified. Original line breaks were kept; CRLF in *Moby-Dick* became LF without merging or adding a line. The closest preceding single-newline ID was 8–23 tokens away.
+
+At the later query, add the same frozen 128-number vector to layer 0 head 14’s output before its output projection. The vector is the mean of eight head differences measured on Python snippets; no literary donor, target-specific scaling or refitting was used. Random directions had matched write length. In each state, the lesion removed only the source-position contribution from MLP layer 1 down-projection weight [1764,1710]. It did not zero the whole writer or edit stored parameters. KL is the mean change over the 32 *subsequent* next-token distributions. The reference changes with the question.
+
+## The two essential controls
+**Is this specific to the current newline?** At natural newline queries, all 24 windows passed the predeclared large-activation and functional criteria; every book passed all three windows, in both genre groups. The writer moved 437–500 activation units toward negative. Scalar-lesion KL was **1.046–2.734 nats** (median 1.856); the median random-direction counterpart was **0.0000055**.
+
+At nearby alphabetic tokenizer entries, **0/24** met the joint criterion. Replacing the newline with that same alphabetic entry in the exact same slot, keeping all other IDs unchanged, likewise produced **0/24**. This is *not* proof the vector has no effect at other tokens: a nearby “was” in Chesterton had a smaller 71-unit excursion but a **1.982-nat** lesion effect. No same-slot alphabetic substitution exceeded 0.062 nat. The large-pulse and downstream-change criteria answer different questions.
+
+**Was the edited intact model already behaving very differently?** A second protocol, frozen before reviewing the literary outcomes, compared intact-model cost with conditional lesion damage. At full strength, **23/24 passages** met both prespecified limits: intact cost ≤0.10 nat and ≤10% of the conditional lesion effect. Every book passed at least two of three. The exception was the 80% *Emma* window: cost 0.216, lesion damage 1.861 nats. The median ratio of lesion damage to intact cost across paired passages was **98.4**. “Low cost” is not “identical”: at full strength, median top-1 disagreement with the intact unedited model was **6.25%** and median true-next-token NLL change was **+0.0148 nat**.
+
+| Frozen vector amplitude | Intact cost: KL(native ∥ steered) | Lesion vulnerability: KL(steered ∥ steered + scalar lesion) | Joint shift: KL(native ∥ steered + lesion) |
+|---:|---:|---:|---:|
+| 0 | 0 | 0.000006 | 0.000006 |
+| 0.25 | 0.0010 | 0.000006 | 0.0010 |
+| 0.50 | 0.0299 | 1.462 | 1.457 |
+| 0.75 | 0.0196 | 1.890 | 1.911 |
+| 1.00 | 0.0196 | 1.856 | 1.855 |
+| Eight random directions, full matched write length | 0.00033 | 0.000006 | 0.00033 |
+
+Entries are passage medians; for the random row, take the within-passage median over control directions first. These are **three distinct comparisons** of distributions; the columns need not add. The first tested dose crossing 0.25 nat lesion damage was 0.50 in 22 windows, 0.75 in two. Only 13/24 curves were monotone within the frozen 0.01-nat tolerance. The coarse grid supports a rise over an interval, not a precise or universal threshold.
+
+## What this changes, and what it does not
+The earlier work established an H14 role in suppressing a later pulse after a newline. These tests add that a single fixed edit from **different inputs** can create large, usually low-intact-cost susceptibility to one specific scalar deletion in new literary material. They do not establish a universal H14 code, a semantic purpose, uniquely necessary circuitry, task-level harm or benefit, or a training mechanism. The 24 passages are not 24 independent authors, and the holdout was not held out of model pretraining. It is a test of selected newline-bearing English print texts in one tokenizer, one precision, one checkpoint and short contexts.
+
+A checkpoint comparison was assessed but **not run**: the existing [developmental bundle](https://github.com/jaykobdetar/superweight-research/tree/4a040468564b51e5c56f0c7c5f44027f1afbde4e/research/olmo/training_development) contains archived normalized states and selected gate/up/down readouts, not the full reader and logits required to score this endpoint. Attention to an earlier newline was already known before the mature functional role developed. A rigorous future comparison should separately test (a) this unchanged final vector with matched per-checkpoint output-write controls, and (b) a checkpoint-native donor measured on separate training files; a mismatch on (a) alone would not show the functional circuit was absent.
+
+The [reproduction guide](REPRODUCE.md) links the frozen protocols, numerical audit, optional offline model replay, exact template and control vectors, and the hashed source-selection manifest. The [experiment trail](TRAIL.md) includes earlier positive and negative results. This publication excludes checkpoint weights, book text and prompt/prediction token arrays. Source archive checked against the [official NLTK SHA-256 index](https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml). All 24 selections and both sets of endpoints were independently re-reduced in code; the shared full-dose and control results matched exactly between runs. The GPU was released after each offline run.
+
+## Related work, not an attention-sink claim
+[Sun et al. (ICML 2026)](https://proceedings.mlr.press/v306/sun26d.html) distinguish massive activations from attention sinks and study how their co-occurrence depends on pre-normalization. [Wang and Lin (ICML 2026)](https://proceedings.mlr.press/v306/wang26ed.html) analyze token mixing and report that removing a sink token's value vector can recover sink attention even when massive activations are suppressed. Here the manipulated quantities are a head's source-local pre-output context and one downstream scalar contribution; the measured outcome is conditional next-token KL. We neither ablate pre-normalization nor establish attention-sink formation, prevention of token mixing, training cause, or precedence for massive-activation mechanisms.
+
+[Subramanian et al. (2026)](https://arxiv.org/abs/2607.08733) separately examine selective fine-tuning of super-weight coordinates and matched training controls. That concerns parameter updates and evaluation accuracy, not our frozen-checkpoint, position-local donor/lesion counterfactual.
