@@ -207,3 +207,7 @@ terms; hashes and source links are supplied instead of redistribution.
 The preceding README history is preserved verbatim as its historical snapshot.
 New OLMo-specific work is indexed in the [October 23 synthesis](docs/olmo/RESEARCH_UPDATE_2026_10_23.md): coefficient and functional development, alternate signal writers, native-source reanalysis, authentic optimizer-state evidence, and the independent review of Reports 1–19.
 The [publication scope](docs/olmo/PUBLICATION_SCOPE.md) records exact cutoff and audit boundaries, including unfinished work excluded from findings. The [claim-to-evidence map](docs/olmo/CLAIM_EVIDENCE_MAP.md) distinguishes measurements, causal interventions and hypotheses.
+
+## 2026-11-17: Fixed H14 vector and source-local lesion susceptibility
+
+The [study, protocols and evidence](research/olmo/fixed_h14_susceptibility/README.md) cover conditional reader controls, an out-of-domain vector transfer and a 24-passage literary holdout with a separately measured intact-predictor cost. The October evidence and its original publication cutoffs are unchanged.

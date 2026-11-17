@@ -11,6 +11,8 @@ The later [conditional-algorithm and Adam-control supplement](olmo/CONDITIONAL_A
 separates a tested amplification branch from its near-threshold failures and a
 descriptive adaptive optimizer control.
 
+The [fixed-H14 susceptibility study](../research/olmo/fixed_h14_susceptibility/README.md) reports an eight-author holdout, intact-predictor cost and an offline numerical audit.
+
 ## Model-specific reading routes
 
 | Model or scope | Start here | Main evidence |
