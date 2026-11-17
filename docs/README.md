@@ -24,6 +24,10 @@ The [fixed-H14 susceptibility study](../research/olmo/fixed_h14_susceptibility/R
 
 ## CPU-only numerical audits
 
+For a single command that lists and runs these checks, see the
+[working guide](WORKING_WITH_EVIDENCE.md). It also covers recent OLMo package
+checks, output locations and what belongs in the immutable evidence.
+
 Use Python with NumPy 1.26.4 and run from the repository root. The README's
 [quick start](../README.md#quick-start) sets up an audit environment. Each script
 is a public numerical check, distinct from original private-tensor reviews and
